@@ -1,4 +1,4 @@
-const mongoose = require(mongoose);
+const mongoose = require('mongoose');
 
 // A model for mongoose
 
@@ -8,7 +8,7 @@ const mongoose = require(mongoose);
 //     return re.test(String(email).toLowerCase());
 // }
 
-mongoose.model("FeedBack", {
+mongoose.model("Feedback", {
     //Title/Subject, author/username, content, email
     subject: {
         type: String,
@@ -27,4 +27,4 @@ mongoose.model("FeedBack", {
         require: true
     }
 
-})
+});
