@@ -1,5 +1,2 @@
 node_modules
-./feedback/node_modules
-./user-profile/node_modules
-./user-profile/.env
-./feedback/.env
+.env
