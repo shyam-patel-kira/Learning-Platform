@@ -89,6 +89,7 @@ const User = mongoose.model("User");
     })
 
     app.post('/user/register', async (req, res) => {
+        console.log(req)
         const { userName, password: plainTextPassword, firstName, lastName, email } = req.body
 
         //Validating User Credentials

@@ -67,12 +67,13 @@ app.post("/admin", async (req, res) => {
             },
             JWT_SECRET_ADMIN
         )
-        return res.json({ status: 'ok', data: token }), res.header('auth-token', token).send(token)
+        return res.header('auth-token-admin', token).send(token)//,res.json({ status: 'ok', data: token }) 
     }
     res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
 app.get("/users", verifiedAdmin, (req, res) => {
+    console.log(User.json)  
     User.find().then((users) => {
         res.json(users)
     }).catch((err) => {
