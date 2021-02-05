@@ -1,10 +1,21 @@
+import React from 'react'
 import './App.css';
-import Form from './Form';
+import {Router, Route, Switch} from 'react-router-dom'
+import FormSignup from './Components/Signup/FormSignup'
+import history from './history'
+// import Form from './Components/Form';
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <Form />
+    <div>
+      
+    <Router history={history}>
+    <Navbar />
+      <Switch>
+      <Route path="/signup" component={FormSignup} />
+      </Switch>
+    </Router>
     </div>
   );
 }
