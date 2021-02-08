@@ -1,0 +1,33 @@
+{
+  "name": "learning-platform",
+  "version": "1.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyam-patel-kira/Learning-Platform.git"
+  },
+  "keywords": [
+    "mern-stack",
+    "nodeJS",
+    "express",
+    "gateway"
+  ],
+  "author": "Shyam Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shyam-patel-kira/Learning-Platform/issues"
+  },
+  "homepage": "https://github.com/shyam-patel-kira/Learning-Platform#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-router": "0.0.1",
+    "mongoose": "^5.11.15"
+  }
+}
