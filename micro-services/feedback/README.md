@@ -2,4 +2,4 @@
 
 ##Initial Setup
 
-npm install --save express body-parser mongoose dotenv compression
+npm install --save express body-parser mongoose dotenv compression nodemon jsonwebtoken bcryptjs @hapi/joi

@@ -12,8 +12,7 @@ dotenv.config();
 app.use(bodyParser.json());
 app.use(compression());
 
-
-require("../Models/Feedback");
+require("./Models/Feedback");
 const FeedBack = mongoose.model("Feedback");
 
 // Connect to MongoDB
