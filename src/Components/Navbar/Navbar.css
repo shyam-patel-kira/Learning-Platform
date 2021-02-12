@@ -1,9 +1,12 @@
 .NavbarItems{
-    /*position: absolute;
-    width: 1400px;*/
-    height: 64px;
-    left: calc(50% - 1400px/2);
-    top: calc(50% - 64px/2 + 0.04px);
+    position: absolute;
+    /* width: 1300px; */
+    height: 70px;
+    left: 1.39%;
+    right: 1.39%;
+    top: 3.89%;
+    bottom: 88.61%;
+    /* overflow-y: scroll; */
 
     background: #002333;
     border-radius: 25px;
