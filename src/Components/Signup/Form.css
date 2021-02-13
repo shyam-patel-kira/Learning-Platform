@@ -20,9 +20,9 @@
   }
   
   .form-content-left {
-      position: relative;
-      line-height: 30px;
-      display: flex;
+    position: relative;
+    line-height: 30px;
+    display: flex;
     background: #002333;
     color: #fff;
     align-items: center;
@@ -76,17 +76,46 @@
     align-items: center;
   }
   
-  .form h1 {
-    font-size: 1rem;
-    text-align: start;
-    width: 80%;
-    margin-bottom: 1rem;
-    color: #fff;
+  .form-content-left h1 {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    left: 140px;
+    top: 200px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+  }
+
+  .form-content-left h2 {
+    position: absolute;
+    width: 210px;
+    height: 53px;
+    left: 170px;
+    top: 325px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
   }
   
   .form-inputs {
     margin-bottom: 0.5rem;
     width: 80%;
+    width: 350px;
   }
   
   .form-inputs p {
@@ -125,7 +154,7 @@
   }
   
   .form-input-btn {
-    width: 80%;
+    width: 75%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;

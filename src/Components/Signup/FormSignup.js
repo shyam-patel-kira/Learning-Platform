@@ -9,10 +9,6 @@ const FormSignup = ({ submitForm }) => {
   return (
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
-        <h1>
-          Get started with us today! Create your account by filling out the
-          information below.
-        </h1>
         <div className='form-inputs'>
           <label className='form-label'>Username</label>
           <input
@@ -65,7 +61,7 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className='form-input-login'>
-          Already a member  <a href='#'>Login</a>
+          Already a member  <a href='/login'>Login</a>
         </span>
       </form>
     </div>

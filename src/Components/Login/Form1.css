@@ -76,12 +76,40 @@
     align-items: center;
   }
   
-  .form1 h1 {
-    font-size: 1rem;
-    text-align: start;
-    width: 80%;
-    margin-bottom: 1rem;
-    color: #fff;
+  .form1-content-left h1 {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    left: 140px;
+    top: 200px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+  }
+
+  .form1-content-left h2 {
+    position: absolute;
+    width: 210px;
+    height: 53px;
+    left: 140px;
+    top: 325px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
   }
   
   .form1-inputs {

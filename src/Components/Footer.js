@@ -47,11 +47,11 @@ function Footer() {
                     <div className='footer-link-items'>
                         <Link to='/'>Home</Link>
                         <Link to='/'>About Us</Link>
-                        <a href={"mailto:" + this.props.email}>email</a>
+                        {/* <a href={"mailto:" + this.props.email}>email</a> */}
                     </div>
                 </div>
             </div>
-            <small className='website-rights'>LMS All rights Reserved</small>
+            <small className='website-rights'>LMS © 2021. All rights reserved</small>
         </div>
     )
 }

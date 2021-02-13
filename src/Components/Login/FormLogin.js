@@ -9,10 +9,10 @@ const FormLogin = ({ submitForm1 }) => {
   return (
     <div className='form1-content-right'>
       <form onSubmit={handleSubmit} className='form1' noValidate>
-        <h1>
+        {/* <h1>
           Get started with us today! Create your account by filling out the
           inForm1ation below.
-        </h1>
+        </h1> */}
         {/* <div className='Form1-inputs'>
           <label className='Form1-label'>Username</label>
           <input
@@ -64,9 +64,9 @@ const FormLogin = ({ submitForm1 }) => {
         <button className='form1-input-btn' type='submit'>
           Login
         </button>
-        {/* <span className='Form1-input-login'>
-          Already a member  <a href='#'>Login</a>
-        </span> */}
+        <span className='Form1-input-login'>
+          Not a member  <a href='/signup'>Sign Up</a>
+        </span> 
       </form>
     </div>
   );

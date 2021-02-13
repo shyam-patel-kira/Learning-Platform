@@ -14,11 +14,11 @@ const Form1 = () => {
       <div className='form1-container'>
         <span className='close-btn'>×</span>
         <div className='form1-content-left'>
-            <h1>Join LMS for Free</h1> 
-            <h1>Begin Your Journey</h1>
+            <h1>Welcome Back to LMS</h1> 
+            <h2>Sign In to continue to your Account</h2>
         </div>
         {!isSubmitted ? (
-          <FormLogin submitForm1={submitForm1} />
+          <FormLogin submitForm={submitForm1} />
         ) : (
           <FormSuccess />
         )}
