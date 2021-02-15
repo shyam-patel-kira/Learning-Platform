@@ -5,7 +5,7 @@ import './Cards.css'
 function Cards() {
     return (
         <div className='cards'>
-            {/* <h1>Hello</h1> */}
+            <h1>This is where GRE and IELTS can take you!</h1> 
             <div className='cards__container'>
                 <div className='cards__wrapper'>
                     <ul className='cards__items'>
@@ -32,7 +32,7 @@ function Cards() {
                          <CardItems
                             src='images/newz.png'
                             text='Journey to New Zealand begins with IELTS'
-                            label='CANADA'
+                            label='New Zealand'
                             path='/'
                          />
                     </ul>
