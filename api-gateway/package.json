@@ -6,6 +6,10 @@
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
-    "express-gateway": "^1.16.10"
+    "connect-redis": "^5.1.0",
+    "express-gateway": "^1.16.10",
+    "redis": "^3.0.2",
+    "redis-cli": "^2.0.0",
+    "redis-server": "^1.2.2"
   }
 }

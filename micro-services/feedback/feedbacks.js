@@ -61,7 +61,7 @@ console.log("POST newfeedaback saved to db")
 })
 
 // List all the feedbacks 
-app.get("/feedbacks", (req, res) => {
+app.get("/feedback", (req, res) => {
 
 FeedBack.find().then((feedbacks) => {
   res.json(feedbacks)

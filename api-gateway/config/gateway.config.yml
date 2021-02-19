@@ -6,10 +6,10 @@ admin:
 apiEndpoints:
   api:
     host: localhost
-    paths: '/ip'
+    paths: '/feedback'
 serviceEndpoints:
   httpbin:
-    url: 'https://httpbin.org'
+    url: 'http://localhost:4545'
 policies:
   - basic-auth
   - cors
@@ -25,7 +25,11 @@ pipelines:
       - api
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - key-auth:
+      - rate-limit:
+        - action:
+            max: 3
+            rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
               serviceEndpoint: httpbin 
