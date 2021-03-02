@@ -1,0 +1,36 @@
+.sidebar {
+    position: absolute;
+    height: 500px;
+    width: 250px;
+    background-color: #002333;
+    border: 1px solid #00FF84;
+    left: 0%;
+    /* right: 79.03%; */
+    top: 11.43%;
+    /* bottom: 44.41%; */
+}
+
+.sidebar-list {
+    height: auto;
+    /* padding: 0; */
+    width: 100%;
+}
+
+.sidebar-list .row {
+    position: relative;
+    border: 1px solid #00FF84;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    color: #f4f4f4;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 58px;
+    /* left: calc(50% - 276px/2 + 1px); */
+    /* top: calc(50% - 58px/2 - 300.5px); */
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-spacing: 0 15px;
+}
+

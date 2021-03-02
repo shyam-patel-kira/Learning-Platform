@@ -5,17 +5,21 @@ import {Router, Route, Switch} from 'react-router-dom'
 import history from './history'
 import Form from './Components/Form';
 import Form1 from './Components/Form1';
-import Navbar from './Components/Navbar/Navbar'
-import Home from './Components/Pages/Home';
+import Home from './Pages/Home';
+import Ieltsmain from './Pages/Ieltsmain';
+import Ieltsreading from './Pages/Ieltsreading';
+import Ieltslistening from './Pages/Ieltslistening';
 
 function App() {
   return (
     <div>
       
     <Router history={history}>
-    <Navbar /> 
       <Switch>
       <Route path='/' exact component={Home} />
+      <Route path="/ieltsmain" component={Ieltsmain} />
+      <Route path="/ielts-reading" component={Ieltsreading} />
+      <Route path="/ielts-listening" component={Ieltslistening} />
       <Route path="/signup" component={Form} />
       <Route path="/login" component={Form1} /> 
       </Switch>

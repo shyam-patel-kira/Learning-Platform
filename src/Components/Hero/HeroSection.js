@@ -5,7 +5,6 @@ function HeroSection() {
     return (
         <div className='hero-container'>
             <img src='/Images/image-1.png' />
-            
         </div>
     )
 }

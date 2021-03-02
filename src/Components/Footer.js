@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Button } from './Button'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import './Footer.css'
@@ -40,7 +41,7 @@ function Footer() {
                     <input type="email" name="email" placeholder="Your Email ID" className='feedback-form-input'/>
                     <input type="text" name="query" placeholder="Your Feedback/Query" className='feedback-form-input'/>
                 </form>
-                <Button>SUBMIT</Button>
+                <Button variant="Default" href='/' style={{color:"#fff", background:"#00ff84", margin: "0.5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}}>Submit</Button>
             </section>
             <div className='footer-links'>
                 <div className='footer-link-wrapper'>
