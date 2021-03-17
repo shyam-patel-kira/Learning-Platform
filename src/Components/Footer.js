@@ -2,9 +2,60 @@ import React from 'react'
 // import { Button } from './Button'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './Footer.css'
 
-function Footer() {
+class Footer extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            subject:"",
+            author:"",
+            content:"",
+            email:""
+        }
+    }
+
+    onChangeAuthor = (event) => {
+        this.setState({
+            author:event.target.value
+        })
+    }
+
+    onChangeSubject = (event) => {
+        this.setState({
+            subject:event.target.value
+        })
+    }
+
+    onChangeContent = (event) => {
+        this.setState({
+            content:event.target.value
+        })
+    }
+
+    onChangeEmail = (event) => {
+        this.setState({
+            email:event.target.value
+        })
+    }
+
+    feedBackSubmit = (event) => {
+        event.preventDefault();
+        const feedback = {
+            subject: this.state.subject,
+            author: this.state.author,
+            content: this.state.content,
+            email: this.state.email
+        }
+        console.log(feedback)
+
+        axios.post('http://localhost:8000/feedback',feedback)
+            .then(res => console.log(res.data))
+
+    }
+
+render() {
     return (
         <div className='footer-container'>
             <section className='social-media'>
@@ -37,11 +88,73 @@ function Footer() {
             </section>
             <section className='footer-feedback-form'>
                 <form>
-                    <input type="text" name="name" placeholder="Your Name" className='feedback-form-input'/>
-                    <input type="email" name="email" placeholder="Your Email ID" className='feedback-form-input'/>
-                    <input type="text" name="query" placeholder="Your Feedback/Query" className='feedback-form-input'/>
+                <h1>Give your Feedback Here</h1> 
+                <div className='form-inputs'>
+                    <label htmlFor='author' className='form-label'>
+                    </label>
+                    <input 
+                        id='author'
+                        type='text'
+                        name='author'
+                        className='form-input'
+                        placeholder='Enter your Name'
+                        value={this.state.author}
+                        onChange={this.onChangeAuthor}
+                    />
+                </div>
+
+                <div className='form-inputs'>
+                    <label htmlFor='subject' className='form-label'>
+                    </label>
+                    <input 
+                        id='subject'
+                        type='text'
+                        name='subject'
+                        className='form-input'
+                        placeholder='Subject'
+                        value={this.state.subject}
+                        onChange={this.onChangeSubject}
+                    />
+                </div>
+
+
+                <div className='form-inputs'>
+                    <label htmlFor='email' className='form-label'>
+                    </label>
+                    <input 
+                        id='email'
+                        type='email'
+                        name='email'
+                        className='form-input'
+                        placeholder='Enter your Email'
+                        value={this.state.email}
+                        onChange={this.onChangeEmail}
+                    />
+                </div>
+
+                <div className='form-inputs'>
+                    <label htmlFor='content' className='form-label'>
+                    </label>
+                    <input 
+                        id='content'
+                        type='text'
+                        name='content'
+                        className='form-input'
+                        placeholder='Your Feedback or Query'
+                        value={this.state.content}
+                        onChange={this.onChangeContent}
+
+                    />
+                </div>
+
+                <button className='form-input-btn'
+                        type='submit'
+                        onClick={this.feedBackSubmit}
+                >
+                    submit
+                        </button>
                 </form>
-                <Button variant="Default" href='/' style={{color:"#fff", background:"#00ff84", margin: "0.5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}}>Submit</Button>
+                {/* <Button variant="Default" href='/' style={{color:"#fff", background:"#00ff84", margin: "0.5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}}>Submit</Button> */}
             </section>
             <div className='footer-links'>
                 <div className='footer-link-wrapper'>
@@ -56,5 +169,6 @@ function Footer() {
         </div>
     )
 }
+}
 
-export default Footer 
+export default Footer

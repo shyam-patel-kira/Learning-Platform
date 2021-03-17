@@ -1,31 +1,85 @@
 import React from 'react'
 
-const FormFeedback = () => {
-    return (
-        <div className='form-content-right'>
+class FormFeedback extends React.Component(){
+    constructor(props) {
+        super(props);
+        this.state = {
+            subject:"",
+            author:"",
+            content:"",
+            email:""
+        }
+    }
+
+    onChangeAuthor = (event) => {
+        this.setState({
+            author:this.state.author
+        })
+    }
+
+    onChangeSubject = (event) => {
+        this.setState({
+            subject:this.state.subject
+        })
+    }
+
+    onChangeContent = (event) => {
+        this.setState({
+            content:this.state.content
+        })
+    }
+
+    onChangeEmail = (event) => {
+        this.setState({
+            email:this.state.email
+        })
+    }
+
+    feedBackSubmit = (event) => {
+        event.preventDefault();
+        const feedback = {
+            subject: this.state.subject,
+            author: this.state.author,
+            content: this.state.content,
+            email: this.state.email
+        }
+        console.log(feedback)
+
+        axios.post('http://localhost:8000/feedback',feedback)
+            .then(res => console.log(res.data))
+
+    }
+
+    render(){
+        return(
+            <div className='form-content-right'>
             <form className='form'>
                 <h1>Give your Feedback Here</h1> 
                 <div className='form-inputs'>
-                    <label htmlFor='firstname' className='form-label'>
+                    <label htmlFor='author' className='form-label'>
                     </label>
                     <input 
-                        id='firstname'
+                        id='author'
                         type='text'
-                        name='firstname'
+                        name='author'
                         className='form-input'
-                        placeholder='Enter your Firstname'
+                        placeholder='Enter your Name'
+                        value={this.state.author}
+                        onChange={this.onChangeAuthor}
                     />
                 </div>
 
                 <div className='form-inputs'>
-                    <label htmlFor='lastname' className='form-label'>
+                    <label htmlFor='subject' className='form-label'>
                     </label>
                     <input 
-                        id='lastname'
+                        id='subject'
                         type='text'
-                        name='lastname'
+                        name='subject'
                         className='form-input'
-                        placeholder='Enter your Lastname'
+                        placeholder='Subject'
+                        value={this.state.subject}
+                        onChange={this.onChangeSubject}
                     />
                 </div>
 
@@ -39,30 +93,39 @@ const FormFeedback = () => {
                         name='email'
                         className='form-input'
                         placeholder='Enter your Email'
+                        value={this.state.email}
+                        onChange={this.onChangeEmail}
                     />
                 </div>
 
                 <div className='form-inputs'>
-                    <label htmlFor='query' className='form-label'>
+                    <label htmlFor='content' className='form-label'>
                     </label>
                     <input 
-                        id='query'
+                        id='content'
                         type='text'
-                        name='query'
+                        name='content'
                         className='form-input'
-                        placeholder='Feedback/query'
+                        placeholder='Your Feedback or Query'
+                        value={this.state.content}
+                        onChange={this.onChangeContent}
+
                     />
                 </div>
 
                 <button className='form-input-btn'
-                        type='submit'>
-                            submit
+                        type='submit'
+                        onClick={this.feedBackSubmit}
+                >
+                    submit
                         </button>
             </form>
         </div>
 
 
     )
+
+    }
 }
 
 export default FormFeedback
