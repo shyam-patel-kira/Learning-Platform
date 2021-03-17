@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Login/Form1.css'
 import FormLogin from './Login/FormLogin';
 import FormSuccess from './Login/FormSuccess';
+import Footer from './Footer';
+import Navbar from './Navbar/Navbar';
 
 const Form1 = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -11,6 +13,8 @@ const Form1 = () => {
   }
   return (
     <>
+    <Navbar />
+
       <div className='form1-container'>
         <span className='close-btn'>×</span>
         <div className='form1-content-left'>
@@ -23,6 +27,8 @@ const Form1 = () => {
           <FormSuccess />
         )}
       </div>
+
+      <Footer />
     </>
   );
 };
