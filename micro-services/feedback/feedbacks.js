@@ -3,6 +3,7 @@ const express = require(`express`);
 const app = express();
 const bodyParser = require(`body-parser`);
 const mongoose = require(`mongoose`);
+const cors = require(`cors`);
 //Server Optimisation
 const compression = require(`compression`);
 //config file
@@ -11,6 +12,7 @@ dotenv.config();
 
 app.use(bodyParser.json());
 app.use(compression());
+app.use(cors());
 
 require("./Models/Feedback");
 const FeedBack = mongoose.model("Feedback");

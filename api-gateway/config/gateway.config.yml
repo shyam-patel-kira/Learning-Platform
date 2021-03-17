@@ -1,5 +1,5 @@
 http:
-  port: 8080
+  port: 8000
 admin:
   port: 9876
   host: localhost
@@ -25,7 +25,7 @@ pipelines:
       - api
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-      - key-auth:
+      #- key-auth:
       - rate-limit:
         - action:
             max: 3
