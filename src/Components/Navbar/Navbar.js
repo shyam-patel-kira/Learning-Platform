@@ -54,14 +54,14 @@ class Navbar extends Component {
                         Courses
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">GRE</a>
-                        <a class="dropdown-item" href="/ieltsmain" onClick="myFunction()">
+                        <Link class="dropdown-item" to="#">GRE</Link>
+                        <Link class="dropdown-item" to="/ieltsmain">
                             IELTS
                              
                                 {/* if (!isLogged) {
                             <Redirect to="/login" />
                         } */}
-                        </a>
+                        </Link>
                         
 
                         

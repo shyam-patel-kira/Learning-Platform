@@ -1,13 +1,14 @@
 .sidebar {
-    position: absolute;
-    height: 500px;
+    position: relative;
+    height: 600px;
     width: 250px;
     background-color: #002333;
     border: 1px solid #00FF84;
     left: 0%;
     /* right: 79.03%; */
-    top: 11.43%;
+    top: 5.43%;
     /* bottom: 44.41%; */
+    margin-top: 5%;  
 }
 
 .sidebar-list {
@@ -18,6 +19,7 @@
 
 .sidebar-list .row {
     position: relative;
+    margin-top: 10%;
     border: 1px solid #00FF84;
     list-style-type: none;
     display: flex;

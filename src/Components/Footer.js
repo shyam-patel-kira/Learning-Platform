@@ -96,6 +96,7 @@ render() {
                         id='author'
                         type='text'
                         name='author'
+                        required
                         className='form-input'
                         placeholder='Enter your Name'
                         value={this.state.author}
@@ -110,6 +111,7 @@ render() {
                         id='subject'
                         type='text'
                         name='subject'
+                        required
                         className='form-input'
                         placeholder='Subject'
                         value={this.state.subject}
@@ -125,6 +127,7 @@ render() {
                         id='email'
                         type='email'
                         name='email'
+                        required
                         className='form-input'
                         placeholder='Enter your Email'
                         value={this.state.email}
@@ -139,6 +142,7 @@ render() {
                         id='content'
                         type='text'
                         name='content'
+                        required
                         className='form-input'
                         placeholder='Your Feedback or Query'
                         value={this.state.content}

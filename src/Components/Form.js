@@ -10,6 +10,7 @@ const Form = () => {
 
   function submitForm() {
     setIsSubmitted(true);
+    window.location='/'
   }
   return (
     <>
@@ -20,11 +21,11 @@ const Form = () => {
             <h1>Join LMS for Free</h1> 
             <h2>Begin Your Journey</h2>
         </div>
-        {!isSubmitted ? (
-          <FormSignup submitForm={submitForm} />
-        ) : (
-          <FormSuccess />
-        )}
+          {!isSubmitted ? (
+            <FormSignup submitForm={submitForm} />
+          ) : (
+            <FormSuccess />
+          )}
       </div>
 
       <Footer />

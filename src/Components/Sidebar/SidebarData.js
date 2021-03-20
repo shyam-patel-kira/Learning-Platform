@@ -14,5 +14,14 @@ export const SidebarData = [
     {
         title: "Speaking",
         link: "/ielts-speaking"
+    },
+    {
+        title: "Tips and Tricks",
+        link: "/ielts-tipsandtricks"
+    },
+    {
+        title: "Vocabulary",
+        link: "/ielts-vocabulary"
     }
+
 ];

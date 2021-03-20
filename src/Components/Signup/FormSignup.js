@@ -1,11 +1,13 @@
 import React from 'react';
 import validate from './validationInfo';
 import useForm from './useForm';
+import { Link } from 'react-router-dom';
 import './Form.css';
+
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
-
+  
   return (
     <div className='form-content-right'>
       <form onSubmit={handleSubmit} className='form' noValidate>
@@ -61,7 +63,7 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className='form-input-login'>
-          Already a member  <a href='/login'>Login</a>
+          Already a member  <Link to='/login'>Login</Link>
         </span>
       </form>
     </div>

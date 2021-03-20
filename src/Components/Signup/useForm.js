@@ -23,6 +23,7 @@ const useForm = (callback, validate) => {
 
     setErrors(validate(values));
     setIsSubmitting(true);
+    // window.location = '/'
   };
 
   useEffect(

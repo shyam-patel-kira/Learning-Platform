@@ -1,6 +1,7 @@
 import React from 'react';
 import validate from './validationInfo';
 import useForm from './useForm';
+import { Link } from 'react-router-dom';
 import './Form1.css';
 
 const FormLogin = ({ submitForm1 }) => {
@@ -65,7 +66,7 @@ const FormLogin = ({ submitForm1 }) => {
           Login
         </button>
         <span className='Form1-input-login'>
-          Not a member  <a href='/signup'>Sign Up</a>
+          Not a member  <Link to='/signup'>Sign Up</Link>
         </span> 
       </form>
     </div>
