@@ -1,15 +1,20 @@
-http:
+microservices:
   port: 8000
 admin:
   port: 9876
   host: localhost
 apiEndpoints:
-  api:
+  feedback:
     host: localhost
     paths: '/feedback'
+  ielts:
+    host: localhost
+    paths: '/ielts/*'
 serviceEndpoints:
-  httpbin:
+  feedbackhttpbin:
     url: 'http://localhost:4545'
+  ieltshttpbin:
+    url: 'http://localhost:4955'
 policies:
   - basic-auth
   - cors
@@ -20,9 +25,9 @@ policies:
   - proxy
   - rate-limit
 pipelines:
-  default:
-    apiEndpoints:
-      - api
+  - default:
+    apiEndpoint:
+      - feedback
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
       #- key-auth:
@@ -32,5 +37,19 @@ pipelines:
             rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
-              serviceEndpoint: httpbin 
+              serviceEndpoint: feedbackhttpbin 
               changeOrigin: true
+  - ielts:  
+    apiEndpoint:
+      - ielts
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      #- key-auth:
+      - rate-limit:
+        - action:
+            max: 3
+            rateLimitBy: "${req.hostname}"
+      - proxy:
+          - action:
+              serviceEndpoint: ieltshttpbin 
+              changeOrigin: true            

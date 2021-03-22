@@ -14,13 +14,13 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-bodyParser.urlencoded({ extended:true })
+app.use(bodyParser.urlencoded({ extended:false }))
 
 app.use('/ielts',readingRouter)
 app.use('/ielts',readingAnswerRouter)
 
 const CONNECTION_URL = process.env.DB_CONNECT;
-const PORT = process.env.PORT || 4444
+const PORT = process.env.PORT || 4955
 
 mongoose.connect(CONNECTION_URL,{ useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true })
 
