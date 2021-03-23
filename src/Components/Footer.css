@@ -10,15 +10,17 @@
 
 .footer-feedback-form {
     display: flex;
+    /* float: ri; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 24px;
-    padding: 24px;
+    /* margin-right: 0px; */
+    padding: 15px;
     color: #fff;
 }
 
-.feedback-form-input {
+/* .feedback-form-input {
     padding: 8px 20px;
     border-radius: 2px;
     margin-right: 10px;
@@ -27,7 +29,7 @@
     font-size: 18px;
     margin-bottom: 18px;
     border: 1px solid #fff;
-}
+} */
 
 .footer-links {
     width: 100%;
@@ -72,23 +74,24 @@
 
 .social-media {
     max-width: 1000px;
-    width: 100%;
+    width: 20%;
 }
 
 .social-media-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
     max-width: 1000px;
     margin: 40px auto 0 auto;
+    margin-top: -10px;
 }
 
 .social-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 240px;
+    width: 100px;
 }
 
 .social-logo {
@@ -112,8 +115,45 @@
 .website-rights {
     color: #fff;
     margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 600px;
 }
 
 .form-inputs {
-    align-items: center;
+    margin-left: 1100px;
+
 }
+
+.footer-feedback-form h1 {
+    margin-left: 1000px;
+    margin-top: -70px;
+}
+
+.form-input-btn {
+    width: 130px;
+    margin-left: 1185px;
+}
+
+input[name=content], textarea {
+    width: 100%;
+  padding: 12px;
+  /* height: 200px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+    
+    
+}
+
+/* input[name=author] {
+    padding: 5px 10px;
+}
+
+input[name=subject] {
+    padding: 5px 10px;
+}
+
+input[name=email] {
+    padding: 5px 10px;
+} */

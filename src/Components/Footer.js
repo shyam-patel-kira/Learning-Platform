@@ -107,7 +107,7 @@ render() {
                 <div className='form-inputs'>
                     <label htmlFor='subject' className='form-label'>
                     </label>
-                    <input 
+                    <input
                         id='subject'
                         type='text'
                         name='subject'
@@ -138,10 +138,11 @@ render() {
                 <div className='form-inputs'>
                     <label htmlFor='content' className='form-label'>
                     </label>
-                    <input 
+                    <textarea 
                         id='content'
                         type='text'
                         name='content'
+                        // style="height:200px"
                         required
                         className='form-input'
                         placeholder='Your Feedback or Query'
@@ -155,7 +156,7 @@ render() {
                         type='submit'
                         onClick={this.feedBackSubmit}
                 >
-                    submit
+                    Submit
                         </button>
                 </form>
                 {/* <Button variant="Default" href='/' style={{color:"#fff", background:"#00ff84", margin: "0.5%", boxShadow: "5px 5px 3px rgba(46, 46, 46, 0.62)"}}>Submit</Button> */}
