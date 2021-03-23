@@ -30,7 +30,9 @@ class Ieltsreadingtest extends React.Component {
         let y = [];
         for (const i of Object.keys(this.state.passages)) {
           if (i.includes('passage')) {
-            y.push(<h2>{i}</h2>);
+            y.push(
+            <h2 style={{color:'red'}}> {i}</h2>
+            );
             Object.values(this.state.passages[i]).map((z) => y.push(<p>{z}</p>));
           }
         }
