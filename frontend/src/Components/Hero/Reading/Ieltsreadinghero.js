@@ -1,5 +1,5 @@
 import React from 'react'
-import Ieltsmainherocards from './Ieltsmainherocards';
+import Ieltsmainherocards from '../Ieltsmain/Ieltsmainherocards';
 import Button from 'react-bootstrap/Button';
 import './Ieltsreadinghero.css'
 

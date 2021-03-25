@@ -18,8 +18,9 @@ const Form = () => {
       <div className='form-container'>
         <span className='close-btn'>×</span>
         <div className='form-content-left'>
-            <h1>Join LMS for Free</h1> 
-            <h2>Begin Your Journey</h2>
+            <h2>Join LMS for Free</h2> 
+            <h4>Begin Your Journey</h4>
+            <div className='seperator'></div>
         </div>
           {!isSubmitted ? (
             <FormSignup submitForm={submitForm} />

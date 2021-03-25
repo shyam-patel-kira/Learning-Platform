@@ -76,7 +76,7 @@
     align-items: center;
   }
   
-  .form1-content-left h1 {
+  .form1-content-left h2 {
     position: absolute;
     width: 210px;
     height: 60px;
@@ -94,7 +94,7 @@
     color: #FFFFFF;
   }
 
-  .form1-content-left h2 {
+  .form1-content-left h4 {
     position: absolute;
     width: 210px;
     height: 53px;
@@ -127,7 +127,7 @@
     display: inline-block;
     font-size: 0.8rem;
     margin-bottom: 6px;
-    color: #fff;
+    color: #7B7B7B;
     }
   
   .form1-input {
@@ -153,7 +153,7 @@
   }
   
   .form1-input-btn {
-    width: 80%;
+    width: 75%;
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
@@ -162,6 +162,17 @@
     border: none;
     color: #002333;
     font-size: 1rem;
+    border: 1px solid rgb(0, 255, 132);
+    /* color: rgb(0, 35, 51); */
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0px 20px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
   }
   
   .form1-input-btn:hover {
@@ -183,3 +194,5 @@
     color: #27cdff;
     font-weight: 600;
   }
+
+ 

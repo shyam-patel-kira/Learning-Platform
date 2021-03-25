@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar/Navbar';
 import Sidebar from '../Components/Sidebar/Sidebar';
 import Footer from '../Components/Footer';
-import Ieltsmainhero from '../Components/Hero/Ieltsmainhero';
+import Ieltsmainhero from '../Components/Hero/Ieltsmain/Ieltsmainhero';
 
 
 function Ieltsmain() {

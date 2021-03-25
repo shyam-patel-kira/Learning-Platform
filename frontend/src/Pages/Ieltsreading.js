@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar';
 import Sidebar from '../Components/Sidebar/Sidebar';
-import Ieltsreadinghero from '../Components/Hero/Ieltsreadinghero'
+import Ieltsreadinghero from '../Components/Hero/Reading/Ieltsreadinghero'
 
 function Ieltsreading() {
     return (

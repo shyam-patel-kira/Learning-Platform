@@ -120,19 +120,39 @@
     margin-left: 600px;
 }
 
-.form-inputs {
+.form-inputs1 {
     margin-left: 1100px;
 
-}
+} 
 
 .footer-feedback-form h1 {
     margin-left: 1000px;
     margin-top: -70px;
 }
 
-.form-input-btn {
+.form-input-btn-1 {
     width: 130px;
     margin-left: 1185px;
+    margin-top: 10px;
+    background: #00FF84;
+    height: 50px;
+    border-radius: 2px;
+    background: #00FF84;
+    outline: none;
+    border: none;
+    color: #002333;
+    font-size: 1rem;
+    border: 1px solid rgb(0, 255, 132);
+    /* color: rgb(0, 35, 51); */
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0px 20px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
 }
 
 input[name=content], textarea {

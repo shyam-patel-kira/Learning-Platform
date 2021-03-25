@@ -89,7 +89,7 @@ render() {
             <section className='footer-feedback-form'>
                 <form>
                 <h1>Give your Feedback Here</h1> 
-                <div className='form-inputs'>
+                <div className='form-inputs1'>
                     <label htmlFor='author' className='form-label'>
                     </label>
                     <input 
@@ -104,7 +104,7 @@ render() {
                     />
                 </div>
 
-                <div className='form-inputs'>
+                <div className='form-inputs1'>
                     <label htmlFor='subject' className='form-label'>
                     </label>
                     <input
@@ -120,7 +120,7 @@ render() {
                 </div>
 
 
-                <div className='form-inputs'>
+                <div className='form-inputs1'>
                     <label htmlFor='email' className='form-label'>
                     </label>
                     <input 
@@ -135,7 +135,7 @@ render() {
                     />
                 </div>
 
-                <div className='form-inputs'>
+                <div className='form-inputs1'>
                     <label htmlFor='content' className='form-label'>
                     </label>
                     <textarea 
@@ -152,7 +152,7 @@ render() {
                     />
                 </div>
 
-                <button className='form-input-btn'
+                <button className='form-input-btn-1'
                         type='submit'
                         onClick={this.feedBackSubmit}
                 >
