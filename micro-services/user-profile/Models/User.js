@@ -11,11 +11,11 @@ mongoose.model("User", {
     },
     firstName: {
         type: String,
-        require: true
+        require: false
     },
     lastName: {
         type: String,
-        require: true,
+        require: false,
     },
     password: {
         type: String,

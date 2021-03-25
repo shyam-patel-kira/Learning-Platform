@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
+const cors = require("cors");
 //Server Optimisation
 const compression = require(`compression`);
 //config file
@@ -31,7 +32,7 @@ mongoose.connect(process.env.DB_CONNECT, () => {
 const app = express();
 app.use(bodyParser.json());
 app.use(compression());
-
+app.use(cors());
 require("./Models/User");
 const User = mongoose.model("User");
 
@@ -92,8 +93,8 @@ const User = mongoose.model("User");
     })
 
     app.post('/user/register', async (req, res) => {
-        console.log(req)
-        const { userName, password: plainTextPassword, firstName, lastName, email } = req.body
+        //console.log(req)
+        const { userName, password: plainTextPassword, email } = req.body
 
         //Validating User Credentials
         const error = registerValidation(req.body);
@@ -122,8 +123,6 @@ const User = mongoose.model("User");
         try {
             const response = await User.create({
                 userName,
-                firstName,
-                lastName,
                 password,
                 email
             })

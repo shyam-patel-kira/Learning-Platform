@@ -7,10 +7,6 @@ const registerValidation = data => {
                 .min(3)
                 .required()
                 .max(255),
-        firstName: Joi.string()
-                .required(),
-        lastName: Joi.string()
-                .required(),
         email: Joi.string()
                 .min(6)
                 .required()
