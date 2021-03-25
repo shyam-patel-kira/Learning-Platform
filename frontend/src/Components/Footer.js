@@ -88,8 +88,8 @@ render() {
             </section>
             <section className='footer-feedback-form'>
                 <form>
-                <h1>Give your Feedback Here</h1> 
-                <div className='form-inputs1'>
+                <h1>Give Your Feedback</h1> 
+                <div className='form-inputs-1'>
                     <label htmlFor='author' className='form-label'>
                     </label>
                     <input 
@@ -104,7 +104,7 @@ render() {
                     />
                 </div>
 
-                <div className='form-inputs1'>
+                <div className='form-inputs-1'>
                     <label htmlFor='subject' className='form-label'>
                     </label>
                     <input
@@ -120,7 +120,7 @@ render() {
                 </div>
 
 
-                <div className='form-inputs1'>
+                <div className='form-inputs-1'>
                     <label htmlFor='email' className='form-label'>
                     </label>
                     <input 
@@ -135,14 +135,14 @@ render() {
                     />
                 </div>
 
-                <div className='form-inputs1'>
+                <div className='form-inputs-1'>
                     <label htmlFor='content' className='form-label'>
                     </label>
                     <textarea 
                         id='content'
                         type='text'
                         name='content'
-                        // style="height:200px"
+                        style={{height:"100px"}}
                         required
                         className='form-input'
                         placeholder='Your Feedback or Query'
@@ -170,7 +170,7 @@ render() {
                     </div>
                 </div>
             </div>
-            <small className='website-rights'>LMS © 2021. All rights reserved</small>
+            <small className='website-rights'>LMS ©️ 2021. All rights reserved</small>
         </div>
     )
 }

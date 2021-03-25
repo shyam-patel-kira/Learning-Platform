@@ -120,7 +120,7 @@
     margin-left: 600px;
 }
 
-.form-inputs1 {
+.form-inputs-1 {
     margin-left: 1100px;
 
 } 
@@ -155,25 +155,5 @@
     vertical-align: middle;
 }
 
-input[name=content], textarea {
-    width: 100%;
-  padding: 12px;
-  /* height: 200px; */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-    
-    
-}
 
-/* input[name=author] {
-    padding: 5px 10px;
-}
 
-input[name=subject] {
-    padding: 5px 10px;
-}
-
-input[name=email] {
-    padding: 5px 10px;
-} */
