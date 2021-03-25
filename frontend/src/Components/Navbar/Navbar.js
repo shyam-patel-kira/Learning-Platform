@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { MenuItems } from './MenuItems'
-// import { Button } from '../Button'
 import './Navbar.css'
-import { Link, NavLink, Redirect } from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 

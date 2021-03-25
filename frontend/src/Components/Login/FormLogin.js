@@ -1,15 +1,81 @@
 import React from 'react';
-import validate from './validationInfo';
-import useForm from './useForm';
+import axios from 'axios'
 import { Link } from 'react-router-dom';
 import './Form1.css';
 
-const FormLogin = ({ submitForm1 }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(submitForm1, validate);
 
-  return (
-    <div className='form1-content-right'>
-      <button className='facebook-button sc-dnqmqq iTCbCQ'>
+class FormLogin extends React.Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      userName:"",
+      password:"",
+      formErrors:{}
+    }
+    this.initialState = this.state;
+  }
+
+  handleChangeUserName = (event) => {
+    this.setState({
+      userName:event.target.value
+    })
+  }
+
+  handleChangePassword = (event) => {
+    this.setState({
+      password:event.target.value
+    })
+  }
+
+  handleFormValidation() {
+    const { userName,password } = this.state;
+    let formErrors = {};    
+    let formIsValid = true; 
+
+    if (!userName) {    
+      formIsValid = false  
+      formErrors["userNameErr"] = "Username is required."   
+    }  
+    else if (!userName.trim()) {
+      formIsValid = false
+      formErrors["userNameErr"] = 'Username is required'
+    }
+
+    if (!password) {
+      formIsValid = false;
+      formErrors["passwordErr"] = 'Password is required';
+    } 
+    else if (password.length < 8) {
+      formIsValid = false;
+      formErrors["passwordErr"] = 'Password needs to be 8 characters or more';
+    }
+    
+    this.setState({ formErrors: formErrors });    
+    return formIsValid;
+
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    if(this.handleFormValidation){
+      this.setState(this.initialState)
+        const login = {
+          userName: this.state.username,
+          password: this.state.password
+        }
+
+        axios.post('http://localhost:5545/user/login',login)
+          .then(res => console.log(res.data))
+          .catch(err => console.log("Error is: ",err))
+    }
+  }
+
+  render(){
+    const { userNameErr, passwordErr } = this.state.formErrors;
+    return (
+      <div className='form1-content-right'>
+        <button className='facebook-button sc-dnqmqq iTCbCQ'>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M20 10.0611C20 4.50451 15.5229 0 10 0C4.47715 0 0 4.50451 0 10.0611C0 15.0829 3.65686 19.2452 8.4375 20V12.9694H5.89844V10.0611H8.4375V7.84452C8.4375 5.32296 9.93043 3.93012 12.2146 3.93012C13.3087 3.93012 14.4531 4.12663 14.4531 4.12663V6.60261H13.1921C11.9499 6.60261 11.5625 7.37816 11.5625 8.17381V10.0611H14.3359L13.8926 12.9694H11.5625V20C16.3431 19.2452 20 15.0829 20 10.0611Z" fill="#1877F2">
           </path>
@@ -27,68 +93,47 @@ const FormLogin = ({ submitForm1 }) => {
         <span class="text">Continue with Google</span>
       </button>
 
-      <form onSubmit={handleSubmit} className='form1' noValidate>
-        {/* <h1>
-          Get started with us today! Create your account by filling out the
-          inForm1ation below.
-        </h1> */}
-        {/* <div className='Form1-inputs'>
-          <label className='Form1-label'>Username</label>
-          <input
-            className='Form1-input'
-            type='text'
-            name='username'
-            placeholder='Enter your Name'
-            value={values.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p>{errors.username}</p>}
-        </div> */}
-        <div className='form1-inputs'>
-          <label className='form1-label'>Email</label>
-          <input
-            className='form1-input'
-            type='email'
-            name='email'
-            placeholder='Enter your Email Address'
-            value={values.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p>{errors.email}</p>}
-        </div>
-        <div className='form1-inputs'>
-          <label className='form1-label'>Password</label>
-          <input
-            className='form1-input'
-            type='password'
-            name='password'
-            placeholder='Enter your password'
-            value={values.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p>{errors.password}</p>}
-        </div>
-        {/* <div className='Form1-inputs'>
-          <label className='Form1-label'>Confirm Password</label>
-          <input
-            className='Form1-input'
-            type='password'
-            name='password2'
-            placeholder='Confirm your password'
-            value={values.password2}
-            onChange={handleChange}
-          />
-          {errors.password2 && <p>{errors.password2}</p>}
-        </div> */}
-        <button className='form1-input-btn' type='submit'>
-          Login
-        </button>
-        <span className='Form1-input-login'>
-          Not a member  <Link to='/signup'>Sign Up</Link>
-        </span> 
-      </form>
-    </div>
-  );
-};
+        <form onSubmit={this.handleSubmit} className='form1' noValidate>
+          <div className='form1-inputs'>
+            <label className='form1-label'>Email</label>
+            <input
+              className='form1-input'
+              type='text'
+              name='username'
+              placeholder='Enter your User Name'
+              value={this.state.userName}
+              onChange={this.handleChangeUserName}
+            />
+            {userNameErr && <p>{userNameErr}</p>}
+          </div>
+          <div className='form1-inputs'>
+            <label className='form1-label'>Password</label>
+            <input
+              className='form1-input'
+              type='password'
+              name='password'
+              placeholder='Enter your password'
+              value={this.state.password}
+              onChange={this.handleChangePassword}
+            />
+            {passwordErr && <p>{passwordErr}</p>}
+          </div>
+          <button className='form1-input-btn' type='submit'>
+            Login
+          </button>
+          <span className='Form1-input-login'>
+            Not a member  <Link to='/signup'>Sign Up</Link>
+          </span> 
+        </form>
+      </div>
+    );
+  }
+}
 
 export default FormLogin;
+
+
+
+
+
+
