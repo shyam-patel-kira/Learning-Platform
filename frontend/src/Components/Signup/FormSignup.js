@@ -8,7 +8,7 @@ class FormSignup extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      username:"",
+      userName:"",
       email:"",
       password:"",
       confpassword:"",
@@ -19,7 +19,7 @@ class FormSignup extends React.Component{
 
   handleChangeUsername = (event) => {
     this.setState({
-      username:event.target.value
+      userName:event.target.value
     })
   }
 
@@ -42,15 +42,15 @@ class FormSignup extends React.Component{
   }
 
   handleFormValidation(){
-    const { username, email, password, confpassword } = this.state;
+    const { userName, email, password, confpassword } = this.state;
     let formErrors = {};    
     let formIsValid = true; 
 
-    if (!username) {    
+    if (!userName) {    
       formIsValid = false  
       formErrors["userNameErr"] = "Username is required."   
     }  
-    else if (!username.trim()) {
+    else if (!userName.trim()) {
       formIsValid = false
       formErrors["userNameErr"] = 'Username is required'
     }
@@ -90,15 +90,15 @@ class FormSignup extends React.Component{
             
         this.setState(this.initialState)
         const signup = {
-          username: this.state.username,
+          userName: this.state.userName,
           password: this.state.password,
           email: this.state.email,
         }
 
-        axios.post('http://localhost:5545/user/register',signup)
+        axios.post('http://localhost:8000/user/register',signup)
           .then(res => console.log(res.data))
           .catch(err => console.log("Error is: ",err))
-
+        // if status code == 200 than post login api simultaneously and get token
     }    
 }    
 
@@ -112,9 +112,9 @@ class FormSignup extends React.Component{
             <input
               className='form-input'
               type='text'
-              name='username'
+              name='userName'
               placeholder='Enter your Name'
-              value={this.state.username}
+              value={this.state.userName}
               onChange={this.handleChangeUsername}
             />
             {userNameErr && <p>{userNameErr}</p>}

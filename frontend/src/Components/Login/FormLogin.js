@@ -61,11 +61,11 @@ class FormLogin extends React.Component{
     if(this.handleFormValidation){
       this.setState(this.initialState)
         const login = {
-          userName: this.state.username,
+          userName: this.state.userName,
           password: this.state.password
         }
 
-        axios.post('http://localhost:5545/user/login',login)
+        axios.post('http://localhost:8000/user/login',login)
           .then(res => console.log(res.data))
           .catch(err => console.log("Error is: ",err))
     }
@@ -99,7 +99,7 @@ class FormLogin extends React.Component{
             <input
               className='form1-input'
               type='text'
-              name='username'
+              name='userName'
               placeholder='Enter your User Name'
               value={this.state.userName}
               onChange={this.handleChangeUserName}
