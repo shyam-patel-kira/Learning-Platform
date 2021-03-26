@@ -256,7 +256,7 @@
     border: 1px solid rgb(57, 70, 73);
     border-radius: 4px;
     margin-left: 25px;
-    margin-top: 5px; 
+    margin-top: 10px; 
 }
 
 .iTCbCQ svg {
@@ -301,7 +301,7 @@
 }
 
 .form-seperator {
-  border-top: 1px solid rgb(0, 35, 51);
+  border-top: 1px solid #002333;
   height: 1px;
   margin: 24px 70px;
   margin-top: 40px;
@@ -310,7 +310,7 @@
 .form-seperator p {
   font-family: "GT Walsheim Pro", Arial, sans-serif;
   background: rgb(255, 255, 255);
-  color: rgb(0, 35, 51);
+  color: #002333;
   display: block;
   margin: -7px auto;
   text-align: center;

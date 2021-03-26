@@ -17,25 +17,7 @@ class Ieltsreadinghero extends React.Component{
         var x = event.target.id
         window.location = `/ielts-reading-test/${x}`
 
-        /*switch (x) {
-            case '1':
-                console.log('Button-1');
-                break;
-            case '2':
-                console.log('Button-2');
-                break;
-            case '3':
-                console.log('Button-3');
-                break;
-            case '4':
-                console.log('Button-4');
-                break;
-            case '5':
-                console.log('Button-5');
-                break;
-            default:
-                return false;
-        }*/
+        
         
     }
 
@@ -77,6 +59,7 @@ class Ieltsreadinghero extends React.Component{
                 >
                     Test 1
                 </Button>
+
                 <Button variant="Default" onClick={e => this.handleTest(e)} id="2"
                 style={{    
                     color:"#fff", 
@@ -89,6 +72,7 @@ class Ieltsreadinghero extends React.Component{
                 >
                     Test 2
                 </Button>
+
                 <Button variant="Default" onClick={e => this.handleTest(e)} id="3"
                 style={{    
                     color:"#fff", 
@@ -101,6 +85,7 @@ class Ieltsreadinghero extends React.Component{
                 >
                     Test 3
                 </Button>
+
                 <Button variant="Default" onClick={e => this.handleTest(e)} id="4"
                 style={{    
                     color:"#fff", 
@@ -113,6 +98,7 @@ class Ieltsreadinghero extends React.Component{
                 >
                     Test 4
                 </Button>
+
                 <Button variant="Default" onClick={e => this.handleTest(e)} id="5"
                 style={{    
                     color:"#fff", 
