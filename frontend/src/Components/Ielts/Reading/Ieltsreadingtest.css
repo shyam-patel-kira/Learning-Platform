@@ -1,0 +1,25 @@
+.main-container {
+    background: #00ffff;
+}
+
+
+
+.passage-content h2 {
+    color: red;
+
+}
+
+.passage-container {
+    background: #fff;
+    color: #000;
+    border: 5px solid ;
+    width: 60em;
+    margin-left: 250px;
+}
+
+.passage-content-1 {
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

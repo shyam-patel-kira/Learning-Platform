@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import './Ieltsreadingtest.css';
 
 class Ieltsreadingtest extends React.Component {
 
@@ -12,6 +13,7 @@ class Ieltsreadingtest extends React.Component {
 
     //(x[x.length - 1])
     componentDidMount() {
+        console.log("componentdidMount")
         let x = window.location.href.split('/')
         console.log(x[x.length - 1]);
         axios.get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`)
@@ -27,17 +29,34 @@ class Ieltsreadingtest extends React.Component {
     }
 
     render() {
+        console.log("render")
         let y = [];
         for (const i of Object.keys(this.state.passages)) {
           if (i.includes('passage')) {
             y.push(
-            <h2 style={{color:'red'}}> {i}</h2>
+                <div className='passage-content'>
+            <h2> Hii{i}</h2>
+            </div>
             );
             Object.values(this.state.passages[i]).map((z) => y.push(<p>{z}</p>));
           }
         }
         return (
-            <div>{y}</div>
+            <div className='main-container'>
+                <div className='passage-container'>
+                    <h1>Test1</h1>
+                    <div className='passage-content-1'>
+                        
+                    {y}
+                    </div>
+                    <button className='submit-test'
+                        type='submit'
+                        // onClick={this.feedBackSubmit}
+                    >
+                    Submit
+                    </button>
+                </div>
+            </div>
         )
       }
     
