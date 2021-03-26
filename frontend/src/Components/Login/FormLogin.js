@@ -93,6 +93,10 @@ class FormLogin extends React.Component{
         <span class="text">Continue with Google</span>
       </button>
 
+      <div className='form-seperator-1'>
+        <p>or</p>
+      </div>
+
         <form onSubmit={this.handleSubmit} className='form1' noValidate>
           <div className='form1-inputs'>
             <label className='form1-label'>Email</label>
@@ -121,7 +125,7 @@ class FormLogin extends React.Component{
           <button className='form1-input-btn' type='submit'>
             Login
           </button>
-          <span className='Form1-input-login'>
+          <span className='form1-input-login'>
             Not a member  <Link to='/signup'>Sign Up</Link>
           </span> 
         </form>

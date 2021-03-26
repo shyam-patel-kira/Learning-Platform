@@ -65,7 +65,7 @@
   
   .form {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -298,4 +298,23 @@
   height: 18px;
   display: inline-block;
   fill: none;
+}
+
+.form-seperator {
+  border-top: 1px solid rgb(0, 35, 51);
+  height: 1px;
+  margin: 24px 70px;
+  margin-top: 40px;
+}
+
+.form-seperator p {
+  font-family: "GT Walsheim Pro", Arial, sans-serif;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 35, 51);
+  display: block;
+  margin: -7px auto;
+  text-align: center;
+  width: 30px;
+  font-size: 13px;
+  font-weight: bold;
 }
