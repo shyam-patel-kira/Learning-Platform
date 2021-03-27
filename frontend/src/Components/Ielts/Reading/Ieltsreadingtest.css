@@ -1,5 +1,5 @@
 .main-container {
-    background: #00ffff;
+    /* background: #00ffff; */
 }
 
 
@@ -10,8 +10,8 @@
 }
 
 .passage-container {
-    background: #fff;
-    color: #000;
+    /* background: #fff; */
+    /* color: #000; */
     border: 5px solid ;
     width: 60em;
     margin-left: 250px;
