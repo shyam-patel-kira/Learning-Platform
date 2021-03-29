@@ -8,25 +8,18 @@ import './Ieltsmainhero.css'
 function Ieltsmainhero() {
     return (
         <div className="ielts-main-hero-container">
-            <h1 style={{ marginTop:'5%' }}>IELTS</h1>
+            <h1 style={{ marginTop:'3%' }}>IELTS</h1>
             <div className="ielts-main-hero-wrapper">
                 <ul className='cards__items'>
-                    <Ieltsmainherocards
-                    />
+                    <Ieltsmainherocards />
                 
-                    <Ieltsmainherocards1
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Ieltsmainherocards1 />
                 </ul>
 
                 <ul className='cards__items'>
-                    <Ieltsmainherocards2
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Ieltsmainherocards2 />
 
-                    <Ieltsmainherocards3
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Ieltsmainherocards3 />
                 </ul> 
 
             </div>

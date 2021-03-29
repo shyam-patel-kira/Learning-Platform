@@ -1,33 +1,48 @@
 import React from 'react'
-import Ieltsmainherocards from '../Ieltsmain/Ieltsmainherocards';
+import Ieltslisteningherocards from './Ieltslisteningherocards'
+import Ieltslisteningherocards1 from './Ieltslisteningherocards1'
+import Ieltslisteningherocards2 from './Ieltslisteningherocards2'
 import Button from 'react-bootstrap/Button';
 import './Ieltslisteninghero.css'
+import Simplelisteningcard from './Simplelisteningcard';
+import Simplelisteningcard1 from './Simplelisteningcard1';
+import Simplelisteningcard2 from './Simplelisteningcard2';
+import Simplelisteningcard3 from './Simplelisteningcard3';
+import Simplelisteningcard4 from './Simplelisteningcard4';
 
 
 function Ieltslisteninghero() {
     return (
         <div className="ielts-listening-hero-container">
-            Tips and Tricks
+            <h1 style={{ marginTop:'3%' }}>Listening</h1>
             <div className="ielts-listening-hero-wrapper">
                 <ul className='cards__items'>
-                    <Ieltsmainherocards
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Ieltslisteningherocards />
 
-                    <Ieltsmainherocards
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Ieltslisteningherocards1 />
                 </ul>
 
                 <ul className='cards__items'>
-                    <Ieltsmainherocards
-                        text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    <Simplelisteningcard />
+                    <Simplelisteningcard1 />
+                    <Simplelisteningcard2 />
+                    {/* <Ieltslisteningherocards2 /> */}
 
-                    <Ieltsmainherocards
+                    {/* <Ieltslisteningherocards3
                         text='nhbhddbfhdbcchdbchjdbchj'
-                    />
+                    /> */}
                 </ul>
+
+                <ul className='cards__items'>
+                    <Simplelisteningcard3 />
+                    <Simplelisteningcard4 />
+                    {/* <Ieltslisteningherocards2 /> */}
+
+                    {/* <Ieltslisteningherocards3
+                        text='nhbhddbfhdbcchdbchjdbchj'
+                    /> */}
+                </ul>
+
 
             </div>
             <Button variant="Default" href='#' style={{    color:"#fff", 

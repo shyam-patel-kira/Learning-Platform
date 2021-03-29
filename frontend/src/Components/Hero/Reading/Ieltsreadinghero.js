@@ -1,5 +1,11 @@
 import React from 'react'
-import Ieltsmainherocards from '../Ieltsmain/Ieltsmainherocards';
+// import Ieltsmainherocards from '../Ieltsmain/Ieltsmainherocards'
+import Ieltsreadingherocards from './Ieltsreadingherocards'
+import Ieltsreadingherocards1 from './Ieltsreadingherocards1'
+import Simplereadingcard from './Simplereadingcard'
+import Simplereadingcard1 from './Simplereadingcard1'
+import Simplereadingcard2 from './Simplereadingcard2'
+import Simplereadingcard3 from './Simplereadingcard3'
 import Button from 'react-bootstrap/Button';
 import './Ieltsreadinghero.css'
 
@@ -24,27 +30,24 @@ class Ieltsreadinghero extends React.Component{
     render() {
         return (
             <div className="ielts-reading-hero-container">
-                Tips and Tricks
+                <h1 style={{ marginTop:'3%' }}>Reading</h1>
                 <div className="ielts-reading-hero-wrapper">
                     <ul className='cards__items'>
-                        <Ieltsmainherocards
-                            text='nhbhddbfhdbcchdbchjdbchj'
-                        />
+                        <Ieltsreadingherocards />
     
-                        <Ieltsmainherocards
-                            text='nhbhddbfhdbcchdbchjdbchj'
-                        />
+                        <Ieltsreadingherocards1 />
                     </ul>
     
                     <ul className='cards__items'>
-                        <Ieltsmainherocards
-                            text='nhbhddbfhdbcchdbchjdbchj'
-                        />
-    
-                        <Ieltsmainherocards
-                            text='nhbhddbfhdbcchdbchjdbchj'
-                        />
+                        <Simplereadingcard />
+                        <Simplereadingcard1 />
+                        <Simplereadingcard2 />
                     </ul>
+
+                    <ul className='cards__items'>
+                        <Simplereadingcard3 />
+                    </ul>
+
     
                 </div>
                 <Button variant="Default" onClick={e => this.handleTest(e)} id="1"
