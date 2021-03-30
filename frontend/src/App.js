@@ -10,6 +10,7 @@ import Ieltsmain from './Pages/Ieltsmain';
 import Ieltsreading from './Pages/Ieltsreading';
 import Ieltslistening from './Pages/Ieltslistening';
 import Ieltswriting from './Pages/Ieltswriting';
+import Ieltsspeaking from './Pages/Ieltsspeaking';
 import Ieltsreadingtest from './Components/Ielts/Reading/Ieltsreadingtest';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/ielts-listening" component={Ieltslistening} />
       <Route path="/ielts-reading" component={Ieltsreading} />
       <Route path="/ielts-writing" component={Ieltswriting} />
+      <Route path="/ielts-speaking" component={Ieltsspeaking} />
       <Route path="/ielts-reading-test" component={Ieltsreadingtest} />
       <Route path="/signup" component={Form} />
       <Route path="/login" component={Form1} /> 
