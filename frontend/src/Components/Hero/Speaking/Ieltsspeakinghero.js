@@ -14,7 +14,7 @@ import './Ieltsspeakinghero.css'
 function Ieltsspeakinghero() {
     return (
         <div className="ielts-listening-hero-container">
-            <h1 style={{ marginTop:'3%' }}>Listening</h1>
+            <h1 style={{ marginTop:'3%' }}>Speaking</h1>
             <div className="ielts-listening-hero-wrapper">
                 <ul className='cards__items'>
                     <Ieltsspeakingherocards />
