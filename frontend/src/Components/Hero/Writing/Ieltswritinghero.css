@@ -34,6 +34,8 @@
     margin-bottom: 24px;
   }
 
-.cards__item__info {
+.cards_item_info {
     padding: 20px 30px 30px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif
   }

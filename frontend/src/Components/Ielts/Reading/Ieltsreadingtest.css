@@ -12,14 +12,58 @@
 .passage-container {
     /* background: #fff; */
     /* color: #000; */
+    background-color: #CCFFE5;
     border: 5px solid ;
-    width: 60em;
-    margin-left: 250px;
+    width: 50em;
+    margin-top: 50px;
+    margin-left: 20px; 
 }
 
 .passage-content-1 {
     margin-left: 20px;
     margin-right: 10px;
     font-size: x-large;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Nunito, Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+
+.image-container {
+    border: 5px solid ;
+    width: 40em;
+    margin-left: 850px;
+    margin-top: -9967px;
+}
+
+.textbox-container {
+    background-color: #002333;
+    border: 3px solid;
+    width: 40em;
+    margin-left: 850px;
+    margin-top: 100px;
+}
+
+.btn-style {
+    width: 130px;
+    margin-left: 250px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background: #00FF84;
+    height: 50px;
+    border-radius: 2px;
+    background: #00FF84;
+    outline: none;
+    border: none;
+    color: #002333;
+    font-size: 1rem;
+    border: 1px solid rgb(0, 255, 132);
+    /* color: rgb(0, 35, 51); */
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0px 20px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
 }
