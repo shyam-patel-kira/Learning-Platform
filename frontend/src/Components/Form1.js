@@ -6,10 +6,10 @@ import Footer from './Footer';
 import Navbar from './Navbar/Navbar';
 
 const Form1 = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false); //eslint-disable-line
 
-  function submitForm1() {
-    setIsSubmitted(true);
+  function submitForm1() { //eslint-disable-line
+    setIsSubmitted(true); 
   }
   return (
     <>

@@ -1,6 +1,6 @@
 import React from 'react'
 // import { Button } from './Button'
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button' //eslint-disable-line
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Footer.css'

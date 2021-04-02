@@ -5,7 +5,7 @@ import Ieltslisteninghero from '../Components/Hero/Listening/Ieltslisteninghero'
 
 function Ieltslistening() {
     return (
-        <div className="">
+    <div className="">
         <Navbar />
         <div className="container-fluid">
 		        <div className="row"> 
@@ -13,10 +13,6 @@ function Ieltslistening() {
                     <div className="col-md-8"><Ieltslisteninghero /></div>
 		        </div>
         </div>
-        {/* <div className="row align-items-end"> 
-			    <div className="col"><Footer /></div>
-		</div> */}
-        {/* <Footer />   */}
     </div>
     )
 }

@@ -19,15 +19,15 @@ function App() {
       
     <Router history={history}>
       <Switch>
-      <Route path='/' exact component={Home} />
-      <Route path="/ieltsmain" component={Ieltsmain} />
-      <Route path="/ielts-listening" component={Ieltslistening} />
-      <Route path="/ielts-reading" component={Ieltsreading} />
-      <Route path="/ielts-writing" component={Ieltswriting} />
-      <Route path="/ielts-speaking" component={Ieltsspeaking} />
-      <Route path="/ielts-reading-test" component={Ieltsreadingtest} />
-      <Route path="/signup" component={Form} />
-      <Route path="/login" component={Form1} /> 
+        <Route path='/' exact component={Home} />
+        <Route path="/ieltsmain" component={Ieltsmain} />
+        <Route path="/ielts-listening" component={Ieltslistening} />
+        <Route path="/ielts-reading" component={Ieltsreading} />
+        <Route path="/ielts-writing" component={Ieltswriting} />
+        <Route path="/ielts-speaking" component={Ieltsspeaking} />
+        <Route path="/ielts-reading-test" component={Ieltsreadingtest} />
+        <Route path="/signup" component={Form} />
+        <Route path="/login" component={Form1} /> 
       </Switch>
     </Router>
     </div>

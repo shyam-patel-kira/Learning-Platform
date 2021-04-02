@@ -55,7 +55,7 @@ class Ieltsreadingtest extends React.Component {
 
     render() {
         console.log("render")
-        let y = [], x = [];
+        let y = [];
         for (const i of Object.keys(this.state.passages)) {
           if (i.includes('Passage')) {
             y.push(
@@ -119,7 +119,6 @@ class Ieltsreadingtest extends React.Component {
                 <div className='textbox-container'>
                     {text}
                 </div>
-                
             </div>
         )
       }

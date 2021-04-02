@@ -1,7 +1,7 @@
 import React from 'react'
 import Ieltslisteningherocards from './Ieltslisteningherocards'
 import Ieltslisteningherocards1 from './Ieltslisteningherocards1'
-import Ieltslisteningherocards2 from './Ieltslisteningherocards2'
+import Ieltslisteningherocards2 from './Ieltslisteningherocards2' //eslint-disable-line
 import Button from 'react-bootstrap/Button';
 import './Ieltslisteninghero.css'
 import Simplelisteningcard from './Simplelisteningcard';
