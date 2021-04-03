@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    marginLeft: -5,
+    marginLeft: 17,
     marginRight: 20,
   },
   bullet: {
@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard() {
@@ -24,10 +23,16 @@ export default function Simplecard() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-            <b>Improve general listening skills:</b> In order to improve the listening skills one should listen to the radio talks, Ted-Talks of native English speakers, documental programs, etc. 
-            Only giving practice tests will not elevate the performance of the examiner instead the examiner will get friendly only to the type of questions asked.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b className='text-xl'>Improve general listening skills:</b> In
+            order to improve the listening skills one should listen to the radio
+            talks, Ted-Talks of native English speakers, documental programs,
+            etc. Only giving practice tests will not elevate the performance of
+            the examiner instead the examiner will get friendly only to the type
+            of questions asked.
+          </div>
         </Typography>
       </CardContent>
     </Card>

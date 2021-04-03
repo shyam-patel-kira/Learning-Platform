@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard() {
@@ -24,9 +23,13 @@ export default function Simplecard() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Maintain the order:</b> Any candidate who is appearing in the exam should remember one thing that the questions follow the order of the text in the majority of cases.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b>Maintain the order:</b> Any candidate who is appearing in the
+            exam should remember one thing that the questions follow the order
+            of the text in the majority of cases.
+          </div>
         </Typography>
       </CardContent>
     </Card>

@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard3() {
@@ -24,10 +23,16 @@ export default function Simplecard3() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        Each and every word should be pronounced clearly. 
-      <p>  <b>Be Coherent:</b> Use proper linking words in order to connect the sentences.</p>
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            Each and every word should be pronounced clearly.
+            <p>
+              {' '}
+              <b>Be Coherent:</b> Use proper linking words in order to connect
+              the sentences.
+            </p>
+          </div>
         </Typography>
       </CardContent>
     </Card>

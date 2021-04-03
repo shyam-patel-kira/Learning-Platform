@@ -5,14 +5,14 @@ import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar/Navbar';
 
 function Home() {
-    return (
-        <>
-            <Navbar />
-            <HeroSection />
-            <Cards />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <HeroSection />
+      <Cards />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;

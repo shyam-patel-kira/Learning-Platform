@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard2() {
@@ -24,9 +23,13 @@ export default function Simplecard2() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Don’t leave any answers:</b> As there is no negative marking in the examination candidates should always attempt all the answers even if they have doubt in some answers.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b className='text-xl'>Don’t leave any answers:</b> As there is no
+            negative marking in the examination candidates should always attempt
+            all the answers even if they have doubt in some answers.
+          </div>
         </Typography>
       </CardContent>
     </Card>

@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard() {
@@ -23,12 +22,17 @@ export default function Simplecard() {
   const bull = <span className={classes.bullet}>•</span>; //eslint-disable-line
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-       <b>Underline:</b>  When one skims over the text, then it becomes important to underline the crucial phrases found in the text.          
-        </Typography>
-      </CardContent>
-    </Card>
+    <div className='bg-green-cardColor'>
+      <Card className={classes.root}>
+        <CardContent className='bg-green-cardColor'>
+          <Typography variant='body2' component='p'>
+            <div className='font-serif text-lg text-white'>
+              <b>Underline:</b> When one skims over the text, then it becomes
+              important to underline the crucial phrases found in the text.
+            </div>
+          </Typography>
+        </CardContent>
+      </Card>
+    </div>
   );
 }

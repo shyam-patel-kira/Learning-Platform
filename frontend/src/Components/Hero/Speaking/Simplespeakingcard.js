@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    marginLeft: -5,
+    marginLeft: 17,
     marginRight: 20,
   },
   bullet: {
@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard() {
@@ -24,11 +23,12 @@ export default function Simplecard() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        Speak fluently without hesitation and with full confidence.
-    
-       <p> Use different vocabulary for the same word. </p>     
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            Speak fluently without hesitation and with full confidence.
+            <p> Use different vocabulary for the same word. </p>
+          </div>
         </Typography>
       </CardContent>
     </Card>

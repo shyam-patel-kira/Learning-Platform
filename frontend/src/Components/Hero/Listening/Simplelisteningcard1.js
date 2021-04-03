@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard1() {
@@ -24,11 +23,16 @@ export default function Simplecard1() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Focus:</b> The candidate should not lose concentration at any cost as the audio is only played once. 
-        In some cases it might happen that if a candidate loses one answer then there is a chance that he/she might lose another answer due to pressure. 
-        Hence, it is extremely vital to remain focused during the whole examination.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b className='text-xl'>Focus:</b> The candidate should not lose
+            concentration at any cost as the audio is only played once. In some
+            cases it might happen that if a candidate loses one answer then
+            there is a chance that he/she might lose another answer due to
+            pressure. Hence, it is extremely vital to remain focused during the
+            whole examination.
+          </div>
         </Typography>
       </CardContent>
     </Card>

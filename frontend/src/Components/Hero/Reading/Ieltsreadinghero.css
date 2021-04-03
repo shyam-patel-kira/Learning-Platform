@@ -1,42 +1,38 @@
 .ielts-reading-hero-container {
-    position: relative;
-    /* left: 20.97%; */
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 100%;
-    /* margin: 0 auto; */
-    left: -10%;
-    /* right: 0%; */
-    top: 5.43%;
-    bottom: 35.44%;
-    background-color: #002333;
-    color: #fff;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  left: -10%;
+  top: 55px;
+  bottom: 2px;
+  background-color: #002333;
+  color: #fff;
 }
 
 .ielts-reading-hero-wrapper {
-    position: relative;
-    margin: 50px 0 45px;
-    color: #000;
-    background: #f4f4f4;
+  position: relative;
+  margin: 50px 0 45px;
+  color: #000;
+  background: #f4f4f4;
+  bottom: 5px;
 }
 
-
 .card-item {
-    display: flex;
-    flex: 1;
-    margin: 0 1rem;
-    border-radius: 10px;
+  display: flex;
+  flex: 1;
+  margin: 0 1rem;
+  border-radius: 10px;
 }
 
 .cards__item {
-    margin-bottom: 24px;
-    
-  }
+  margin-bottom: 24px;
+}
 
 .cards_item_info {
-    padding: 20px 30px 30px;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif
+  padding: 20px 30px 30px;
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }

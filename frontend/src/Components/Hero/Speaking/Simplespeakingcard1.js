@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard1() {
@@ -24,10 +23,12 @@ export default function Simplecard1() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        Avoid grammatical errors.
-       <p> Speak some sentences which include complex grammar. </p> 
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            Avoid grammatical errors.
+            <p> Speak some sentences which include complex grammar. </p>
+          </div>
         </Typography>
       </CardContent>
     </Card>

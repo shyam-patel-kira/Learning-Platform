@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    marginLeft: -5,
+    marginLeft: 17,
     marginRight: 20,
   },
   bullet: {
@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard() {
@@ -24,9 +23,13 @@ export default function Simplecard() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-       <b>Skimming:</b> The candidate should use this technique and it’s main purpose is to look only for the main ideas from the passage instead of giving attention to every single word in the passage.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b>Skimming:</b> The candidate should use this technique and it’s
+            main purpose is to look only for the main ideas from the passage
+            instead of giving attention to every single word in the passage.
+          </div>
         </Typography>
       </CardContent>
     </Card>

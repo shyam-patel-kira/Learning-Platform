@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard4() {
@@ -24,10 +23,14 @@ export default function Simplecard4() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Extend your Speech:</b> Try to speak more than the examiner. Give reasons for your answer instead of giving an answer in a single word. 
-        You can completely fake out the reasons as the examiner doesn’t know the truth.   	          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b>Extend your Speech:</b> Try to speak more than the examiner. Give
+            reasons for your answer instead of giving an answer in a single
+            word. You can completely fake out the reasons as the examiner
+            doesn’t know the truth.
+          </div>
         </Typography>
       </CardContent>
     </Card>

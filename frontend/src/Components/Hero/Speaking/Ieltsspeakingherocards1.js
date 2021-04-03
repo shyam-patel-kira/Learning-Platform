@@ -1,37 +1,38 @@
-import React from 'react'
+import React from 'react';
 
 function Ieltsspeakingherocards1(props) {
-    return (
-        <>
-            <li className='cards__item'>
-                <div className='cards__item__info'>
-                    {/* <h3>What is Ielts?</h3> */}
-                        <li>
-                            The examiner controls the time and the length of your answers.
-                        </li>
-                        <br></br>
+  return (
+    <>
+      <li
+        className='cards__item font-serif text-lg list-disc md:list-disc
+       leading-relaxed tracking-normal text antialiased 
+       sm:subpixel-antialiased md:antialiased'
+      >
+        <div className='cards__item__info'>
+          <li>
+            The examiner controls the time and the length of your answers.
+          </li>
+          <br />
 
-                        <li>
-                             Marking criteria is based on the following factors:
-                             <ol>
-                                Fluency and cohesion: 25%
-                             </ol>
-                             <ol>
-                                Vocabulary: 25%
-                             </ol>
-                             <ol>
-                                Grammar: 25%
-                             </ol>
-                             <ol>
-                                Pronunciation: 25%
-                             </ol>
-                        </li>
-                </div>
-            </li>
-
-        </>
-
-    )
+          <li>
+            Marking criteria is based on the following factors:
+            <ol>
+              <strong>Fluency and cohesion: 25%</strong>
+            </ol>
+            <ol>
+              <strong>Vocabulary: 25%</strong>
+            </ol>
+            <ol>
+              <strong>Grammar: 25%</strong>
+            </ol>
+            <ol>
+              <strong>Pronunciation: 25%</strong>
+            </ol>
+          </li>
+        </div>
+      </li>
+    </>
+  );
 }
 
-export default Ieltsspeakingherocards1
+export default Ieltsspeakingherocards1;

@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard3() {
@@ -24,10 +23,16 @@ export default function Simplecard3() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Don’t write answers promptly:</b> Many candidates fall into this trap easily as they write the answers quickly by just listening to the audio related to the answers. 
-        The candidates should listen properly to the contractions which are used in the audio and after listening to it only they should write the correct answer.
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b className='text-xl'>Don’t write answers promptly:</b> Many
+            candidates fall into this trap easily as they write the answers
+            quickly by just listening to the audio related to the answers. The
+            candidates should listen properly to the contractions which are used
+            in the audio and after listening to it only they should write the
+            correct answer.
+          </div>
         </Typography>
       </CardContent>
     </Card>

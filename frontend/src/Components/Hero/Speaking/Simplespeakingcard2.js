@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  
 });
 
 export default function Simplecard2() {
@@ -24,11 +23,15 @@ export default function Simplecard2() {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="body2" component="p">
-        <b>Don’t learn answers by heart:</b> Examiners are able to determine whether you speak freely or you memorized the answer before your interview. 
-        Learning full scripts is a bad idea. 
-        Instead, it is much better to learn separate words and collocations and adopt them in your speech.          
+      <CardContent className='bg-green-cardColor'>
+        <Typography variant='body2' component='p'>
+          <div className='font-serif text-lg text-white'>
+            <b>Don’t learn answers by heart:</b> Examiners are able to determine
+            whether you speak freely or you memorized the answer before your
+            interview. Learning full scripts is a bad idea. Instead, it is much
+            better to learn separate words and collocations and adopt them in
+            your speech.
+          </div>
         </Typography>
       </CardContent>
     </Card>
