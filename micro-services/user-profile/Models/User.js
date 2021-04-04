@@ -38,7 +38,7 @@ mongoose.model("User", {
     },
     roles: {
         type: String,
-        require: false
+        require: true
     }
 
 });

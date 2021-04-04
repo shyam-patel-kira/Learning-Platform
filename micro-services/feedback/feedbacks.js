@@ -28,9 +28,9 @@ mongoose.connect(process.env.DB_CONNECT, () => {
 
 
 app.get('/', (req, res) => {
-    
-res.send("This is out main EndPoint");
-}) 
+
+  res.send("This is out main EndPoint");
+})
 
 // Create Functionality
 app.post("/feedback", (req, res) => {
@@ -39,50 +39,50 @@ app.post("/feedback", (req, res) => {
   // This is for create functionality
 
   var newFeedback = {
-    subject : req.body.subject,
-    author  : req.body.author,
-    content : req.body.content,
-    email   : req.body.email
-}
-console.log("newfeedaback defined")
-// Create a new Feedback
-var feedBack = new FeedBack(newFeedback);
-console.log("newfeedaback created")
-
-console.log("newfeedaback saving to db")
-feedBack.save().then(() => {
-  console.log("New feedback created ");
-}).catch((err) => {
-  if(err){
-    throw err;
+    subject: req.body.subject,
+    author: req.body.author,
+    content: req.body.content,
+    email: req.body.email
   }
-})
-console.log("newfeedaback saved to db")
-res.send("New Feedback successfully created");
-console.log("POST newfeedaback saved to db")
+  console.log("newfeedaback defined")
+  // Create a new Feedback
+  var feedBack = new FeedBack(newFeedback);
+  console.log("newfeedaback created")
+
+  console.log("newfeedaback saving to db")
+  feedBack.save().then(() => {
+    console.log("New feedback created ");
+  }).catch((err) => {
+    if (err) {
+      throw err;
+    }
+  })
+  console.log("newfeedaback saved to db")
+  res.send("New Feedback successfully created");
+  console.log("POST newfeedaback saved to db")
 })
 
 // List all the feedbacks 
 app.get("/feedback", (req, res) => {
 
-FeedBack.find().then((feedbacks) => {
-  res.json(feedbacks)
-}).catch(err => {
-  if(err){
-    throw err;
-  }
-})
+  FeedBack.find().then((feedbacks) => {
+    res.json(feedbacks)
+  }).catch(err => {
+    if (err) {
+      throw err;
+    }
+  })
 })
 
 app.delete("/feedback/:id", (req, res) => {
 
-FeedBack.findOneAndRemove(req.params.id).then(() => {
-  res.send("feedback removed succesfully");
-}).catch(err => {
-  if(err){
-    throw err;
-  }
-})  
+  FeedBack.findOneAndRemove(req.params.id).then(() => {
+    res.send("feedback removed succesfully");
+  }).catch(err => {
+    if (err) {
+      throw err;
+    }
+  })
 
 })
 
@@ -106,5 +106,5 @@ FeedBack.findOneAndRemove(req.params.id).then(() => {
 // })
 
 app.listen(4545, () => {
-console.log("Up and running! This is our feedback service");
+  console.log("Up and running! This is our feedback service");
 })

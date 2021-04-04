@@ -69,7 +69,7 @@ const User = mongoose.model("User");
 
 
     app.post('/user/login', async (req, res) => {
-        const { userName, password } = req.body
+        const { userName, password, roles } = req.body
         const user = await User.findOne({ userName }).lean()
         if (!user) {
             return res.json({ status: 'error', error: 'Invalid username/password' })
@@ -83,7 +83,8 @@ const User = mongoose.model("User");
             const token = jwt.sign(
                 {
                     id: user._id,
-                    username: user.username
+                    userName: user.userName,
+                    roles: user.roles
                 },
                 JWT_SECRET
             )

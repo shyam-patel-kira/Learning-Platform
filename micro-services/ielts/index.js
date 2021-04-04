@@ -9,6 +9,9 @@ dotenv.config();
 import readingRouter from './Reading_Routes/reading.js'
 import readingAnswerRouter from './Reading_Routes/reading_answerkey.js';
 
+const JWT_SECRET = process.env.TOKEN_SECRET
+const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN
+
 const app = express()
 
 app.use(cors());
