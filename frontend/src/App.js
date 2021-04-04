@@ -13,7 +13,7 @@ import Ieltswriting from './Pages/Ieltswriting';
 import Ieltsspeaking from './Pages/Ieltsspeaking';
 import Ieltsreadingtest from './Components/Ielts/Reading/Ieltsreadingtest';
 
-function App() {
+export default function App() {
   return (
     <div>
       <Router history={history}>
@@ -32,5 +32,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

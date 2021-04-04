@@ -3,10 +3,6 @@
   background: #fff;
 }
 
-h1 {
-  text-align: center;
-}
-
 .cards__container {
   display: flex;
   flex-flow: column;
@@ -57,7 +53,6 @@ h1 {
 }
 
 .cards__item__pic-wrap::after {
-  content: attr(data-category);
   position: absolute;
   bottom: 0;
   margin-left: 10px;

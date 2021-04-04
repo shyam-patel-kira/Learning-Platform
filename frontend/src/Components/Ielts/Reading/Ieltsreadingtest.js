@@ -54,18 +54,25 @@ class Ieltsreadingtest extends React.Component {
       if (i.includes('Passage')) {
         y.push(
           <div className='passage-content'>
-            <h2>{i}</h2>
+            <h2 className='text-3xl my-2'>{i}</h2>
           </div>
         );
-        Object.values(this.state.passages[i]).map(z => y.push(<p>{z}</p>));
+        Object.values(this.state.passages[i]).map(z =>
+          y.push(
+            <div>
+              <p className='font-serif text-white'>{z}</p>
+              <br />
+            </div>
+          )
+        );
       }
     }
 
     let text = [];
     for (let i = 1; i <= 40; i++) {
       text.push(
-        <label style={{ color: '#fff' }}>
-          {i}
+        <label className='mx-2 px-3 text-right text-black'>
+          {i + '  '}
           <input
             type='text'
             id={i.toString()}
@@ -77,39 +84,48 @@ class Ieltsreadingtest extends React.Component {
         </label>
       );
     }
-    text.push(
-      <button
-        className='btn-style'
-        type='submit'
-        onClick={e => {
-          this.handleSubmit(e);
-          for (let i = 1; i <= 40; i++) {
-            document.getElementById(i.toString()).value = '';
-          }
-        }}
-      >
-        Submit
-      </button>
-    );
 
     return (
-      <div className='main-container'>
-        <div className='passage-container'>
-          <h1 className='text-5xl'>Test-{this.state.testid}</h1>
-          <div className='passage-content-1 mx-5 text-2xl'>{y}</div>
+      <div className='flex'>
+        <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
+          <h1 className='text-5xl my-2 text-center'>
+            Test-{this.state.testid}
+          </h1>
+          <div className='mx-5 text-lg'>{y}</div>
         </div>
-        <div className='image-container'>
-          <Img
-            className='border-black border-2'
-            src={this.state.questions.imgurl_1}
-          />
-          <Img src={this.state.questions.imgurl_2} />
-          <Img src={this.state.questions.imgurl_3} />
-          <Img src={this.state.questions.imgurl_4} />
-          <Img src={this.state.questions.imgurl_5} />
-          <Img src={this.state.questions.imgurl_6} />
+
+        <div className='w-2/5'>
+          <div className='border-black border-2 mx-2 my-2'>
+            <Img src={this.state.questions.imgurl_1} />
+            <Img src={this.state.questions.imgurl_2} />
+            <Img src={this.state.questions.imgurl_3} />
+            <Img src={this.state.questions.imgurl_4} />
+            <Img src={this.state.questions.imgurl_5} />
+            <Img src={this.state.questions.imgurl_6} />
+          </div>
+          <div className='border-black border-2 mx-2 my-2'>
+            <h1 className='my-4 mx-2 text-4xl font-serif'>
+              Write your answers here!!
+            </h1>
+            <form>
+              <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
+              <div className='flex justify-center items-center my-4'>
+                <button
+                  className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
+                  type='submit'
+                  onClick={e => {
+                    this.handleSubmit(e);
+                    for (let i = 1; i <= 40; i++) {
+                      document.getElementById(i.toString()).value = '';
+                    }
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className='textbox-container'>{text}</div>
       </div>
     );
   }

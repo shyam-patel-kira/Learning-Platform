@@ -13,6 +13,9 @@ module.exports = {
           navbar: '#002333',
         },
       },
+      flex: {
+        2: '2',
+      },
     },
   },
   variants: {

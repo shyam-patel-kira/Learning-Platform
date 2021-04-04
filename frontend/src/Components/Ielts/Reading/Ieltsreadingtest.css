@@ -25,22 +25,23 @@
   font-family: Nunito, Helvetica, Arial, sans-serif;
   color: #282828;
   margin-bottom: 5px;
-  /* margin-left: 20px; */
-  /* margin-right: 20px; */
 }
 
 .image-container {
-  border: 5px solid;
+  border: 1px solid;
   width: 40em;
-  margin-left: 850px;
-  margin-top: -9967px;
+  margin-left: 830px;
+  margin-top: -9009px;
 }
 
 .textbox-container {
   background-color: #002333;
-  border: 3px solid;
+  border: 2px solid;
   width: 40em;
-  margin-bottom: 10px;
+  justify-items: center;
+  margin-top: 100px;
+  padding-left: 50px;
+  margin-left: 830px;
 }
 
 .btn-style {

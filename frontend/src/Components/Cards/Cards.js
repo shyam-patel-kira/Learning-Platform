@@ -4,21 +4,21 @@ import './Cards.css';
 
 function Cards() {
   return (
-    <div className='cards'>
-      <h1 className='text-5xl'>This is where GRE and IELTS can take you!</h1>
+    <div className='p-8'>
+      <h1 className='text-center text-5xl'>
+        This is where GRE and IELTS can take you!
+      </h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItems
               src='images/usa.png'
               text='Achieve your goals to go to USA with IELTS and GRE'
-              label='USA'
               path='/'
             />
             <CardItems
               src='images/canada.png'
               text='Achieve your dreams to go to Canada with IELTS'
-              label='CANADA'
               path='/'
             />
           </ul>
@@ -26,13 +26,11 @@ function Cards() {
             <CardItems
               src='images/australia.png'
               text='Achieve your dreams to go to Australia with IELTS'
-              label='Australia'
               path='/'
             />
             <CardItems
               src='images/newz.png'
               text='Journey to New Zealand begins with IELTS'
-              label='New Zealand'
               path='/'
             />
           </ul>

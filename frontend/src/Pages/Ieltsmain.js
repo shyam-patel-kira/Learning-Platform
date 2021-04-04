@@ -6,23 +6,13 @@ import Ieltsmainhero from '../Components/Hero/Ieltsmain/Ieltsmainhero';
 
 function Ieltsmain() {
   return (
-    <div className=''>
+    <div className='bg-green-500 text-black'>
       <Navbar />
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-md-4'>
-            <Sidebar />
-          </div>
-          <div className='col-md-12'>
-            <div className='mt-0'>
-              <Ieltsmainhero />
-            </div>
-          </div>
-        </div>
+      <div className='flex items-start justify-between'>
+        <Sidebar />
+        <Ieltsmainhero />
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

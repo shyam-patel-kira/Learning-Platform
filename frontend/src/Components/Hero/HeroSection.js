@@ -1,11 +1,12 @@
 import React from 'react';
-import './HeroSection.css';
 
 function HeroSection() {
   return (
-    <div className='hero-container'>
-      <img src='/Images/image-1.png' alt='' />
-    </div>
+    <img
+      className='h-screen w-screen'
+      src='/Images/image-1.png'
+      alt='Baseimage'
+    />
   );
 }
 

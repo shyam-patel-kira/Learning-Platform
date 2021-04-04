@@ -1,37 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    marginLeft: 17,
-    marginRight: 20,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-});
-
-export default function Simplecard() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>; //eslint-disable-line
-
+export default function SimpleReadingCard(props) {
   return (
-    <Card className={classes.root}>
-      <CardContent className='bg-green-cardColor'>
-        <Typography variant='body2' component='p'>
-          <div className='font-serif text-lg text-white'>
-            <b>Skimming:</b> The candidate should use this technique and it’s
-            main purpose is to look only for the main ideas from the passage
-            instead of giving attention to every single word in the passage.
-          </div>
-        </Typography>
-      </CardContent>
-    </Card>
+    <p className='border-2 p-2 w-5/6 border-black bg-green-cardColor font-serif text-lg text-white transition duration-500 ease-in-out hover:bg-green-600 transform hover:-translate-y-1 hover:scale-110'>
+      <b className='underline'>{props.title}</b>
+      <p>{props.content}</p>
+    </p>
   );
 }

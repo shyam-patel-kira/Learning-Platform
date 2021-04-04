@@ -2,29 +2,18 @@ import React from 'react';
 import Navbar from '../Components/Navbar/Navbar';
 import Sidebar from '../Components/Sidebar/Sidebar';
 import Ieltsspeakinghero from '../Components/Hero/Speaking/Ieltsspeakinghero';
+import Footer from '../Components/Footer';
 
 function Ieltsspeaking() {
   return (
-    <div className=''>
+    <div className='bg-green-500 text-black'>
       <Navbar />
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-md-4'>
-            <div className='mt-8'>
-              <Sidebar />
-            </div>
-          </div>
-          <div className='col-md-8'>
-            <div className='mt-14'>
-              <Ieltsspeakinghero />
-            </div>
-          </div>
-        </div>
+      <div className='flex items-start justify-between'>
+        <Sidebar />
+
+        <Ieltsspeakinghero />
       </div>
-      {/* <div className="row align-items-end"> 
-			    <div className="col"><Footer /></div>
-		</div> */}
-      {/* <Footer />   */}
+      <Footer />
     </div>
   );
 }

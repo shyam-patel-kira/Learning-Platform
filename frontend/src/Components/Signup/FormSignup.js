@@ -56,7 +56,7 @@ class FormSignup extends React.Component {
     if (!email) {
       formIsValid = false;
       formErrors['emailErr'] = 'Email required';
-    } else if (!/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(email)) {
+    } else if (!/^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/.test(email)) {
       //eslint-disable-line
       //eslint-disable-line
       formIsValid = false;
