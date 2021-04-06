@@ -51,6 +51,8 @@ class Ieltsreadinghero extends React.Component {
                 complicated language, academic vocabulary and complex grammar.
               </li>
             </Ieltsreadingherocards>
+
+            
             <Ieltsreadingherocards>
               <li>
                 <strong>Reading is of two types:</strong>

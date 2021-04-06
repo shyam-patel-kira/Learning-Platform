@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
+//import Footer from '../Footer';
 
 class Navbar extends Component {
   state = { clicked: false };
@@ -83,7 +84,13 @@ class Navbar extends Component {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/' className='text-white px-4 py-2'>
+            <NavLink
+              to='/'
+              className='text-white px-4 py-2'
+              onClick={window.scroll({
+                behavior: 'smooth',
+              })}
+            >
               Contact Us
             </NavLink>
           </li>
