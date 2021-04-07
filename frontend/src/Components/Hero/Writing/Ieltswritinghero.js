@@ -1,47 +1,135 @@
 import React from 'react';
 import Ieltswritingherocards from './Ieltswritingherocards';
-import Button from 'react-bootstrap/Button';
 import './Ieltswritinghero.css';
 
-function Ieltswritinghero() {
-  return (
-    <div className='ielts-listening-hero-container'>
-      <h1 className='pt-6 mt-2 text-4xl'>Writing</h1>
-      <div className='ielts-listening-hero-wrapper'>
-        <ul className='cards__items'>
-          <Ieltswritingherocards />
-        </ul>
+class Ieltswritinghero extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleTest = event => {
+    let x = event.target.name;
+    window.location = `/ielts-sample-writing/${x}`;
+  };
+
+  render() {
+    return (
+      <div className='bg-blue-navbar my-6 mr-14 w-3/4 divide-y-2 text-white'>
+        <h1 className='pt-8 text-4xl text-center'>Writing</h1>
+        <div className='px-8 my-10 text-gray-50'>
+          <ul className='cards__items'>
+            <Ieltswritingherocards />
+          </ul>
+        </div>
+
+        <div className='flex flex-col justify-center items-center'>
+          <h1 className='text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+            Writing Task-1 Sample Answers
+          </h1>
+          <div className='flex flex-row justify-evenly w-5/6 px-2'>
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='bar-graph'
+              onClick={this.handleTest}
+              id='1'
+            >
+              Bar Graph
+            </button>
+
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='pie-chart'
+              onClick={this.handleTest}
+              id='2'
+            >
+              Pie-Chart
+            </button>
+
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='line-graph'
+              onClick={this.handleTest}
+              id='3'
+            >
+              Line Graph
+            </button>
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='table'
+              onClick={this.handleTest}
+              id='4'
+            >
+              Tabular Data
+            </button>
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='maps'
+              onClick={this.handleTest}
+              id='5'
+            >
+              Maps
+            </button>
+            <button
+              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              name='diagram'
+              onClick={this.handleTest}
+              id='6'
+            >
+              Diagram
+            </button>
+          </div>
+        </div>
+
+        <div className='flex flex-col my-10 justify-center items-center'>
+          <h1 className='text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+            Writing Task-2 Sample Answers
+          </h1>
+
+          <div className='flex flex-col justify-between items-center w-5/6 px-2'>
+            <button
+              className='my-2 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded w-1/3'
+              variant='Default'
+              id='7'
+            >
+              Agree & Disagree
+            </button>
+
+            <button
+              className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              id='8'
+            >
+              Advantages & Disadvantages
+            </button>
+
+            <button
+              className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              id='9'
+            >
+              Double Questions
+            </button>
+
+            <button
+              className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              variant='Default'
+              id='10'
+            >
+              Discussion Essay
+            </button>
+          </div>
+        </div>
+        <br />
       </div>
-      <Button
-        variant='Default'
-        href='#'
-        style={{
-          color: '#fff',
-          display: 'grid',
-          background: '#00ff84',
-          margin: '0.5%',
-          boxShadow: '5px 5px 3px rgba(46, 46, 46, 0.62)',
-          padding: '10px 15px',
-        }}
-      >
-        Test 1
-      </Button>
-      <Button
-        variant='Default'
-        href='#'
-        style={{
-          color: '#fff',
-          display: 'grid',
-          background: '#00ff84',
-          margin: '0.5%',
-          boxShadow: '5px 5px 3px rgba(46, 46, 46, 0.62)',
-          padding: '10px 15px',
-        }}
-      >
-        Test 2
-      </Button>
-    </div>
-  );
+    );
+  }
 }
 
 export default Ieltswritinghero;

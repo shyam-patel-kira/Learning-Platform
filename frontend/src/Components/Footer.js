@@ -38,7 +38,7 @@ class Footer extends React.Component {
     });
   };
 
-  feedBackSubmit = e => {
+  feedBackSubmit = async e => {
     e.preventDefault();
     const feedback = {
       subject: this.state.subject,
@@ -48,7 +48,7 @@ class Footer extends React.Component {
     };
     console.log(feedback);
 
-    axios
+    await axios
       .post('http://localhost:8000/feedback', feedback)
       .then(res => console.log(res.data));
   };

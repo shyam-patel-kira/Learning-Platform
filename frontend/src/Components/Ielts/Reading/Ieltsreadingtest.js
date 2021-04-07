@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
-import { Img } from 'react-image';
+
 
 class Ieltsreadingtest extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class Ieltsreadingtest extends React.Component {
       questions: [],
       testid: '',
       answers: {},
+      error:''
     };
   }
 
@@ -22,9 +23,20 @@ class Ieltsreadingtest extends React.Component {
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.answers);
+    let answers = this.state.answers;
+    this.setState({
+      answers
+    })
+
+    await axios.post()
+    .then()
+    .catch()
+
+    await axios.get()
+    .then()
+    .catch
   };
 
   componentDidMount() {
@@ -41,7 +53,16 @@ class Ieltsreadingtest extends React.Component {
           questions: res.data.results[0].questions,
         });
       })
-      .catch(e => console.error(e.message));
+      .catch(e => {
+        if(e.response){
+          console.log(e.response.data);
+          console.log(e.response.status);
+          console.log(e.response.headers);
+        }
+        else{
+          console.log(e.message)
+        }
+      });
     this.setState({
       testid: mytest,
     });
@@ -84,7 +105,7 @@ class Ieltsreadingtest extends React.Component {
         </label>
       );
     }
-
+    console.log(this.state.error)
     return (
       <div className='flex'>
         <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
@@ -96,12 +117,12 @@ class Ieltsreadingtest extends React.Component {
 
         <div className='w-2/5'>
           <div className='border-black border-2 mx-2 my-2'>
-            <Img src={this.state.questions.imgurl_1} />
-            <Img src={this.state.questions.imgurl_2} />
-            <Img src={this.state.questions.imgurl_3} />
-            <Img src={this.state.questions.imgurl_4} />
-            <Img src={this.state.questions.imgurl_5} />
-            <Img src={this.state.questions.imgurl_6} />
+            <img src={this.state.questions.imgurl_1} alt='' />
+            <img src={this.state.questions.imgurl_2} alt='' />
+            <img src={this.state.questions.imgurl_3} alt='' />
+            <img src={this.state.questions.imgurl_4} alt='' />
+            <img src={this.state.questions.imgurl_5} alt='' />
+            <img src={this.state.questions.imgurl_6} alt='' />
           </div>
           <div className='border-black border-2 mx-2 my-2'>
             <h1 className='my-4 mx-2 text-4xl font-serif'>

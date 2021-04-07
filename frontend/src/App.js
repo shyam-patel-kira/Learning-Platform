@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Router, Route, Switch } from 'react-router-dom';
-// import FormSignup from './Components/Signup/FormSignup'
 import history from './history';
+
 import Form from './Components/Form';
 import Form1 from './Components/Form1';
 import Home from './Pages/Home';
@@ -13,6 +13,9 @@ import Ieltswriting from './Pages/Ieltswriting';
 import Ieltsspeaking from './Pages/Ieltsspeaking';
 import Ieltsreadingtest from './Components/Ielts/Reading/Ieltsreadingtest';
 import Ieltslisteningtest from './Components/Ielts/Listening/Ieltslisteningtest'
+import IeltsSampleWritingContent from './Components/Ielts/Writing/IeltsSampleWritingContent'
+
+const Page404 = () => <h1>Four:oh:four</h1>;
 
 export default function App() {
   return (
@@ -27,8 +30,14 @@ export default function App() {
           <Route path='/ielts-speaking' component={Ieltsspeaking} />
           <Route path='/ielts-reading-test' component={Ieltsreadingtest} />
           <Route path='/ielts-listening-test' component={Ieltslisteningtest} />
+
+          <Route
+            path='/ielts-sample-writing'
+            component={IeltsSampleWritingContent}
+          />
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
+          <Route component={Page404} />
         </Switch>
       </Router>
     </div>
