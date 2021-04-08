@@ -8,10 +8,10 @@ import map_q1 from './map_q1.JPG';
 import map_q2 from './map_q2.JPG';
 import Table_q1 from './Table_q1.JPG';
 import Table_q2 from './Table_q2.JPG';
-import process_q1 from './process_q1.JPG'
-import process_q2 from './process_q2.JPG'
-import Bar_graph_q1 from './Bar_graph_q1.JPG'
-import Bar_graph_q2 from './Bar_graph_q2.JPG'
+import process_q1 from './process_q1.JPG';
+import process_q2 from './process_q2.JPG';
+import Bar_graph_q1 from './Bar_graph_q1.JPG';
+import Bar_graph_q2 from './Bar_graph_q2.JPG';
 
 function IeltsSampleWritingContent(props) {
   let x = window.location.href.split('/');
@@ -83,8 +83,7 @@ function IeltsSampleWritingContent(props) {
         />
       </div>
     );
-  } 
-  else if (keyword === 'table') {
+  } else if (keyword === 'table') {
     return (
       <div>
         <IeltsSampleWritingstyle
@@ -106,8 +105,7 @@ function IeltsSampleWritingContent(props) {
         />
       </div>
     );
-  } 
-  else if (keyword === 'maps') {
+  } else if (keyword === 'maps') {
     return (
       <div>
         <IeltsSampleWritingstyle

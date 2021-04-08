@@ -52,7 +52,6 @@ class Ieltsreadinghero extends React.Component {
               </li>
             </Ieltsreadingherocards>
 
-            
             <Ieltsreadingherocards>
               <li>
                 <strong>Reading is of two types:</strong>

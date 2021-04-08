@@ -8,9 +8,14 @@ class Ieltswritinghero extends React.Component {
     this.state = {};
   }
 
-  handleTest = event => {
+  handleSamplePractice = event => {
     let x = event.target.name;
     window.location = `/ielts-sample-writing/${x}`;
+  };
+
+  handleTest = event => {
+    let x = event.target.name;
+    window.location = `/ielts-writing-task-1-practice/${x}`;
   };
 
   render() {
@@ -32,7 +37,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='bar-graph'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='1'
             >
               Bar Graph
@@ -42,7 +47,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='pie-chart'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='2'
             >
               Pie-Chart
@@ -52,7 +57,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='line-graph'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='3'
             >
               Line Graph
@@ -61,7 +66,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='table'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='4'
             >
               Tabular Data
@@ -70,7 +75,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='maps'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='5'
             >
               Maps
@@ -79,7 +84,7 @@ class Ieltswritinghero extends React.Component {
               className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               name='diagram'
-              onClick={this.handleTest}
+              onClick={this.handleSamplePractice}
               id='6'
             >
               Diagram
@@ -127,6 +132,117 @@ class Ieltswritinghero extends React.Component {
           </div>
         </div>
         <br />
+
+        <div>
+          <div className='flex flex-col justify-center items-center'>
+            <h1 className='text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+              Practice Yourself !!
+            </h1>
+            <div className='flex flex-row justify-evenly w-5/6 px-2'>
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='bar-graph'
+                onClick={this.handleTest}
+                id='11'
+              >
+                Bar Graph
+              </button>
+
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='pie-chart'
+                onClick={this.handleTest}
+                id='12'
+              >
+                Pie-Chart
+              </button>
+
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='line-graph'
+                onClick={this.handleTest}
+                id='13'
+              >
+                Line Graph
+              </button>
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='table'
+                onClick={this.handleTest}
+                id='14'
+              >
+                Tabular Data
+              </button>
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='maps'
+                onClick={this.handleTest}
+                id='15'
+              >
+                Maps
+              </button>
+              <button
+                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='diagram'
+                onClick={this.handleTest}
+                id='16'
+              >
+                Diagram
+              </button>
+            </div>
+          </div>
+          <br />
+          <br />
+        </div>
+
+        <div>
+          <div className='flex flex-col  justify-center items-center'>
+            <h1 className='text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+              Practice Yourself !!
+            </h1>
+
+            <div className='flex flex-col justify-between items-center w-5/6 px-2'>
+              <button
+                className='my-2 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded w-1/3'
+                variant='Default'
+                id='17'
+              >
+                Agree & Disagree
+              </button>
+
+              <button
+                className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                id='18'
+              >
+                Advantages & Disadvantages
+              </button>
+
+              <button
+                className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                id='19'
+              >
+                Double Questions
+              </button>
+
+              <button
+                className='my-2 w-1/3 bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                variant='Default'
+                id='20'
+              >
+                Discussion Essay
+              </button>
+            </div>
+          </div>
+          <br />
+        </div>
       </div>
     );
   }

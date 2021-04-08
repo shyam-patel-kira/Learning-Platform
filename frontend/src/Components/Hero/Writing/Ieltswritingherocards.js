@@ -2,8 +2,8 @@ import React from 'react';
 
 function Ieltswritingherocards(props) {
   return (
-    <>
-      <li
+    
+      <div
         className='cards__item font-serif text-lg list-disc md:list-disc
        leading-relaxed tracking-normal text antialiased 
        sm:subpixel-antialiased md:antialiased'
@@ -42,8 +42,7 @@ function Ieltswritingherocards(props) {
             IELTS writing is same for both the candidates.
           </li>
         </div>
-      </li>
-    </>
+      </div>
   );
 }
 

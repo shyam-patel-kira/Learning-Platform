@@ -79,7 +79,7 @@ class Navbar extends Component {
                         </script> */}
 
           <li>
-            <NavLink to='/' className='text-white px-4 py-2'>
+            <NavLink to='/about' className='text-white px-4 py-2'>
               About Us
             </NavLink>
           </li>

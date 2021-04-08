@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
 
-
 class Ieltsreadingtest extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +10,7 @@ class Ieltsreadingtest extends React.Component {
       questions: [],
       testid: '',
       answers: {},
-      error:''
+      error: '',
     };
   }
 
@@ -23,20 +22,16 @@ class Ieltsreadingtest extends React.Component {
     });
   };
 
-  handleSubmit = async (e) => {
+  handleSubmit = async e => {
     e.preventDefault();
     let answers = this.state.answers;
     this.setState({
-      answers
-    })
+      answers,
+    });
 
-    await axios.post()
-    .then()
-    .catch()
+    await axios.post().then().catch();
 
-    await axios.get()
-    .then()
-    .catch
+    await axios.get().then().catch;
   };
 
   componentDidMount() {
@@ -48,20 +43,20 @@ class Ieltsreadingtest extends React.Component {
       .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`)
       .then(res => {
         console.log(res.data);
-        this.setState({
-          passages: res.data.results[0],
-          questions: res.data.results[0].questions,
-        });
+        if (res.data.error) {
+          console.log(res.data.error);
+          this.setState({
+            error: res.data.error,
+          });
+        } else {
+          this.setState({
+            passages: res.data.results[0],
+            questions: res.data.results[0].questions,
+          });
+        }
       })
       .catch(e => {
-        if(e.response){
-          console.log(e.response.data);
-          console.log(e.response.status);
-          console.log(e.response.headers);
-        }
-        else{
-          console.log(e.message)
-        }
+        console.log(e.message);
       });
     this.setState({
       testid: mytest,
@@ -69,7 +64,14 @@ class Ieltsreadingtest extends React.Component {
   }
 
   render() {
-    console.log('render');
+    if (this.state.error) {
+      return(
+        <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{this.state.error}</h1>
+        </div>
+      )
+    }
+    
     let y = [];
     for (const i of Object.keys(this.state.passages)) {
       if (i.includes('Passage')) {
@@ -105,50 +107,52 @@ class Ieltsreadingtest extends React.Component {
         </label>
       );
     }
-    console.log(this.state.error)
-    return (
-      <div className='flex'>
-        <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
-          <h1 className='text-5xl my-2 text-center'>
-            Test-{this.state.testid}
-          </h1>
-          <div className='mx-5 text-lg'>{y}</div>
-        </div>
 
-        <div className='w-2/5'>
-          <div className='border-black border-2 mx-2 my-2'>
-            <img src={this.state.questions.imgurl_1} alt='' />
-            <img src={this.state.questions.imgurl_2} alt='' />
-            <img src={this.state.questions.imgurl_3} alt='' />
-            <img src={this.state.questions.imgurl_4} alt='' />
-            <img src={this.state.questions.imgurl_5} alt='' />
-            <img src={this.state.questions.imgurl_6} alt='' />
-          </div>
-          <div className='border-black border-2 mx-2 my-2'>
-            <h1 className='my-4 mx-2 text-4xl font-serif'>
-              Write your answers here!!
+     
+      return (
+        <div className='flex'>
+          <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
+            <h1 className='text-5xl my-2 text-center'>
+              Test-{this.state.testid}
             </h1>
-            <form>
-              <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
-              <div className='flex justify-center items-center my-4'>
-                <button
-                  className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
-                  type='submit'
-                  onClick={e => {
-                    this.handleSubmit(e);
-                    for (let i = 1; i <= 40; i++) {
-                      document.getElementById(i.toString()).value = '';
-                    }
-                  }}
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+            <div className='mx-5 text-lg'>{y}</div>
+          </div>
+
+          <div className='w-2/5'>
+            <div className='border-black border-2 mx-2 my-2'>
+              <img src={this.state.questions.imgurl_1} alt='' />
+              <img src={this.state.questions.imgurl_2} alt='' />
+              <img src={this.state.questions.imgurl_3} alt='' />
+              <img src={this.state.questions.imgurl_4} alt='' />
+              <img src={this.state.questions.imgurl_5} alt='' />
+              <img src={this.state.questions.imgurl_6} alt='' />
+            </div>
+            <div className='border-black border-2 mx-2 my-2'>
+              <h1 className='my-4 mx-2 text-4xl font-serif'>
+                Write your answers here!!
+              </h1>
+              <form>
+                <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
+                <div className='flex justify-center items-center my-4'>
+                  <button
+                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
+                    type='submit'
+                    onClick={e => {
+                      this.handleSubmit(e);
+                      for (let i = 1; i <= 40; i++) {
+                        document.getElementById(i.toString()).value = '';
+                      }
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    
   }
 }
 
