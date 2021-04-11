@@ -7,6 +7,7 @@ import Form from './Components/Form';
 import Form1 from './Components/Form1';
 import Home from './Pages/Home';
 import AboutUs from './Components/AboutUs';
+import ErrorPage from './Error404.JPG';
 
 import Ieltsmain from './Pages/Ieltsmain';
 import Ieltsreading from './Pages/Ieltsreading';
@@ -16,10 +17,24 @@ import Ieltsspeaking from './Pages/Ieltsspeaking';
 import Ieltsreadingtest from './Components/Ielts/Reading/Ieltsreadingtest';
 import Ieltslisteningtest from './Components/Ielts/Listening/Ieltslisteningtest';
 import IeltsSampleWritingContent from './Components/Ielts/Writing/Task-1/IeltsSampleWritingContent';
-import IeltsSampleTestContent from './Components/Ielts/Writing/Task-1/IeltsSampleTestContent'
+import IeltsSampleTestContent from './Components/Ielts/Writing/Task-1/IeltsSampleTestContent';
+import IeltsSampleWritingTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleWritingTask2';
+import IeltsTask1Topics from './Components/Ielts/Writing/Task-1/IeltsTask1Topics';
+import IeltsTask2Topics from './Components/Ielts/Writing/Task-2/IeltsTask2Topics';
+import IeltsSampleTestTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleTestTask2';
+import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 
-
-const Page404 = () => <h1>Four:oh:four</h1>;
+const Page404 = () => {
+  return (
+    <div>
+      <img
+        src={ErrorPage}
+        className='w-1/2 flex flex-row justify-around mx-auto'
+        alt='Not Found'
+      />
+    </div>
+  );
+};
 
 export default function App() {
   return (
@@ -34,15 +49,30 @@ export default function App() {
           <Route path='/ielts-speaking' component={Ieltsspeaking} />
           <Route path='/ielts-reading-test' component={Ieltsreadingtest} />
           <Route path='/ielts-listening-test' component={Ieltslisteningtest} />
+          <Route path='/ielts-speaking-test' component={IeltsSpeakingTest} />
           <Route path='/about' component={AboutUs} />
+
           <Route
-            path='/ielts-sample-writing'
+            path='/ielts-sample-writing-task-1'
             component={IeltsSampleWritingContent}
           />
           <Route
             path='/ielts-writing-task-1-practice'
             component={IeltsSampleTestContent}
           />
+
+          <Route
+            path='/ielts-sample-writing-task2'
+            component={IeltsSampleWritingTask2}
+          />
+          <Route
+            path='/ielts-writing-task-2-practice'
+            component={IeltsSampleTestTask2}
+          />
+
+          <Route path='/ielts-writing-task-1' component={IeltsTask1Topics} />
+          <Route path='/ielts-writing-task-2' component={IeltsTask2Topics} />
+
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
           <Route component={Page404} />

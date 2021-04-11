@@ -65,13 +65,15 @@ class Ieltsreadingtest extends React.Component {
 
   render() {
     if (this.state.error) {
-      return(
+      return (
         <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{this.state.error}</h1>
+          <h1 className='text-5xl text-center text-red-500 my-28'>
+            {this.state.error}
+          </h1>
         </div>
-      )
+      );
     }
-    
+
     let y = [];
     for (const i of Object.keys(this.state.passages)) {
       if (i.includes('Passage')) {
@@ -108,51 +110,49 @@ class Ieltsreadingtest extends React.Component {
       );
     }
 
-     
-      return (
-        <div className='flex'>
-          <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
-            <h1 className='text-5xl my-2 text-center'>
-              Test-{this.state.testid}
-            </h1>
-            <div className='mx-5 text-lg'>{y}</div>
-          </div>
+    return (
+      <div className='flex'>
+        <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
+          <h1 className='text-5xl my-2 text-center'>
+            Test-{this.state.testid}
+          </h1>
+          <div className='mx-5 text-lg'>{y}</div>
+        </div>
 
-          <div className='w-2/5'>
-            <div className='border-black border-2 mx-2 my-2'>
-              <img src={this.state.questions.imgurl_1} alt='' />
-              <img src={this.state.questions.imgurl_2} alt='' />
-              <img src={this.state.questions.imgurl_3} alt='' />
-              <img src={this.state.questions.imgurl_4} alt='' />
-              <img src={this.state.questions.imgurl_5} alt='' />
-              <img src={this.state.questions.imgurl_6} alt='' />
-            </div>
-            <div className='border-black border-2 mx-2 my-2'>
-              <h1 className='my-4 mx-2 text-4xl font-serif'>
-                Write your answers here!!
-              </h1>
-              <form>
-                <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
-                <div className='flex justify-center items-center my-4'>
-                  <button
-                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
-                    type='submit'
-                    onClick={e => {
-                      this.handleSubmit(e);
-                      for (let i = 1; i <= 40; i++) {
-                        document.getElementById(i.toString()).value = '';
-                      }
-                    }}
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </div>
+        <div className='w-2/5'>
+          <div className='border-black border-2 mx-2 my-2'>
+            <img src={this.state.questions.imgurl_1} alt='' />
+            <img src={this.state.questions.imgurl_2} alt='' />
+            <img src={this.state.questions.imgurl_3} alt='' />
+            <img src={this.state.questions.imgurl_4} alt='' />
+            <img src={this.state.questions.imgurl_5} alt='' />
+            <img src={this.state.questions.imgurl_6} alt='' />
+          </div>
+          <div className='border-black border-2 mx-2 my-2'>
+            <h1 className='my-4 mx-2 text-4xl font-serif'>
+              Write your answers here!!
+            </h1>
+            <form>
+              <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
+              <div className='flex justify-center items-center my-4'>
+                <button
+                  className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
+                  type='submit'
+                  onClick={e => {
+                    this.handleSubmit(e);
+                    for (let i = 1; i <= 40; i++) {
+                      document.getElementById(i.toString()).value = '';
+                    }
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-      );
-    
+      </div>
+    );
   }
 }
 

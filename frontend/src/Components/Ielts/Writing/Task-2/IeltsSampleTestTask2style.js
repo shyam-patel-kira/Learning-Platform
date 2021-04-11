@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const IeltsSampleTestContentstyle = props => {
+const IeltsSampleTestTask2style = props => {
   const [answer, setAnswer] = useState('');
 
   const handleChange = event => {
@@ -11,7 +11,6 @@ const IeltsSampleTestContentstyle = props => {
   const handleWritingTest = event => {
     axios.post('').then().catch();
   };
-
   return (
     <div className='bg-green-600 '>
       <br />
@@ -19,20 +18,15 @@ const IeltsSampleTestContentstyle = props => {
       <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white'>
         <h1 className='pt-8 text-4xl text-center font-serif'>{props.title}</h1>
         <div className='px-8 my-10 text-gray-50'>
-          <div className='my-10 text-xl font-serif leading-relaxed'>
+          <div className='my-10 text-xl leading-relaxed font-serif'>
             <strong className='underline'>{props.question}</strong>
             <br />
             {props.question_heading}
-            <img
-              src={props.img}
-              alt=''
-              className='object-contain h-96 w-full my-8'
-            />
           </div>
           <br />
         </div>
         <div>
-          <h1 className='text-center text-3xl my-6 font-serif leading-relaxed'>
+          <h1 className='text-center text-3xl my-6 font-serif'>
             Write your answer below and then press submit!!
           </h1>
           <textarea
@@ -48,6 +42,7 @@ const IeltsSampleTestContentstyle = props => {
         <br />
         <br />
 
+       
         <button
           className='flex flex-wrap content-center justify-around bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
           variant='Default'
@@ -63,4 +58,4 @@ const IeltsSampleTestContentstyle = props => {
   );
 };
 
-export default IeltsSampleTestContentstyle;
+export default IeltsSampleTestTask2style;

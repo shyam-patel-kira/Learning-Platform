@@ -8,7 +8,10 @@ class Ieltsspeakinghero extends React.Component {
     this.state = {};
   }
 
-  handleTest = event => {};
+  handleTest = event => {
+    let x = event.target.id
+    window.location = `/ielts-speaking-test/${x}`;
+  };
 
   render() {
     return (
