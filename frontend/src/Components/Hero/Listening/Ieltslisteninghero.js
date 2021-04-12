@@ -1,18 +1,18 @@
 import React from 'react';
 //import './Ieltslisteninghero.css';
 import Ieltslisteningherocards from './Ieltslisteningherocards';
-import SimpleReadingCard from '../Reading/Simplereadingcard'
+import SimpleReadingCard from '../Reading/Simplereadingcard';
 
 class Ieltslisteninghero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
-  handleTest = (event) => {
+  handleTest = event => {
     let x = event.target.id;
     window.location = `/ielts-listening-test/${x}`;
-  }
+  };
 
   render() {
     return (
@@ -136,8 +136,6 @@ class Ieltslisteninghero extends React.Component {
               title='Don’t write answers promptly:'
               content=' Lorem'
             />
-
-            
           </ul>
         </div>
         <div className='flex flex-col justify-center items-center'>

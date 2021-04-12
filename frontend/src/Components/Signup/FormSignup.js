@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Route,Redirect } from 'react-router-dom';
+import Form1 from '../Form1'
+
 import './Form.css';
 import axios from 'axios';
 
@@ -12,6 +14,7 @@ class FormSignup extends React.Component {
       password: '',
       confpassword: '',
       formErrors: {},
+      sucess: false,
     };
     this.initialState = this.state;
   }
@@ -57,8 +60,6 @@ class FormSignup extends React.Component {
       formIsValid = false;
       formErrors['emailErr'] = 'Email required';
     } else if (!/^\w+([.-]?\w+)@\w+([.-]?\w+)(\.\w{2,3})+$/.test(email)) {
-      //eslint-disable-line
-      //eslint-disable-line
       formIsValid = false;
       formErrors['emailErr'] = 'Invalid email id.';
     }
@@ -82,6 +83,7 @@ class FormSignup extends React.Component {
   }
 
   handleSubmit = event => {
+    console.log('In submit')
     event.preventDefault();
     if (this.handleFormValidation()) {
       this.setState(this.initialState);
@@ -96,16 +98,29 @@ class FormSignup extends React.Component {
         .then(res => console.log(res.data))
         .catch(err => console.log('Error is: ', err));
       // if status code == 200 than post login api simultaneously and get token
+      this.setState({
+        sucess: true,
+      });
     }
   };
 
   render() {
+    console.log("in render")
     const {
       userNameErr,
       emailErr,
       passwordErr,
       confpassErr,
     } = this.state.formErrors;
+
+    
+      {this.state.sucess === true ? (
+        <Route path='/login' component={Form1} />
+      ) : (
+        <Route path='/signup' component={FormSignup} />
+      ) }
+   
+console.log(this.state.sucess)
     return (
       <div className='form-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>

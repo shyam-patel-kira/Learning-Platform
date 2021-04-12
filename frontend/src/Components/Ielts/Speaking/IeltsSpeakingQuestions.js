@@ -34,9 +34,7 @@ function IeltsSpeakingQuestions(props) {
       </h1>
       <ul className='list-inside list-disc font-serif leading-relaxed mx-20 text-lg'>
         <li>{props.q7}</li>
-        <li>
-          {props.q8}
-        </li>
+        <li>{props.q8}</li>
         <li>{props.q9}</li>
         <li>{props.q10}</li>
       </ul>
