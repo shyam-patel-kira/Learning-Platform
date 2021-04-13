@@ -6,20 +6,20 @@ admin:
 apiEndpoints:
   feedback:
     host: localhost
-    paths: '/feedback'
+    paths: "/feedback"
   ielts:
     host: localhost
-    paths: '/ielts/*'
+    paths: "/ielts/*"
   user:
     host: localhost
-    paths: '/user/*'  
+    paths: "/user/*"
 serviceEndpoints:
   feedbackhttpbin:
-    url: 'http://localhost:4545'
+    url: "http://localhost:4545"
   ieltshttpbin:
-    url: 'http://localhost:4955'
+    url: "http://localhost:4955"
   userhttpbin:
-    url: 'http://localhost:5545'  
+    url: "http://localhost:5545"
 policies:
   - basic-auth
   - cors
@@ -34,43 +34,41 @@ pipelines:
     apiEndpoint:
       - feedback
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
       #- key-auth:
       - rate-limit:
-        - action:
-            max: 3
-            rateLimitBy: "${req.hostname}"
+          - action:
+              max: 3
+              rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
-              serviceEndpoint: feedbackhttpbin 
+              serviceEndpoint: feedbackhttpbin
               changeOrigin: true
-  - ielts:  
+  - ielts:
     apiEndpoint:
       - ielts
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
       #- key-auth:
       - rate-limit:
-        - action:
-            max: 3
-            rateLimitBy: "${req.hostname}"
+          - action:
+              max: 3400
+              rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
-              serviceEndpoint: ieltshttpbin 
+              serviceEndpoint: ieltshttpbin
               changeOrigin: true
-  - user:  
+  - user:
     apiEndpoint:
       - user
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
       #- key-auth:
       - rate-limit:
-        - action:
-            max: 3
-            rateLimitBy: "${req.hostname}"
+          - action:
+              max: 3
+              rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
-              serviceEndpoint: userhttpbin 
-              changeOrigin: true          
-
-
+              serviceEndpoint: userhttpbin
+              changeOrigin: true

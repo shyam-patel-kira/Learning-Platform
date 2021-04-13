@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import speakingModel from "../Models/Speaking.js";
+import listeningModel from "../Models/Listening.js";
+import userListeningAnswersModel from "../Models/Listening_user_answers.js"
 
 import dotenv from "dotenv";
 import jwa from "jwa";
@@ -12,17 +13,18 @@ dotenv.config();
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
 
-const speakingRouter = express.Router();
-speakingRouter.use(cors());
+const listeningRouter = express.Router();
+listeningRouter.use(cors());
 
-speakingRouter.get("/speaking/test/:test_id", (req, res) => {
+//Obtain listening test paper
+listeningRouter.get("/listening/test/:test_id", (req, res) => {
   /* const decodedJWT = _decodeJWT(req);
   if (!_authorized(decodedJWT, "USER")) {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
 */
-  speakingModel
+  listeningModel
     .find({ test_id: req.params.test_id })
     .then((doc) => {
       res.status(201).json({
@@ -35,47 +37,19 @@ speakingRouter.get("/speaking/test/:test_id", (req, res) => {
     });
 });
 
-speakingRouter.post("/speaking/test/:test_id", (req, res) => {
+//Questions added for listening
+listeningRouter.post("/listening/test/:test_id", (req, res) => {
   const test_id = req.params.test_id;
-  const detail = req.body.detail;
-  const topic1 = req.body.topic1;
-  const topic2 = req.body.topic2;
-  const topic3 = req.body.topic3;
-  const q1 = req.body.q1;
-  const q2 = req.body.q2;
-  const q3 = req.body.q3;
-  const q4 = req.body.q4;
-  const q5 = req.body.q5;
-  const q6 = req.body.q6;
-  const q7 = req.body.q7;
-  const q8 = req.body.q8;
-  const q9 = req.body.q9;
-  const q10 = req.body.q10;
-  const q11 = req.body.q11;
-
-  const speakingQuestions = new speakingModel({
+  const questions = req.body.questions;
+  const listeningQuestions = new listeningModel({
     test_id: test_id,
-    detail: detail,
-    topic1: topic1,
-    topic2: topic2,
-    topic3: topic3,
-    q1: q1,
-    q2: q2,
-    q3: q3,
-    q4: q4,
-    q5: q5,
-    q6: q6,
-    q7: q7,
-    q8: q8,
-    q9: q9,
-    q10: q10,
-    q11: q11,
+    questions: questions,
   });
-  speakingQuestions
+  listeningQuestions
     .save()
     .then((doc) => {
       res.status(201).json({
-        message: "Questions obtained successfully.",
+        message: "Questions posted successfully.",
         results: doc,
       });
     })
@@ -83,6 +57,29 @@ speakingRouter.post("/speaking/test/:test_id", (req, res) => {
       res.json(err);
     });
 });
+
+//User-Answers of listening
+listeningRouter.post("/listening/test/user-answers/:test_id", (req, res) => {
+  const test_id = req.params.test_id;
+  const answers = req.body.answers;
+
+  const userAnswers = new userListeningAnswersModel({
+    test_id: test_id,
+    answers: answers,
+  });
+  userAnswers
+    .save()
+    .then((doc) => {
+      res.status(201).json({
+        message: "Test submitted successfully.",
+        results: doc,
+      });
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 
 /**
  * Decode the JWT by extracting the JWT from the HTTP request header.
@@ -203,4 +200,4 @@ function _authorized(decodedJWT, role) {
   //if (!jwt.assertIdentity(decodedJWT, ))
 }
 
-export default speakingRouter;
+export default listeningRouter;
