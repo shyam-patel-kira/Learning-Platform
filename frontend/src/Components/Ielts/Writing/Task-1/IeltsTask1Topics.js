@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function IeltsTask1Topics(props) {
   const handleSamplePractice = event => {
@@ -20,14 +21,14 @@ function IeltsTask1Topics(props) {
 
   if (keyword === 'bar-graph') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
           <h1 className='pt-8 text-4xl text-center my-6 font-serif'>
             Bar Graph
           </h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl font-serif leading-relaxed'>
               <ul className='list-disc list-inside font-serif'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -60,7 +61,7 @@ function IeltsTask1Topics(props) {
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -70,7 +71,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -79,7 +80,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -95,7 +96,7 @@ function IeltsTask1Topics(props) {
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
@@ -105,7 +106,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
@@ -114,13 +115,27 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
                 id='2'
               >
                 Test-3
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
               </button>
             </div>
           </div>
@@ -134,12 +149,12 @@ function IeltsTask1Topics(props) {
   //Pie-Chart
   else if (keyword === 'pie-chart') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white font-serif leading-relaxed'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Pie Chart</h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
               <ul className='list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -170,7 +185,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -180,7 +195,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -189,7 +204,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -203,7 +218,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
@@ -213,7 +228,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
@@ -222,13 +237,27 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
                 id='2'
               >
                 Test-3
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
               </button>
             </div>
           </div>
@@ -242,12 +271,12 @@ function IeltsTask1Topics(props) {
   //Line-Graph
   else if (keyword === 'line-graph') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white font-serif leading-relaxed'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Line Graph</h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
               <ul className='list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -278,7 +307,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -288,7 +317,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -297,7 +326,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -311,7 +340,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -321,7 +350,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -330,7 +359,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -340,8 +369,21 @@ function IeltsTask1Topics(props) {
               </button>
             </div>
           </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
+              </button>
+            </div>
+          </div>
         </div>
-
         <br />
       </div>
     );
@@ -350,12 +392,12 @@ function IeltsTask1Topics(props) {
   //Maps
   else if (keyword === 'maps') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white font-serif leading-relaxed'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Maps</h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
               <ul className='list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -390,7 +432,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -400,7 +442,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -409,7 +451,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -423,7 +465,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
@@ -433,7 +475,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
@@ -442,13 +484,27 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
                 id='3'
               >
                 Test-3
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
               </button>
             </div>
           </div>
@@ -462,12 +518,12 @@ function IeltsTask1Topics(props) {
   //Tabular Data
   else if (keyword === 'table') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white font-serif leading-relaxed'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Table</h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
               <ul className='list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -502,7 +558,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -512,7 +568,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -521,7 +577,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -535,7 +591,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
@@ -545,7 +601,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
@@ -554,13 +610,27 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
                 id='3'
               >
                 Test-3
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
               </button>
             </div>
           </div>
@@ -574,12 +644,12 @@ function IeltsTask1Topics(props) {
   //Diagram
   else if (keyword === 'diagram') {
     return (
-      <div className='bg-green-600'>
+      <div className='bg-custombrown'>
         <br />
         <br />
-        <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white leading-relaxed font-serif'>
+        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite leading-relaxed font-serif'>
           <h1 className='pt-8 text-4xl  my-6 text-center'>Diagram</h1>
-          <div className='px-8 text-gray-50'>
+          <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
               <ul className='list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
@@ -614,7 +684,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -624,7 +694,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -633,7 +703,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -647,7 +717,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleTask1Test}
@@ -657,7 +727,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown-700 transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleTask1Test}
@@ -666,13 +736,27 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+                className='bg-customblack hover:bg-custombrown-700 transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleTask1Test}
                 id='3'
               >
                 Test-3
+              </button>
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+              <button
+                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                variant='Default'
+                name='opinion'
+                id='1'
+              >
+                <Link to='/ielts-writing' className='no-underline'>
+                  Go Back
+                </Link>
               </button>
             </div>
           </div>

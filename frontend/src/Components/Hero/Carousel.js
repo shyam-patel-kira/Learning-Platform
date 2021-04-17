@@ -1,6 +1,4 @@
-import React,{useState} from 'react';
-
-
+import React, { useState } from 'react';
 
 function Carousel(props) {
   const [count, setCount] = useState(0);
@@ -22,13 +20,13 @@ function Carousel(props) {
   }
 
   return (
-    <div className='flex items-center w-full mx-auto justify-center'>
+    <div className='flex items-center w-full justify-center'>
       <svg
         onClick={() => {
           setCount(count === 0 ? x.length - 1 : count - 1);
         }}
         xmlns='https://www.w3.org/2000/svg'
-        className='h-20 w-8 cursor-pointer'
+        className='h-20 w-8 cursor-pointer bg-customwhite'
         viewBox='0 0 20 20'
         fill='currentColor'
       >
@@ -44,7 +42,7 @@ function Carousel(props) {
           setCount(count === x.length - 1 ? 0 : count + 1);
         }}
         xmlns='https://www.w3.org/2000/svg'
-        className='h-20 w-8 cursor-pointer'
+        className='h-20 w-8 cursor-pointer bg-customwhite'
         viewBox='0 0 20 20'
         fill='currentColor'
       >
@@ -58,4 +56,4 @@ function Carousel(props) {
   );
 }
 
-export default Carousel
+export default Carousel;

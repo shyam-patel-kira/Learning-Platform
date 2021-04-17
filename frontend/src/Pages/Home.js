@@ -7,13 +7,13 @@ import Accordion from '../Components/Faq/Accordion';
 
 function Home() {
   return (
-    <>
+    <div className='bg-metal'>
       <Navbar />
       <HeroSection />
       <Cards />
       <Accordion />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -34,16 +34,16 @@ class Ieltsreadingtest extends React.Component {
 
     await axios.post().then().catch();
 
-    await axios.get().then().catch;
+    await axios.get().then().catch();
   };
 
   componentDidMount() {
     console.log('componentdidMount');
     let x = window.location.href.split('/');
     let mytest = x[x.length - 1];
-    
     let USER_TOKEN = cookies.get('token');
-    let AuthStr = 'JWT '.concat(USER_TOKEN);
+   let AuthStr = 'JWT '.concat(USER_TOKEN);
+
     axios
       .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, { headers: { Authorization: AuthStr } })
       .then(res => {
@@ -90,7 +90,7 @@ class Ieltsreadingtest extends React.Component {
         Object.values(this.state.passages[i]).map(z =>
           y.push(
             <div>
-              <p className='font-serif text-white'>{z}</p>
+              <p className='font-serif text-customblack'>{z}</p>
               <br />
             </div>
           )

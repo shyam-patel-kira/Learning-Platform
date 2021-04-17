@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link,Route,Redirect } from 'react-router-dom';
-import Form1 from '../Form1'
+import { Link,Route } from 'react-router-dom';
+
 
 import './Form.css';
 import axios from 'axios';
@@ -82,7 +82,7 @@ class FormSignup extends React.Component {
     return formIsValid;
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     console.log('In submit')
     event.preventDefault();
     if (this.handleFormValidation()) {
@@ -93,11 +93,19 @@ class FormSignup extends React.Component {
         email: this.state.email,
       };
 
-      axios
+      await axios
         .post('http://localhost:8000/user/register', signup)
         .then(res => console.log(res.data))
+        .then(res => {
+          if(res.data.error){
+            console.log(res.data.error)
+          }
+          else{
+            this.setState({ data:res.data })
+          }
+        })
         .catch(err => console.log('Error is: ', err));
-      // if status code == 200 than post login api simultaneously and get token
+
       this.setState({
         sucess: true,
       });
@@ -115,10 +123,10 @@ class FormSignup extends React.Component {
 
 
     {this.state.sucess === true ? (
-      window.location = '/login'
-    ) : (
-      <Route path='/signup' component={FormSignup} />
-    ) }
+    window.location = '/login'
+  ) : (
+    <Route path='/signup' component={FormSignup} />
+  ) }
 
 console.log(this.state.sucess)
     return (
@@ -183,9 +191,9 @@ console.log(this.state.sucess)
 
         <form onSubmit={this.handleSubmit} className='form' noValidate>
           <div className='form-inputs'>
-            <label className='form-label'>Username</label>
+            <label className='form-label mx-4'>Username</label>
             <input
-              className='form-input'
+              className='form-input mx-4'
               type='text'
               name='userName'
               placeholder='Enter your Name'
@@ -195,9 +203,9 @@ console.log(this.state.sucess)
             {userNameErr && <p>{userNameErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label'>Email</label>
+            <label className='form-label mx-4'>Email</label>
             <input
-              className='form-input'
+              className='form-input mx-4'
               type='email'
               name='email'
               placeholder='Enter your Email Address'
@@ -207,9 +215,9 @@ console.log(this.state.sucess)
             {emailErr && <p>{emailErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label'>Password</label>
+            <label className='form-label mx-4'>Password</label>
             <input
-              className='form-input'
+              className='form-input mx-4'
               type='password'
               name='password'
               placeholder='Enter your password'
@@ -219,9 +227,9 @@ console.log(this.state.sucess)
             {passwordErr && <p>{passwordErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label'>Confirm Password</label>
+            <label className='form-label mx-4'>Confirm Password</label>
             <input
-              className='form-input'
+              className='form-input mx-4'
               type='password'
               name='password2'
               placeholder='Confirm your password'
@@ -230,7 +238,7 @@ console.log(this.state.sucess)
             />
             {confpassErr && <p>{confpassErr}</p>}
           </div>
-          <button className='form-input-btn' type='submit'>
+          <button className='form-input-btn mx-2' type='submit'>
             Sign up
           </button>
           <span className='form-input-login'>

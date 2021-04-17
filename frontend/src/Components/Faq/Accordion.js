@@ -1,61 +1,7 @@
 import React, { useState } from 'react';
 import { Data } from './Data';
-import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { FiPlus, FiMinus } from 'react-icons/fi';
-
-const AccordionSection = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position relative;
-    height: 100vh;
-    background: #fff;
-`;
-
-const Container = styled.div`
-  position: absolute;
-  top: 1%;
-  box-shadow: 2px 10px 35px 1px rgba(153, 153, 153, 0.3);
-`;
-const Wrap = styled.div`
-  background: #002333;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-
-  h1 {
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-
-  span {
-    margin-right: 1.5rem;
-  }
-`;
-
-const Dropdown = styled.div`
-  background: #002333;
-  color: #00ffb9;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #00ffb9;
-  border-top: 1px solid #00ffb9;
-
-  p {
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-`;
 
 const Accordion = () => {
   const [clicked, setClicked] = useState(false);
@@ -70,27 +16,35 @@ const Accordion = () => {
 
   return (
     <div>
-    <h1 className='text-center my-6 text-6xl'>Frequently Asked Questions</h1>
-      <IconContext.Provider value={{ color: '#00FF89', size: '25px' }}>
-        <AccordionSection>
-          <Container>
+      <h1 className='text-center my-6 text-6xl text-customwhite'>
+        Frequently Asked Questions
+      </h1>
+      <IconContext.Provider value={{ color: '#00FF89', size: '20px' }}>
+        <div className='flex flex-col bg-metal relative justify-center items-center h-screen'>
+          <div className='shadow-xl absolute'>
             {Data.map((item, index) => {
               return (
                 <>
-                  <Wrap onClick={() => toggle(index)} key={index}>
-                    <h1>{item.question}</h1>
-                    <span>{clicked === index ? <FiMinus /> : <FiPlus />}</span>
-                  </Wrap>
+                  <div
+                    className='flex justify-between items-center h-24 w-full text-center cursor-pointer bg-customblue text-customwhite'
+                    onClick={() => toggle(index)}
+                    key={index}
+                  >
+                    <h1 className='p-8 text-2xl'>{item.question}</h1>
+                    <span className='mr-6'>
+                      {clicked === index ? <FiMinus /> : <FiPlus />}
+                    </span>
+                  </div>
                   {clicked === index ? (
-                    <Dropdown>
-                      <p>{item.answer}</p>
-                    </Dropdown>
+                    <div className='w-full h-24 flex flex-col justify-center items-center bg-metal text-customwhite'>
+                      <p className='p-8 text-2xl'>{item.answer}</p>
+                    </div>
                   ) : null}
                 </>
               );
             })}
-          </Container>
-        </AccordionSection>
+          </div>
+        </div>
       </IconContext.Provider>
     </div>
   );

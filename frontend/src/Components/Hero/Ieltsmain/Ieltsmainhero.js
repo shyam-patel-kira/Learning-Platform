@@ -14,9 +14,9 @@ function Ieltsmainherocards(props) {
 
 function Ieltsmainhero() {
   return (
-    <div className='bg-blue-navbar my-6 mr-14 w-3/4 divide-y-2 text-white'>
+    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-white'>
       <h1 className='pt-8 text-4xl text-center'>IELTS</h1>
-      <div className='px-8 my-10 text-gray-50'>
+      <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>
           <Ieltsmainherocards>
             <div>

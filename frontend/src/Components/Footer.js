@@ -55,12 +55,12 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className='flex max-h-screen justify-between bg-blue-navbar'>
-        <div className='flex flex-col w-full divide-y-2 divide-white justify-center items-center bg-blue-navbar'>
+      <div className='flex max-h-screen justify-between bg-customblack'>
+        <div className='flex flex-col w-full divide-y-2 divide-white justify-center items-center bg-customblack'>
           <div className='flex items-center text-4xl w-3/4 justify-between'>
-            <Link to='/' className='hover:no-underline'>
+            <Link to='/' className='inline hover:no-underline'>
               <i className='fab fa-typo3 text-white' />
-              <p className='text-white'>LMS</p>
+              <p className='text-white hover:no-underline'>LMS</p>
             </Link>
             <div className='flex text-4xl'>
               <Link
@@ -84,17 +84,15 @@ class Footer extends React.Component {
 
           <div className='flex flex-col w-3/4 justify-stretch'>
             <Link
-              className='my-4 text-white no-underline bg-scroll'
+              className='my-4 text-customwhite no-underline bg-scroll hover:underline hover:text-customwhite'
               to='/'
-              onClick={window.scroll({
-                behavior: 'smooth',
-                top: 0,
-                left: 0,
-              })}
             >
               Home
             </Link>
-            <Link className='my-4 text-white no-underline' to='/about'>
+            <Link
+              className='my-4 text-customwhite no-underline hover:underline hover:text-customwhite'
+              to='/about'
+            >
               About
             </Link>
           </div>
@@ -138,7 +136,7 @@ class Footer extends React.Component {
         </div>
 
         <form className='flex flex-col w-3/5 items-center justify-center'>
-          <h1 className='my-2 text-2xl text-white'>Feedback</h1>
+          <h1 className='my-2 text-2xl text-customwhite'>Feedback</h1>
 
           <div className='my-2 flex flex-col w-5/6'>
             <label htmlFor='author' className=''></label>
@@ -197,11 +195,25 @@ class Footer extends React.Component {
           </div>
 
           <button
-            className='my-3 bg-green-400 hover:bg-green-700 hover:text-white transition-all ease-in duration-300 rounded-xl w-1/3 p-2 text-black text-lg'
+            className=' inline my-3 bg-log hover:text-customwhite hover:bg-loghover transition-all ease-in duration-300 rounded-sm w-1/3 p-2 text-white text-lg'
             type='submit'
             onClick={this.feedBackSubmit}
           >
             Submit
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='mx-2 my-1 h-6 w-6 inline'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z'
+              />
+            </svg>
           </button>
         </form>
       </div>
@@ -210,3 +222,4 @@ class Footer extends React.Component {
 }
 
 export default Footer;
+

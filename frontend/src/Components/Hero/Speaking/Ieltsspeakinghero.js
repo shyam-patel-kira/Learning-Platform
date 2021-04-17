@@ -15,9 +15,9 @@ class Ieltsspeakinghero extends React.Component {
 
   render() {
     return (
-      <div className='bg-blue-navbar my-6 mr-14 w-3/4 divide-y-2 text-white'>
+      <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center'>Speaking</h1>
-        <div className='px-8 my-10 text-gray-50'>
+        <div className='px-8 my-10 text-customwhite'>
           <ul className='flex'>
             <Ieltslisteningherocards>
               <div>
@@ -125,7 +125,7 @@ class Ieltsspeakinghero extends React.Component {
           </h1>
           <div className='flex flex-row justify-evenly w-5/6'>
             <button
-              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
               id='1'
@@ -134,7 +134,7 @@ class Ieltsspeakinghero extends React.Component {
             </button>
 
             <button
-              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
               id='2'
@@ -143,7 +143,7 @@ class Ieltsspeakinghero extends React.Component {
             </button>
 
             <button
-              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
               id='3'
@@ -151,7 +151,7 @@ class Ieltsspeakinghero extends React.Component {
               Test 3
             </button>
             <button
-              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
               id='4'
@@ -159,7 +159,7 @@ class Ieltsspeakinghero extends React.Component {
               Test 4
             </button>
             <button
-              className='bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
               id='5'

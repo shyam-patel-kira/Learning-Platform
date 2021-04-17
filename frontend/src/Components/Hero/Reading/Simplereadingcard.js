@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SimpleReadingCard(props) {
   return (
-    <div className='border-2 p-2 w-5/6 border-black bg-green-cardColor font-serif text-lg text-white transition duration-500 ease-in-out hover:bg-green-600 transform hover:-translate-y-1 hover:scale-110'>
+    <div className='border-2 p-2 w-5/6 border-customblack bg-customblack font-serif text-lg text-customwhite transition duration-500 ease-in-out hover:bg-customblack transform hover:-translate-y-1 hover:scale-110'>
       <b className='underline'>{props.title}</b>
       <p>{props.content}</p>
     </div>

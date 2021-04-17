@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 const IeltsSampleTestContentstyle = props => {
   const [answer, setAnswer] = useState('');
-
+  let x = window.location.href.split('/');
+  let keyword = x[x.length - 2];
   const handleChange = event => {
     setAnswer(event.target.value);
   };
@@ -13,12 +15,12 @@ const IeltsSampleTestContentstyle = props => {
   };
 
   return (
-    <div className='bg-green-600 '>
+    <div className='bg-custombrown '>
       <br />
       <br />
-      <div className='bg-blue-navbar mx-auto w-3/4 divide-y-2 text-white'>
+      <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center font-serif'>{props.title}</h1>
-        <div className='px-8 my-10 text-gray-50'>
+        <div className='px-8 my-10 text-customwhite'>
           <div className='my-10 text-xl font-serif leading-relaxed'>
             <strong className='underline'>{props.question}</strong>
             <br />
@@ -42,20 +44,34 @@ const IeltsSampleTestContentstyle = props => {
             required
             value={answer}
             onChange={handleChange}
-            className='rounded-lg h-96 text-black w-4/5 mx-28'
+            className='rounded-lg h-96 text-customblack w-4/5 mx-28'
           />
         </div>
-        <br />
-        <br />
 
-        <button
-          className='flex flex-wrap content-center justify-around bg-green-500 hover:bg-green-700 transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
-          variant='Default'
-          name='test'
-          onClick={handleWritingTest}
-        >
-          Submit
-        </button>
+        <div>
+          <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+            <button
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
+              variant='Default'
+              id='1'
+            >
+              <Link
+                to={`/ielts-writing-task-1/${keyword}`}
+                className='no-underline'
+              >
+                Go Back
+              </Link>
+            </button>
+            <button
+              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
+              variant='Default'
+              name='test'
+              onClick={handleWritingTest}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
         <br />
       </div>
       <br />

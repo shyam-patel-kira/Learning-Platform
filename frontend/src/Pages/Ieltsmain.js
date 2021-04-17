@@ -6,7 +6,7 @@ import Ieltsmainhero from '../Components/Hero/Ieltsmain/Ieltsmainhero';
 
 function Ieltsmain() {
   return (
-    <div className='bg-green-500 text-black'>
+    <div className='bg-metal text-customblack'>
       <Navbar />
       <div className='flex items-start justify-between'>
         <Sidebar />

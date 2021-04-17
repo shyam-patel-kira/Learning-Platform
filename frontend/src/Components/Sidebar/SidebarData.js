@@ -16,8 +16,8 @@ export const SidebarData = [
     link: '/ielts-speaking',
   },
   {
-    title: 'Tips and Tricks',
-    link: '/ielts-tipsandtricks',
+    title: 'Mini-Youtube',
+    link: '/mini-youtube',
   },
   {
     title: 'Vocabulary',
