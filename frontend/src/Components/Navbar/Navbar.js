@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 //import Footer from '../Footer';
+
+const cookies = new Cookies();
 
 class Navbar extends Component {
   state = { clicked: false };
@@ -15,7 +18,17 @@ class Navbar extends Component {
     window.location = '/';
   };
 
+  handleLogout = () => {
+    cookies.remove('token')
+    cookies.remove('uname')
+    cookies.remove('role')
+    alert("User Logged out")
+
+  }
+
   render() {
+    const username = cookies.get('uname')
+    console.log(username);
     //  const isLogged = !!sessionStorage.getItem('token_object');
     return (
       <nav className='flex p-3 bg-blue-navbar items-center justify-between'>
@@ -101,13 +114,27 @@ class Navbar extends Component {
                                 <a className={item.cName} href={item.url}>
                                     {item.title}
                                 </a>
-                                
+
                             </li>
                         )
                     })} */}
         </ul>
 
         <div>
+        {username ? (
+          <div>
+          <h1 className='text-white text-md inline py-2 px-4'>Hi, {username} </h1>
+
+          <button
+          onClick = {this.handleLogout}
+          className = 'bg-green-400 text-black hover:text-white hover:bg-green-700 transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+            <Link className='hover:no-underline hover:text-white' to='/'>
+              Logout
+            </Link>
+          </button>
+          </div>
+        ) : (
+          <div>
           <button className='bg-green-400 text-black hover:text-white hover:bg-green-700 transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
             <Link className='hover:no-underline hover:text-white' to='/login'>
               Login
@@ -119,6 +146,8 @@ class Navbar extends Component {
               Sign Up
             </Link>
           </button>
+          </div>
+        )}
         </div>
       </nav>
     );

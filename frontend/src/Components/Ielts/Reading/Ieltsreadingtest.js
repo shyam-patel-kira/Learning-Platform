@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Ieltsreadingtest extends React.Component {
   constructor(props) {
@@ -38,9 +41,11 @@ class Ieltsreadingtest extends React.Component {
     console.log('componentdidMount');
     let x = window.location.href.split('/');
     let mytest = x[x.length - 1];
-
+    
+    let USER_TOKEN = cookies.get('token');
+    let AuthStr = 'JWT '.concat(USER_TOKEN);
     axios
-      .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`)
+      .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, { headers: { Authorization: AuthStr } })
       .then(res => {
         console.log(res.data);
         if (res.data.error) {

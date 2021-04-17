@@ -113,13 +113,13 @@ class FormSignup extends React.Component {
       confpassErr,
     } = this.state.formErrors;
 
-    
-      {this.state.sucess === true ? (
-        <Route path='/login' component={Form1} />
-      ) : (
-        <Route path='/signup' component={FormSignup} />
-      ) }
-   
+
+    {this.state.sucess === true ? (
+      window.location = '/login'
+    ) : (
+      <Route path='/signup' component={FormSignup} />
+    ) }
+
 console.log(this.state.sucess)
     return (
       <div className='form-content-right'>

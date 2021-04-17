@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useMemo } from "react";
 import './App.css';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
+import { UserContext } from "./UserContext";
 
 import Form from './Components/Form';
 import Form1 from './Components/Form1';
@@ -37,10 +38,15 @@ const Page404 = () => {
 };
 
 export default function App() {
+
+  const [user, setUser] = useState(null);
+  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+
   return (
     <div>
       <Router history={history}>
         <Switch>
+        // <UserContext.Provider value={value}>
           <Route path='/' exact component={Home} />
           <Route path='/ieltsmain' component={Ieltsmain} />
           <Route path='/ielts-listening' component={Ieltslistening} />
@@ -75,6 +81,7 @@ export default function App() {
 
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
+          // </UserContext.Provider>
           <Route component={Page404} />
         </Switch>
       </Router>
