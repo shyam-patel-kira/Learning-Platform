@@ -69,7 +69,9 @@ const User = mongoose.model("User");
 
 
     app.post('/user/login', async (req, res) => {
-        const { userName, password, roles } = req.body
+        //const { userName, password, roles } = req.body
+        const { userName, password} = req.body
+        const roles = "USER"
         const user = await User.findOne({ userName }).lean()
         if (!user) {
             return res.json({ status: 'error', error: 'Invalid username/password' })
@@ -88,7 +90,7 @@ const User = mongoose.model("User");
                 },
                 JWT_SECRET
             )
-            return res.json({ status: 'ok', data: token })      //Ambiguity here we need to send headers too, res.header('auth-token', token).send(token)
+            return res.json({ status: 'ok', data: token, userName: userName, roles: roles })      //Ambiguity here we need to send headers too, res.header('auth-token', token).send(token)
         }
         res.json({ status: 'error', error: 'Invalid username/password' })
     })
@@ -107,20 +109,20 @@ const User = mongoose.model("User");
         if (!userName || typeof userName !== 'string') {
             return res.json({ status: 'error', error: 'Invalid username' })
         }
-    
+
         if (!plainTextPassword || typeof plainTextPassword !== 'string') {
             return res.json({ status: 'error', error: 'Invalid password' })
         }
-    
+
         if (plainTextPassword.length < 5) {
             return res.json({
                 status: 'error',
                 error: 'Password too small. Should be atleast 6 characters'
             })
         }
-    
+
         const password = await bcrypt.hash(plainTextPassword, 10)
-    
+
         try {
             const response = await User.create({
                 userName,
@@ -141,7 +143,7 @@ const User = mongoose.model("User");
 
 // app.get('/', (req, res) => {
 // res.send("This is out main EndPoint");
-// }) 
+// })
 
 app.listen(5545, () => {
 console.log("Up and running! This is our user-profile service");

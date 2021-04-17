@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import jwa from "jwa";
 import jwt from "jsonwebtoken";
 import Inversoft from "passport-node-client";
+// import { _authorized } from "./functions.js"
 // import jwt_decode from "jwt-decode";
 
 dotenv.config();
@@ -171,8 +172,8 @@ function _authorized(decodedJWT, role) {
   ) {
     return true;
   }
-
   //if (!jwt.assertIdentity(decodedJWT, ))
 }
+
 
 export default readingRouter;
