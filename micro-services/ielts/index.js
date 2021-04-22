@@ -9,10 +9,12 @@ dotenv.config();
 import readingRouter from "./Reading_Routes/reading.js";
 import readingAnswerRouter from "./Reading_Routes/reading_answerkey.js";
 import speakingRouter from "./Speaking_Routes/speaking.js";
-import listeningRouter from "./Listening_Routes/listening.js"
-import listeningAnswerRouter from "./Listening_Routes/listening_answerkey.js"
-import resultRouter from './result_reading.js'
-import resultListeningRouter from './result_listening.js' 
+import listeningRouter from "./Listening_Routes/listening.js";
+import listeningAnswerRouter from "./Listening_Routes/listening_answerkey.js";
+import resultRouter from "./result_reading.js";
+import resultListeningRouter from "./result_listening.js";
+import writingTaskOneSampleRouter from "./WritingTask1Sample_Routes/writing_Task1_sample_bar.js";
+import writingTaskTwoSampleRouter from "./WritingTask2Sample_Routes/writing_Task2_sample.js"
 
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
@@ -24,13 +26,15 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/ielts", readingRouter)
-app.use("/ielts", readingAnswerRouter)
-app.use("/ielts", speakingRouter)
-app.use("/ielts",listeningRouter)
-app.use("/ielts",listeningAnswerRouter)
-app.use("./ielts",resultRouter)
-app.use("/ielts",resultListeningRouter)
+app.use("/ielts", readingRouter);
+app.use("/ielts", readingAnswerRouter);
+app.use("/ielts", speakingRouter);
+app.use("/ielts", listeningRouter);
+app.use("/ielts", listeningAnswerRouter);
+app.use("/ielts", resultRouter);
+app.use("/ielts", resultListeningRouter);
+app.use("/ielts", writingTaskOneSampleRouter);
+app.use("/ielts",writingTaskTwoSampleRouter)
 
 const CONNECTION_URL = process.env.DB_CONNECT;
 const PORT = process.env.PORT || 4955;
