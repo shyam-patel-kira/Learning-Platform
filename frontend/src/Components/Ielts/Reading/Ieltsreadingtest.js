@@ -42,10 +42,12 @@ class Ieltsreadingtest extends React.Component {
     let x = window.location.href.split('/');
     let mytest = x[x.length - 1];
     let USER_TOKEN = cookies.get('token');
-   let AuthStr = 'JWT '.concat(USER_TOKEN);
+    let AuthStr = 'JWT '.concat(USER_TOKEN);
 
     axios
-      .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, { headers: { Authorization: AuthStr } })
+      .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, {
+        headers: { Authorization: AuthStr },
+      })
       .then(res => {
         console.log(res.data);
         if (res.data.error) {

@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
-import { UserContext } from "../../UserContext";
+import React from 'react';
+//import { UserContext } from '../../UserContext';
 import axios from 'axios';
-import { Link,Route,Redirect } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import './Form1.css';
-import Form1 from '../Form1'
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
 
 class FormLogin extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -73,21 +71,20 @@ class FormLogin extends React.Component {
         .post('http://localhost:8000/user/login', login)
         //.then(res => console.log(res.data.data))
         .then(res => {
-          if(res.data.error){
-            console.log("erroroooororor")
-            console.log(res.data.error)
+          if (res.data.error) {
+            console.log('erroroooororor');
+            console.log(res.data.error);
             this.setState({
-              err:res.data.error
-            })
-          }
-          else{
+              err: res.data.error,
+            });
+          } else {
             //console.log(res.data.data);
-            this.setState({ data:res.data.data })
-            cookies.set('token', res.data.data );
-            cookies.set('uname', res.data.userName );
-            cookies.set('role', res.data.roles );
+            this.setState({ data: res.data.data });
+            cookies.set('token', res.data.data);
+            cookies.set('uname', res.data.userName);
+            cookies.set('role', res.data.roles);
             console.log(cookies.get('token'));
-            console.log("Not error");
+            console.log('Not error');
             this.setState({
               sucess: true,
             });
@@ -99,17 +96,16 @@ class FormLogin extends React.Component {
   };
 
   render() {
-    // const { data, setUser } = this.UserContext;
-    // <UserContext.Provider value={this.state.data}>
-    // </UserContext.Provider>
-    {this.state.sucess === true ? (
-      window.location = '/'
-    ) : (
-      <Route path='/login' exact component={FormLogin} />
-    ) }
+    
+      this.state.sucess === true ? (
+        (window.location = '/')
+      ) : (
+        <Route path='/login' exact component={FormLogin} />
+      );
+    
 
     const { userNameErr, passwordErr } = this.state.formErrors;
-    // console.log(this.state.data)
+
     return (
       <div className='form1-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>
@@ -181,7 +177,7 @@ class FormLogin extends React.Component {
               value={this.state.userName}
               onChange={this.handleChangeUserName}
             />
-            {this.state.err && <p>{this.state.err}</p>}
+            {userNameErr && <p>{userNameErr}</p>}
           </div>
           <div className='form1-inputs'>
             <label className='form1-label'>Password</label>
@@ -193,7 +189,7 @@ class FormLogin extends React.Component {
               value={this.state.password}
               onChange={this.handleChangePassword}
             />
-            {this.state.err && <p>{this.state.err}</p>}
+            {passwordErr && <p>{passwordErr}</p>}
           </div>
           <button className='form1-input-btn' type='submit'>
             Login

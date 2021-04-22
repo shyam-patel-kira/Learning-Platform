@@ -5,7 +5,7 @@ import './Cards.css';
 function Cards() {
   return (
     <div className='p-8'>
-      <h1 className='text-center text-5xl text-customwhite'>
+      <h1 className='text-center text-5xl text-customdarkblue'>
         This is where GRE and IELTS can take you!
       </h1>
       <div className='cards__container'>

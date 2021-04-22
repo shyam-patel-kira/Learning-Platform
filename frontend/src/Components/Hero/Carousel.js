@@ -20,7 +20,7 @@ function Carousel(props) {
   }
 
   return (
-    <div className='flex items-center w-full justify-center'>
+    <div className='flex items-center w-full justify-center my-6'>
       <svg
         onClick={() => {
           setCount(count === 0 ? x.length - 1 : count - 1);

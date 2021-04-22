@@ -17,12 +17,12 @@ class Navbar extends Component {
   };
 
   handleLogout = () => {
-   cookies.remove('token')
-   cookies.remove('uname')
-   cookies.remove('role')
-   alert("User Logged out")
-   window.location = '/'
- }
+    cookies.remove('token');
+    cookies.remove('uname');
+    cookies.remove('role');
+    alert('User Logged out');
+    window.location = '/';
+  };
 
   logoClick = () => {
     window.location = '/';
@@ -33,10 +33,10 @@ class Navbar extends Component {
   };
 
   render() {
-    const username = cookies.get('uname')
+    const username = cookies.get('uname');
     console.log(username);
     return (
-      <nav className='flex p-3 bg-customblack items-center justify-between'>
+      <nav className='flex p-3 bg-customdarkblue items-center justify-between'>
         <h1
           className='cursor-pointer text-customwhite'
           onClick={this.logoClick}
@@ -126,33 +126,44 @@ class Navbar extends Component {
           </li>
         </ul>
 
-
         {username ? (
-                 <div>
-                 <h1 className='text-white text-md inline py-2 px-4'>Hi, {username} </h1>
+          <div>
+            <h1 className='text-white text-md inline py-2 px-4'>
+              Hi, {username}{' '}
+            </h1>
 
-                 <button
-                 onClick = {this.handleLogout}
-                 className = 'bg-log text-customwhite hover:text-customwhite hover:bg-loghover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-                   <Link className='hover:no-underline hover:text-customwhite' to='/'>
-                     Logout
-                   </Link>
-                 </button>
-                 </div>
-               ) : (
-                 <div>
-                 <button className='bg-log text-customwhite hover:text-customwhite hover:bg-loghover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-                   <Link className='hover:no-underline hover:text-customwhite' to='/login'>
-                     Login
-                     </Link>
-                      </button>
-                      <button className='bg-log text-customwhite hover:text-customwhite hover:bg-loghover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-                  <Link className='hover:no-underline hover:text-customwhite' to='/signup'>
-                     Sign Up
-                   </Link>
-                 </button>
-                 </div>
-               )}
+            <button
+              onClick={this.handleLogout}
+              className='bg-custompink text-customred hover:text-customdarkblue hover:bg-onhover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+            >
+              <Link
+                className='hover:no-underline hover:text-onhovertext'
+                to='/'
+              >
+                Logout
+              </Link>
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button className='bg-custompink text-customred hover:text-onhovertext hover:bg-onhover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+              <Link
+                className='hover:no-underline hover:text-onhovertext'
+                to='/login'
+              >
+                Login
+              </Link>
+            </button>
+            <button className='bg-custompink text-customred hover:text-onhovertext hover:bg-onhover transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+              <Link
+                className='hover:no-underline hover:text-onhovertext'
+                to='/signup'
+              >
+                Sign Up
+              </Link>
+            </button>
+          </div>
+        )}
       </nav>
     );
   }

@@ -16,7 +16,7 @@ const IeltsSampleWritingTask2style = props => {
           <div className='my-10 text-xl leading-relaxed font-serif'>
             <strong className='underline '>{props.question}</strong>
             <br />
-            {props.question_heading_1}
+            {props.question_heading}
           </div>
           <div className='text-xl leading-relaxed font-serif space-x-2'>
             <p className='underline'>

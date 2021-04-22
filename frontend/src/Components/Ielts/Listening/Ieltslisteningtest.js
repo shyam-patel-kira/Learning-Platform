@@ -11,7 +11,7 @@ function Ieltslisteningtest(props) {
   let x = window.location.href.split('/');
   let test_id = x[x.length - 1];
   const [error, setError] = useState('');
-  const [ans, setAns] = useState(new Array(40) );
+  const [ans, setAns] = useState(new Array(40));
   const [question, setQuestion] = useState({
     id: '',
     img1: '',
@@ -22,28 +22,31 @@ function Ieltslisteningtest(props) {
     img6: '',
   });
 
-  useEffect(async () => {
-    await axios
-      .get(`http://localhost:8000/ielts/listening/test/${test_id}`)
-      .then(res => {
-        console.log(res.data);
-        if (res.data.error) {
-          setError({ error: res.data.error });
-        } else {
-          setQuestion({
-            id: res.data.results[0].test_id,
-            img_1: res.data.results[0].questions.img_1,
-            img_2: res.data.results[0].questions.img_2,
-            img_3: res.data.results[0].questions.img_3,
-            img_4: res.data.results[0].questions.img_4,
-            img_5: res.data.results[0].questions.img_5,
-            img_6: res.data.results[0].questions.img_6,
-          });
-        }
-      })
-      .catch(e => {
-        console.log(e.message);
-      });
+  useEffect(() => {
+    async function fetchData() {
+      await axios
+        .get(`http://localhost:8000/ielts/listening/test/${test_id}`)
+        .then(res => {
+          console.log(res.data);
+          if (res.data.error) {
+            setError({ error: res.data.error });
+          } else {
+            setQuestion({
+              id: res.data.results[0].test_id,
+              img_1: res.data.results[0].questions.img_1,
+              img_2: res.data.results[0].questions.img_2,
+              img_3: res.data.results[0].questions.img_3,
+              img_4: res.data.results[0].questions.img_4,
+              img_5: res.data.results[0].questions.img_5,
+              img_6: res.data.results[0].questions.img_6,
+            });
+          }
+        })
+        .catch(e => {
+          console.log(e.message);
+        });
+    }
+    fetchData();
   }, []);
 
   if (error) {
@@ -56,7 +59,7 @@ function Ieltslisteningtest(props) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    let x = { ...ans }
+    let x = { ...ans };
 
     //await axios.post().then().catch();
 
@@ -207,5 +210,3 @@ function Ieltslisteningtest(props) {
 }
 
 export default Ieltslisteningtest;
-
-<h1 className='text-white text-xl'></h1>

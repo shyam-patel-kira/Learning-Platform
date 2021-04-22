@@ -59,12 +59,12 @@ class Footer extends React.Component {
         <div className='flex flex-col w-full divide-y-2 divide-white justify-center items-center bg-customblack'>
           <div className='flex items-center text-4xl w-3/4 justify-between'>
             <Link to='/' className='inline hover:no-underline'>
-              <i className='fab fa-typo3 text-white' />
-              <p className='text-white hover:no-underline'>LMS</p>
+              <i className='fab fa-typo3 text-customwhite' />
+              <p className='text-customwhite hover:no-underline'>LMS</p>
             </Link>
             <div className='flex text-4xl'>
               <Link
-                className='m-4 text-white'
+                className='m-4 text-customwhite'
                 to='/'
                 target='_blank'
                 aria-label='Instagram'
@@ -72,7 +72,7 @@ class Footer extends React.Component {
                 <i className='fab fa-instagram' />
               </Link>
               <Link
-                className='m-4 text-white'
+                className='m-4 text-customwhite'
                 to='/'
                 target='_blank'
                 aria-label='Twitter'

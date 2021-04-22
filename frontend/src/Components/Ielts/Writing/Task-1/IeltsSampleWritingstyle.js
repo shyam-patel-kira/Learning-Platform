@@ -14,9 +14,9 @@ const IeltsSampleWritingstyle = props => {
           <div className='my-10 text-xl font-serif leading-relaxed'>
             <strong className='underline'>{props.question}</strong>
             <br />
-            {props.question_heading_1}
+            {props.question_heading}
             <img
-              src={props.img_1}
+              src={props.img_url}
               alt=''
               className='object-contain h-96 w-full my-8'
             />

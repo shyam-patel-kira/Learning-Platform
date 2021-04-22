@@ -16,7 +16,7 @@ const Accordion = () => {
 
   return (
     <div>
-      <h1 className='text-center my-6 text-6xl text-customwhite'>
+      <h1 className='text-center my-6 text-6xl text-customdarkblue'>
         Frequently Asked Questions
       </h1>
       <IconContext.Provider value={{ color: '#00FF89', size: '20px' }}>
@@ -26,17 +26,17 @@ const Accordion = () => {
               return (
                 <>
                   <div
-                    className='flex justify-between items-center h-24 w-full text-center cursor-pointer bg-customblue text-customwhite'
+                    className='flex justify-between items-center h-24 w-full text-center cursor-pointer bg-custompink text-customdarkblue'
                     onClick={() => toggle(index)}
                     key={index}
                   >
                     <h1 className='p-8 text-2xl'>{item.question}</h1>
                     <span className='mr-6'>
-                      {clicked === index ? <FiMinus /> : <FiPlus />}
+                      {clicked === index ? <FiMinus className='bg-customdarkblue'/> : <FiPlus className='bg-customdarkblue' />}
                     </span>
                   </div>
                   {clicked === index ? (
-                    <div className='w-full h-24 flex flex-col justify-center items-center bg-metal text-customwhite'>
+                    <div className='w-full h-24 flex flex-col justify-center items-center bg-custompink text-customdarkblue'>
                       <p className='p-8 text-2xl'>{item.answer}</p>
                     </div>
                   ) : null}
