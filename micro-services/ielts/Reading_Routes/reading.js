@@ -6,8 +6,8 @@ import dotenv from "dotenv";
 import jwa from "jwa";
 import jwt from "jsonwebtoken";
 import Inversoft from "passport-node-client";
-import _decodeJWT from "../decodeJWTFunction.js";
-import _authorized from "../authorizationFunction.js";
+import _decodeJWT from "../decodeJWTFunction.js"
+import _authorized from "../authorizationFunction.js"
 // import jwt_decode from "jwt-decode";
 
 dotenv.config();
