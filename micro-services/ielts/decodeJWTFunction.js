@@ -31,6 +31,7 @@ export default function _decodeJWT(req) {
   //return encodedJWT.decode(encodedJWT);
 }
 
+
 function decode(encodedJWT) {
   try {
     const parts = encodedJWT.split(".");

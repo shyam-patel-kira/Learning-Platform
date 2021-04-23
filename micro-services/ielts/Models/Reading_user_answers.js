@@ -6,6 +6,10 @@ const userReadingAnswersSchema = new Schema({
     type: Number,
     required: true,
   },
+  userName: {
+    type: String,
+    required: true,
+  },
   answers: {
     type: Object,
     required: true,

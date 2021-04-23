@@ -140,6 +140,21 @@ const User = mongoose.model("User");
         res.json({ status: 'ok' })
     })
 
+    app.post('/admin/login', async (req, res) => {
+        //const { userName, password, roles } = req.body
+        const { userName, roles } = req.body
+        const token = jwt.sign(
+                {
+                    userName: userName,
+                    roles: roles
+                },
+                JWT_SECRET_ADMIN
+            )
+            return res.json({ status: 'ok', data: token, userName: userName, roles: roles })      //Ambiguity here we need to send headers too, res.header('auth-token', token).send(token)
+
+        res.json({ status: 'error', error: 'Invalid username/password' })
+    })
+
 
 // app.get('/', (req, res) => {
 // res.send("This is out main EndPoint");
