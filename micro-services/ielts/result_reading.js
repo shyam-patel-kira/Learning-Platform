@@ -128,7 +128,7 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
 resultRouter.get("/reading-result-display/test/:test_id", (req, res) => {
   resultModel
     .find({
-      userName: req.params.userName,
+      //userName: req.params.userName,
       test_id: req.params.test_id,
     }) //User-ID left to be inserted
     .then((doc) => {
