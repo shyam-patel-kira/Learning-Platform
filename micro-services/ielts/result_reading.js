@@ -160,9 +160,9 @@ resultRouter.get("/reading-result-display/test/:test_id", (req, res) => {
   const userName = decodedJWT.userName
   resultModel
     .find({
-      userName: userName
-      //test_id: req.params.test_id,
-    }).sort({_id:-1})//.limit(1)
+      userName: userName,
+      test_id: req.params.test_id,
+    }).sort({_id:-1}).limit(1)
     .then((doc) => {
       res.status(201).json({
         message: "Result displayed successfully",
