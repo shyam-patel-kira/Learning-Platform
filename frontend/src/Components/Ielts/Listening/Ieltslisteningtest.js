@@ -3,8 +3,27 @@ import section_1 from './Test-1/Section-1.mp3';
 import section_2 from './Test-1/Section-2.mp3';
 import section_3 from './Test-1/Section-3.mp3';
 import section_4 from './Test-1/Section-4.mp3';
-//import sec_1_1 from './Test-1/sec1_1.JPG';
-//import sec_1_2 from './Test-1/sec1_2.JPG';
+
+import section1_2 from './Test-2/Section-1.mp3';
+import section2_2 from './Test-2/Section-2.mp3';
+import section3_2 from './Test-2/Section-3.mp3';
+import section4_2 from './Test-2/Section-4.mp3';
+
+import section1_3 from './Test-3/Section-1.mp3'
+import section2_3 from './Test-3/Section-2.mp3';
+import section3_3 from './Test-3/Section-3.mp3';
+import section4_3 from './Test-3/Section-4.mp3';
+
+import section1_4 from './Test-4/Section-1.mp3';
+import section2_4 from './Test-4/Section-2.mp3';
+import section3_4 from './Test-4/Section-3.mp3';
+import section4_4 from './Test-4/Section-4.mp3';
+
+import section1_5 from './Test-5/Section-1.mp3';
+import section2_5 from './Test-5/Section-2.mp3';
+import section3_5 from './Test-5/Section-3.mp3';
+import section4_5 from './Test-5/Section-4.mp3';
+
 import axios from 'axios';
 
 function Ieltslisteningtest(props) {
@@ -204,6 +223,255 @@ function Ieltslisteningtest(props) {
         >
           Submit
         </button>
+      </div>
+    );
+  }
+
+  if (test_id === '2') {
+    return (
+      <div className='leading-relaxed font-serif'>
+        <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
+        <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <audio controls className='mx-auto'>
+          <source src={section1_2} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_1} alt='' />
+            <img src={question.img_2} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section2_2} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_3} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section3_2} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_4} alt='' />
+            <img src={question.img_5} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section4_2} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_6} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+        </div>
+        <button
+          className='w-32 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-customdarkblue border-2 border-black'
+          type='submit'
+          onClick={e => {
+            handleSubmit(e);
+            for (let i = 1; i <= 40; i++) {
+              document.getElementById(i.toString()).value = '';
+            }
+          }}
+        >
+          Submit
+        </button>
+        <br />
+      </div>
+    );
+  }
+  if (test_id === '3') {
+    return (
+      <div className='leading-relaxed font-serif'>
+        <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
+        <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <audio controls className='mx-auto'>
+          <source src={section1_3} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_1} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section2_3} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_2} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section3_3} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_3} alt='' />
+            <img src={question.img_4} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section4_3} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_5} alt='' />
+            <img src={question.img_6} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+        </div>
+        <button
+          className='w-32 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-customdarkblue border-2 border-black'
+          type='submit'
+          onClick={e => {
+            handleSubmit(e);
+            for (let i = 1; i <= 40; i++) {
+              document.getElementById(i.toString()).value = '';
+            }
+          }}
+        >
+          Submit
+        </button>
+        <br />
+      </div>
+    );
+  }
+  if (test_id === '4') {
+    return (
+      <div className='leading-relaxed font-serif'>
+        <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
+        <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <audio controls className='mx-auto'>
+          <source src={section1_4} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_1} alt='' />
+            <img src={question.img_2} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section2_4} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_3} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section3_4} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_4} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section4_4} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_5} alt='' />
+            <img src={question.img_6} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+        </div>
+        <button
+          className='w-32 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-customdarkblue border-2 border-black'
+          type='submit'
+          onClick={e => {
+            handleSubmit(e);
+            for (let i = 1; i <= 40; i++) {
+              document.getElementById(i.toString()).value = '';
+            }
+          }}
+        >
+          Submit
+        </button>
+        <br />
+      </div>
+    );
+  }
+  if (test_id === '5') {
+    return (
+      <div className='leading-relaxed font-serif'>
+        <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
+        <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <audio controls className='mx-auto'>
+          <source src={section1_5} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_1} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section2_5} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_2} alt='' />
+            <img src={question.img_3} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section3_5} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_4} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+        </div>
+
+        <audio controls className='mx-auto'>
+          <source src={section4_5} type='audio/mpeg' />
+        </audio>
+        <div className='flex'>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <img src={question.img_5} alt='' />
+            <img src={question.img_6} alt='' />
+          </div>
+          <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+        </div>
+        <button
+          className='w-32 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-customdarkblue border-2 border-black'
+          type='submit'
+          onClick={e => {
+            handleSubmit(e);
+            for (let i = 1; i <= 40; i++) {
+              document.getElementById(i.toString()).value = '';
+            }
+          }}
+        >
+          Submit
+        </button>
+        <br />
       </div>
     );
   }
