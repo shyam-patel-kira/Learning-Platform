@@ -2,8 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
 import Cookies from 'universal-cookie';
-import jwa from "jwa";
-import jwt from "jsonwebtoken";
+import jwa from 'jwa';
+import jwt from 'jsonwebtoken';
 
 const cookies = new Cookies();
 
@@ -31,31 +31,48 @@ class Ieltsreadingtest extends React.Component {
   handleSubmit = async e => {
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
-    let ADMIN_TOKEN = 'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk'
+    let ADMIN_TOKEN =
+      'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
     //signing ADMIN TOKEN for answerkey
     const admin_token = jwt.sign(
-        {
-          userName: "kira",
-          roles: "ADMIN"
-        },
-        ADMIN_TOKEN
-    )
+      {
+        userName: 'kira',
+        roles: 'ADMIN',
+      },
+      ADMIN_TOKEN
+    );
     let secret = 'JWT '.concat(admin_token);
     e.preventDefault();
+
     let answer = this.state.answers;
+    let cnt = 0;
+    for (let i = 1; i <= 40; i++) {
+      if (answer[i] === undefined) {
+        answer[`ans_${i.toString()}`] = "";
+      } else {
+        answer[`ans_${i.toString()}`] = this.state.answers[i];
+        cnt += 1;
+      }
+    }
+
+    for (let i = 1; i <= 40; i++) {
+      delete answer[i];
+    }
     this.setState({
       answer,
     });
-    console.log('Test-ID is: ', this.state.testid);
-    console.log(answer);
-    console.log(typeof(answer));
-    console.log(typeof(this.state.testid));
+    console.log("Answer:",answer);
     //API Call for storing user answers
-    let answers = { "answers" : answer}
+    let answers = { answers: answer };
+    console.log(answers);
     await axios
-      .post(`http://localhost:8000/ielts/reading/test/user-answers/${this.state.testid}`, answers, {
-        headers: { Authorization: AuthStr }
-      })
+      .post(
+        `http://localhost:8000/ielts/reading/test/user-answers/${this.state.testid}`,
+        answers,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
       .then(res => {
         //console.log(res.data);
         if (res.data.error) {
@@ -75,8 +92,9 @@ class Ieltsreadingtest extends React.Component {
     //API Call for obtaining answer key
     await axios
       .get(
-        `http://localhost:8000/ielts/reading-answers/test/${this.state.testid}`,{
-          headers: { Authorization: secret }
+        `http://localhost:8000/ielts/reading-answers/test/${this.state.testid}`,
+        {
+          headers: { Authorization: secret },
         }
       )
       .then(res => {
@@ -96,9 +114,11 @@ class Ieltsreadingtest extends React.Component {
     // //API Call for comparing answers in result collection
     await axios
       .get(
-        `http://localhost:8000/ielts/reading-answer-result/test/${this.state.testid}`,{
-        headers: { Authorization: AuthStr }
-      })
+        `http://localhost:8000/ielts/reading-answer-result/test/${this.state.testid}`,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
       .then(res => {
         console.log(res.data);
         if (res.data.error) {
@@ -115,9 +135,11 @@ class Ieltsreadingtest extends React.Component {
     //API Call for displaying result
     await axios
       .get(
-        `http://localhost:8000/ielts/reading-result-display/test/${this.state.testid}`,{
-        headers: { Authorization: AuthStr }
-      })
+        `http://localhost:8000/ielts/reading-result-display/test/${this.state.testid}`,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
       .then(res => {
         if (res.data.error) {
           console.log('Result display error: ', res.data.error);
@@ -136,7 +158,7 @@ class Ieltsreadingtest extends React.Component {
     let mytest = x[x.length - 1];
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
-    console.log(typeof(x[x.length - 1]));
+    console.log(typeof x[x.length - 1]);
     axios
       .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, {
         headers: { Authorization: AuthStr },
@@ -200,7 +222,7 @@ class Ieltsreadingtest extends React.Component {
           {i + '  '}
           <input
             type='text'
-            id={`ans_${i.toString()}`}
+            id={i.toString()}
             key={i.toString()}
             onChange={e => {
               this.handleChange(e);
@@ -241,7 +263,7 @@ class Ieltsreadingtest extends React.Component {
                   onClick={e => {
                     this.handleSubmit(e);
                     for (let i = 1; i <= 40; i++) {
-                      document.getElementById(`ans_${i.toString()}`).value = '';
+                      document.getElementById(i.toString()).value = '';
                     }
                   }}
                 >
