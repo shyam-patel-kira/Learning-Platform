@@ -15,9 +15,7 @@ function VideoItem(props) {
         alt={props.video.snippet.title}
       />
       <div className='my-4'>
-        <div className='text-white' >
-          {props.video.snippet.title}
-        </div>
+        <div className='text-customwhite'>{props.video.snippet.title}</div>
       </div>
     </div>
   );

@@ -34,7 +34,6 @@ class Navbar extends Component {
 
   render() {
     const username = cookies.get('uname');
-    console.log(username);
     return (
       <nav className='flex p-3 bg-customdarkblue items-center justify-between'>
         <h1

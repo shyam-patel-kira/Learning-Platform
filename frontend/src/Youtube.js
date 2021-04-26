@@ -24,8 +24,8 @@ const Youtube = () => {
   };
 
   return (
-    <div className='bg-black flex'>
-      <div className='my-8'>
+    <div className='bg-customblack'>
+      <div>
         <SearchBar onFormSubmit={onTermSubmit} />
       </div>
       <VideoDetail video={selectedVideo} />

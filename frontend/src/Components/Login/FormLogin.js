@@ -72,13 +72,10 @@ class FormLogin extends React.Component {
         //.then(res => console.log(res.data.data))
         .then(res => {
           if (res.data.error) {
-            console.log('erroroooororor');
-            console.log(res.data.error);
             this.setState({
               err: res.data.error,
             });
           } else {
-            //console.log(res.data.data);
             this.setState({ data: res.data.data });
             cookies.set('token', res.data.data);
             cookies.set('uname', res.data.userName);
@@ -96,13 +93,11 @@ class FormLogin extends React.Component {
   };
 
   render() {
-    
-      this.state.sucess === true ? (
-        (window.location = '/')
-      ) : (
-        <Route path='/login' exact component={FormLogin} />
-      );
-    
+    this.state.sucess === true ? (
+      (window.location = '/')
+    ) : (
+      <Route path='/login' exact component={FormLogin} />
+    );
 
     const { userNameErr, passwordErr } = this.state.formErrors;
 

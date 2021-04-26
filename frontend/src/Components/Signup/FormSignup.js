@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link,Route } from 'react-router-dom';
-
+import { Link, Route } from 'react-router-dom';
 
 import './Form.css';
 import axios from 'axios';
@@ -83,7 +82,7 @@ class FormSignup extends React.Component {
   }
 
   handleSubmit = async event => {
-    console.log('In submit')
+    console.log('In submit');
     event.preventDefault();
     if (this.handleFormValidation()) {
       this.setState(this.initialState);
@@ -97,11 +96,10 @@ class FormSignup extends React.Component {
         .post('http://localhost:8000/user/register', signup)
         .then(res => console.log(res.data))
         .then(res => {
-          if(res.data.error){
-            console.log(res.data.error)
-          }
-          else{
-            this.setState({ data:res.data })
+          if (res.data.error) {
+            console.log(res.data.error);
+          } else {
+            this.setState({ data: res.data });
           }
         })
         .catch(err => console.log('Error is: ', err));
@@ -113,7 +111,7 @@ class FormSignup extends React.Component {
   };
 
   render() {
-    console.log("in render")
+    console.log('in render');
     const {
       userNameErr,
       emailErr,
@@ -121,14 +119,15 @@ class FormSignup extends React.Component {
       confpassErr,
     } = this.state.formErrors;
 
+    {
+      this.state.sucess === true ? ( //eslint-disable-line
+        (window.location = '/login')
+      ) : (
+        <Route path='/signup' component={FormSignup} />
+      );
+    }
 
-    {this.state.sucess === true ? (
-    window.location = '/login'
-  ) : (
-    <Route path='/signup' component={FormSignup} />
-  ) }
-
-console.log(this.state.sucess)
+    console.log(this.state.sucess);
     return (
       <div className='form-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>
@@ -191,7 +190,7 @@ console.log(this.state.sucess)
 
         <form onSubmit={this.handleSubmit} className='form' noValidate>
           <div className='form-inputs'>
-            <label className='form-label mx-4'>Username</label>
+            <label className='form-label mt-2'>Name</label>
             <input
               className='form-input mx-4'
               type='text'
@@ -203,7 +202,7 @@ console.log(this.state.sucess)
             {userNameErr && <p>{userNameErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label mx-4'>Email</label>
+            <label className='form-label mt-2'>Email Address</label>
             <input
               className='form-input mx-4'
               type='email'
@@ -215,7 +214,7 @@ console.log(this.state.sucess)
             {emailErr && <p>{emailErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label mx-4'>Password</label>
+            <label className='form-label mt-2'>Password</label>
             <input
               className='form-input mx-4'
               type='password'
@@ -227,7 +226,7 @@ console.log(this.state.sucess)
             {passwordErr && <p>{passwordErr}</p>}
           </div>
           <div className='form-inputs'>
-            <label className='form-label mx-4'>Confirm Password</label>
+            <label className='form-label mt-2'>Confirm Password</label>
             <input
               className='form-input mx-4'
               type='password'

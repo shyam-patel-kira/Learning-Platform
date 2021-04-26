@@ -4,6 +4,7 @@ import './Ieltsreadingtest.css';
 import Cookies from 'universal-cookie';
 import jwa from 'jwa';
 import jwt from 'jsonwebtoken';
+import Loader from 'react-loader-spinner';
 
 const cookies = new Cookies();
 
@@ -16,7 +17,9 @@ class Ieltsreadingtest extends React.Component {
       testid: '',
       answers: {},
       error: '',
-      answerkey: {},
+      answerkey: [],
+      loading: true,
+      bands: null,
     };
   }
 
@@ -48,7 +51,7 @@ class Ieltsreadingtest extends React.Component {
     let cnt = 0;
     for (let i = 1; i <= 40; i++) {
       if (answer[i] === undefined) {
-        answer[`ans_${i.toString()}`] = "";
+        answer[`ans_${i.toString()}`] = '';
       } else {
         answer[`ans_${i.toString()}`] = this.state.answers[i];
         cnt += 1;
@@ -61,7 +64,7 @@ class Ieltsreadingtest extends React.Component {
     this.setState({
       answer,
     });
-    console.log("Answer:",answer);
+    console.log('Answer:', answer);
     //API Call for storing user answers
     let answers = { answers: answer };
     console.log(answers);
@@ -98,11 +101,11 @@ class Ieltsreadingtest extends React.Component {
         }
       )
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         if (res.data.error) {
           console.log(res.data.error);
         } else {
-          this.setState({ answerkey: res.data.results[0] });
+          this.setState({ answerkey: { ...res.data.results[0].answers } });
         }
         console.log('Answer Key:', this.state.answerkey);
       })
@@ -110,8 +113,7 @@ class Ieltsreadingtest extends React.Component {
         console.log(e.message);
       });
 
-    console.log('Call for comparing Result');
-    // //API Call for comparing answers in result collection
+    //API Call for comparing answers in result collection
     await axios
       .get(
         `http://localhost:8000/ielts/reading-answer-result/test/${this.state.testid}`,
@@ -124,16 +126,17 @@ class Ieltsreadingtest extends React.Component {
         if (res.data.error) {
           console.log(res.data.error);
         } else {
-          console.log(res.message);
+          this.setState({
+            bands: res.data.results.bands,
+          });
         }
       })
       .catch(e => {
         console.log(e.message);
       });
 
-    console.log('Call for displaying result');
     //API Call for displaying result
-    await axios
+    /*await axios
       .get(
         `http://localhost:8000/ielts/reading-result-display/test/${this.state.testid}`,
         {
@@ -144,12 +147,17 @@ class Ieltsreadingtest extends React.Component {
         if (res.data.error) {
           console.log('Result display error: ', res.data.error);
         } else {
-          console.log('Result success data', res.data);
+          this.setState({
+            bands: res.data.results[0].bands,
+          });
         }
       })
       .catch(e => {
         console.log(e.message);
-      });
+      });*/
+    //console.log("Bands are: ",this.state.bands);
+    let x = this.state.testid;
+    window.location = `/ielts-reading-result/${x}`;
   };
 
   componentDidMount() {
@@ -165,6 +173,7 @@ class Ieltsreadingtest extends React.Component {
       })
       .then(res => {
         console.log(res.data);
+
         if (res.data.error) {
           console.log(res.data.error);
           this.setState({
@@ -174,6 +183,7 @@ class Ieltsreadingtest extends React.Component {
           this.setState({
             passages: res.data.results[0],
             questions: res.data.results[0].questions,
+            loading: false,
           });
         }
       })
@@ -200,7 +210,7 @@ class Ieltsreadingtest extends React.Component {
     for (const i of Object.keys(this.state.passages)) {
       if (i.includes('Passage')) {
         y.push(
-          <div className='passage-content'>
+          <div key={i} className='passage-content'>
             <h2 className='text-3xl my-2'>{i}</h2>
           </div>
         );
@@ -232,49 +242,68 @@ class Ieltsreadingtest extends React.Component {
       );
     }
 
-    return (
-      <div className='flex'>
-        <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
-          <h1 className='text-5xl my-2 text-center'>
-            Test-{this.state.testid}
-          </h1>
-          <div className='mx-5 text-lg'>{y}</div>
-        </div>
-
-        <div className='w-2/5'>
-          <div className='border-black border-2 mx-2 my-2'>
-            <img src={this.state.questions.imgurl_1} alt='' />
-            <img src={this.state.questions.imgurl_2} alt='' />
-            <img src={this.state.questions.imgurl_3} alt='' />
-            <img src={this.state.questions.imgurl_4} alt='' />
-            <img src={this.state.questions.imgurl_5} alt='' />
-            <img src={this.state.questions.imgurl_6} alt='' />
-          </div>
-          <div className='border-black border-2 mx-2 my-2'>
-            <h1 className='my-4 mx-2 text-4xl font-serif'>
-              Write your answers here!!
+    if (this.state.loading === true) {
+      return (
+        <div>
+          <div className='my-64'>
+            <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+              Fetching Test...
             </h1>
-            <form>
-              <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
-              <div className='flex justify-center items-center my-4'>
-                <button
-                  className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
-                  type='submit'
-                  onClick={e => {
-                    this.handleSubmit(e);
-                    for (let i = 1; i <= 40; i++) {
-                      document.getElementById(i.toString()).value = '';
-                    }
-                  }}
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+            <Loader
+              type='BallTriangle'
+              color='#00BFFF'
+              height={100}
+              width={100}
+              className='flex flex-row mx-auto my-auto justify-center'
+            />
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className='flex'>
+          <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
+            <h1 className='text-5xl my-2 text-center'>
+              Test-{this.state.testid}
+            </h1>
+            <div className='mx-5 text-lg'>{y}</div>
+          </div>
+
+          <div className='w-2/5'>
+            <div className='border-black border-2 mx-2 my-2'>
+              <img src={this.state.questions.imgurl_1} alt='' />
+              <img src={this.state.questions.imgurl_2} alt='' />
+              <img src={this.state.questions.imgurl_3} alt='' />
+              <img src={this.state.questions.imgurl_4} alt='' />
+              <img src={this.state.questions.imgurl_5} alt='' />
+              <img src={this.state.questions.imgurl_6} alt='' />
+            </div>
+            <div className='border-black border-2 mx-2 my-2'>
+              <h1 className='my-4 mx-2 text-4xl font-serif'>
+                Write your answers here!!
+              </h1>
+              <form>
+                <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
+                <div className='flex justify-center items-center my-4'>
+                  <button
+                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
+                    type='submit'
+                    onClick={e => {
+                      this.handleSubmit(e);
+                      for (let i = 1; i <= 40; i++) {
+                        document.getElementById(i.toString()).value = '';
+                      }
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
