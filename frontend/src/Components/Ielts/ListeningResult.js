@@ -1,17 +1,16 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
+import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
-function ReadingResult(props) {
+function ListeningResult(props) {
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
     'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
+
   const admin_token = jwt.sign(
     {
       userName: 'kira',
@@ -38,7 +37,7 @@ function ReadingResult(props) {
     async function fetchResult() {
       await axios
         .get(
-          `http://localhost:8000/ielts/reading-result-display/test/${mytest}`,
+          `http://localhost:8000/ielts/listening-result-display/test/${mytest}`,
           {
             headers: { Authorization: AuthStr },
           }
@@ -68,7 +67,7 @@ function ReadingResult(props) {
   useEffect(() => {
     async function fetchAnswerKey() {
       await axios
-        .get(`http://localhost:8000/ielts/reading-answers/test/${mytest}`, {
+        .get(`http://localhost:8000/ielts/listening-answers/test/${mytest}`, {
           headers: { Authorization: secret },
         })
         .then(res => {
@@ -85,14 +84,12 @@ function ReadingResult(props) {
     fetchAnswerKey();
   }, []);
 
-  if(error){
-     return (
-       <div>
-         <h1 className='text-5xl text-center text-red-500 my-28'>
-           {error}
-         </h1>
-       </div>
-     );
+  if (error) {
+    return (
+      <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      </div>
+    );
   }
 
   if (loading === true) {
@@ -100,7 +97,7 @@ function ReadingResult(props) {
       <div>
         <div className='my-64'>
           <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
-            Calculating Result...
+            Displaying Result...
           </h1>
           <Loader
             type='BallTriangle'
@@ -125,4 +122,4 @@ function ReadingResult(props) {
   }
 }
 
-export default ReadingResult;
+export default ListeningResult;

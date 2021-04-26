@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
 import Cookies from 'universal-cookie';
-import jwa from 'jwa';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 
@@ -19,7 +18,7 @@ class Ieltsreadingtest extends React.Component {
       error: '',
       answerkey: [],
       loading: true,
-      bands: null,
+      submitLoading: false,
     };
   }
 
@@ -32,6 +31,9 @@ class Ieltsreadingtest extends React.Component {
   };
 
   handleSubmit = async e => {
+    this.setState({
+      submitLoading: true,
+    });
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
     let ADMIN_TOKEN =
@@ -48,13 +50,12 @@ class Ieltsreadingtest extends React.Component {
     e.preventDefault();
 
     let answer = this.state.answers;
-    let cnt = 0;
+
     for (let i = 1; i <= 40; i++) {
       if (answer[i] === undefined) {
         answer[`ans_${i.toString()}`] = '';
       } else {
         answer[`ans_${i.toString()}`] = this.state.answers[i];
-        cnt += 1;
       }
     }
 
@@ -64,7 +65,7 @@ class Ieltsreadingtest extends React.Component {
     this.setState({
       answer,
     });
-    console.log('Answer:', answer);
+
     //API Call for storing user answers
     let answers = { answers: answer };
     console.log(answers);
@@ -77,37 +78,13 @@ class Ieltsreadingtest extends React.Component {
         }
       )
       .then(res => {
-        //console.log(res.data);
         if (res.data.error) {
-          console.log(res.data.error);
           this.setState({
             error: res.data.error,
           });
         } else {
           console.log(res);
         }
-      })
-      .catch(e => {
-        console.log(e.message);
-      });
-
-    console.log('Call for obtaining answer key.');
-    //API Call for obtaining answer key
-    await axios
-      .get(
-        `http://localhost:8000/ielts/reading-answers/test/${this.state.testid}`,
-        {
-          headers: { Authorization: secret },
-        }
-      )
-      .then(res => {
-        //console.log(res.data);
-        if (res.data.error) {
-          console.log(res.data.error);
-        } else {
-          this.setState({ answerkey: { ...res.data.results[0].answers } });
-        }
-        console.log('Answer Key:', this.state.answerkey);
       })
       .catch(e => {
         console.log(e.message);
@@ -122,60 +99,36 @@ class Ieltsreadingtest extends React.Component {
         }
       )
       .then(res => {
-        console.log(res.data);
         if (res.data.error) {
-          console.log(res.data.error);
-        } else {
           this.setState({
-            bands: res.data.results.bands,
+            error: res.data.error,
           });
+        } else {
+          console.log(res.data);
         }
       })
       .catch(e => {
         console.log(e.message);
+        this.setState({
+          submitLoading: false,
+        });
       });
 
-    //API Call for displaying result
-    /*await axios
-      .get(
-        `http://localhost:8000/ielts/reading-result-display/test/${this.state.testid}`,
-        {
-          headers: { Authorization: AuthStr },
-        }
-      )
-      .then(res => {
-        if (res.data.error) {
-          console.log('Result display error: ', res.data.error);
-        } else {
-          this.setState({
-            bands: res.data.results[0].bands,
-          });
-        }
-      })
-      .catch(e => {
-        console.log(e.message);
-      });*/
-    //console.log("Bands are: ",this.state.bands);
     let x = this.state.testid;
     window.location = `/ielts-reading-result/${x}`;
   };
 
   componentDidMount() {
-    console.log('componentdidMount');
     let x = window.location.href.split('/');
     let mytest = x[x.length - 1];
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
-    console.log(typeof x[x.length - 1]);
     axios
       .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, {
         headers: { Authorization: AuthStr },
       })
       .then(res => {
-        console.log(res.data);
-
         if (res.data.error) {
-          console.log(res.data.error);
           this.setState({
             error: res.data.error,
           });
@@ -286,7 +239,7 @@ class Ieltsreadingtest extends React.Component {
                 <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
                 <div className='flex justify-center items-center my-4'>
                   <button
-                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-blue-navbar bg-green-customBorder border-2 border-black'
+                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack'
                     type='submit'
                     onClick={e => {
                       this.handleSubmit(e);
@@ -294,8 +247,19 @@ class Ieltsreadingtest extends React.Component {
                         document.getElementById(i.toString()).value = '';
                       }
                     }}
+                    disabled={this.state.submitLoading}
                   >
-                    Submit
+                    {this.state.submitLoading && (
+                      <Loader
+                        type='BallTriangle'
+                        color='#00BFFF'
+                        height={20}
+                        width={20}
+                        className='mr-1 my-2'
+                      />
+                    )}
+                    {this.state.submitLoading && <span>Submitting</span>}
+                    {!this.state.submitLoading && <span>Submit</span>}
                   </button>
                 </div>
               </form>

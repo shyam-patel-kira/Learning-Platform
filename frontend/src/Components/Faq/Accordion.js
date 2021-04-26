@@ -15,7 +15,7 @@ const Accordion = () => {
   };
 
   return (
-    <div>
+    <div id='faq'>
       <h1 className='text-center my-6 text-6xl text-customdarkblue'>
         Frequently Asked Questions
       </h1>
@@ -32,7 +32,11 @@ const Accordion = () => {
                   >
                     <h1 className='p-8 text-2xl'>{item.question}</h1>
                     <span className='mr-6'>
-                      {clicked === index ? <FiMinus className='bg-customdarkblue'/> : <FiPlus className='bg-customdarkblue' />}
+                      {clicked === index ? (
+                        <FiMinus className='bg-customdarkblue' />
+                      ) : (
+                        <FiPlus className='bg-customdarkblue' />
+                      )}
                     </span>
                   </div>
                   {clicked === index ? (

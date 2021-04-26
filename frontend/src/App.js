@@ -25,6 +25,7 @@ import IeltsTask2Topics from './Components/Ielts/Writing/Task-2/IeltsTask2Topics
 import IeltsSampleTestTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleTestTask2';
 import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 import ReadingResult from './Components/Ielts/ReadingResult';
+import ListeningResult from './Components/Ielts/ListeningResult';
 
 const Page404 = () => {
   return (
@@ -44,6 +45,7 @@ export default function App() {
       <Router history={history}>
         <Switch>
           <Route path='/' exact component={Home} />
+
           <Route path='/ieltsmain' component={Ieltsmain} />
           <Route path='/ielts-listening' component={Ieltslistening} />
           <Route path='/ielts-reading' component={Ieltsreading} />
@@ -54,6 +56,7 @@ export default function App() {
           <Route path='/ielts-speaking-test' component={IeltsSpeakingTest} />
           <Route path='/about' component={AboutUs} />
           <Route path='/ielts-reading-result' component={ReadingResult} />
+          <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
           <Route
             path='/ielts-sample-writing-task-1'
