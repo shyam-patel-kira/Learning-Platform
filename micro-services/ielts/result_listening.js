@@ -2,6 +2,16 @@ import express from "express";
 import listeningAnswerKeyModel from "./Models/Listening_answerkey.js";
 import userListeningAnswersModel from "./Models/Listening_user_answers.js";
 import resultModel from "./Models/Result.js";
+import dotenv from "dotenv";
+import jwa from "jwa";
+import jwt from "jsonwebtoken";
+import Inversoft from "passport-node-client";
+import _decodeJWT from "./decodeJWTFunction.js"
+import _authorized from "./authorizationFunction.js"
+
+dotenv.config();
+const JWT_SECRET = process.env.TOKEN_SECRET;
+const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
 
 const resultListeningRouter = express.Router();
 
@@ -52,6 +62,14 @@ resultListeningRouter.get(
       bands = 0;
     var incorrectAnswers = [];
 
+    const decodedJWT = _decodeJWT(req);
+    console.log(decodedJWT)
+    if (!_authorized(decodedJWT, "USER")) {
+      console.log("Is not authorised");
+      return res.json({ status: "Error", error: "Unauthorized user" });
+    }
+    const userName = decodedJWT.userName;
+
     listeningAnswerKeyModel
       .find({
         test_id: req.params.test_id,
@@ -66,8 +84,9 @@ resultListeningRouter.get(
         let user_answer;
         userListeningAnswersModel
           .find({
-            test_id: req.params.test_id,
-          }) //User id is left
+            userName: userName,
+            test_id: req.params.test_id
+          }).sort({_id:-1}).limit(1)
           .then((ans) => {
             user_answer = ans[0].answers;
             user_answer = Object.keys(user_answer).map((key) => [
@@ -93,6 +112,7 @@ resultListeningRouter.get(
             //console.log(incorrans)
 
             const finalResult = new resultModel({
+              userName: userName,
               test_id: test_id,
               correct: cor,
               incorrect: incor,
@@ -131,11 +151,44 @@ resultListeningRouter.get(
 resultListeningRouter.get(
   "/listening-result-display/test/:test_id",
   (req, res) => {
+    const decodedJWT = _decodeJWT(req);
+    console.log(decodedJWT)
+    if (!_authorized(decodedJWT, "USER")) {
+      console.log("Is not authorised");
+      return res.json({ status: "Error", error: "Unauthorized user" });
+    }
+    const userName = decodedJWT.userName
     resultModel
       .find({
-        //userName: req.params.userName,
+        userName: userName,
         test_id: req.params.test_id,
-      }) //User-ID left to be inserted
+      }).sort({_id:-1}).limit(1)
+      .then((doc) => {
+        res.status(201).json({
+          message: "Result displayed successfully",
+          userName: userName,
+          results: doc,
+        });
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  }
+);
+
+resultListeningRouter.get(
+  "/listening-result/display-all",
+  (req, res) => {
+    const decodedJWT = _decodeJWT(req);
+    if (!_authorized(decodedJWT, "USER")) {
+      console.log("Is not authorised");
+      return res.json({ status: "Error", error: "Unauthorized user" });
+    }
+    const userName = decodedJWT.userName
+    resultModel
+      .find({
+        userName: userName,
+      })
       .then((doc) => {
         res.status(201).json({
           message: "Result displayed successfully",
@@ -147,25 +200,6 @@ resultListeningRouter.get(
       });
   }
 );
-
-/*resultListeningRouter.get(
-  "/listening-result/display-all/:userName",
-  (req, res) => {
-    resultModel
-      .find({
-        userName: req.params.userName,
-      }) //User-ID left to be inserted
-      .then((doc) => {
-        res.status(201).json({
-          message: "Result displayed successfully",
-          results: doc,
-        });
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  }
-);*/
 
 export default resultListeningRouter;
 

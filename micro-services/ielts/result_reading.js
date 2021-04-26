@@ -67,6 +67,7 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName;
+
   console.log("Authorization passed");
   readingAnswerKeyModel
     .find({
@@ -79,12 +80,13 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
         answer_test[key],
       ]);
     console.log("Our Answer ket obtained");
+
       let user_answer;
       userReadingAnswersModel
         .find({
           userName: userName,
           test_id: req.params.test_id,
-        }).sort({_id:-1})//.limit(1)
+        }).sort({_id:-1}).limit(1)
         .then((ans) => {
           user_answer = ans[0].answers;
           user_answer = Object.keys(user_answer).map((key) => [
@@ -185,7 +187,7 @@ resultRouter.get("/reading-result/display-all", (req, res) => {
   resultModel
     .find({
       userName: userName,
-    }) //User-ID left to be inserted
+    })
     .then((doc) => {
       res.status(201).json({
         message: "Result displayed successfully",
