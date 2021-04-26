@@ -1,8 +1,5 @@
 const express = require("express" );
 
-// const Verbal_SE = require("../Models/Verbal.js");
-// const Verbal_TC = require("../Models/Verbal.js");
-//const userReadingAnswersModel = require( "../Models/Reading_user_answers.js";
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const jwa = require("jwa");

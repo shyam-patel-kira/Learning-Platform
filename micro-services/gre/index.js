@@ -4,14 +4,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
-const verbal_routes = require("./Verbal_Routes/verbal.js");
 //Server Optimisation
 const compression = require(`compression`);
 //config file
 const dotenv = require(`dotenv`)
 dotenv.config();
-
-// const verbalRouter = require("./Verbal_Routes/verbal.js")
+// All Routes
+const verbal_routes = require("./Verbal_Routes/verbal.js");
+const verbalanswers_routes = require("./Verbal_Routes/verbal_answerkey.js");
 
 const JWT_SECRET = process.env.TOKEN_SECRET
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN
@@ -33,8 +33,9 @@ appRouter.use(compression());
 appRouter.use(cors());
 appRouter.use(express.json());
 appRouter.use("/gre", verbal_routes);
+appRouter.use("/gre", verbalanswers_routes);
 appRouter.use('/', (req, res,next)=>{
-   res.send('<h1> first midleware: Hello Tutorials Point </h1>');
+   res.send('<h1> middleware </h1>');
 });
 
 appRouter.listen(7545, () => {

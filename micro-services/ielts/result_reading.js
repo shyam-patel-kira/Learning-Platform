@@ -53,7 +53,7 @@ function calculate_result(correct, bands) {
 //API for storing result in results collection
 resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
   let answer_test;
-  const test_type = "reading";
+  const test_type = "Reading";
   const test_id = req.params.test_id;
   var correct = 0,
     incorrect = 0,

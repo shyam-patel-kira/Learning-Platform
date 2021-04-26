@@ -45,7 +45,7 @@ resultListeningRouter.get(
   "/listening-answer-result/test/:test_id",
   (req, res) => {
     let answer_test;
-    const test_type = "listening";
+    const test_type = "Listening";
     const test_id = req.params.test_id;
     var correct = 0,
       incorrect = 0,
