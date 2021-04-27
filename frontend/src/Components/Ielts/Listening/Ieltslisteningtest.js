@@ -38,7 +38,7 @@ function Ieltslisteningtest(props) {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
   //signing ADMIN TOKEN for answerkey
   const admin_token = jwt.sign(
     {
@@ -166,21 +166,39 @@ function Ieltslisteningtest(props) {
 
   let text1 = [];
   for (let i = 1; i <= 10; i++) {
-    text1.push(
-      <label className='mx-4 px-3 my-2 text-right text-black'>
-        {i + '  '}
-        <input
-          type='text'
-          id={i.toString()}
-          key={i.toString()}
-          onChange={e => {
-            let a = ans;
-            a[i] = e.target.value;
-            setAns(a);
-          }}
-        />
-      </label>
-    );
+    if (i <= 9) {
+      text1.push(
+        <label className='mx-4 my-4 text-right text-black'>
+          {'0' + i}
+          <input
+            type='text'
+            id={i.toString()}
+            key={i.toString()}
+            onChange={e => {
+              let a = ans;
+              a[i] = e.target.value;
+              setAns(a);
+            }}
+          />
+        </label>
+      );
+    } else {
+      text1.push(
+        <label className='mx-4 my-4 text-right text-black'>
+          {i}
+          <input
+            type='text'
+            id={i.toString()}
+            key={i.toString()}
+            onChange={e => {
+              let a = ans;
+              a[i] = e.target.value;
+              setAns(a);
+            }}
+          />
+        </label>
+      );
+    }
   }
 
   let text2 = [];
@@ -271,7 +289,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text1}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>

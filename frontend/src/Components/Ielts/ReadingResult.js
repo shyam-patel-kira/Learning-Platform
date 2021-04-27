@@ -10,8 +10,8 @@ function ReadingResult(props) {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
+    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+
   const admin_token = jwt.sign(
     {
       userName: 'kira',
@@ -30,6 +30,7 @@ function ReadingResult(props) {
     incorrect: '',
     test_id: '',
     test_type: '',
+    answerKey: [],
   });
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
@@ -75,7 +76,14 @@ function ReadingResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data.results[0].answers);
+            let ans = [];
+            //(Object.values(res.data.results[0].answers)
+            for (let i of Object.values(res.data.results[0].answers)) {
+              ans.push(i);
+            }
+            setParams({
+              answerKey: ans,
+            });
           }
         })
         .catch(e => {
@@ -85,14 +93,12 @@ function ReadingResult(props) {
     fetchAnswerKey();
   }, []);
 
-  if(error){
-     return (
-       <div>
-         <h1 className='text-5xl text-center text-red-500 my-28'>
-           {error}
-         </h1>
-       </div>
-     );
+  if (error) {
+    return (
+      <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      </div>
+    );
   }
 
   if (loading === true) {
@@ -120,6 +126,13 @@ function ReadingResult(props) {
         <h1>Total Incorrect Answers - {params.incorrect}</h1>
         <h1>Examination Type - {params.test_type}</h1>
         <h1>Test-Id - {params.test_id}</h1>
+        <h1>
+          Answer Key-{' '}
+          {params.answerKey &&
+            params.answerKey.map(item => {
+              return <p>{item}</p>;
+            })}
+        </h1>
       </div>
     );
   }

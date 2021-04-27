@@ -37,7 +37,7 @@ class Ieltsreadingtest extends React.Component {
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
     let ADMIN_TOKEN =
-      'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+      'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
     //signing ADMIN TOKEN for answerkey
     const admin_token = jwt.sign(
       {
@@ -119,10 +119,12 @@ class Ieltsreadingtest extends React.Component {
   };
 
   componentDidMount() {
+    console.log('componentdidMount');
     let x = window.location.href.split('/');
     let mytest = x[x.length - 1];
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
+    console.log(typeof x[x.length - 1]);
     axios
       .get(`http://localhost:8000/ielts/reading/test/${x[x.length - 1]}`, {
         headers: { Authorization: AuthStr },
@@ -215,7 +217,7 @@ class Ieltsreadingtest extends React.Component {
     } else {
       return (
         <div className='flex'>
-          <div className='flex-1 w-full border-black border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
+          <div className='flex-1 w-full border-customblack border-2 mx-2 mt-2 mb-4 bg-green-cardColor'>
             <h1 className='text-5xl my-2 text-center'>
               Test-{this.state.testid}
             </h1>
@@ -239,7 +241,7 @@ class Ieltsreadingtest extends React.Component {
                 <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
                 <div className='flex justify-center items-center my-4'>
                   <button
-                    className='w-1/5 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack'
+                    className='w-1/3 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack'
                     type='submit'
                     onClick={e => {
                       this.handleSubmit(e);
@@ -250,15 +252,25 @@ class Ieltsreadingtest extends React.Component {
                     disabled={this.state.submitLoading}
                   >
                     {this.state.submitLoading && (
-                      <Loader
-                        type='BallTriangle'
-                        color='#00BFFF'
-                        height={20}
-                        width={20}
-                        className='mr-1 my-2'
-                      />
+                      <div className='flex flex-row'>
+                        <svg
+                          xmlns='https://www.w3.org/2000/svg'
+                          className='animate-spin h-6 w-6'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth={2}
+                            d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                          />
+                        </svg>
+                        <div className=''>Submitting...</div>
+                      </div>
                     )}
-                    {this.state.submitLoading && <span>Submitting</span>}
+
                     {!this.state.submitLoading && <span>Submit</span>}
                   </button>
                 </div>

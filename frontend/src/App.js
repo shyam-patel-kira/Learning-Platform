@@ -27,6 +27,11 @@ import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 import ReadingResult from './Components/Ielts/ReadingResult';
 import ListeningResult from './Components/Ielts/ListeningResult';
 
+import Gremain from './Pages/Gremain';
+import Greverbal from './Pages/Greverbal';
+import Grequantitative from './Pages/Grequantitative';
+import Gretipsandtricks from './Pages/Gretipsandtricks';
+
 const Page404 = () => {
   return (
     <div>
@@ -78,6 +83,11 @@ export default function App() {
 
           <Route path='/ielts-writing-task-1' component={IeltsTask1Topics} />
           <Route path='/ielts-writing-task-2' component={IeltsTask2Topics} />
+
+          <Route path='/gremain' component={Gremain} />
+          <Route path='/gre-verbal' component={Greverbal} />
+          <Route path='/gre-quantitative' component={Grequantitative} />
+          <Route path='/gre-tipsandtricks' component={Gretipsandtricks} />
 
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
