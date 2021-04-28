@@ -31,6 +31,7 @@ import Gremain from './Pages/Gremain';
 import Greverbal from './Pages/Greverbal';
 import Grequantitative from './Pages/Grequantitative';
 import Gretipsandtricks from './Pages/Gretipsandtricks';
+import Rcmain from './Pages/Rcmain';
 
 const Page404 = () => {
   return (
@@ -88,6 +89,7 @@ export default function App() {
           <Route path='/gre-verbal' component={Greverbal} />
           <Route path='/gre-quantitative' component={Grequantitative} />
           <Route path='/gre-tipsandtricks' component={Gretipsandtricks} />
+          <Route path='/verbal-rc' component={Rcmain} />
 
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
