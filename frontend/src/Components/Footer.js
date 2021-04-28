@@ -56,7 +56,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div className='flex max-h-screen justify-between bg-customblack'>
-        <div className='flex flex-col w-full divide-y-2 divide-white justify-center items-center bg-customblack'>
+        <div className='flex flex-col w-full divide-y-2 divide-customwhite justify-center items-center bg-customblack'>
           <div className='flex items-center text-4xl w-3/4 justify-between'>
             <Link to='/' className='inline hover:no-underline'>
               <i className='fab fa-typo3 text-customwhite' />
@@ -222,4 +222,3 @@ class Footer extends React.Component {
 }
 
 export default Footer;
-

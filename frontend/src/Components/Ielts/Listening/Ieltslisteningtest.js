@@ -204,7 +204,7 @@ function Ieltslisteningtest(props) {
   let text2 = [];
   for (let i = 11; i <= 20; i++) {
     text2.push(
-      <label className='mx-4 px-3 my-2 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-black'>
         {i + '  '}
         <input
           type='text'
@@ -223,7 +223,7 @@ function Ieltslisteningtest(props) {
   let text3 = [];
   for (let i = 21; i <= 30; i++) {
     text3.push(
-      <label className='mx-4 px-3 my-2 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-black'>
         {i + '  '}
         <input
           type='text'
@@ -242,7 +242,7 @@ function Ieltslisteningtest(props) {
   let text4 = [];
   for (let i = 31; i <= 40; i++) {
     text4.push(
-      <label className='mx-4 px-3 my-2 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-black'>
         {i + '  '}
         <input
           type='text'
@@ -301,7 +301,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text2}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -311,7 +313,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text3}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -322,7 +326,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text4}
+            </div>
           </div>
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
@@ -336,13 +342,23 @@ function Ieltslisteningtest(props) {
             disabled={submitLoading}
           >
             {submitLoading && (
-              <Loader
-                type='BallTriangle'
-                color='#00BFFF'
-                height={20}
-                width={20}
-                className='mr-1 my-2'
-              />
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
             )}
             {submitLoading && <span>Submitting</span>}
             {!submitLoading && <span>Submit</span>}
@@ -363,7 +379,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text1}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -373,7 +391,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text2}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -384,7 +404,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_4} alt='' />
               <img src={question.img_5} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text3}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -394,7 +416,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_6} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text4}
+            </div>
           </div>
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
@@ -408,15 +432,24 @@ function Ieltslisteningtest(props) {
             disabled={submitLoading}
           >
             {submitLoading && (
-              <Loader
-                type='BallTriangle'
-                color='#00BFFF'
-                height={20}
-                width={20}
-                className='mr-1 my-2'
-              />
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
             )}
-            {submitLoading && <span>Submitting</span>}
             {!submitLoading && <span>Submit</span>}
           </button>
           <br />
@@ -435,7 +468,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text1}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -445,7 +480,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_2} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text2}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -456,7 +493,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_3} alt='' />
               <img src={question.img_4} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text3}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -467,7 +506,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text4}
+            </div>
           </div>
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
@@ -481,15 +522,24 @@ function Ieltslisteningtest(props) {
             disabled={submitLoading}
           >
             {submitLoading && (
-              <Loader
-                type='BallTriangle'
-                color='#00BFFF'
-                height={20}
-                width={20}
-                className='mr-1 my-2'
-              />
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
             )}
-            {submitLoading && <span>Submitting</span>}
             {!submitLoading && <span>Submit</span>}
           </button>
           <br />
@@ -509,7 +559,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text1}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -519,7 +571,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text2}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -529,7 +583,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text3}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -540,7 +596,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text4}
+            </div>
           </div>
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
@@ -554,15 +612,24 @@ function Ieltslisteningtest(props) {
             disabled={submitLoading}
           >
             {submitLoading && (
-              <Loader
-                type='BallTriangle'
-                color='#00BFFF'
-                height={20}
-                width={20}
-                className='mr-1 my-2'
-              />
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
             )}
-            {submitLoading && <span>Submitting</span>}
             {!submitLoading && <span>Submit</span>}
           </button>
           <br />
@@ -581,7 +648,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text1}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text1}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -592,7 +661,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_2} alt='' />
               <img src={question.img_3} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text2}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text2}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -602,7 +673,9 @@ function Ieltslisteningtest(props) {
             <div className='border-black border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text3}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text3}
+            </div>
           </div>
 
           <audio controls className='mx-auto'>
@@ -613,7 +686,9 @@ function Ieltslisteningtest(props) {
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>{text4}</div>
+            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+              {text4}
+            </div>
           </div>
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
@@ -627,15 +702,25 @@ function Ieltslisteningtest(props) {
             disabled={submitLoading}
           >
             {submitLoading && (
-              <Loader
-                type='BallTriangle'
-                color='#00BFFF'
-                height={20}
-                width={20}
-                className='mr-1 my-2'
-              />
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
             )}
-            {submitLoading && <span>Submitting</span>}
+
             {!submitLoading && <span>Submit</span>}
           </button>
           <br />
