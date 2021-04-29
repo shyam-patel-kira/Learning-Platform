@@ -6,8 +6,8 @@ const jwa = require("jwa");
 const jwt = require("jsonwebtoken");
 const Inversoft = require("passport-node-client");
 
-// const _decodeJWT = require("../decodeJWTFunction.js");
-// const _authorized = require("../authorizationFunction.js");
+const _decodeJWTAdmin = require("../decodeJWTFunctionAdmin.js");
+const _authorizedAdmin = require("../authorizationFunctionAdmin.js");
 // const jwt_decode = require( "jwt-decode";
 
 dotenv.config();
@@ -19,7 +19,14 @@ require("../Models/Verbal_AnswerKey.js");
 const Verbal_Answers = mongoose.model("Verbal_AnswerKey");
 
 verbalAnswerRouter.get("/verbal-answers/test/:test_type&:test_id", (req, res) => {
-  verbalAnswerKeyModel
+  const decodedJWT = _decodeJWTAdmin(req);
+  console.log(decodedJWT);
+  if (!_authorizedAdmin(decodedJWT, "ADMIN")) {
+    console.log("Is not authorised");
+    return res.json({ status: "Error", error: "Unauthorized API call" });
+  }
+
+  Verbal_Answers
     .find({
       test_id: req.params.test_id,
       test_type: req.params.test_type
@@ -39,6 +46,13 @@ verbalAnswerRouter.post("/verbal-answers/test/:test_type&:test_id", (req, res) =
   const test_id = req.params.test_id;
   const test_type = req.params.test_type;
   const answers = req.body.answers;
+  const decodedJWT = _decodeJWTAdmin(req);
+  console.log(decodedJWT);
+  if (!_authorizedAdmin(decodedJWT, "ADMIN")) {
+    console.log("Is not authorised");
+    return res.json({ status: "Error", error: "Unauthorized API call" });
+  }
+
   const verbalAnswerKey = new Verbal_Answers({
     test_id: test_id,
     test_type: test_type,
