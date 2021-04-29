@@ -5,6 +5,7 @@ mongoose.model("Verbal", {
     test_id: {
       type: Number,
       required: true,
+      unique: true,
     },
     test_type: {
       type: String,

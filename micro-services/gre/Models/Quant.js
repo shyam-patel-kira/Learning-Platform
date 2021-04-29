@@ -5,10 +5,7 @@ mongoose.model("Quant", {
     test_id: {
       type: Number,
       required: true,
-    },
-    test_type: {
-      type: String,
-      required: true,
+      unique: true,
     },
     question_1: {
       type: String,
@@ -47,6 +44,46 @@ mongoose.model("Quant", {
       required: true,
     },
     question_10: {
+      type: String,
+      required: true,
+    },
+    question_11: {
+      type: String,
+      required: true,
+    },
+    question_12: {
+      type: String,
+      required: true,
+    },
+    question_13: {
+      type: String,
+      required: true,
+    },
+    question_14: {
+      type: String,
+      required: true,
+    },
+    question_15: {
+      type: String,
+      required: true,
+    },
+    question_16: {
+      type: String,
+      required: true,
+    },
+    question_17: {
+      type: String,
+      required: true,
+    },
+    question_18: {
+      type: String,
+      required: true,
+    },
+    question_19: {
+      type: String,
+      required: true,
+    },
+    question_20: {
       type: String,
       required: true,
     },

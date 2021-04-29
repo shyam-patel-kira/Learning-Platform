@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
-mongoose.model("Verbal_AnswerKey", {
+mongoose.model("GRE_User_Quant_Answer", {
     test_id: {
         type: Number,
         require: true,
-        unique: true,
     },
-    test_type: {
+    userName: {
         type: String,
         require: true,
     },
