@@ -1,63 +1,33 @@
-import express from "express";
-import readingAnswerKeyModel from "./Models/Reading_answerkey.js";
-import userReadingAnswersModel from "./Models/Reading_user_answers.js";
-import resultModel from "./Models/Result.js";
-import dotenv from "dotenv";
-import jwa from "jwa";
-import jwt from "jsonwebtoken";
-import Inversoft from "passport-node-client";
-import _decodeJWT from "./decodeJWTFunction.js"
-import _authorized from "./authorizationFunction.js"
+const express = require("express" );
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const jwa = require("jwa");
+const jwt = require("jsonwebtoken");
+const Inversoft = require("passport-node-client");
+
+const _decodeJWT = require("../decodeJWTFunction.js");
+const _authorized = require("../authorizationFunction.js");
+// const jwt_decode = require( "jwt-decode" );
 
 dotenv.config();
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
 
-const resultRouter = express.Router();
+const quantResultRouter = express.Router();
 
-function calculate_result(correct, bands) {
-  if (correct > 38) {
-    bands = 9;
-  } else if (correct > 36 && correct < 39) {
-    bands = 8.5;
-  } else if (correct > 34 && correct < 37) {
-    bands = 8;
-  } else if (correct > 32 && correct < 35) {
-    bands = 7.5;
-  } else if (correct > 29 && correct < 33) {
-    bands = 7;
-  } else if (correct > 26 && correct < 30) {
-    bands = 6.5;
-  } else if (correct > 22 && correct < 27) {
-    bands = 6;
-  } else if (correct > 18 && correct < 23) {
-    bands = 5.5;
-  } else if (correct > 14 && correct < 19) {
-    bands = 5;
-  } else if (correct > 12 && correct < 15) {
-    bands = 4.5;
-  } else if (correct > 9 && correct < 13) {
-    bands = 4;
-  } else if (correct > 7 && correct < 10) {
-    bands = 3.5;
-  } else if (correct > 5 && correct < 8) {
-    bands = 3;
-  } else if (correct > 3 && correct < 6) {
-    bands = 2.5;
-  } else {
-    bands = 0;
-  }
-  return bands;
-}
+require("../Models/Quant_AnswerKey.js");
+const Quant_AnswerKey = mongoose.model("Quant_AnswerKey");
+require("../Models/GRE_User_Quant_Answer.js")
+const GRE_User_Quant_Answer = mongoose.model("GRE_User_Quant_Answer");
+require("../Models/Result_Quant.js")
+const Result_Quant = mongoose.model("Result_Quant");
 
 //API for storing result in results collection
-resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
+quantResultRouter.get("/quant-answer-result/test/:test_id", (req, res) => {
   let answer_test;
-  const test_type = "Reading";
   const test_id = req.params.test_id;
   var correct = 0,
-    incorrect = 0,
-    bands = 0;
+    incorrect = 0;
   var incorrectAnswers = [];
 
   const decodedJWT = _decodeJWT(req);
@@ -67,9 +37,8 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName;
-
   console.log("Authorization passed");
-  readingAnswerKeyModel
+  Quant_AnswerKey
     .find({
       test_id: req.params.test_id,
     })
@@ -79,15 +48,15 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
         Number(key),
         answer_test[key],
       ]);
-    console.log("Our Answer ket obtained");
-
+    console.log("Our Answer key obtained");
       let user_answer;
-      userReadingAnswersModel
+      GRE_User_Quant_Answer
         .find({
           userName: userName,
           test_id: req.params.test_id,
         }).sort({_id:-1}).limit(1)
         .then((ans) => {
+          console.log(ans);
           user_answer = ans[0].answers;
           user_answer = Object.keys(user_answer).map((key) => [
             Number(key),
@@ -96,7 +65,7 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
     console.log(ans);
     console.log("User Answer key obtained");
           var i, a, b;
-          for (i = 0; i < 40; i++) {
+          for (i = 0; i < 20; i++) {
             a = user_answer[i][1];
             b = answer_test[i][1];
             if (a.toUpperCase() === b.toUpperCase()) {
@@ -109,25 +78,21 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
 
           const cor = correct;
           const incor = incorrect;
-          const finalbands = calculate_result(correct, bands);
           const incorrans = [...incorrectAnswers];
           //console.log(incorrans)
           console.log(cor);
           console.log(incor);
-          console.log(finalbands);
           console.log(incorrans);
-          const finalResult = new resultModel({
+          const score = cor;
+          const finalResult = new Result_Quant({
             userName: userName,
             test_id: test_id,
-            correct: cor,
             incorrect: incor,
-            bands: finalbands,
-            test_type: test_type,
+            score: score,
             incorrectAnswers: incorrans,
           });
           correct = 0;
           incorrect = 0;
-          bands = 0;
           incorrectAnswers = [];
           console.log("Finalk point");
           finalResult
@@ -152,7 +117,7 @@ resultRouter.get("/reading-answer-result/test/:test_id", (req, res) => {
 });
 
 //API's for displaying result
-resultRouter.get("/reading-result-display/test/:test_id", (req, res) => {
+quantResultRouter.get("/quant-result-display/test/:test_id", (req, res) => {
   const decodedJWT = _decodeJWT(req);
   console.log(decodedJWT)
   if (!_authorized(decodedJWT, "USER")) {
@@ -160,7 +125,7 @@ resultRouter.get("/reading-result-display/test/:test_id", (req, res) => {
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName
-  resultModel
+  Result_Quant
     .find({
       userName: userName,
       test_id: req.params.test_id,
@@ -177,17 +142,17 @@ resultRouter.get("/reading-result-display/test/:test_id", (req, res) => {
     });
 });
 
-resultRouter.get("/reading-result/display-all", (req, res) => {
+quantResultRouter.get("/quant-result/display-all", (req, res) => {
   const decodedJWT = _decodeJWT(req);
   if (!_authorized(decodedJWT, "USER")) {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName
-  resultModel
+  Result_Quant
     .find({
       userName: userName,
-    })
+    }) //User-ID left to be inserted
     .then((doc) => {
       res.status(201).json({
         message: "Result displayed successfully",
@@ -199,7 +164,7 @@ resultRouter.get("/reading-result/display-all", (req, res) => {
     });
 });
 
-export default resultRouter;
+module.exports = quantResultRouter;
 
 //When submit button is clicked below API's will be called
 //API Calls for result
