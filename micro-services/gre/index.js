@@ -12,6 +12,10 @@ dotenv.config();
 // All Routes
 const verbal_routes = require("./Verbal_Routes/verbal.js");
 const verbalanswers_routes = require("./Verbal_Routes/verbal_answerkey.js");
+const verbalresult_routes = require("./Verbal_Routes/verbal_result.js");
+const quant_routes = require("./Quant_Routes/quant.js");
+const quantanswers_routes = require("./Quant_Routes/quant_answerkey.js");
+const quantresult_routes = require("./Quant_Routes/quant_result.js");
 
 const JWT_SECRET = process.env.TOKEN_SECRET
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN
@@ -34,8 +38,13 @@ appRouter.use(cors());
 appRouter.use(express.json());
 appRouter.use("/gre", verbal_routes);
 appRouter.use("/gre", verbalanswers_routes);
+appRouter.use("/gre", verbalresult_routes);
+appRouter.use("/gre", quant_routes);
+appRouter.use("/gre", quantanswers_routes);
+appRouter.use("/gre", quantresult_routes);
+
 appRouter.use('/', (req, res,next)=>{
-   res.send('<h1> middleware </h1>');
+   res.send('<h1> You have reached our middleware. Maybe u r lost. </h1>');
 });
 
 appRouter.listen(7545, () => {
