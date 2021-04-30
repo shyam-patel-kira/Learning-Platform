@@ -27,7 +27,7 @@ function Rctest() {
   const [error, setError] = useState('');
   const [ans, setAns] = useState(new Array(7));
   const [loading, setLoading] = useState(true);
-  const [submitLoading,setSubmitLoading] = useState(false)
+  const [submitLoading, setSubmitLoading] = useState(false)
   const [question, setQuestion] = useState({
     id: '',
     test_type: '',
@@ -76,26 +76,89 @@ function Rctest() {
   }, []);
 
   const handleSubmit = async e => {
-    console.log('hi');
+    e.preventDefault();
+    const test_type = 'rc'
+    setSubmitLoading(true);
+    let x = window.location.href.split('/');
+    let test_id = x[x.length - 1];
+
+    let answer = { ...ans };
+    console.log(answer);
+    for (let i = 1; i <= 7; i++) {
+      if (answer[i] === undefined) {
+        answer[`ans_${i.toString()}`] = '';
+      } else {
+        answer[`ans_${i.toString()}`] = ans[i];
+      }
+    }
+    for (let i = 1; i <= 7; i++) {
+      delete answer[i];
+    }
+    let answers = { answers: answer };
+    console.log(answers);
+
+    //API Call for storing user answers
+    await axios
+      .post(
+        `http://localhost:7545/gre/verbal/test/user-answers/${test_type}&${test_id}`,
+        answers,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
+      .then(res => {
+        if (res.data.error) {
+          setError({ error: res.data.error });
+        } else {
+          console.log(res);
+        }
+      })
+      .catch(e => {
+        console.log(e.message);
+      });
+
+    //API Call for comparing answers in result collection
+    await axios
+      .get(
+        `http://localhost:7545/gre/verbal-answer-result/test/${test_type}&${test_id}`,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
+      .then(res => {
+        if (res.data.error) {
+          setError({ error: res.data.error });
+        } else {
+          console.log(res.data);
+          setSubmitLoading(false);
+        }
+      })
+      .catch(e => {
+        console.log(e.message);
+      });
+    window.location = `/gre-verbal-result/${test_type}/${test_id}`;
   };
+
 
   let text = [];
   for (let i = 1; i <= 7; i++) {
-    text.push(
-      <label className='mx-2 px-3 text-right text-black'>
-        {i + '  '}
-        <input
-          type='text'
-          id={i.toString()}
-          key={i.toString()}
-          onChange={e => {
-            this.handleChange(e);
-          }}
-        />
-      </label>
-    );
-  }
-
+      text.push(
+        <label className='mx-4 my-4 text-right text-black'>
+          {'0' + i}
+          <input
+            type='text'
+            id={i.toString()}
+            key={i.toString()}
+            onChange={e => {
+              let a = ans;
+              a[i] = e.target.value;
+              setAns(a);
+            }}
+          />
+        </label>
+      );
+    }
+    
   if (error) {
     return (
       <div>
@@ -124,67 +187,67 @@ function Rctest() {
   } else {
     return (
       <div className='leading-relaxed font-serif'>
-        <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
+        <h1 className='text-3xl text-center my-4'>Test-{question.id}</h1>
         <div className='flex'>
           <div className='border-black border-2 w-1/2 my-4 mx-6'>
-            <img src={question.img_1} alt='' />
+            <img src={question.img1} alt='' />
           </div>
           <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
             {text}
+            <button
+            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
+            type='submit'
+            onClick={e => {
+              handleSubmit(e);
+              for (let i = 1; i <= 40; i++) {
+                document.getElementById(i.toString()).value = '';
+              }
+            }}
+            disabled={submitLoading}
+          >
+            {submitLoading && (
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                <div className=''>Submitting...</div>
+              </div>
+            )}
+            {!submitLoading && <span>Submit</span>}
+          </button>
           </div>
+        </div> 
+        <div className='border-black border-2 w-1/2 my-4 mx-6'>
+          <img src={question.img2} alt='' />
         </div>
         <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_2} alt='' />
+          <img src={question.img3} alt='' />
         </div>
         <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_3} alt='' />
+          <img src={question.img4} alt='' />
         </div>
         <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_4} alt='' />
+          <img src={question.img5} alt='' />
         </div>
         <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_5} alt='' />
-        </div>
-        <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_6} alt='' />
+          <img src={question.img6} alt='' />
         </div>
 
         <div className='border-black border-2 w-1/2 my-4 mx-6'>
-          <img src={question.img_7} alt='' />
+          <img src={question.img7} alt='' />
         </div>
-        <button
-          className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-          type='submit'
-          onClick={e => {
-            this.handleSubmit(e);
-            for (let i = 1; i <= 40; i++) {
-              document.getElementById(i.toString()).value = '';
-            }
-          }}
-          disabled={submitLoading}
-        >
-          {submitLoading && (
-            <div className='flex flex-row'>
-              <svg
-                xmlns='https://www.w3.org/2000/svg'
-                className='animate-spin h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                />
-              </svg>
-              <div className=''>Submitting...</div>
-            </div>
-          )}
-
-          {!submitLoading && <span>Submit</span>}
-        </button>
+        
       </div>
     );
   }

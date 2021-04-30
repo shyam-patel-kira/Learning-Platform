@@ -360,7 +360,6 @@ function Ieltslisteningtest(props) {
                 <div className=''>Submitting...</div>
               </div>
             )}
-            {submitLoading && <span>Submitting</span>}
             {!submitLoading && <span>Submit</span>}
           </button>
         </div>

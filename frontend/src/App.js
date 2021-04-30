@@ -9,7 +9,6 @@ import Home from './Pages/Home';
 import AboutUs from './Components/AboutUs';
 import ErrorPage from './Error404.JPG';
 import Youtube from './Youtube';
-import TodoApp from './Components/Todos/TodoApp';
 
 import Ieltsmain from './Pages/Ieltsmain';
 import Ieltsreading from './Pages/Ieltsreading';
@@ -34,6 +33,7 @@ import Grequantitative from './Pages/Grequantitative';
 import Gretipsandtricks from './Pages/Gretipsandtricks';
 import Rcmain from './Pages/Rcmain';
 import Rctest from './Components/GRE/Hero/Rc/Rctest';
+import RcResult from './Components/GRE/Hero/Rc/RcResult';
 
 const Page404 = () => {
   return (
@@ -53,7 +53,7 @@ export default function App() {
       <Router history={history}>
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/todo' component={TodoApp} />
+
           <Route path='/ieltsmain' component={Ieltsmain} />
           <Route path='/ielts-listening' component={Ieltslistening} />
           <Route path='/ielts-reading' component={Ieltsreading} />
@@ -93,10 +93,9 @@ export default function App() {
           <Route path='/gre-tipsandtricks' component={Gretipsandtricks} />
           <Route path='/verbal-rc' component={Rcmain} />
           <Route path='/gre-rc-test' component={Rctest} />
-
+          <Route path='/gre-verbal-result' component={RcResult} />
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
-
           <Route component={Page404} />
         </Switch>
       </Router>
