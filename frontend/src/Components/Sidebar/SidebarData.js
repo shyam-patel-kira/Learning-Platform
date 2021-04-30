@@ -20,7 +20,7 @@ export const SidebarData = [
     link: '/mini-youtube',
   },
   {
-    title: 'Vocabulary',
-    link: '/ielts-vocabulary',
+    title: 'Todo App',
+    link: '/todo',
   },
 ];

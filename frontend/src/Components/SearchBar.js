@@ -22,7 +22,12 @@ const SearchBar = props => {
             </label>
           </div>
           <div className='mx-auto'>
-            <input className='w-96 mb-20' type='text' value={term} onChange={handleInput} />
+            <input
+              className='w-96 mb-16'
+              type='text'
+              value={term}
+              onChange={handleInput}
+            />
           </div>
         </div>
       </form>

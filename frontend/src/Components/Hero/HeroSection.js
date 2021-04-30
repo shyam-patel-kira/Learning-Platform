@@ -7,7 +7,7 @@ function HeroSection() {
       src={[
         '/Images/image-1.jpg',
         '/Images/image-2.jpg',
-        '/Images/image-3.jpg',
+        '/Images/image-3.jpeg',
       ]}
     />
   );

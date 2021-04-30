@@ -9,10 +9,10 @@ function VideoDetail(props) {
 
   return (
     <div>
-      <div className=''>
-        <iframe className='w-60' title='video player' src={videoSrc} />
+      <div>
+        <iframe className='w-full h-96 ml-16' title='video player' src={videoSrc} />
       </div>
-      <div className='text-customwhite bg-customblack'>
+      <div className='text-customwhite bg-customblack ml-16 my-4 font-serif leading-relaxed'>
         <h4 className='text-customwhite bg-customblack'>
           {props.video.snippet.title}
         </h4>

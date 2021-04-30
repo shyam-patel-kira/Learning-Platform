@@ -28,7 +28,7 @@ module.exports = {
       customblack: '#02111B',
       custombrown: '#3F4045',
       coffee: '#30292F',
-      metal: '#83c5be',
+      metal: '#e6ccb2',
       charcoal: '#474E57',
       customblue: '#5D737E',
       sand: '#ADB8BD',
@@ -44,6 +44,9 @@ module.exports = {
       customdarkblue: '#3d405b',
       onhover: '#b7b7a4',
       onhovertext: '#3a0ca3',
+      carditem: '#d7e3fc',
+      todobordercolor: '#149fff',
+      todoinputcolor: '#5d0cff',
     },
     boxShadow: {
       customsm: '2px 10px 35px 1px rgba(153, 153, 153, 0.3)',

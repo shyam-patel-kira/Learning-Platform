@@ -6,7 +6,7 @@ function VideoList(props) {
     return <VideoItem onVideoSelect={props.onVideoSelect} video={video} />;
   });
 
-  return <div>{renderedList}</div>;
+  return <div className='ml-96 mb-8'>{renderedList}</div>;
 }
 
 export default VideoList;

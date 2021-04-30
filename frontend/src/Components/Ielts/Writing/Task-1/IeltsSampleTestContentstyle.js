@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const IeltsSampleTestContentstyle = props => {
@@ -57,7 +57,7 @@ const IeltsSampleTestContentstyle = props => {
             >
               <Link
                 to={`/ielts-writing-task-1/${keyword}`}
-                className='no-underline'
+                className='hover:no-underline hover:text-customwhite'
               >
                 Go Back
               </Link>

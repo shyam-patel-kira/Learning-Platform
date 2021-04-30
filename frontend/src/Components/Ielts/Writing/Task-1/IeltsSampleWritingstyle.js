@@ -46,7 +46,7 @@ const IeltsSampleWritingstyle = props => {
             >
               <Link
                 to={`/ielts-writing-task-1/${keyword}`}
-                className='no-underline'
+                className='hover:no-underline hover:text-customwhite'
               >
                 Go Back
               </Link>

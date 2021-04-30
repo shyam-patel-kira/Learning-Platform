@@ -130,6 +130,7 @@ class Ieltsreadingtest extends React.Component {
         headers: { Authorization: AuthStr },
       })
       .then(res => {
+        console.log(res.data);
         if (res.data.error) {
           this.setState({
             error: res.data.error,

@@ -28,12 +28,15 @@ const Youtube = () => {
       <div>
         <SearchBar onFormSubmit={onTermSubmit} />
       </div>
-      <VideoDetail video={selectedVideo} />
+      <div className='flex flex-row justify-items-evenly'>
+        <VideoDetail video={selectedVideo} />
 
-      <VideoList
-        onVideoSelect={video => setSelectedVideo(video)}
-        videos={videos}
-      />
+        <VideoList
+          onVideoSelect={video => setSelectedVideo(video)}
+          videos={videos}
+          className=''
+        />
+      </div>
     </div>
   );
 };
