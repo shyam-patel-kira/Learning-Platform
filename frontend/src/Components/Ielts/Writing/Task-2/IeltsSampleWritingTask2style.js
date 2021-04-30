@@ -43,7 +43,7 @@ const IeltsSampleWritingTask2style = props => {
             >
               <Link
                 to={`/ielts-writing-task-2/${keyword}`}
-                className='no-underline'
+                className='hover:no-underline hover:text-customwhite'
               >
                 Go Back
               </Link>

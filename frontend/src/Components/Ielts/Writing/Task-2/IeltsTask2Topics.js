@@ -128,7 +128,7 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='no-underline'>
+                <Link to='/ielts-writing' className='hover:no-underline hover:text-customwhite'>
                   Go Back
                 </Link>
               </button>
@@ -258,7 +258,10 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='no-underline'>
+                <Link
+                  to='/ielts-writing'
+                  className='hover:no-underline hover:text-customwhite'
+                >
                   Go Back
                 </Link>
               </button>
@@ -378,7 +381,10 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='no-underline'>
+                <Link
+                  to='/ielts-writing'
+                  className='hover:no-underline hover:text-customwhite'
+                >
                   Go Back
                 </Link>
               </button>
@@ -498,7 +504,10 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='no-underline'>
+                <Link
+                  to='/ielts-writing'
+                  className='hover:no-underline hover:text-customwhite'
+                >
                   Go Back
                 </Link>
               </button>
@@ -615,7 +624,10 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='no-underline'>
+                <Link
+                  to='/ielts-writing'
+                  className='hover:no-underline hover:text-customwhite'
+                >
                   Go Back
                 </Link>
               </button>

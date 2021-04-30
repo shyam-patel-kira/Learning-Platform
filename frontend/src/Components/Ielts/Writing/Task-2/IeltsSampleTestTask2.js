@@ -1,196 +1,98 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import IeltsSampleTestTask2style from './IeltsSampleTestTask2style';
+import axios from 'axios';
+import Loader from 'react-loader-spinner';
+import Cookies from 'universal-cookie';
+import jwt from 'jsonwebtoken';
 
-function IeltsSampleTestTask2() {
+const cookies = new Cookies();
+
+function IeltsSampleTestTask2(props) {
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [params, setParams] = useState({
+    title: '',
+    question_heading: '',
+  });
   let x = window.location.href.split('/');
   let id = x[x.length - 1];
   let keyword = x[x.length - 2];
+  let USER_TOKEN = cookies.get('token');
+  let AuthStr = 'JWT '.concat(USER_TOKEN);
+  let ADMIN_TOKEN =
+    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+  //signing ADMIN TOKEN for answerkey
+  const admin_token = jwt.sign(
+    {
+      userName: 'kira',
+      roles: 'ADMIN',
+    },
+    ADMIN_TOKEN
+  );
+  let secret = 'JWT '.concat(admin_token);
 
-  //Opinion Based Essay
-  if (keyword === 'opinion') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            id={id}
-            title='Opinion Based Essay'
-            question='Question:'
-            question_heading='Today, the high sales of popular goods reflect the power of advertising and not the real need of the society in which they are sold. To what extent do you agree or disagree?'
-          />
-        </div>
-      );
+  useEffect(() => {
+    async function fetchTest() {
+      await axios
+        .get(
+          `http://localhost:8000/ielts/writing-task-2-test/${id}&${keyword}`,
+          {
+            headers: { Authorization: AuthStr },
+          }
+        )
+        .then(res => {
+          console.log(res.data);
+          if (res.data.error) {
+            setError({ error: res.data.error });
+          } else {
+            setParams({
+              title: res.data.results[0].title,
+              question_heading: res.data.results[0].question_heading,
+            });
+            setLoading(false);
+          }
+        })
+        .catch(e => console.log(e.message));
     }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            id={id}
-            title='Opinion Based Essay'
-            question='Question:'
-            question_heading='Many people assume that the goal of every country should be to produce more materials and goods. To what extent do you agree or disagree that constantly increasing production is an appropriate goal?'
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            id={id}
-            title='Opinion Based Essay'
-            question='Question:'
-            question_heading='Modern technology has made it easier for individuals to download copyrighted music and books from the Internet for no charge. To what extent is this a positive or a negative development?'
-          />
-        </div>
-      );
-    }
+    fetchTest();
+  }, []);
+
+  if (error) {
+    return (
+      <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      </div>
+    );
   }
 
-  //Advantage-Disadvantage essay
-  else if (keyword === 'adv-disadv') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Advantage-Disadvantage Essay'
-            question='Question:'
-            question_heading="It is becoming increasingly popular to have a year off between finishing school and going to a university. What are the advantages and disadvantages of this?"
+  if (loading === true) {
+    return (
+      <div>
+        <div className='my-64'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+            Fetching Test...
+          </h1>
+          <Loader
+            type='BallTriangle'
+            color='#00BFFF'
+            height={100}
+            width={100}
+            className='flex flex-row mx-auto my-auto justify-center'
           />
         </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Advantage-Disadvantage Essay'
-            question='Question:'
-            question_heading='Some people think that it would be better for large companies and industry to move to regional areas outside large urban centers. Do you think advantages outweigh the disadvantages?'
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Pie-Chart'
-            question='Question:'
-            question_heading="Space exploration costs tax payers an exorbitant amount of money each year. What are the advantages and disadvantages of spending money on space exploration? "
-          />
-        </div>
-      );
-    }
-  }
-
-  //Solution essay
-  else if (keyword === 'solution') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Solution Based Essay'
-            question='Question:'
-            question_heading='Every country has poor people and every country has different ways of dealing with the poor. What are some of the reasons for poverty? What can be done to help the poor?'
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Solution Based Essay'
-            question='Question:'
-            question_heading="In many developing countries there is a problem with declining quality of air and water from both industry and construction. What measures could be taken to prevent this?"
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Solution Based Essay'
-            question='Question:'
-            question_heading='Overpopulation in many major urban centers around the world is a major problem. What are the causes of this? How can this problem be solved?'
-          />
-        </div>
-      );
-    }
-  }
-  //Discussion essay
-  else if (keyword === 'discussion') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Discussion Essay'
-            question='Question:'
-            question_heading='Successful sports professionals can earn a great deal more money than people in other important professions. Some people think this is fully justified while others think it is unfair. Discuss both views and give your opinion.'
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Discussion Essay'
-            question='Question:'
-            question_heading='Some people believe that visitors to other countries should follow local customs and behaviour. Others disagree and think that the host country should welcome cultural differences. Discuss both views and give your opinion.'
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Discussion Essay'
-            question='Question:'
-            question_heading='Some people prefer to spend their lives doing the same things and avoiding change. Others, however, think that change is always a good thing. Discuss both views and give your opinion'
-          />
-        </div>
-      );
-    }
-  }
-
-  //Direct Essays
-  else if (keyword === 'direct') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Direct Essay'
-            question='Question:'
-            question_heading='Traditional food is undergoing great changes and is being replaced by new diet. What do you think are the reasons and what do you think about this phenomenon?'
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Direct Essay'
-            question='Question:'
-            question_heading='Discuss the reasons why people define happiness differently and how to obtain happiness?'
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestTask2style
-            title='Direct Essay'
-            question='Question:'
-            question_heading='Most people agree that money cannot be happiness. Why is happiness difficult to define? How can people achieve happiness?'
-          />
-        </div>
-      );
-    }
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <IeltsSampleTestTask2style
+          title={params.title}
+          question='Question:'
+          question_heading={params.question_heading}
+          answer='Answers'
+        />
+      </div>
+    );
   }
 }
 

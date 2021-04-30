@@ -1,274 +1,102 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import IeltsSampleTestContentstyle from './IeltsSampleTestContentstyle';
+import axios from 'axios';
+import Loader from 'react-loader-spinner';
+import Cookies from 'universal-cookie';
+import jwt from 'jsonwebtoken';
 
-import Line_graph_test_1 from './Images/Line-graph/Line_graph_test_1.JPG';
-import Line_graph_test_2 from './Images/Line-graph/Line_graph_test_2.JPG';
-import Line_graph_test_3 from './Images/Line-graph/Line_graph_test_3.JPG';
+const cookies = new Cookies();
 
-import Pie_chart_test_1 from './Images//Pie-chart/Pie_chart_test_1.JPG';
-import Pie_chart_test_2 from './Images//Pie-chart/Pie_chart_test_2.JPG';
-import Pie_chart_test_3 from './Images//Pie-chart/Pie_chart_test_3.JPG';
+function IeltsSampleTestContent(props) {
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [params, setParams] = useState({
+    title: '',
+    img_url: '',
+    question_heading: '',
+  });
 
-import Bar_graph_test_1 from './Images/Bar-graph/Bar_graph_test_1.JPG';
-import Bar_graph_test_2 from './Images/Bar-graph/Bar_graph_test_2.JPG';
-import Bar_graph_test_3 from './Images/Bar-graph/Bar_graph_test_3.JPG';
-
-import map_test_1 from './Images/Map/map_test_1.JPG';
-import map_test_2 from './Images/Map/map_test_2.JPG';
-import map_test_3 from './Images/Map/map_test_3.JPG';
-
-import table_test_1 from './Images/Table/table_test_1.JPG';
-import table_test_2 from './Images/Table/table_test_2.JPG';
-import table_test_3 from './Images/Table/table_test_3.JPG';
-
-import Process_test_1 from './Images/Diagram/Process_test_1.JPG';
-import Process_test_2 from './Images/Diagram/Process_test_2.JPG';
-import Process_test_3 from './Images/Diagram/Process_test_3.JPG';
-
-function IeltsSampleTestContent() {
   let x = window.location.href.split('/');
   let id = x[x.length - 1];
   let keyword = x[x.length - 2];
+  let USER_TOKEN = cookies.get('token');
+  let AuthStr = 'JWT '.concat(USER_TOKEN);
+  let ADMIN_TOKEN =
+    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+  //signing ADMIN TOKEN for answerkey
+  const admin_token = jwt.sign(
+    {
+      userName: 'kira',
+      roles: 'ADMIN',
+    },
+    ADMIN_TOKEN
+  );
+  let secret = 'JWT '.concat(admin_token);
 
-  if (keyword === 'line-graph') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            id={id}
-            title='Line-Graph'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task.The graph shows average annual expenditures on cell phone and residential phone services between 2001 and 2010. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.'
-            img={Line_graph_test_1}
-          />
-        </div>
-      );
+  useEffect(() => {
+    async function fetchTest() {
+      await axios
+        .get(
+          `http://localhost:8000/ielts/writing-task-1-test/${id}&${keyword}`,
+          {
+            headers: { Authorization: AuthStr },
+          }
+        )
+        .then(res => {
+          console.log(res.data);
+          if (res.data.error) {
+            setError({ error: res.data.error });
+          } else {
+            setParams({
+              title: res.data.results[0].title,
+              img_url: res.data.results[0].img_url,
+              question_heading: res.data.results[0].question_heading,
+            });
+            setLoading(false);
+          }
+        })
+        .catch(e => console.log(e.message));
     }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            id={id}
-            title='Line-Graph'
-            question='Question:'
-            question_heading='The graph below shows the number of books read by men and women at Burnaby Public Library from 2011 to 2014. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={Line_graph_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            id={id}
-            title='Line-Graph'
-            question='Question:'
-            question_heading='The graph below shows relative price changes for fresh fruits and vegetables, sugars and sweets, and carbonated drinks between 1978 and 2009. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={Line_graph_test_3}
-          />
-        </div>
-      );
-    }
+    fetchTest();
+  }, []);
+
+  if (error) {
+    return (
+      <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      </div>
+    );
   }
 
-  //Pie-Chart
-  else if (keyword === 'pie-chart') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Pie-Chart'
-            question='Question:'
-            question_heading="You should spend about 20 minutes on this task. The pie graphs below show the result of a survey of children's activities. The first graph shows the cultural and leisure activities that boys participate in, whereas the second graph shows the activities in which the girls participate. Write a report describing the information shown in the two pie graphs. Write at least 150 words"
-            img={Pie_chart_test_1}
+  if (loading === true) {
+    return (
+      <div>
+        <div className='my-64'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+            Fetching Test...
+          </h1>
+          <Loader
+            type='BallTriangle'
+            color='#00BFFF'
+            height={100}
+            width={100}
+            className='flex flex-row mx-auto my-auto justify-center'
           />
         </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Pie-Chart'
-            question='Question:'
-            question_heading='The pie charts below give information about the composition of household rubbish in the United Kingdom in two different years. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={Pie_chart_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Pie-Chart'
-            question='Question:'
-            question_heading="You should spend about 20 minutes on this task. The pie graphs below show the result of a survey of children's activities. The first graph shows the cultural and leisure activities that boys participate in, whereas the second graph shows the activities in which the girls participate. Write a report describing the information shown in the two pie graphs. Write at least 150 words"
-            img={Pie_chart_test_3}
-          />
-        </div>
-      );
-    }
-  }
-
-  //Bar-Graph
-  else if (keyword === 'bar-graph') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Bar-Graph'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. The bar chart shows the number of visitors to three London Museums between 2007 and 2012. Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.'
-            img={Bar_graph_test_1}
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Bar-Graph'
-            question='Question:'
-            question_heading='Bar graph below shows the amount of carbon emissions in different countries during three different years. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={Bar_graph_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Bar-Graph'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. The chart below shows gives information about Southland’s main exports in 2000,*20.., and future projections for 2025. Summarise the information by selecting and reporting the main features, and making comparisons where relevant. Write atleast 150 words.'
-            img={Bar_graph_test_3}
-          />
-        </div>
-      );
-    }
-  }
-  //Table
-  else if (keyword === 'table') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Table'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. The table below shows consumer spending on different items in 5 different countries.Summarize the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.'
-            img={table_test_1}
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Table'
-            question='Question:'
-            question_heading='The table below gives information about the percentage of land covered by forest in various countries in 1990 and 2005 with estimated figures for 2015. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={table_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Table'
-            question='Question:'
-            question_heading='The table below gives information about past and projected population figures in various countries for different years. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={table_test_3}
-          />
-        </div>
-      );
-    }
-  }
-
-  //Maps
-  else if (keyword === 'maps') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Maps'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.'
-            img={map_test_1}
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Maps'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. Plan A below shows a health centre in 2005. Plan B shows the same place in the present day. Summarise the information by selecting and reporting the main features, and making comparisons where relevant.  Write atleast 150 words'
-            img={map_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Maps'
-            question='Question:'
-            question_heading='The two maps below show an island, before and after the construction of some tourist facilities. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words'
-            img={map_test_3}
-          />
-        </div>
-      );
-    }
-  }
-
-  //Diagram
-  else if (keyword === 'diagram') {
-    if (id === '1') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Diagram'
-            question='Question:'
-            question_heading='You should spend about 20 minutes on this task. The diagram shows the process of making coffee. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.'
-            img={Process_test_1}
-          />
-        </div>
-      );
-    }
-    if (id === '2') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Diagram'
-            question='Question:'
-            question_heading='The diagram below shows the life cycle of the salmon. Summarise the information by selecting and reporting the main features and make comparisons where relevant.'
-            img={Process_test_2}
-          />
-        </div>
-      );
-    }
-    if (id === '3') {
-      return (
-        <div>
-          <IeltsSampleTestContentstyle
-            title='Diagram'
-            question='Question:'
-            question_heading='The diagram below shows how potato chips are made. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.'
-            img={Process_test_3}
-          />
-        </div>
-      );
-    }
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <IeltsSampleTestContentstyle
+          title={params.title}
+          question='Question:'
+          question_heading={params.question_heading}
+          img_url={params.img_url}
+          answer='Answers'
+        />
+      </div>
+    );
   }
 }
 

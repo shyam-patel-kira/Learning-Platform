@@ -26,7 +26,7 @@ const IeltsSampleTestContentstyle = props => {
             <br />
             {props.question_heading}
             <img
-              src={props.img}
+              src={props.img_url}
               alt=''
               className='object-contain h-96 w-full my-8'
             />

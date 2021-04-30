@@ -119,7 +119,7 @@ function IeltsTask1Topics(props) {
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
-                id='2'
+                id='3'
               >
                 Test-3
               </button>
@@ -244,7 +244,7 @@ function IeltsTask1Topics(props) {
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
-                id='2'
+                id='3'
               >
                 Test-3
               </button>
