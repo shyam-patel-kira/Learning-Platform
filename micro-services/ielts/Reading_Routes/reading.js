@@ -3,11 +3,8 @@ import express from "express";
 import readingModel from "../Models/Reading.js";
 import userReadingAnswersModel from "../Models/Reading_user_answers.js";
 import dotenv from "dotenv";
-import jwa from "jwa";
-import jwt from "jsonwebtoken";
-import Inversoft from "passport-node-client";
-import _decodeJWT from "../decodeJWTFunction.js"
-import _authorized from "../authorizationFunction.js"
+import _decodeJWT from "../decodeJWTFunction.js";
+import _authorized from "../authorizationFunction.js";
 // import jwt_decode from "jwt-decode";
 
 dotenv.config();
@@ -43,20 +40,19 @@ readingRouter.post("/reading/test/user-answers/:test_id", (req, res) => {
   const answers = req.body.answers;
 
   const decodedJWT = _decodeJWT(req);
-  console.log(decodedJWT)
+  console.log(decodedJWT);
   if (!_authorized(decodedJWT, "USER")) {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName;
-  //console.log("Start Here");
+ 
   const userAnswers = new userReadingAnswersModel({
     test_id: test_id,
     answers: answers,
-    userName: userName
+    userName: userName,
   });
-  // console.log("answer :" + answers);
-  // console.log("Here passed");
+  
   userAnswers
     .save()
     .then((doc) => {
@@ -70,6 +66,5 @@ readingRouter.post("/reading/test/user-answers/:test_id", (req, res) => {
     });
   // console.log("Finished Here");
 });
-
 
 export default readingRouter;

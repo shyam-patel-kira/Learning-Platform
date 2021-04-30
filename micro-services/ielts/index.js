@@ -14,7 +14,9 @@ import listeningAnswerRouter from "./Listening_Routes/listening_answerkey.js";
 import resultRouter from "./result_reading.js";
 import resultListeningRouter from "./result_listening.js";
 import writingTaskOneSampleRouter from "./WritingTask1Sample_Routes/writing_Task1_sample_bar.js";
-import writingTaskTwoSampleRouter from "./WritingTask2Sample_Routes/writing_Task2_sample.js"
+import writingTaskOneTestRouter from "./WritingTask1Sample_Routes/writing_Task1_test_questions.js";
+import writingTaskTwoSampleRouter from "./WritingTask2Sample_Routes/writing_Task2_sample.js";
+import writingTaskTwoTestRouter from "./WritingTask2Sample_Routes/writing_Task2_test_questions.js";
 
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
@@ -34,7 +36,10 @@ app.use("/ielts", listeningAnswerRouter);
 app.use("/ielts", resultRouter);
 app.use("/ielts", resultListeningRouter);
 app.use("/ielts", writingTaskOneSampleRouter);
-app.use("/ielts",writingTaskTwoSampleRouter)
+app.use("/ielts", writingTaskTwoSampleRouter);
+app.use("/ielts", writingTaskOneTestRouter);
+app.use("/ielts",writingTaskTwoTestRouter)
+
 
 const CONNECTION_URL = process.env.DB_CONNECT;
 const PORT = process.env.PORT || 4955;
