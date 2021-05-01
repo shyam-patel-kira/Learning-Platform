@@ -75,6 +75,7 @@ function ReadingResult(props) {
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
+            console.log('Answer Key error:',res.data.error)
           } else {
             let ans = [];
             //(Object.values(res.data.results[0].answers)

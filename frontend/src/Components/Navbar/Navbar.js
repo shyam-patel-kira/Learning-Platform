@@ -3,7 +3,9 @@ import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
 import Accordion from '../Faq/Accordion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { BiUser } from 'react-icons/bi';
 import Cookies from 'universal-cookie';
+import {FiUsers} from 'react-icons/fi'
 
 const cookies = new Cookies();
 
@@ -70,7 +72,6 @@ class Navbar extends Component {
               aria-haspopup='true'
               aria-expanded='false'
             >
-              Courses
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-5 w-5 inline'
@@ -83,6 +84,7 @@ class Navbar extends Component {
                   clipRule='evenodd'
                 />
               </svg>
+              Courses
             </p>
             <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
               <Link className='dropdown-item' to='/gremain'>
@@ -95,7 +97,11 @@ class Navbar extends Component {
           </li>
 
           <li>
-            <NavLink to='/about' className='text-white px-4 py-2'>
+            <NavLink
+              to='/about'
+              className='text-customwhite px-4 py-2 hover:text-customwhite'
+            >
+              <FiUsers className='mx-1 mb-1 h-4 w-4 inline' />
               About Us
             </NavLink>
           </li>
@@ -124,46 +130,51 @@ class Navbar extends Component {
               </AnchorLink>
             </NavLink>
           </li>
+          <li>
+            {' '}
+            {username ? (
+              <div>
+                <div className='mb-1 h-4 w-4 inline text-customwhite px-4'>
+                  <BiUser className='inline mx-1 mb-1' />
+                  <h1 className='text-customwhite text-md inline py-2'>
+                    Hi, {username}{' '}
+                  </h1>
+                </div>
+
+                <button
+                  onClick={this.handleLogout}
+                  className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+                >
+                  <Link
+                    className='hover:no-underline hover:text-onhovertext'
+                    to='/'
+                  >
+                    Logout
+                  </Link>
+                </button>
+              </div>
+            ) : (
+              <div>
+                <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+                  <Link
+                    className='hover:no-underline hover:text-onhovertext'
+                    to='/login'
+                  >
+                    Login
+                  </Link>
+                </button>
+                <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+                  <Link
+                    className='hover:no-underline hover:text-onhovertext'
+                    to='/signup'
+                  >
+                    Sign Up
+                  </Link>
+                </button>
+              </div>
+            )}
+          </li>
         </ul>
-
-        {username ? (
-          <div>
-            <h1 className='text-white text-md inline py-2 px-4'>
-              Hi, {username}{' '}
-            </h1>
-
-            <button
-              onClick={this.handleLogout}
-              className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
-            >
-              <Link
-                className='hover:no-underline hover:text-onhovertext'
-                to='/'
-              >
-                Logout
-              </Link>
-            </button>
-          </div>
-        ) : (
-          <div>
-            <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-              <Link
-                className='hover:no-underline hover:text-onhovertext'
-                to='/login'
-              >
-                Login
-              </Link>
-            </button>
-            <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-              <Link
-                className='hover:no-underline hover:text-onhovertext'
-                to='/signup'
-              >
-                Sign Up
-              </Link>
-            </button>
-          </div>
-        )}
       </nav>
     );
   }

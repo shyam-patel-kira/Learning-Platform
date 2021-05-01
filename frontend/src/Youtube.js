@@ -4,13 +4,14 @@ import youtube from './api/youtube';
 import SearchBar from './Components/SearchBar';
 import VideoList from './Components/VideoList';
 import VideoDetail from './Components/VideoDetail';
+import Navbar from './Components/Navbar/Navbar'
 
 const Youtube = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
-    onTermSubmit('IELTS');
+    onTermSubmit('IELTS and GRE');
   }, []);
 
   const onTermSubmit = async term => {
@@ -25,6 +26,7 @@ const Youtube = () => {
 
   return (
     <div className='bg-customblack'>
+    <Navbar />
       <div>
         <SearchBar onFormSubmit={onTermSubmit} />
       </div>

@@ -168,9 +168,10 @@ function Ieltslisteningtest(props) {
   for (let i = 1; i <= 10; i++) {
     if (i <= 9) {
       text1.push(
-        <label className='mx-4 my-4 text-right text-black'>
+        <label className='mx-4 my-4 text-right text-customwhite'>
           {'0' + i}
           <input
+            className='text-customblack'
             type='text'
             id={i.toString()}
             key={i.toString()}
@@ -184,9 +185,10 @@ function Ieltslisteningtest(props) {
       );
     } else {
       text1.push(
-        <label className='mx-4 my-4 text-right text-black'>
+        <label className='mx-4 my-4 text-right text-customwhite'>
           {i}
           <input
+            className='text-customblack'
             type='text'
             id={i.toString()}
             key={i.toString()}
@@ -204,9 +206,10 @@ function Ieltslisteningtest(props) {
   let text2 = [];
   for (let i = 11; i <= 20; i++) {
     text2.push(
-      <label className='mx-4 my-4 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-customwhite'>
         {i + '  '}
         <input
+          className='text-customblack'
           type='text'
           id={i.toString()}
           key={i.toString()}
@@ -223,9 +226,10 @@ function Ieltslisteningtest(props) {
   let text3 = [];
   for (let i = 21; i <= 30; i++) {
     text3.push(
-      <label className='mx-4 my-4 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-customwhite'>
         {i + '  '}
         <input
+          className='text-customblack'
           type='text'
           id={i.toString()}
           key={i.toString()}
@@ -242,10 +246,11 @@ function Ieltslisteningtest(props) {
   let text4 = [];
   for (let i = 31; i <= 40; i++) {
     text4.push(
-      <label className='mx-4 my-4 text-right text-black'>
+      <label className='mx-4 my-4 text-right text-customwhite'>
         {i + '  '}
         <input
           type='text'
+          className='text-customblack'
           id={i.toString()}
           key={i.toString()}
           onChange={e => {
@@ -278,451 +283,522 @@ function Ieltslisteningtest(props) {
   } else {
     if (test_id === '1') {
       return (
-        <div className='leading-relaxed font-serif'>
-          <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
-          <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <div className='leading-relaxed font-serif bg-trialback'>
+          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+            Test - {question.id}
+          </h1>
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-1
+          </h1>
+
           <audio controls className='mx-auto'>
             <source src={section_1} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-2
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-3
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-4
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
-          <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-            type='submit'
-            onClick={e => {
-              handleSubmit(e);
-              for (let i = 1; i <= 40; i++) {
-                document.getElementById(i.toString()).value = '';
-              }
-            }}
-            disabled={submitLoading}
-          >
-            {submitLoading && (
-              <div className='flex flex-row'>
-                <svg
-                  xmlns='https://www.w3.org/2000/svg'
-                  className='animate-spin h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                  />
-                </svg>
-                <div className=''>Submitting...</div>
-              </div>
-            )}
-            {!submitLoading && <span>Submit</span>}
-          </button>
+          <div className='flex flex-row justify-center'>
+            <button
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              type='submit'
+              onClick={e => {
+                handleSubmit(e);
+                for (let i = 1; i <= 40; i++) {
+                  document.getElementById(i.toString()).value = '';
+                }
+              }}
+              disabled={submitLoading}
+            >
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div className=''>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
+            </button>
+          </div>
         </div>
       );
     }
     if (test_id === '2') {
       return (
-        <div className='leading-relaxed font-serif'>
-          <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
-          <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <div className='leading-relaxed font-serif bg-trialback'>
+          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+            Test - {question.id}
+          </h1>
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-1
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section1_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-2
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section2_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-3
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section3_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
               <img src={question.img_5} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-4
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section4_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
-          <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-            type='submit'
-            onClick={e => {
-              handleSubmit(e);
-              for (let i = 1; i <= 40; i++) {
-                document.getElementById(i.toString()).value = '';
-              }
-            }}
-            disabled={submitLoading}
-          >
-            {submitLoading && (
-              <div className='flex flex-row'>
-                <svg
-                  xmlns='https://www.w3.org/2000/svg'
-                  className='animate-spin h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                  />
-                </svg>
-                <div className=''>Submitting...</div>
-              </div>
-            )}
-            {!submitLoading && <span>Submit</span>}
-          </button>
-          <br />
+          <div className='flex flex-row justify-center'>
+            <button
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              type='submit'
+              onClick={e => {
+                handleSubmit(e);
+                for (let i = 1; i <= 40; i++) {
+                  document.getElementById(i.toString()).value = '';
+                }
+              }}
+              disabled={submitLoading}
+            >
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div className=''>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
+            </button>
+          </div>
         </div>
       );
     }
     if (test_id === '3') {
       return (
-        <div className='leading-relaxed font-serif'>
-          <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
-          <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <div className='leading-relaxed font-serif bg-trialback'>
+          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+            Test - {question.id}
+          </h1>
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-1
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section1_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-2
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section2_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-3
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section3_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-4
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section4_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
-          <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-            type='submit'
-            onClick={e => {
-              handleSubmit(e);
-              for (let i = 1; i <= 40; i++) {
-                document.getElementById(i.toString()).value = '';
-              }
-            }}
-            disabled={submitLoading}
-          >
-            {submitLoading && (
-              <div className='flex flex-row'>
-                <svg
-                  xmlns='https://www.w3.org/2000/svg'
-                  className='animate-spin h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                  />
-                </svg>
-                <div className=''>Submitting...</div>
-              </div>
-            )}
-            {!submitLoading && <span>Submit</span>}
-          </button>
-          <br />
+          <div className='flex flex-row justify-center'>
+            <button
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              type='submit'
+              onClick={e => {
+                handleSubmit(e);
+                for (let i = 1; i <= 40; i++) {
+                  document.getElementById(i.toString()).value = '';
+                }
+              }}
+              disabled={submitLoading}
+            >
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div className=''>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
+            </button>
+          </div>
         </div>
       );
     }
     if (test_id === '4') {
       return (
-        <div className='leading-relaxed font-serif'>
-          <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
-          <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <div className='leading-relaxed font-serif bg-trialback'>
+          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+            Test - {question.id}
+          </h1>
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-1
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section1_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-2
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section2_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-3
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section3_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-4
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section4_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
-          <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-            type='submit'
-            onClick={e => {
-              handleSubmit(e);
-              for (let i = 1; i <= 40; i++) {
-                document.getElementById(i.toString()).value = '';
-              }
-            }}
-            disabled={submitLoading}
-          >
-            {submitLoading && (
-              <div className='flex flex-row'>
-                <svg
-                  xmlns='https://www.w3.org/2000/svg'
-                  className='animate-spin h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                  />
-                </svg>
-                <div className=''>Submitting...</div>
-              </div>
-            )}
-            {!submitLoading && <span>Submit</span>}
-          </button>
-          <br />
+          <div className='flex flex-row justify-center'>
+            <button
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              type='submit'
+              onClick={e => {
+                handleSubmit(e);
+                for (let i = 1; i <= 40; i++) {
+                  document.getElementById(i.toString()).value = '';
+                }
+              }}
+              disabled={submitLoading}
+            >
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div className=''>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
+            </button>
+          </div>
         </div>
       );
     }
     if (test_id === '5') {
       return (
-        <div className='leading-relaxed font-serif'>
-          <h1 className='text-3xl text-center my-4'>Test - {question.id}</h1>
-          <h1 className='text-2xl text-center my-4'>Section-1</h1>
+        <div className='leading-relaxed font-serif bg-trialback'>
+          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+            Test - {question.id}
+          </h1>
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-1
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section1_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-2
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section2_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_2} alt='' />
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-3
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section3_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
+          <h1 className='text-2xl text-center my-4 text-customwhite'>
+            Section-4
+          </h1>
           <audio controls className='mx-auto'>
             <source src={section4_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-black border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
-          <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack '
-            type='submit'
-            onClick={e => {
-              handleSubmit(e);
-              for (let i = 1; i <= 40; i++) {
-                document.getElementById(i.toString()).value = '';
-              }
-            }}
-            disabled={submitLoading}
-          >
-            {submitLoading && (
-              <div className='flex flex-row'>
-                <svg
-                  xmlns='https://www.w3.org/2000/svg'
-                  className='animate-spin h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                  />
-                </svg>
-                <div className=''>Submitting...</div>
-              </div>
-            )}
-
-            {!submitLoading && <span>Submit</span>}
-          </button>
-          <br />
+          <div className='flex flex-row justify-center'>
+            <button
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              type='submit'
+              onClick={e => {
+                handleSubmit(e);
+                for (let i = 1; i <= 40; i++) {
+                  document.getElementById(i.toString()).value = '';
+                }
+              }}
+              disabled={submitLoading}
+            >
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div className=''>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
+            </button>
+          </div>
         </div>
       );
     }

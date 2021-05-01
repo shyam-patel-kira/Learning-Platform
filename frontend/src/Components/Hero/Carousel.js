@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from '@emotion/styled'
 
 function Carousel(props) {
   const [count, setCount] = useState(0);
