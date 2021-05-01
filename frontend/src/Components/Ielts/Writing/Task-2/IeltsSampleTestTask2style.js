@@ -1,18 +1,57 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 const IeltsSampleTestTask2style = props => {
-  const [answer, setAnswer] = useState('');
+  const [ans, setAns] = useState('');
+  const [error, setError] = useState('');
+  const [submitLoading, setSubmitLoading] = useState(false);
   let x = window.location.href.split('/');
   let keyword = x[x.length - 2];
-  const handleChange = event => {
-    setAnswer(event.target.value);
+
+  const handleWritingTest = async event => {
+    event.preventDefault();
+    setSubmitLoading(true);
+    let x = window.location.href.split('/');
+    let test_type = x[x.length - 2];
+    let test_id = x[x.length - 1];
+    let USER_TOKEN = cookies.get('token');
+    let AuthStr = 'JWT '.concat(USER_TOKEN);
+    let confans = { answer: ans };
+    await axios
+      .post(
+        `http://localhost:8000/ielts/writing-task-2-user-answer/${test_type}/${test_id}`,
+        confans,
+        {
+          headers: { Authorization: AuthStr },
+        }
+      )
+      .then(res => {
+        if (res.data.error) {
+          setError(res.data.error);
+          console.log(res.data.error);
+        } else {
+          console.log(res);
+          setSubmitLoading(false);
+          alert('You have successfully submitted your test.')
+        }
+      })
+      .catch(e => {
+        console.log(e.message);
+      });
   };
 
-  const handleWritingTest = event => {
-    axios.post('').then().catch();
-  };
+  if (error) {
+    return (
+      <div>
+        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      </div>
+    );
+  }
+
   return (
     <div className='bg-custombrown '>
       <br />
@@ -36,8 +75,12 @@ const IeltsSampleTestTask2style = props => {
             type='text'
             name={props.title}
             required
-            value={answer}
-            onChange={handleChange}
+            value={ans}
+            onChange={e => {
+              let a = ans;
+              a = e.target.value;
+              setAns(a);
+            }}
             className='rounded-lg h-96 text-customblack w-4/5 mx-28'
           />
         </div>
@@ -63,8 +106,28 @@ const IeltsSampleTestTask2style = props => {
               variant='Default'
               name='test'
               onClick={handleWritingTest}
+              disabled={submitLoading}
             >
-              Submit
+              {submitLoading && (
+                <div className='flex flex-row'>
+                  <svg
+                    xmlns='https://www.w3.org/2000/svg'
+                    className='animate-spin h-6 w-6 ml-2'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                    />
+                  </svg>
+                  <div>Submitting...</div>
+                </div>
+              )}
+              {!submitLoading && <span>Submit</span>}
             </button>
           </div>
         </div>

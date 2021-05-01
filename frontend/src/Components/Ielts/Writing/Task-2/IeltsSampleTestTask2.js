@@ -3,7 +3,6 @@ import IeltsSampleTestTask2style from './IeltsSampleTestTask2style';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 
 const cookies = new Cookies();
 
@@ -19,17 +18,6 @@ function IeltsSampleTestTask2(props) {
   let keyword = x[x.length - 2];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
-  const admin_token = jwt.sign(
-    {
-      userName: 'kira',
-      roles: 'ADMIN',
-    },
-    ADMIN_TOKEN
-  );
-  let secret = 'JWT '.concat(admin_token);
 
   useEffect(() => {
     async function fetchTest() {

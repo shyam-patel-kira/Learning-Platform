@@ -28,7 +28,6 @@ import section4_5 from './Test-5/Section-4.mp3';
 
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 
 const cookies = new Cookies();
 
@@ -37,17 +36,7 @@ function Ieltslisteningtest(props) {
   let test_id = x[x.length - 1];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
-  const admin_token = jwt.sign(
-    {
-      userName: 'kira',
-      roles: 'ADMIN',
-    },
-    ADMIN_TOKEN
-  );
-  let secret = 'JWT '.concat(admin_token);
+
   const [error, setError] = useState('');
   const [ans, setAns] = useState(new Array(40));
   const [question, setQuestion] = useState({
@@ -68,11 +57,9 @@ function Ieltslisteningtest(props) {
         .get(`http://localhost:8000/ielts/listening/test/${test_id}`, {
           headers: { Authorization: AuthStr },
         })
-
         .then(res => {
-          console.log(res.data);
           if (res.data.error) {
-            setError({ error: res.data.error });
+            setError(res.data.error);
           } else {
             setQuestion({
               id: res.data.results[0].test_id,
@@ -125,7 +112,7 @@ function Ieltslisteningtest(props) {
       )
       .then(res => {
         if (res.data.error) {
-          setError({ error: res.data.error });
+          setError(res.data.error);
         } else {
           console.log(res);
         }
@@ -144,7 +131,7 @@ function Ieltslisteningtest(props) {
       )
       .then(res => {
         if (res.data.error) {
-          setError({ error: res.data.error });
+          setError(res.data.error);
         } else {
           console.log(res.data);
           setSubmitLoading(false);

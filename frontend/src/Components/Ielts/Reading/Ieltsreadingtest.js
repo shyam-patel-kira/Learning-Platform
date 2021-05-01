@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import './Ieltsreadingtest.css';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 
 const cookies = new Cookies();
@@ -36,17 +35,6 @@ class Ieltsreadingtest extends React.Component {
     });
     let USER_TOKEN = cookies.get('token');
     let AuthStr = 'JWT '.concat(USER_TOKEN);
-    let ADMIN_TOKEN =
-      'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-    //signing ADMIN TOKEN for answerkey
-    const admin_token = jwt.sign(
-      {
-        userName: 'kira',
-        roles: 'ADMIN',
-      },
-      ADMIN_TOKEN
-    );
-    let secret = 'JWT '.concat(admin_token);
     e.preventDefault();
 
     let answer = this.state.answers;

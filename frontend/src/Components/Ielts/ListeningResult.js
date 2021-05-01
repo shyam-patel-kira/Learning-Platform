@@ -29,6 +29,7 @@ function ListeningResult(props) {
     incorrect: '',
     test_id: '',
     test_type: '',
+    answerKey: '',
   });
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
@@ -61,7 +62,12 @@ function ListeningResult(props) {
           console.log(e.message);
         });
     }
+    async function Hello() {
+      console.log('Hi');
+    }
+
     fetchResult();
+    Hello();
   }, []);
 
   useEffect(() => {
@@ -74,7 +80,13 @@ function ListeningResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data.results[0].answers);
+            let ans = [];
+            for (let i of Object.values(res.data.results[0].answers)) {
+              ans.push(i);
+            }
+            setParams({
+              answerKey: ans,
+            });
           }
         })
         .catch(e => {
@@ -117,6 +129,13 @@ function ListeningResult(props) {
         <h1>Total Incorrect Answers - {params.incorrect}</h1>
         <h1>Examination Type - {params.test_type}</h1>
         <h1>Test-Id - {params.test_id}</h1>
+        <h1>
+          Answer Key-{' '}
+          {params.answerKey &&
+            params.answerKey.map(item => {
+              return <p>{item}</p>;
+            })}
+        </h1>
       </div>
     );
   }

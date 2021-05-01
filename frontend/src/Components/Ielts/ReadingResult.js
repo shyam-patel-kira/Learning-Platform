@@ -10,7 +10,7 @@ function ReadingResult(props) {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+    'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
 
   const admin_token = jwt.sign(
     {
@@ -75,16 +75,16 @@ function ReadingResult(props) {
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
-            console.log('Answer Key error:',res.data.error)
+            console.log('Answer Key error:', res.data.error);
           } else {
             let ans = [];
-            //(Object.values(res.data.results[0].answers)
             for (let i of Object.values(res.data.results[0].answers)) {
               ans.push(i);
             }
             setParams({
               answerKey: ans,
             });
+            setLoading(false);
           }
         })
         .catch(e => {

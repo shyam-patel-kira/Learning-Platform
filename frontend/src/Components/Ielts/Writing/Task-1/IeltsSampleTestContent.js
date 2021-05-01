@@ -3,12 +3,11 @@ import IeltsSampleTestContentstyle from './IeltsSampleTestContentstyle';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 
 const cookies = new Cookies();
 
 function IeltsSampleTestContent(props) {
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [params, setParams] = useState({
     title: '',
@@ -21,17 +20,6 @@ function IeltsSampleTestContent(props) {
   let keyword = x[x.length - 2];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
-  const admin_token = jwt.sign(
-    {
-      userName: 'kira',
-      roles: 'ADMIN',
-    },
-    ADMIN_TOKEN
-  );
-  let secret = 'JWT '.concat(admin_token);
 
   useEffect(() => {
     async function fetchTest() {
@@ -45,7 +33,7 @@ function IeltsSampleTestContent(props) {
         .then(res => {
           console.log(res.data);
           if (res.data.error) {
-            setError({ error: res.data.error });
+            setError(res.data.error);
           } else {
             setParams({
               title: res.data.results[0].title,
