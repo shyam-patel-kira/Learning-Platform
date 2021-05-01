@@ -15,8 +15,10 @@ import resultRouter from "./result_reading.js";
 import resultListeningRouter from "./result_listening.js";
 import writingTaskOneSampleRouter from "./WritingTask1Sample_Routes/writing_Task1_sample_bar.js";
 import writingTaskOneTestRouter from "./WritingTask1Sample_Routes/writing_Task1_test_questions.js";
+import writingTaskOneUserAnswerRouter from "./WritingTask1Sample_Routes/writing_Task-1_user_answers.js";
 import writingTaskTwoSampleRouter from "./WritingTask2Sample_Routes/writing_Task2_sample.js";
 import writingTaskTwoTestRouter from "./WritingTask2Sample_Routes/writing_Task2_test_questions.js";
+import writingTaskTwoUserAnswerRouter from "./WritingTask2Sample_Routes/writing_Task2_user_answers.js"
 
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
@@ -38,8 +40,9 @@ app.use("/ielts", resultListeningRouter);
 app.use("/ielts", writingTaskOneSampleRouter);
 app.use("/ielts", writingTaskTwoSampleRouter);
 app.use("/ielts", writingTaskOneTestRouter);
-app.use("/ielts",writingTaskTwoTestRouter)
-
+app.use("/ielts", writingTaskTwoTestRouter);
+app.use("/ielts", writingTaskOneUserAnswerRouter);
+app.use("/ielts", writingTaskTwoUserAnswerRouter);
 
 const CONNECTION_URL = process.env.DB_CONNECT;
 const PORT = process.env.PORT || 4955;
