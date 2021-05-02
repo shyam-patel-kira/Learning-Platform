@@ -9,7 +9,7 @@ function Sidebar() {
           return (
             <li
               key={key}
-              className='box-border rounded-md cursor-pointer p-2 w-1/2 text-center bg-boxColor text-customblack hover:text-customwhite hover:bg-custombrown transition-all ease-in duration-300 border-black border-2 my-4 mx-4'
+              className='box-border rounded-md cursor-pointer p-2 w-1/2 text-center bg-boxColor text-customblack hover:text-customwhite hover:bg-custombrown transition-all ease-in duration-300 border-black border-0 my-4 mx-4'
               onClick={() => {
                 window.location.pathname = val.link;
               }}

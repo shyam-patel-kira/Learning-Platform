@@ -8,10 +8,9 @@ import Error_401 from '../../../401-Error.jpg';
 
 const cookies = new Cookies();
 
-function Rctest() {
+function Test1() {
   let x = window.location.href.split('/');
   let test_id = x[x.length - 1];
-  let test_type = 'rc';
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
@@ -32,7 +31,6 @@ function Rctest() {
   const [submitLoading, setSubmitLoading] = useState(false);
   const [question, setQuestion] = useState({
     id: '',
-    test_type: '',
     img1: '',
     img2: '',
     img3: '',
@@ -40,17 +38,27 @@ function Rctest() {
     img5: '',
     img6: '',
     img7: '',
+    img8: '',
+    img9: '',
+    img10: '',
+    img11: '',
+    img12: '',
+    img13: '',
+    img14: '',
+    img15: '',
+    img16: '',
+    img17: '',
+    img18: '',
+    img19: '',
+    img20: '',
   });
 
   useEffect(() => {
     async function fetchTest() {
       await axios
-        .get(
-          `http://localhost:7545/gre/verbal/practice/${test_type}&${test_id}`,
-          {
-            headers: { Authorization: AuthStr },
-          }
-        )
+        .get(`http://localhost:7545/gre/quant/practice/${test_id}`, {
+          headers: { Authorization: AuthStr },
+        })
         .then(res => {
           if (res.data.error) {
             setError( res.data.error );
@@ -58,14 +66,26 @@ function Rctest() {
             console.log(res.data);
             setQuestion({
               id: res.data.results[0].test_id,
-              test_type: res.data.results[0].test_type,
-              img1: res.data.results[0].passage_1,
-              img2: res.data.results[0].passage_2,
-              img3: res.data.results[0].passage_3,
-              img4: res.data.results[0].passage_4,
-              img5: res.data.results[0].passage_5,
-              img6: res.data.results[0].passage_6,
-              img7: res.data.results[0].passage_7,
+              img1: res.data.results[0].question_1,
+              img2: res.data.results[0].question_2,
+              img3: res.data.results[0].question_3,
+              img4: res.data.results[0].question_4,
+              img5: res.data.results[0].question_5,
+              img6: res.data.results[0].question_6,
+              img7: res.data.results[0].question_7,
+              img8: res.data.results[0].question_8,
+              img9: res.data.results[0].question_9,
+              img10: res.data.results[0].question_10,
+              img11: res.data.results[0].question_11,
+              img12: res.data.results[0].question_12,
+              img13: res.data.results[0].question_13,
+              img14: res.data.results[0].question_14,
+              img15: res.data.results[0].question_15,
+              img16: res.data.results[0].question_16,
+              img17: res.data.results[0].question_17,
+              img18: res.data.results[0].question_18,
+              img19: res.data.results[0].question_19,
+              img20: res.data.results[0].question_20,
             });
             setLoading(false);
           }
@@ -79,21 +99,20 @@ function Rctest() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const test_type = 'rc';
     setSubmitLoading(true);
     let x = window.location.href.split('/');
     let test_id = x[x.length - 1];
 
     let answer = { ...ans };
     console.log(answer);
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 20; i++) {
       if (answer[i] === undefined) {
         answer[`ans_${i.toString()}`] = '';
       } else {
         answer[`ans_${i.toString()}`] = ans[i];
       }
     }
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 20; i++) {
       delete answer[i];
     }
     let answers = { answers: answer };
@@ -102,7 +121,7 @@ function Rctest() {
     //API Call for storing user answers
     await axios
       .post(
-        `http://localhost:7545/gre/verbal/test/user-answers/${test_type}&${test_id}`,
+        `http://localhost:7545/gre/quant/test/user-answers/${test_id}`,
         answers,
         {
           headers: { Authorization: AuthStr },
@@ -121,12 +140,9 @@ function Rctest() {
 
     //API Call for comparing answers in result collection
     await axios
-      .get(
-        `http://localhost:7545/gre/verbal-answer-result/test/${test_type}&${test_id}`,
-        {
-          headers: { Authorization: AuthStr },
-        }
-      )
+      .get(`http://localhost:7545/gre/quant-answer-result/test/${test_id}`, {
+        headers: { Authorization: AuthStr },
+      })
       .then(res => {
         if (res.data.error) {
           setError({ error: res.data.error });
@@ -138,11 +154,11 @@ function Rctest() {
       .catch(e => {
         console.log(e.message);
       });
-    window.location = `/gre-rc-result/${test_type}/${test_id}`;
+    window.location = `/gre-quant-test1-result/${test_id}`;
   };
 
   let text = [];
-  for (let i = 1; i <= 7; i++) {
+  for (let i = 1; i <= 20; i++) {
     text.push(
       <label className='mx-4 mt-4 text-right text-xl text-black'>
         {i + '  '}
@@ -261,8 +277,112 @@ function Rctest() {
               <img src={question.img7} alt='' />
             </div>
           </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q8.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img8} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q9.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img9} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q10.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img10} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q11.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img11} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q12.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img12} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q13.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img13} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q14.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img14} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q15.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img15} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q16.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img16} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q17.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img17} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q18.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img18} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q19.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img19} alt='' />
+            </div>
+          </div>
+          <div className='flex'>
+            <label className='mx-2 my-4 text-right text-2xl text-black'>
+              Q20.
+            </label>
+            <div className='border-black border-2 w-full my-2 mx-0 mr-2'>
+              <img src={question.img20} alt='' />
+            </div>
+          </div>
         </div>
-        <div className='flex-col items-center border-black border-2 w-1/2 h-1/6 my-32 ml-60 col-end-6'>
+        <div className='flex-col items-center border-black border-2 w-1/2 h-1/3 my-32 ml-60 col-end-6'>
           {text}
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack my-4 ml-20 '
@@ -302,4 +422,4 @@ function Rctest() {
   }
 }
 
-export default Rctest;
+export default Test1;

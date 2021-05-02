@@ -1,5 +1,5 @@
 import React from 'react';
-//import './App.css';
+import './App.css';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 
@@ -26,7 +26,6 @@ import IeltsSampleTestTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleT
 import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 import ReadingResult from './Components/Ielts/ReadingResult';
 import ListeningResult from './Components/Ielts/ListeningResult';
-import TodoApp from './Components/Todos/TodoApp';
 
 import Gremain from './Pages/Gremain';
 import Greverbal from './Pages/Greverbal';
@@ -35,6 +34,14 @@ import Gretipsandtricks from './Pages/Gretipsandtricks';
 import Rcmain from './Pages/Rcmain';
 import Rctest from './Components/GRE/Hero/Rc/Rctest';
 import RcResult from './Components/GRE/Hero/Rc/RcResult';
+import Tcmain from './Pages/Tcmain';
+import Tctest from './Components/GRE/Hero/Tc/Tctest';
+import TcResult from './Components/GRE/Hero/Tc/TcResult';
+import Semain from './Pages/Semain';
+import Setest from './Components/GRE/Hero/Se/Setest';
+import SeResult from './Components/GRE/Hero/Se/SeResult';
+import Test1 from './Components/GRE/Hero/Quant/Test1';
+import Test1Result from './Components/GRE/Hero/Quant/Test1Result';
 
 const Page404 = () => {
   return (
@@ -67,7 +74,6 @@ export default function App() {
           <Route path='/ielts-reading-result' component={ReadingResult} />
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
-          <Route path='/todo' component={TodoApp} />
           <Route
             path='/ielts-sample-writing-task-1'
             component={IeltsSampleWritingContent}
@@ -95,7 +101,15 @@ export default function App() {
           <Route path='/gre-tipsandtricks' component={Gretipsandtricks} />
           <Route path='/verbal-rc' component={Rcmain} />
           <Route path='/gre-rc-test' component={Rctest} />
-          <Route path='/gre-verbal-result' component={RcResult} />
+          <Route path='/gre-rc-result' component={RcResult} />
+          <Route path='/verbal-tc' component={Tcmain} />
+          <Route path='/gre-tc-test' component={Tctest} />
+          <Route path='/gre-tc-result' component={TcResult} />
+          <Route path='/verbal-se' component={Semain} />
+          <Route path='/gre-se-test' component={Setest} />
+          <Route path='/gre-se-result' component={SeResult} />
+          <Route path='/gre-quant-test' component={Test1} />
+          <Route path='/gre-quant-test1-result' component={Test1Result} />
           <Route path='/signup' component={Form} />
           <Route path='/login' component={Form1} />
           <Route component={Page404} />

@@ -136,7 +136,7 @@ function Greverbalhero() {
             >
               <Link
                 className='hover:no-underline hover:text-customwhite'
-                to='/'
+                to='/verbal-tc'
               >
                 TC
               </Link>
@@ -148,7 +148,7 @@ function Greverbalhero() {
             >
               <Link
                 className='hover:no-underline hover:text-customwhite'
-                to='/gremain'
+                to='/verbal-se'
               >
                 SE
               </Link>

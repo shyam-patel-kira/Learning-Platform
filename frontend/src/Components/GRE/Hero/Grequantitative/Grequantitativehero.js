@@ -14,6 +14,12 @@ function Grequantitativeherocards(props) {
 }
 
 function Grequantitativehero() {
+  const handleTest = event => {
+    let x = event.target.id;
+    console.log(x);
+    window.location = `/gre-quant-test/${x}`;
+
+  };
   return (
     <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
       <h1 className='pt-8 text-4xl text-center'>QUANTITATIVE REASONING</h1>
@@ -142,37 +148,33 @@ function Grequantitativehero() {
         <br />
         <br />
         <div className='flex flex-col justify-center items-center'>
+          <h1 className='text-5xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+            Give Test
+          </h1>
+
           <div className='flex flex-row justify-evenly w-5/6'>
             <button
               className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
+              onClick={handleTest}
+              id='1'
             >
-              Quant Comparison
+              Sample Test 1
             </button>
 
             <button
               className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
               variant='Default'
+              onClick={handleTest}
+              id='2'
             >
-              MCQ-One Answer
-            </button>
-
-            <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
-              variant='Default'
-            >
-              <Link
-                className='hover:no-underline hover:text-customwhite'
-                to='/gremain'
-              >
-                MCQ-One or More Answer
-              </Link>
+              Sample Test 2
             </button>
           </div>
         </div>
       </div>
     </div>
   );
-}
+  }
 
 export default Grequantitativehero;

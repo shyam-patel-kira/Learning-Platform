@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 
-function RcResult(props) {
+function SeResult(props) {
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
@@ -31,14 +31,13 @@ function RcResult(props) {
     test_type: '',
     incorrectAnswers: [],
   });
-
   let [answerKey, setAnswerKey] = useState([]);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchResult() {
-      const test_type = 'rc';
+      const test_type = 'se';
       await axios
         .get(
           `http://localhost:7545/gre/verbal-result-display/test/${test_type}&${test_id}`,
@@ -69,7 +68,7 @@ function RcResult(props) {
 
   useEffect(() => {
     async function fetchAnswerKey() {
-      const test_type = 'rc';
+      const test_type = 'se';
       await axios
         .get(
           `http://localhost:7545/gre/verbal-answers/test/${test_type}&${test_id}`,
@@ -153,7 +152,7 @@ function RcResult(props) {
         </ul>
         <button
           onClick={e => {
-            window.location = '/verbal-rc';
+            window.location = '/verbal-se';
           }}
           className='text-center w-1/3 mb-3 border-2 border-customblack bg-green-500 mx-auto'
         >
@@ -164,4 +163,4 @@ function RcResult(props) {
   }
 }
 
-export default RcResult;
+export default SeResult;

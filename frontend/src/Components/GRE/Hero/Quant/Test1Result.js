@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 
-function RcResult(props) {
+function Test1Result(props) {
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
@@ -28,20 +28,17 @@ function RcResult(props) {
     score: '',
     incorrect: '',
     test_id: '',
-    test_type: '',
     incorrectAnswers: [],
   });
-
   let [answerKey, setAnswerKey] = useState([]);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchResult() {
-      const test_type = 'rc';
       await axios
         .get(
-          `http://localhost:7545/gre/verbal-result-display/test/${test_type}&${test_id}`,
+          `http://localhost:7545/gre/quant-result-display/test/${test_id}`,
           {
             headers: { Authorization: AuthStr },
           }
@@ -55,7 +52,6 @@ function RcResult(props) {
               score: res.data.results[0].score,
               incorrect: res.data.results[0].incorrect,
               test_id: res.data.results[0].test_id,
-              test_type: res.data.results[0].test_type,
               incorrectAnswers: res.data.results[0].incorrectAnswers,
             });
           }
@@ -69,14 +65,10 @@ function RcResult(props) {
 
   useEffect(() => {
     async function fetchAnswerKey() {
-      const test_type = 'rc';
       await axios
-        .get(
-          `http://localhost:7545/gre/verbal-answers/test/${test_type}&${test_id}`,
-          {
-            headers: { Authorization: secret },
-          }
-        )
+        .get(`http://localhost:7545/gre/quant-answers/test/${test_id}`, {
+          headers: { Authorization: secret },
+        })
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
@@ -128,7 +120,6 @@ function RcResult(props) {
         <h1 className='text-5xl py-4 text-center'>Scorecard</h1>
         <h1 className={cls}>Score - {params.score}</h1>
         <h1 className={cls}>Total Incorrect Answers - {params.incorrect}</h1>
-        <h1 className={cls}>Examination Type - {params.test_type}</h1>
         <h1 className={cls}>Test-Id - {params.test_id}</h1>
         <h1 className={cls}>Answer Key</h1>
         <ul className=''>
@@ -153,7 +144,7 @@ function RcResult(props) {
         </ul>
         <button
           onClick={e => {
-            window.location = '/verbal-rc';
+            window.location = '/gre-quantitative';
           }}
           className='text-center w-1/3 mb-3 border-2 border-customblack bg-green-500 mx-auto'
         >
@@ -164,4 +155,4 @@ function RcResult(props) {
   }
 }
 
-export default RcResult;
+export default Test1Result;

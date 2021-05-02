@@ -8,10 +8,10 @@ import Error_401 from '../../../401-Error.jpg';
 
 const cookies = new Cookies();
 
-function Rctest() {
+function Tctest() {
   let x = window.location.href.split('/');
   let test_id = x[x.length - 1];
-  let test_type = 'rc';
+  let test_type = 'tc';
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
@@ -79,7 +79,7 @@ function Rctest() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const test_type = 'rc';
+    const test_type = 'tc';
     setSubmitLoading(true);
     let x = window.location.href.split('/');
     let test_id = x[x.length - 1];
@@ -138,7 +138,7 @@ function Rctest() {
       .catch(e => {
         console.log(e.message);
       });
-    window.location = `/gre-rc-result/${test_type}/${test_id}`;
+    window.location = `/gre-tc-result/${test_type}/${test_id}`;
   };
 
   let text = [];
@@ -262,7 +262,7 @@ function Rctest() {
             </div>
           </div>
         </div>
-        <div className='flex-col items-center border-black border-2 w-1/2 h-1/6 my-32 ml-60 col-end-6'>
+        <div className='flex-col items-center border-black border-2 w-1/2 h-2/5 my-24 ml-60 col-end-6'>
           {text}
           <button
             className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack my-4 ml-20 '
@@ -302,4 +302,4 @@ function Rctest() {
   }
 }
 
-export default Rctest;
+export default Tctest;
