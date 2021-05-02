@@ -3,7 +3,7 @@ import React from 'react';
 function Gremainherocards(props) {
   return (
     <li
-      className='cards__item font-serif text-lg list-disc md:list-disc
+      className='cards__item font-myfonts text-lg list-disc md:list-disc
        leading-relaxed tracking-normal text antialiased 
        sm:subpixel-antialiased md:antialiased'
     >
@@ -14,15 +14,15 @@ function Gremainherocards(props) {
 
 function Gremainhero() {
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
       <h1 className='pt-8 text-4xl text-center'>GRE</h1>
       <div className='px-8 my-10 text-gray-50'>
         <ul className='grid grid-cols-2 gap-4'>
           <Gremainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>About GRE</h1>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>About GRE</h1>
               <br />
-              <ul className='list-disc list-inside'>
+              <ul className='list-disc list-inside font-myfonts'>
                 <li>
                   Obtaining a graduate degree will open up a myriad of
                   opportunities.
@@ -51,9 +51,11 @@ function Gremainhero() {
 
           <Gremainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>Who Takes GRE?</h1>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>
+                Who Takes GRE?
+              </h1>
               <br />
-              <ul className='list-inside list-disc'>
+              <ul className='list-inside list-disc font-myfonts'>
                 <li>Primarily, IELTS is divided into two sections:</li>
                 <br />
                 <li>
@@ -78,9 +80,9 @@ function Gremainhero() {
           </Gremainherocards>
           <Gremainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>3 Modules</h1>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>3 Modules</h1>
               <br />
-              <ul className='list-inside list-disc'>
+              <ul className='list-inside list-disc  font-myfonts'>
                 <li>
                   <strong>Verbal Reasoning:</strong> The ability to interpret
                   and draw conclusions from discourse, reason from incomplete
@@ -110,11 +112,11 @@ function Gremainhero() {
           </Gremainherocards>
           <Gremainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>
                 When and Where Do People Take It?
               </h1>
               <br />
-              <ul className='list-inside list-disc'>
+              <ul className='list-inside list-disc font-myfonts'>
                 <li>
                   The GRE General Test is available on computer at more than
                   1,000 test centers in more than 160 countries.

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Grequantitativeherocards(props) {
   return (
     <li
-      className='cards__item font-serif text-lg list-disc md:list-disc
+      className='cards__item font-myfonts text-lg list-disc md:list-disc
        leading-relaxed tracking-normal text antialiased 
        sm:subpixel-antialiased md:antialiased'
     >
@@ -18,10 +18,9 @@ function Grequantitativehero() {
     let x = event.target.id;
     console.log(x);
     window.location = `/gre-quant-test/${x}`;
-
   };
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
       <h1 className='pt-8 text-4xl text-center'>QUANTITATIVE REASONING</h1>
       <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>
@@ -175,6 +174,6 @@ function Grequantitativehero() {
       </div>
     </div>
   );
-  }
+}
 
 export default Grequantitativehero;

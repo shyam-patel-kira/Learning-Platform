@@ -202,7 +202,7 @@ function Test1() {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-myfonts justify-center'>
             Fetching Test...
           </h1>
           <Loader
@@ -217,7 +217,7 @@ function Test1() {
     );
   } else {
     return (
-      <div className='leading-relaxed font-serif grid grid-col-2'>
+      <div className='leading-relaxed font-myfonts grid grid-col-2'>
         <h1 className='text-4xl text-center my-4 ml-96'>Test-{question.id}</h1>
         <div className='boder-black border-2 w-11/12 overflow-y-scroll overscroll-auto h-1/2 col-start-1 col-end-5 ml-4'>
           <div className='flex'>

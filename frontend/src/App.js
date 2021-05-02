@@ -9,6 +9,7 @@ import Home from './Pages/Home';
 import AboutUs from './Components/AboutUs';
 import ErrorPage from './Error404.JPG';
 import Youtube from './Youtube';
+import TodoApp from './Components/Todos/TodoApp'
 
 import Ieltsmain from './Pages/Ieltsmain';
 import Ieltsreading from './Pages/Ieltsreading';
@@ -74,6 +75,7 @@ export default function App() {
           <Route path='/ielts-reading-result' component={ReadingResult} />
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
+          <Route path='/todo' component={TodoApp} />
           <Route
             path='/ielts-sample-writing-task-1'
             component={IeltsSampleWritingContent}

@@ -3,7 +3,7 @@ import React from 'react';
 function Gretipsandtricksherocards(props) {
   return (
     <li
-      className='cards__item font-serif text-lg list-disc md:list-disc
+      className='cards__item font-myfonts text-lg list-disc md:list-disc
        leading-relaxed tracking-normal text antialiased 
        sm:subpixel-antialiased md:antialiased'
     >
@@ -14,7 +14,7 @@ function Gretipsandtricksherocards(props) {
 
 function Gretipsandtrickshero() {
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
       <h1 className='pt-8 text-4xl text-center'>TIPS AND TRICKS</h1>
       <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>

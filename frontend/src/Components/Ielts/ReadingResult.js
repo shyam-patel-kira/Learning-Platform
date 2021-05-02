@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
+import Error_401 from '../401-Error.jpg';
+
 
 function ReadingResult(props) {
   const cookies = new Cookies();
@@ -94,8 +97,22 @@ function ReadingResult(props) {
 
   if (error) {
     return (
-      <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      <div className='flex flex-row'>
+        <div>
+          <img className='' src={Error_401} alt='' />
+        </div>
+        <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+          <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+            {error}
+          </h1>
+          <p className='text-2xl text-center text-customblack my-3'>
+            Please{' '}
+            <Link className='text-blue-500' to='/login'>
+              Login
+            </Link>{' '}
+            first.
+          </p>
+        </div>
       </div>
     );
   }

@@ -1,37 +1,37 @@
-import { FiHeadphones } from 'react-icons/fi'
-import { BsBook,BsPencil } from 'react-icons/bs'
-import { AiOutlineAudio,AiOutlineYoutube } from 'react-icons/ai'
-import { RiTodoLine } from 'react-icons/ri'
+import { FiHeadphones } from 'react-icons/fi';
+import { BsBook, BsPencil } from 'react-icons/bs';
+import { AiOutlineAudio, AiOutlineYoutube } from 'react-icons/ai';
+import { RiTodoLine } from 'react-icons/ri';
 
 export const SidebarData = [
   {
     title: 'Listening',
     link: '/ielts-listening',
-    icon: <FiHeadphones />
+    icon: <FiHeadphones />,
   },
   {
     title: 'Reading',
     link: '/ielts-reading',
-    icon: <BsBook />
+    icon: <BsBook />,
   },
   {
     title: 'Writing',
     link: '/ielts-writing',
-    icon: <BsPencil />
+    icon: <BsPencil />,
   },
   {
     title: 'Speaking',
     link: '/ielts-speaking',
-    icon: <AiOutlineAudio />
+    icon: <AiOutlineAudio />,
   },
   {
     title: 'Mini-Youtube',
     link: '/mini-youtube',
-    icon: <AiOutlineYoutube />
+    icon: <AiOutlineYoutube />,
   },
   {
     title: 'Todo App',
     link: '/todo',
-    icon: <RiTodoLine />
+    icon: <RiTodoLine />,
   },
 ];

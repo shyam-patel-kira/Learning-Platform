@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
 import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
+import Error_401 from '../../../401-Error.jpg';
 
 function TcResult(props) {
   const cookies = new Cookies();
@@ -37,7 +38,7 @@ function TcResult(props) {
 
   useEffect(() => {
     async function fetchResult() {
-        const test_type = 'tc';
+      const test_type = 'tc';
       await axios
         .get(
           `http://localhost:7545/gre/verbal-result-display/test/${test_type}&${test_id}`,
@@ -68,11 +69,14 @@ function TcResult(props) {
 
   useEffect(() => {
     async function fetchAnswerKey() {
-        const test_type = 'tc';
+      const test_type = 'tc';
       await axios
-        .get(`http://localhost:7545/gre/verbal-answers/test/${test_type}&${test_id}`, {
-          headers: { Authorization: secret },
-        })
+        .get(
+          `http://localhost:7545/gre/verbal-answers/test/${test_type}&${test_id}`,
+          {
+            headers: { Authorization: secret },
+          }
+        )
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
@@ -94,8 +98,22 @@ function TcResult(props) {
 
   if (error) {
     return (
-      <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      <div className='flex flex-row'>
+        <div>
+          <img className='' src={Error_401} alt='' />
+        </div>
+        <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+          <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+            {error}
+          </h1>
+          <p className='text-2xl text-center text-customblack my-3'>
+            Please{' '}
+            <Link className='text-blue-500' to='/login'>
+              Login
+            </Link>{' '}
+            first.
+          </p>
+        </div>
       </div>
     );
   }
@@ -104,7 +122,7 @@ function TcResult(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-myfonts justify-center'>
             Calculating Result...
           </h1>
           <Loader

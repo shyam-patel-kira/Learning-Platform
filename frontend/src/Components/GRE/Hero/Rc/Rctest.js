@@ -14,17 +14,6 @@ function Rctest() {
   let test_type = 'rc';
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
-  const admin_token = jwt.sign(
-    {
-      userName: 'kira',
-      roles: 'ADMIN',
-    },
-    ADMIN_TOKEN
-  );
-  let secret = 'JWT '.concat(admin_token);
 
   const [error, setError] = useState('');
   const [ans, setAns] = useState(new Array(7));
@@ -53,7 +42,7 @@ function Rctest() {
         )
         .then(res => {
           if (res.data.error) {
-            setError( res.data.error );
+            setError(res.data.error);
           } else {
             console.log(res.data);
             setQuestion({
@@ -144,7 +133,7 @@ function Rctest() {
   let text = [];
   for (let i = 1; i <= 7; i++) {
     text.push(
-      <label className='mx-4 mt-4 text-right text-xl text-black'>
+      <label className='font-myfonts mx-4 mt-4 text-right text-xl text-black'>
         {i + '  '}
         <input
           type='text'
@@ -186,7 +175,7 @@ function Rctest() {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-myfonts justify-center'>
             Fetching Test...
           </h1>
           <Loader
@@ -201,7 +190,7 @@ function Rctest() {
     );
   } else {
     return (
-      <div className='leading-relaxed font-serif grid grid-col-2'>
+      <div className='leading-relaxed font-myfonts grid grid-col-2'>
         <h1 className='text-4xl text-center my-4 ml-96'>Test-{question.id}</h1>
         <div className='boder-black border-2 w-11/12 overflow-y-scroll overscroll-auto h-1/2 col-start-1 col-end-5 ml-4'>
           <div className='flex'>

@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
+import Error_401 from '../../../401-Error.jpg';
 
 function Test1Result(props) {
   const cookies = new Cookies();
@@ -37,12 +39,9 @@ function Test1Result(props) {
   useEffect(() => {
     async function fetchResult() {
       await axios
-        .get(
-          `http://localhost:7545/gre/quant-result-display/test/${test_id}`,
-          {
-            headers: { Authorization: AuthStr },
-          }
-        )
+        .get(`http://localhost:7545/gre/quant-result-display/test/${test_id}`, {
+          headers: { Authorization: AuthStr },
+        })
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
@@ -90,17 +89,30 @@ function Test1Result(props) {
 
   if (error) {
     return (
-      <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      <div className='flex flex-row'>
+        <div>
+          <img className='' src={Error_401} alt='' />
+        </div>
+        <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+          <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+            {error}
+          </h1>
+          <p className='text-2xl text-center text-customblack my-3'>
+            Please{' '}
+            <Link className='text-blue-500' to='/login'>
+              Login
+            </Link>{' '}
+            first.
+          </p>
+        </div>
       </div>
     );
   }
-
   if (loading === true) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-myfonts justify-center'>
             Calculating Result...
           </h1>
           <Loader

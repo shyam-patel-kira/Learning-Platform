@@ -9,7 +9,7 @@ function Rc() {
   };
 
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
       <h1 className='pt-8 text-4xl text-center'>READING COMPREHENSION</h1>
       <div className='px-8 my-10 text-customwhite'>
         <div className='px-1 justify-items-start'>
