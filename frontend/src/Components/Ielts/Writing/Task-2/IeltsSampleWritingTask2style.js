@@ -5,7 +5,7 @@ const IeltsSampleWritingTask2style = props => {
   let x = window.location.href.split('/');
   let keyword = x[x.length - 2];
   return (
-    <div className='bg-custombrown '>
+    <div className='font-myfonts bg-custombrown '>
       <br />
       <br />
       <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -18,7 +18,7 @@ const IeltsSampleWritingTask2style = props => {
             <br />
             {props.question_heading}
           </div>
-          <div className='text-xl leading-relaxed font-serif space-x-2'>
+          <div className='text-xl leading-relaxed font-myfonts space-x-2'>
             <p className='underline'>
               <strong>{props.answer}</strong>
             </p>
@@ -34,7 +34,7 @@ const IeltsSampleWritingTask2style = props => {
           </div>
         </div>
         <div>
-          <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
+          <div className='font-myfonts flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
             <button
               className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
               variant='Default'

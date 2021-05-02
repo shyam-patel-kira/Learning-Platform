@@ -18,7 +18,7 @@ class Ieltsreadinghero extends React.Component {
       <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center'>Reading</h1>
         <div className='px-8 my-10 text-customwhite'>
-          <ul className='flex'>
+          <ul className='flex font-myfonts'>
             <Ieltsreadingherocards>
               <li>
                 IELTS Reading section consists of three passages and a total of
@@ -53,19 +53,19 @@ class Ieltsreadinghero extends React.Component {
             </Ieltsreadingherocards>
 
             <Ieltsreadingherocards>
-              <li>
+              <li className='font-myfonts'>
                 <strong>Reading is of two types:</strong>
                 <ul>Academic Reading</ul>
                 <ul>General Reading</ul>
               </li>
               <br />
-              <li>
+              <li className='font-myfonts'>
                 The candidate should definitely decide which exam they are going
                 to give and if they are confused then they can definitely reach
                 out to the British Council or IDP.
               </li>
               <br />
-              <li>
+              <li className='font-myfonts'>
                 <strong>Types of Questions asked:</strong>
                 <ul className='px-3 list-decimal'>
                   <li>Multiple Choice Questions</li>

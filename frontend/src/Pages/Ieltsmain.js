@@ -8,7 +8,7 @@ function Ieltsmain() {
   return (
     <div className='bg-metal text-customblack'>
       <Navbar />
-      <div className='flex items-start justify-between'>
+      <div className='font-myfonts flex items-start justify-between'>
         <Sidebar />
         <Ieltsmainhero />
       </div>

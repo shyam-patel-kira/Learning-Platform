@@ -5,7 +5,7 @@ const IeltsSampleWritingstyle = props => {
   let x = window.location.href.split('/');
   let keyword = x[x.length - 2];
   return (
-    <div className='bg-custombrown '>
+    <div className='font-myfonts bg-custombrown '>
       <br />
       <br />
       <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>

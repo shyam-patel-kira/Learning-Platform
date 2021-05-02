@@ -22,7 +22,7 @@ function IeltsTask2Topics() {
   //Opinion Essays
   if (keyword === 'opinion') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -128,7 +128,10 @@ function IeltsTask2Topics() {
                 name='opinion'
                 id='1'
               >
-                <Link to='/ielts-writing' className='hover:no-underline hover:text-customwhite'>
+                <Link
+                  to='/ielts-writing'
+                  className='hover:no-underline hover:text-customwhite'
+                >
                   Go Back
                 </Link>
               </button>
@@ -143,7 +146,7 @@ function IeltsTask2Topics() {
   //Advantage-Disadvantge
   else if (keyword === 'adv-disadv') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -277,7 +280,7 @@ function IeltsTask2Topics() {
   //Solution essays
   else if (keyword === 'solution') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -400,7 +403,7 @@ function IeltsTask2Topics() {
   //Discussion
   else if (keyword === 'discussion') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -523,7 +526,7 @@ function IeltsTask2Topics() {
   //Direct essays
   else if (keyword === 'direct') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>

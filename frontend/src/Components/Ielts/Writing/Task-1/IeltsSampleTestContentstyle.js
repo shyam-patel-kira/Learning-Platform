@@ -53,7 +53,7 @@ const IeltsSampleTestContentstyle = props => {
   }
 
   return (
-    <div className='bg-custombrown'>
+    <div className='font-myfonts bg-custombrown'>
       <br />
       <br />
       <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -72,7 +72,7 @@ const IeltsSampleTestContentstyle = props => {
           <br />
         </div>
         <div>
-          <h1 className='text-center text-3xl my-6 font-serif leading-relaxed'>
+          <h1 className='text-center text-3xl my-6 font-myfonts leading-relaxed'>
             Write your answer below and then press submit!!
           </h1>
           <textarea
@@ -86,7 +86,7 @@ const IeltsSampleTestContentstyle = props => {
               a = e.target.value;
               setAns(a);
             }}
-            className='rounded-lg h-96 text-customblack w-4/5 mx-28'
+            className='rounded-lg h-96 text-customblack w-4/5 mx-28 my-4'
           />
         </div>
 

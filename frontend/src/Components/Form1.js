@@ -12,8 +12,8 @@ const Form1 = () => {
       <div className='form1-container'>
         <span className='close-btn'>×</span>
         <div className='form1-content-left'>
-          <h2>Welcome Back to LMS</h2>
-          <h4>Sign In to continue to your Account</h4>
+          <h2 className='font-myfonts'>Welcome Back to LMS</h2>
+          <h4 className='font-myfonts'>Sign In to continue to your Account</h4>
           <div className='seperator'></div>
         </div>
         <FormLogin />

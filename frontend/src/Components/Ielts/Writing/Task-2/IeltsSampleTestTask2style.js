@@ -36,7 +36,7 @@ const IeltsSampleTestTask2style = props => {
         } else {
           console.log(res);
           setSubmitLoading(false);
-          alert('You have successfully submitted your test.')
+          alert('You have successfully submitted your test.');
         }
       })
       .catch(e => {
@@ -47,19 +47,23 @@ const IeltsSampleTestTask2style = props => {
   if (error) {
     return (
       <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+        <h1 className='font-myfonts text-5xl text-center text-customwhite my-28'>
+          {error}
+        </h1>
       </div>
     );
   }
 
   return (
-    <div className='bg-custombrown '>
+    <div className='font-myfonts bg-custombrown '>
       <br />
       <br />
       <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
-        <h1 className='pt-8 text-4xl text-center font-serif'>{props.title}</h1>
+        <h1 className='pt-8 text-4xl text-center font-myfonts'>
+          {props.title}
+        </h1>
         <div className='px-8 my-10 text-customwhite'>
-          <div className='my-10 text-xl leading-relaxed font-serif'>
+          <div className='my-10 text-xl leading-relaxed font-myfonts'>
             <strong className='underline'>{props.question}</strong>
             <br />
             {props.question_heading}
@@ -67,7 +71,7 @@ const IeltsSampleTestTask2style = props => {
           <br />
         </div>
         <div>
-          <h1 className='text-center text-3xl my-6 font-serif'>
+          <h1 className='text-center text-3xl my-6 font-myfonts'>
             Write your answer below and then press submit!!
           </h1>
           <textarea
@@ -81,7 +85,7 @@ const IeltsSampleTestTask2style = props => {
               a = e.target.value;
               setAns(a);
             }}
-            className='rounded-lg h-96 text-customblack w-4/5 mx-28'
+            className='rounded-lg h-96 text-customblack w-4/5 mx-28 font-myfonts'
           />
         </div>
         <br />
@@ -102,7 +106,7 @@ const IeltsSampleTestTask2style = props => {
               </Link>
             </button>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
+              className='font-myfonts bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
               variant='Default'
               name='test'
               onClick={handleWritingTest}

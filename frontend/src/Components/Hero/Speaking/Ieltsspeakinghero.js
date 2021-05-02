@@ -20,7 +20,7 @@ class Ieltsspeakinghero extends React.Component {
         <div className='px-8 my-10 text-customwhite'>
           <ul className='flex'>
             <Ieltslisteningherocards>
-              <div>
+              <div className='font-myfonts'>
                 <ul className='list-disc list-inside my-8'>
                   <li>
                     Majority of the examiners find this part of the exam to be
@@ -57,7 +57,7 @@ class Ieltsspeakinghero extends React.Component {
             </Ieltslisteningherocards>
 
             <Ieltslisteningherocards>
-              <div>
+              <div className='font-myfonts'>
                 <ul className='list-disc list-inside my-8'>
                   <li>
                     The examiner controls the time and the length of your

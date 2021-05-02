@@ -8,9 +8,8 @@ function Ieltsreading() {
   return (
     <div className='bg-custombrown text-customblack'>
       <Navbar />
-      <div className='flex items-start justify-between'>
+      <div className='font-myfonts flex items-start justify-between'>
         <Sidebar />
-
         <Ieltsreadinghero />
       </div>
       <Footer />

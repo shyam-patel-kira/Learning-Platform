@@ -254,7 +254,7 @@ function Ieltslisteningtest(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
             Fetching Test...
           </h1>
           <Loader
@@ -270,7 +270,7 @@ function Ieltslisteningtest(props) {
   } else {
     if (test_id === '1') {
       return (
-        <div className='leading-relaxed font-serif bg-trialback'>
+        <div className='font-myfonts leading-relaxed font-serif bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>

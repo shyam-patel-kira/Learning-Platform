@@ -3,7 +3,7 @@ import React from 'react';
 function Ieltsmainherocards(props) {
   return (
     <li
-      className='cards__item font-serif text-lg list-disc md:list-disc
+      className='cards__item font-myfonts text-lg list-disc md:list-disc
        leading-relaxed tracking-normal text antialiased 
        sm:subpixel-antialiased md:antialiased'
     >
@@ -14,14 +14,16 @@ function Ieltsmainherocards(props) {
 
 function Ieltsmainhero() {
   return (
-    <div className='bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
-      <h1 className='pt-8 text-4xl text-center'>IELTS</h1>
+    <div className='bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 font-myfonts text-customwhite'>
+      <h1 className='pt-8 text-4xl font-myfonts text-center'>IELTS</h1>
       <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>
           <Ieltsmainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>What is Ielts?</h1>
-              <ul className='list-disc list-inside'>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>
+                What is Ielts?
+              </h1>
+              <ul className='list-disc list-inside font-myfonts'>
                 <li>
                   IELTS is an International English Language Testing System
                   where a person is tested efficiently for their English skills.
@@ -55,9 +57,11 @@ function Ieltsmainhero() {
 
           <Ieltsmainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>Exam Types of IELTS</h1>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>
+                Exam Types of IELTS
+              </h1>
 
-              <ul className='list-inside list-disc'>
+              <ul className='list-inside list-disc font-myfonts'>
                 <li>Primarily, IELTS is divided into two sections:</li>
                 <br />
                 <li>
@@ -85,8 +89,8 @@ function Ieltsmainhero() {
           </Ieltsmainherocards>
           <Ieltsmainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>4 Modules</h1>
-              <ul className='list-inside list-disc'>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>4 Modules</h1>
+              <ul className='list-inside list-disc font-myfonts'>
                 <li>
                   <strong>Listening:</strong> In this module, 4 different audios
                   which are recorded are heard by the candidates. This exam
@@ -124,15 +128,17 @@ function Ieltsmainhero() {
           </Ieltsmainherocards>
           <Ieltsmainherocards>
             <div>
-              <h1 className='pt-6 mb-2 text-4xl'>Modes of giving IELTS</h1>
-              <ul className='list-inside list-disc'>
+              <h1 className='pt-6 mb-2 text-4xl font-myfonts'>
+                Modes of giving IELTS
+              </h1>
+              <ul className='list-inside list-disc font-myfonts'>
                 <li>
                   IELTS can be given through two modes: Online and Offline.
                 </li>
                 <br />
 
                 <strong>Offline Mode:</strong>
-                <ul className='list-inside list-disc'>
+                <ul className='list-inside list-disc font-myfonts'>
                   <li>
                     Primarily, the IELTS candidate have to book the test through
                     British Council or IDP and pay the fees for the exam. The
@@ -159,7 +165,7 @@ function Ieltsmainhero() {
                 </ul>
 
                 <strong>Online Mode:</strong>
-                <ul className='list-inside list-disc'>
+                <ul className='list-inside list-disc font-myfonts'>
                   <li>
                     The procedure to select exam location is same as of the
                     Offline mode. But the only difference is that candidate has

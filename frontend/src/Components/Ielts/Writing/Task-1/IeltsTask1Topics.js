@@ -21,7 +21,7 @@ function IeltsTask1Topics(props) {
 
   if (keyword === 'bar-graph') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
@@ -30,7 +30,7 @@ function IeltsTask1Topics(props) {
           </h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl font-serif leading-relaxed'>
-              <ul className='list-disc list-inside font-serif'>
+              <ul className='font-myfonts list-disc list-inside font-serif'>
                 <li>Spend only 20 minutes on this question.</li>
                 <li>
                   Look at the trends in the graph and use some rich vocabulary
@@ -91,7 +91,7 @@ function IeltsTask1Topics(props) {
             </div>
           </div>
           <div>
-            <h1 className='my-8 text-3xl text-center font-serif leading-relaxed'>
+            <h1 className='font-myfonts my-8 text-3xl text-center font-serif leading-relaxed'>
               Practice Yourself
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
@@ -152,7 +152,7 @@ function IeltsTask1Topics(props) {
   //Pie-Chart
   else if (keyword === 'pie-chart') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
@@ -277,7 +277,7 @@ function IeltsTask1Topics(props) {
   //Line-Graph
   else if (keyword === 'line-graph') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
@@ -401,7 +401,7 @@ function IeltsTask1Topics(props) {
   //Maps
   else if (keyword === 'maps') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
@@ -530,7 +530,7 @@ function IeltsTask1Topics(props) {
   //Tabular Data
   else if (keyword === 'table') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
@@ -659,7 +659,7 @@ function IeltsTask1Topics(props) {
   //Diagram
   else if (keyword === 'diagram') {
     return (
-      <div className='bg-custombrown'>
+      <div className='font-myfonts bg-custombrown'>
         <br />
         <br />
         <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite leading-relaxed font-serif'>

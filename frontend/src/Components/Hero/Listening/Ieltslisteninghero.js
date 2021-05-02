@@ -16,12 +16,12 @@ class Ieltslisteninghero extends React.Component {
 
   render() {
     return (
-      <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
-        <h1 className='pt-8 text-4xl text-center'>Listening</h1>
+      <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+        <h1 className='pt-8 text-4xl text-center font-myfonts'>Listening</h1>
         <div className='px-8 my-10 text-customwhite'>
           <ul className='flex'>
             <Ieltslisteningherocards>
-              <div>
+              <div className='font-myfonts'>
                 <ul className='list-disc list-inside my-8'>
                   <li>The listening test lasts for 40 minutes.</li>
                   <br />
@@ -62,7 +62,7 @@ class Ieltslisteninghero extends React.Component {
             </Ieltslisteningherocards>
 
             <Ieltslisteningherocards>
-              <div>
+              <div className='font-myfonts'>
                 <ul className='list-disc list-inside my-8'>
                   <li>
                     For the computer delivered IELTS, put your answers directly

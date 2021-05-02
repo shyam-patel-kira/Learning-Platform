@@ -52,7 +52,9 @@ function IeltsSampleWritingTask2(props) {
   if (error) {
     return (
       <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+        <h1 className='font-myfonts text-5xl text-center text-customwhite my-28'>
+          {error}
+        </h1>
       </div>
     );
   }
@@ -61,7 +63,7 @@ function IeltsSampleWritingTask2(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
             Fetching Sample Content...
           </h1>
           <Loader
@@ -76,7 +78,7 @@ function IeltsSampleWritingTask2(props) {
     );
   } else {
     return (
-      <div>
+      <div className='font-myfonts'>
         <IeltsSampleWritingTask2style
           title={params.title}
           question='Question:'

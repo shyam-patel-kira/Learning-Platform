@@ -16,7 +16,6 @@ class FormLogin extends React.Component {
       data: '',
       formErrors: {},
       err: '',
-      //setData: props.setData,
     };
     this.initialState = this.state;
   }
@@ -102,7 +101,7 @@ class FormLogin extends React.Component {
     const { userNameErr, passwordErr } = this.state.formErrors;
 
     return (
-      <div className='form1-content-right'>
+      <div className='font-myfonts form1-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>
           <svg
             width='20'

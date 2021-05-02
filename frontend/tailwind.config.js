@@ -47,11 +47,21 @@ module.exports = {
       carditem: '#d7e3fc',
       todobordercolor: '#149fff',
       todoinputcolor: '#5d0cff',
-      trialback:'#0B172A',
-      trialback2:'#BC4123'
+      trialback: '#0B172A',
+      trialback2: '#BC4123',
     },
     boxShadow: {
       customsm: '2px 10px 35px 1px rgba(153, 153, 153, 0.3)',
+    },
+    fontFamily: {
+      myfonts: [
+        'Trebuchet MS',
+        'Lucida Sans Unicode',
+        'Lucida Grande',
+        'Lucida Sans',
+        'Arial',
+        'sans-serif',
+      ],
     },
   },
   variants: {

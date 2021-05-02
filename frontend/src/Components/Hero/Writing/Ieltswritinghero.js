@@ -20,7 +20,7 @@ class Ieltswritinghero extends React.Component {
 
   render() {
     return (
-      <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+      <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center'>Writing</h1>
         <div className='px-8 my-10 text-customwhite'>
           <ul className='cards__items'>
@@ -29,7 +29,7 @@ class Ieltswritinghero extends React.Component {
         </div>
 
         <div className='flex flex-col justify-center items-center'>
-          <h1 className='text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
+          <h1 className='font-myfonts text-4xl font-serif list-disc md:list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased my-4'>
             Writing Task-1 Topics
           </h1>
           <div className='flex flex-row justify-evenly w-5/6 px-2'>

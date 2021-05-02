@@ -5,7 +5,7 @@ import Accordion from '../Faq/Accordion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { BiUser } from 'react-icons/bi';
 import Cookies from 'universal-cookie';
-import {FiUsers} from 'react-icons/fi'
+import { FiUsers } from 'react-icons/fi';
 
 const cookies = new Cookies();
 
@@ -42,12 +42,12 @@ class Navbar extends Component {
           onClick={this.logoClick}
         >
           <i className='fab fa-react mx-2 text-2xl'></i>
-          <span className='text-2xl'>LMS</span>
+          <span className='text-2xl font-myfonts'>LMS</span>
         </h1>
 
-        <ul className='flex items-center flex-grow justify-end'>
+        <ul className='flex items-center flex-grow justify-end font-myfonts'>
           <li>
-            <NavLink to='/' className='text-white py-2 px-4'>
+            <NavLink to='/' className='text-customwhite py-2 px-4 font-myfonts hover:text-customwhite'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='mx-1 mb-1 h-4 w-4 inline'
@@ -65,7 +65,7 @@ class Navbar extends Component {
               Home
             </NavLink>
           </li>
-          <li className='dropdown'>
+          <li className='dropdown font-myfonts'>
             <p
               className='justify-center w-full rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'
               data-toggle='dropdown'
@@ -96,7 +96,7 @@ class Navbar extends Component {
             </div>
           </li>
 
-          <li>
+          <li className='font-myfonts'>
             <NavLink
               to='/about'
               className='text-customwhite px-4 py-2 hover:text-customwhite'
@@ -105,7 +105,7 @@ class Navbar extends Component {
               About Us
             </NavLink>
           </li>
-          <li>
+          <li className='font-myfonts'>
             <NavLink
               to='/'
               className='text-white px-4 py-2 hover:no-underline'
@@ -125,7 +125,10 @@ class Navbar extends Component {
                   d='M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
                 />
               </svg>
-              <AnchorLink className='hover: text-white' href='#faq'>
+              <AnchorLink
+                className='hover: text-white font-myfonts'
+                href='#faq'
+              >
                 FAQ
               </AnchorLink>
             </NavLink>
@@ -136,14 +139,14 @@ class Navbar extends Component {
               <div>
                 <div className='mb-1 h-4 w-4 inline text-customwhite px-4'>
                   <BiUser className='inline mx-1 mb-1' />
-                  <h1 className='text-customwhite text-md inline py-2'>
+                  <h1 className='text-customwhite text-md inline py-2 font-myfonts'>
                     Hi, {username}{' '}
                   </h1>
                 </div>
 
                 <button
                   onClick={this.handleLogout}
-                  className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+                  className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
                 >
                   <Link
                     className='hover:no-underline hover:text-onhovertext'
@@ -155,7 +158,7 @@ class Navbar extends Component {
               </div>
             ) : (
               <div>
-                <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+                <button className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
                   <Link
                     className='hover:no-underline hover:text-onhovertext'
                     to='/login'
@@ -163,7 +166,7 @@ class Navbar extends Component {
                     Login
                   </Link>
                 </button>
-                <button className='bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
+                <button className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
                   <Link
                     className='hover:no-underline hover:text-onhovertext'
                     to='/signup'

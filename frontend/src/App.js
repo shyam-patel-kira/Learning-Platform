@@ -26,7 +26,7 @@ import IeltsSampleTestTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleT
 import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 import ReadingResult from './Components/Ielts/ReadingResult';
 import ListeningResult from './Components/Ielts/ListeningResult';
-import TodoApp from './Components/Todos/TodoApp'
+import TodoApp from './Components/Todos/TodoApp';
 
 import Gremain from './Pages/Gremain';
 import Greverbal from './Pages/Greverbal';

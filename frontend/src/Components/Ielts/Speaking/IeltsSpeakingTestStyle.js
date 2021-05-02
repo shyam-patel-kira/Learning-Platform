@@ -53,7 +53,7 @@ function IeltsSpeakingTestStyle() {
   };
 
   return (
-    <div className='m-5 grid grid-cols-2'>
+    <div className='font-myfonts m-5 grid grid-cols-2'>
       <div className='shadow-2xl m-8 p-5 rounded-md min-h-0'>
         <h2 className='text-3xl'>Current Note</h2>
         {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}

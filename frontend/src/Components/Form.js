@@ -11,9 +11,9 @@ const Form = () => {
       <Navbar />
       <div className='form-container'>
         <span className='close-btn'>×</span>
-        <div className='form-content-left'>
-          <h2>Join LMS for Free</h2>
-          <h4>Begin Your Journey</h4>
+        <div className='font-myfonts form-content-left'>
+          <h2 className='font-myfonts'>Join LMS for Free</h2>
+          <h4 className='font-myfonts'>Begin Your Journey</h4>
           <div className='seperator'></div>
         </div>
         <FormSignup />

@@ -189,7 +189,7 @@ class Ieltsreadingtest extends React.Component {
       return (
         <div>
           <div className='my-64'>
-            <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+            <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
               Fetching Test...
             </h1>
             <Loader
@@ -206,10 +206,12 @@ class Ieltsreadingtest extends React.Component {
       return (
         <div className='flex bg-trialback'>
           <div className='flex-1 w-full border-customblack border-2 mx-2 mt-2 mb-4 bg-trialback2'>
-            <h1 className='text-5xl text-customwhite my-2 text-center'>
+            <h1 className='font-myfonts text-5xl text-customwhite my-2 text-center'>
               Test-{this.state.testid}
             </h1>
-            <div className='mx-5 text-lg text-customwhite'>{y}</div>
+            <div className='font-myfonts mx-5 text-lg text-customwhite'>
+              {y}
+            </div>
           </div>
 
           <div className='w-2/5'>
@@ -222,7 +224,7 @@ class Ieltsreadingtest extends React.Component {
               <img src={this.state.questions.imgurl_6} alt='' />
             </div>
             <div className='border-customwhite border-2 mx-2 my-2'>
-              <h1 className='my-4 mx-2 text-4xl font-serif text-customwhite'>
+              <h1 className='font-myfonts my-4 mx-2 text-4xl font-serif text-customwhite'>
                 Write your answers here!!
               </h1>
               <form>

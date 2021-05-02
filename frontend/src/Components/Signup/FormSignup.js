@@ -111,7 +111,6 @@ class FormSignup extends React.Component {
   };
 
   render() {
-    console.log('in render');
     const {
       userNameErr,
       emailErr,
@@ -129,7 +128,7 @@ class FormSignup extends React.Component {
 
     console.log(this.state.sucess);
     return (
-      <div className='form-content-right'>
+      <div className='font-myfonts form-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>
           <svg
             width='20'

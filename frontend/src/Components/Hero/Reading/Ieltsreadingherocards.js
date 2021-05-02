@@ -2,7 +2,7 @@ import React from 'react';
 
 function Ieltsreadingherocards(props) {
   return (
-    <ul className='font-serif text-lg p-8 list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased'>
+    <ul className='font-myfonts text-lg p-8 list-disc leading-relaxed tracking-normal text antialiased sm:subpixel-antialiased md:antialiased'>
       {props.children}
     </ul>
   );

@@ -80,7 +80,7 @@ function IeltsSpeakingTest() {
   if (loading === true) {
     return (
       <div>
-        <div className='my-64'>
+        <div className='font-myfonts my-64'>
           <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
             Fetching Test...
           </h1>

@@ -55,16 +55,18 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className='flex max-h-screen justify-between bg-customdarkblue'>
+      <div className='flex max-h-screen justify-between bg-customdarkblue font-myfonts'>
         <div className='flex flex-col w-full divide-y-2 divide-customwhite justify-center items-center bg-customdarkblue'>
           <div className='flex items-center text-4xl w-3/4 justify-between'>
             <Link to='/' className='inline hover:no-underline'>
               <i className='fab fa-typo3 text-customwhite' />
-              <p className='text-customwhite hover:no-underline'>LMS</p>
+              <p className='text-customwhite hover:no-underline font-myfonts'>
+                LMS
+              </p>
             </Link>
             <div className='flex text-4xl'>
               <Link
-                className='m-4 text-customwhite'
+                className='m-4 text-customwhite hover:text-customwhite'
                 to='/'
                 target='_blank'
                 aria-label='Instagram'
@@ -72,7 +74,7 @@ class Footer extends React.Component {
                 <i className='fab fa-instagram' />
               </Link>
               <Link
-                className='m-4 text-customwhite'
+                className='m-4 text-customwhite hover:text-customwhite'
                 to='/'
                 target='_blank'
                 aria-label='Twitter'
@@ -84,13 +86,13 @@ class Footer extends React.Component {
 
           <div className='flex flex-col w-3/4 justify-stretch'>
             <Link
-              className='my-4 text-customwhite no-underline bg-scroll hover:underline hover:text-customwhite'
+              className='my-4 font-myfonts text-customwhite no-underline bg-scroll hover:underline hover:text-customwhite'
               to='/'
             >
               Home
             </Link>
             <Link
-              className='my-4 text-customwhite no-underline hover:underline hover:text-customwhite'
+              className='my-4 font-myfonts text-customwhite no-underline hover:underline hover:text-customwhite'
               to='/about'
             >
               About
@@ -113,7 +115,7 @@ class Footer extends React.Component {
                   d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
                 />
               </svg>
-              <p className='inline'> +91-8469975929</p>
+              <p className='inline font-myfonts'> +91-8469975929</p>
             </div>
             <div className='my-4 text-white'>
               <svg
@@ -130,13 +132,15 @@ class Footer extends React.Component {
                   d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
                 />
               </svg>
-              <p className='inline'> lms@gmail.com</p>
+              <p className='inline font-myfonts'> lms@gmail.com</p>
             </div>
           </div>
         </div>
 
         <form className='flex flex-col w-3/5 items-center justify-center'>
-          <h1 className='my-2 text-2xl text-customwhite'>Feedback</h1>
+          <h1 className='my-2 text-3xl text-customwhite font-myfonts'>
+            Feedback
+          </h1>
 
           <div className='my-2 flex flex-col w-5/6'>
             <label htmlFor='author' className=''></label>
@@ -195,7 +199,7 @@ class Footer extends React.Component {
           </div>
 
           <button
-            className=' inline my-3 bg-custompink text-customblack hover:text-customdarkblue hover:bg-metal transition-all ease-in duration-300 rounded-sm w-1/3 p-2  text-lg'
+            className='font-myfonts inline my-3 bg-custompink text-customblack hover:text-customdarkblue hover:bg-metal transition-all ease-in duration-300 rounded-sm w-1/3 p-2  text-lg'
             type='submit'
             onClick={this.feedBackSubmit}
           >

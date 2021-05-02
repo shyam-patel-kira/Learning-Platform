@@ -15,7 +15,7 @@ const Accordion = () => {
   };
 
   return (
-    <div id='faq'>
+    <div id='faq' className='font-myfonts'>
       <h1 className='text-center my-6 text-6xl text-customdarkblue'>
         Frequently Asked Questions
       </h1>
@@ -30,7 +30,9 @@ const Accordion = () => {
                     onClick={() => toggle(index)}
                     key={index}
                   >
-                    <h1 className='p-8 text-2xl'>{item.question}</h1>
+                    <h1 className='p-8 text-2xl font-myfonts'>
+                      {item.question}
+                    </h1>
                     <span className='mr-6'>
                       {clicked === index ? (
                         <FiMinus className='bg-customdarkblue' />
@@ -41,7 +43,7 @@ const Accordion = () => {
                   </div>
                   {clicked === index ? (
                     <div className='w-full h-24 flex flex-col justify-center items-center bg-custompink text-customdarkblue'>
-                      <p className='p-8 text-2xl'>{item.answer}</p>
+                      <p className='p-8 text-2xl font-myfonts'>{item.answer}</p>
                     </div>
                   ) : null}
                 </>
