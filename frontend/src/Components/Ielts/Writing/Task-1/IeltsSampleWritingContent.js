@@ -54,7 +54,7 @@ function IeltsSampleWritingContent(props) {
   if (error) {
     return (
       <div>
-        <h1 className='font-myfonts text-5xl text-center text-customblack -500 my-28'>
+        <h1 className='font-myfonts text-5xl text-center text-customblack my-28'>
           {error}
         </h1>
       </div>
@@ -65,7 +65,7 @@ function IeltsSampleWritingContent(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack justify-center'>
             Fetching Sample Content...
           </h1>
           <Loader

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
+import Error_401 from '../../401-Error.jpg';
 
 import section_1 from './Test-1/Section-1.mp3';
 import section_2 from './Test-1/Section-2.mp3';
@@ -145,8 +147,22 @@ function Ieltslisteningtest(props) {
 
   if (error) {
     return (
-      <div>
-        <h1 className='text-5xl text-center text-red-500 my-28'>{error}</h1>
+      <div className='flex flex-row'>
+        <div>
+          <img className='' src={Error_401} alt='' />
+        </div>
+        <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+          <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+            {error}
+          </h1>
+          <p className='text-2xl text-center text-customblack my-3'>
+            Please{' '}
+            <Link className='text-blue-500' to='/login'>
+              Login
+            </Link>{' '}
+            first.
+          </p>
+        </div>
       </div>
     );
   }
@@ -254,7 +270,7 @@ function Ieltslisteningtest(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack justify-center'>
             Fetching Test...
           </h1>
           <Loader
@@ -270,7 +286,7 @@ function Ieltslisteningtest(props) {
   } else {
     if (test_id === '1') {
       return (
-        <div className='font-myfonts leading-relaxed font-serif bg-trialback'>
+        <div className='font-myfonts leading-relaxed bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>
@@ -375,7 +391,7 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '2') {
       return (
-        <div className='leading-relaxed font-serif bg-trialback'>
+        <div className='font-myfonts leading-relaxed bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>
@@ -479,7 +495,7 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '3') {
       return (
-        <div className='leading-relaxed font-serif bg-trialback'>
+        <div className='leading-relaxed font-myfonts bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>
@@ -583,7 +599,7 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '4') {
       return (
-        <div className='leading-relaxed font-serif bg-trialback'>
+        <div className='leading-relaxed font-myfonts bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>
@@ -687,7 +703,7 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '5') {
       return (
-        <div className='leading-relaxed font-serif bg-trialback'>
+        <div className='leading-relaxed font-myfonts bg-trialback'>
           <h1 className='text-5xl text-center mb-2 text-customwhite'>
             Test - {question.id}
           </h1>

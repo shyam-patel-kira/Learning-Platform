@@ -10,6 +10,7 @@ function ReadingResult(props) {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
+    process.env.ADMIN_TOKEN ||
     'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
 
   const admin_token = jwt.sign(
@@ -30,8 +31,8 @@ function ReadingResult(props) {
     incorrect: '',
     test_id: '',
     test_type: '',
-    answerKey: [],
   });
+  let [answerKey, setAnswerKey] = useState([]);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
 
@@ -56,7 +57,6 @@ function ReadingResult(props) {
               test_id: res.data.results[0].test_id,
               test_type: res.data.results[0].test_type,
             });
-            setLoading(false);
           }
         })
         .catch(e => {
@@ -75,15 +75,13 @@ function ReadingResult(props) {
         .then(res => {
           if (res.data.error) {
             setError(res.data.error);
-            console.log('Answer Key error:', res.data.error);
           } else {
+            console.log(res.data.results[0].answers);
             let ans = [];
             for (let i of Object.values(res.data.results[0].answers)) {
               ans.push(i);
             }
-            setParams({
-              answerKey: ans,
-            });
+            setAnswerKey(ans);
             setLoading(false);
           }
         })
@@ -119,24 +117,49 @@ function ReadingResult(props) {
         </div>
       </div>
     );
-  } else {
-    return (
-      <div className='text-2xl text-customblack font-serif'>
-        <h1>Bands - {params.bands}</h1>
-        <h1>Total Correct Answers - {params.correct}</h1>
-        <h1>Total Incorrect Answers - {params.incorrect}</h1>
-        <h1>Examination Type - {params.test_type}</h1>
-        <h1>Test-Id - {params.test_id}</h1>
-        <h1>
-          Answer Key-{' '}
-          {params.answerKey &&
-            params.answerKey.map(item => {
-              return <p>{item}</p>;
-            })}
-        </h1>
-      </div>
-    );
   }
+
+  let cls = 'text-3xl my-3 text-center';
+
+  return (
+    <div className='text-lg shadow-2xl flex flex-col bg-custompink font-myfonts w-1/2 mx-auto my-10 text-customblack'>
+      <h1 className='text-5xl py-4 text-center'>Scorecard</h1>
+      <h1 className={cls}>Bands - {params.bands}</h1>
+      <h1 className={cls}>Total Correct Answers - {params.correct}</h1>
+      <h1 className={cls}>Total Incorrect Answers - {params.incorrect}</h1>
+      <h1 className={cls}>Examination Type - {params.test_type}</h1>
+      <h1 className={cls}>Test-Id - {params.test_id}</h1>
+      <h1 className={cls}>Answer Key</h1>
+      <ul className=''>
+        {answerKey &&
+          Object.keys(answerKey).map(item => {
+            return (
+              <li key={item} className='flex my-1 pb-2'>
+                <span
+                  style={{
+                    flex: 3,
+                  }}
+                  className='text-right'
+                >
+                  ({Number(item) + 1})&nbsp;
+                </span>
+                <span style={{ flex: 3.5 }} className='text-left'>
+                  &nbsp;{answerKey[item]}
+                </span>
+              </li>
+            );
+          })}
+      </ul>
+      <button
+        onClick={e => {
+          window.location = '/ielts-reading';
+        }}
+        className='text-center w-1/3 mb-3 border-2 border-customblack bg-green-500 mx-auto'
+      >
+        Back to Main Page
+      </button>
+    </div>
+  );
 }
 
 export default ReadingResult;

@@ -3,6 +3,8 @@ import React from 'react';
 import './Ieltsreadingtest.css';
 import Cookies from 'universal-cookie';
 import Loader from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
+import Error_401 from '../../401-Error.jpg';
 
 const cookies = new Cookies();
 
@@ -140,10 +142,22 @@ class Ieltsreadingtest extends React.Component {
   render() {
     if (this.state.error) {
       return (
-        <div>
-          <h1 className='text-5xl text-center text-red-500 my-28'>
-            {this.state.error}
-          </h1>
+        <div className='flex flex-row'>
+          <div>
+            <img className='' src={Error_401} alt='' />
+          </div>
+          <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+            <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+              {this.state.error}
+            </h1>
+            <p className='text-2xl text-center text-customblack my-3'>
+              Please{' '}
+              <Link className='text-blue-500' to='/login'>
+                Login
+              </Link>{' '}
+              first.
+            </p>
+          </div>
         </div>
       );
     }
@@ -189,7 +203,7 @@ class Ieltsreadingtest extends React.Component {
       return (
         <div>
           <div className='my-64'>
-            <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+            <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack justify-center'>
               Fetching Test...
             </h1>
             <Loader
@@ -224,7 +238,7 @@ class Ieltsreadingtest extends React.Component {
               <img src={this.state.questions.imgurl_6} alt='' />
             </div>
             <div className='border-customwhite border-2 mx-2 my-2'>
-              <h1 className='font-myfonts my-4 mx-2 text-4xl font-serif text-customwhite'>
+              <h1 className='font-myfonts my-4 mx-2 text-4xl text-customwhite'>
                 Write your answers here!!
               </h1>
               <form>

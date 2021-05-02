@@ -3,6 +3,8 @@ import IeltsSampleTestContentstyle from './IeltsSampleTestContentstyle';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import Cookies from 'universal-cookie';
+import Error_401 from '../../../401-Error.jpg';
+import { Link } from 'react-router-dom';
 
 const cookies = new Cookies();
 
@@ -48,21 +50,33 @@ function IeltsSampleTestContent(props) {
     fetchTest();
   }, []);
 
-  if (error) {
-    return (
-      <div>
-        <h1 className='font-myfonts text-5xl text-center text-customblack my-28'>
-          {error}
-        </h1>
-      </div>
-    );
-  }
+   if (error) {
+     return (
+       <div className='flex flex-row'>
+         <div>
+           <img className='' src={Error_401} alt='' />
+         </div>
+         <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+           <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+             {error}
+           </h1>
+           <p className='text-2xl text-center text-customblack my-3'>
+             Please{' '}
+             <Link className='text-blue-500' to='/login'>
+               Login
+             </Link>{' '}
+             first.
+           </p>
+         </div>
+       </div>
+     );
+   }
 
   if (loading === true) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack justify-center'>
             Fetching Test...
           </h1>
           <Loader

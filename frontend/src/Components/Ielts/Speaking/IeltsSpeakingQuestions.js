@@ -2,13 +2,11 @@ import React from 'react';
 
 function IeltsSpeakingQuestions(props) {
   return (
-    <div className='font-myfonts'>
+    <div className='font-myfonts bg-custompink mx-auto mb-4 my-4 w-5/6 shadow-customsm'>
       <h1 className='text-customblack text-5xl text-center my-4 leading-relaxed font-semibold'>
         Test - {props.id}
       </h1>
-      <p className='leading-relaxed text-xl text-center'>
-        {props.detail}
-      </p>
+      <p className='leading-relaxed text-xl text-center'>{props.detail}</p>
 
       <h1 className='text-customblack leading-relaxed font-semibold text-2xl mx-20 my-2'>
         {props.topic1}
@@ -32,7 +30,7 @@ function IeltsSpeakingQuestions(props) {
       <h1 className='text-customblack leading-relaxed font-semibold text-2xl mx-20 my-2'>
         {props.topic3}
       </h1>
-      <ul className='list-inside list-disc leading-relaxed mx-20 text-lg'>
+      <ul className='list-inside list-disc pb-4 leading-relaxed mx-20 text-lg'>
         <li>{props.q8}</li>
         <li>{props.q9}</li>
         <li>{props.q10}</li>

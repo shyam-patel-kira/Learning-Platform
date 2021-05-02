@@ -30,7 +30,7 @@ function IeltsTask1Topics(props) {
           </h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl font-serif leading-relaxed'>
-              <ul className='font-myfonts list-disc list-inside font-serif'>
+              <ul className='font-myfonts list-disc list-inside'>
                 <li>Spend only 20 minutes on this question.</li>
                 <li>
                   Look at the trends in the graph and use some rich vocabulary
@@ -91,7 +91,7 @@ function IeltsTask1Topics(props) {
             </div>
           </div>
           <div>
-            <h1 className='font-myfonts my-8 text-3xl text-center font-serif leading-relaxed'>
+            <h1 className='font-myfonts my-8 text-3xl text-center leading-relaxed'>
               Practice Yourself
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>

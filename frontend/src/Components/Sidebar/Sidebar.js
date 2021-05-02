@@ -9,12 +9,13 @@ function Sidebar() {
           return (
             <li
               key={key}
-              className='font-myfonts box-border rounded-md cursor-pointer p-2 w-1/2 text-center bg-custompink text-customblack hover:text-customdarkblue hover:bg-metal transition-all ease-in duration-300 border-customblack border-2 my-4 mx-4'
+              className='flex flex-row items-center justify-between font-myfonts box-border rounded-md cursor-pointer p-2 w-3/4 text-center bg-custompink text-customblack hover:text-customdarkblue hover:bg-metal transition-all ease-in duration-300 border-customblack border-2 my-4'
               onClick={() => {
                 window.location.pathname = val.link;
               }}
             >
-              {val.title}
+              <span className='my-2 ml-4 mr-2'>{val.icon}</span>
+              <span className='my-2 text-left flex-grow'>{val.title}</span>
             </li>
           );
         })}

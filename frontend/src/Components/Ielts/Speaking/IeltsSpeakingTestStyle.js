@@ -53,27 +53,27 @@ function IeltsSpeakingTestStyle() {
   };
 
   return (
-    <div className='font-myfonts m-5 grid grid-cols-2'>
-      <div className='shadow-2xl m-8 p-5 rounded-md min-h-0'>
-        <h2 className='text-3xl'>Current Note</h2>
+    <div className='font-myfonts shadow-customsm bg-custompink my-4 w-5/6 mx-auto grid grid-cols-2'>
+      <div className='shadow-2xl m-8 border-2 p-5 rounded-md min-h-0'>
+        <h2 className='text-3xl text-customblack'>Current Note</h2>
         {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
         <button
-          className='rounded-md m-2 p-2 float-right bg-green-300'
+          className='rounded-md m-2 p-2 float-right bg-green-300  text-customblack'
           onClick={handleSaveNote}
           disabled={!note}
         >
           Save Note
         </button>
         <button
-          className='rounded-md m-2 p-2 float-right bg-green-300'
+          className='rounded-md m-2 p-2 float-right bg-green-300 text-customblack'
           onClick={() => setIsListening(prevState => !prevState)}
         >
           Start/Stop
         </button>
         <p>{note}</p>
       </div>
-      <div className='shadow-2xl m-8 p-5 rounded-md min-h-0'>
-        <h2 className='text-3xl'>Notes</h2>
+      <div className='shadow-2xl m-8 p-5 border-2 rounded-md min-h-0'>
+        <h2 className='text-3xl text-customblack'>Notes</h2>
         {savedNotes.map(n => (
           <p key={n}>{n}</p>
         ))}
