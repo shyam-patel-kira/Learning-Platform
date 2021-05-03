@@ -1,7 +1,6 @@
 import React from 'react';
-//import { UserContext } from '../../UserContext';
 import axios from 'axios';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Form1.css';
 import Cookies from 'universal-cookie';
 
@@ -16,8 +15,8 @@ class FormLogin extends React.Component {
       data: '',
       formErrors: {},
       err: '',
+      submitLoading: false,
     };
-    this.initialState = this.state;
   }
 
   handleChangeUserName = event => {
@@ -58,9 +57,11 @@ class FormLogin extends React.Component {
   }
 
   handleSubmit = async event => {
+    this.setState({
+      submitLoading: true,
+    });
     event.preventDefault();
     if (this.handleFormValidation) {
-      this.setState(this.initialState);
       const login = {
         userName: this.state.userName,
         password: this.state.password,
@@ -68,38 +69,37 @@ class FormLogin extends React.Component {
 
       await axios
         .post('http://localhost:8000/user/login', login)
-        //.then(res => console.log(res.data.data))
         .then(res => {
           if (res.data.error) {
             this.setState({
               err: res.data.error,
+              submitLoading: false,
             });
           } else {
-            this.setState({ data: res.data.data });
+            this.setState({
+              data: res.data.data,
+              submitLoading: false,
+            });
             cookies.set('token', res.data.data);
             cookies.set('uname', res.data.userName);
             cookies.set('role', res.data.roles);
-            console.log(cookies.get('token'));
-            console.log('Not error');
-            this.setState({
-              sucess: true,
-            });
-            alert('Logged in Successfully');
+            window.location = '/';
           }
         })
-        .catch(err => console.log('Error is: ', err));
+        .catch(err => {
+          console.log('Error is: ', err);
+          this.setState({ submitLoading: false });
+        });
+    } else {
+      this.setState({
+        submitLoading: false,
+      });
     }
   };
 
   render() {
-    this.state.sucess === true ? (
-      (window.location = '/')
-    ) : (
-      <Route path='/login' exact component={FormLogin} />
-    );
-
     const { userNameErr, passwordErr } = this.state.formErrors;
-
+    let { submitLoading } = this.state;
     return (
       <div className='font-myfonts form1-content-right'>
         <button className='facebook-button sc-dnqmqq iTCbCQ'>
@@ -160,37 +160,78 @@ class FormLogin extends React.Component {
           <p>or</p>
         </div>
 
-        <form onSubmit={this.handleSubmit} className='form1' noValidate>
-          <div className='form1-inputs'>
-            <label className='form1-label'>Email</label>
+        <form
+          className='h-2/3 w-full flex flex-col justify-center items-center p-4'
+          noValidate
+        >
+          <div className='font-myfonts text-sm'>
+            <label className='inline-block font-normal mb-2 text-customblack'>
+              Username
+            </label>
             <input
-              className='form1-input'
+              className='outline-none mx-auto my-auto block w-72 bg-customwhite border-1 border-solid border-customblack box-border'
               type='text'
               name='userName'
               placeholder='Enter your User Name'
               value={this.state.userName}
               onChange={this.handleChangeUserName}
             />
-            {userNameErr && <p>{userNameErr}</p>}
+            {(userNameErr && <p>{userNameErr}</p>) ||
+              (this.state.err && (
+                <p className='text-red-600'>{this.state.err}</p>
+              ))}
           </div>
-          <div className='form1-inputs'>
-            <label className='form1-label'>Password</label>
+          <div className='font-myfonts mt-2 text-sm'>
+            <label className='inline-block font-normal mb-2 text-customblack'>
+              Password
+            </label>
             <input
-              className='form1-input'
+              className='mx-auto my-auto block w-72 bg-customwhite border-1 border-solid border-customblack box-border'
               type='password'
               name='password'
               placeholder='Enter your password'
               value={this.state.password}
               onChange={this.handleChangePassword}
             />
-            {passwordErr && <p>{passwordErr}</p>}
+            {(passwordErr && <p>{passwordErr}</p>) ||
+              (this.state.err && (
+                <p className='text-red-600'>{this.state.err}</p>
+              ))}
           </div>
-          <button className='form1-input-btn' type='submit'>
-            Login
+          <button
+            className='cursor-pointer font-myfonts font-normal mx-auto text-lg w-1/2 h-12 mt-3 border-2 outline-none border-none bg-customdarkblue text-white text-center '
+            type='submit'
+            onClick={this.handleSubmit}
+            disabled={this.state.submitLoading}
+          >
+            {submitLoading && (
+              <div className='flex flex-row'>
+                <svg
+                  xmlns='https://www.w3.org/2000/svg'
+                  className='animate-spin h-6 w-6 ml-2'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+                  />
+                </svg>
+                {console.log('Loading State:', submitLoading)}
+                <div className='ml-4'> Verifying...</div>
+              </div>
+            )}
+            {!submitLoading && <div>Login</div>}
           </button>
-          <span className='form1-input-login'>
-            Not a member <Link to='/signup'>Sign Up</Link>
-          </span>
+          <div className='text-sm mt-3 text-center w-4/5 text-customblack'>
+            Not a member{' '}
+            <Link to='/signup' className='text-blue-600'>
+              Sign Up
+            </Link>
+          </div>
         </form>
       </div>
     );
