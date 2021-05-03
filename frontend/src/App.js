@@ -6,7 +6,7 @@ import history from './history';
 import Form from './Components/Form';
 import Form1 from './Components/Form1';
 import Home from './Pages/Home';
-import AboutUs from './Components/AboutUs';
+import AboutUs from './Pages/AboutUs';
 import ErrorPage from './Error404.JPG';
 import Youtube from './Youtube';
 import TodoApp from './Components/Todos/TodoApp'
@@ -71,7 +71,7 @@ export default function App() {
           <Route path='/ielts-reading-test' component={Ieltsreadingtest} />
           <Route path='/ielts-listening-test' component={Ieltslisteningtest} />
           <Route path='/ielts-speaking-test' component={IeltsSpeakingTest} />
-          <Route path='/about' component={AboutUs} />
+          <Route path='/about-us' component={AboutUs} />
           <Route path='/ielts-reading-result' component={ReadingResult} />
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />

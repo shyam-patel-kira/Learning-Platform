@@ -98,7 +98,7 @@ class Navbar extends Component {
 
           <li className='font-myfonts'>
             <NavLink
-              to='/about'
+              to='/about-us'
               className='text-customwhite px-4 py-2 hover:text-customwhite'
             >
               <FiUsers className='mx-1 mb-1 h-4 w-4 inline' />
