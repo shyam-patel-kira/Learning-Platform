@@ -21,6 +21,7 @@ const Todo = mongoose.model("Todo");
 // get todo route
 todoRouter.get('/todoslist', (req, res) => {
     // verify
+    console.log("In GET todoslist");
     const decodedJWT = _decodeJWT(req);
     if (!_authorized(decodedJWT, "USER")) {
         console.log("Is not authorised");
@@ -55,10 +56,11 @@ todoRouter.post('/todoslist', (req, res) => {
             error: "Unauthorized user"
         });
     }
+    console.log(decodedJWT.id);
     let newTodo = new Todo({
         title: req.body.title,
         isCompleted: false,
-        author: decodedJWT.Id
+        author: decodedJWT.id,
     });
 
     newTodo.save(error => {
@@ -70,7 +72,40 @@ todoRouter.post('/todoslist', (req, res) => {
     })
 });
 
-todoRouter.put('/todo/:todoId', (req, res) => {
+// for updating todo
+todoRouter.put('/todoslist/update/:todoId', (req, res) => {
+    console.log("In PUT todoslist");
+    const decodedJWT = _decodeJWT(req);
+    if (!_authorized(decodedJWT, "USER")) {
+        console.log("Is not authorised");
+        return res.json({
+            status: "Error",
+            error: "Unauthorized user"
+        });
+    }
+    const newTitle = req.body.title;
+    // now we know token is valid
+    Todo.findOne({
+        author: decodedJWT.id,
+        _id: req.params.todoId
+    }, (err, todo) => {
+        if (err) return console.log(err);
+
+        todo.title = newTitle;
+        todo.save(error => {
+            if (error) return console.log(error);
+
+            //saved
+            return res.status(200).json({
+                title: 'success',
+                todo: todo
+            });
+        });
+    })
+});
+
+todoRouter.put('/todoslist/:todoId', (req, res) => {
+    console.log("In PUT todoslist");
     const decodedJWT = _decodeJWT(req);
     if (!_authorized(decodedJWT, "USER")) {
         console.log("Is not authorised");

@@ -53,7 +53,9 @@ function decode(encodedJWT) {
     console.log(schema);
 
     console.log(JWT_SECRET);
-
+    console.log("Part 0: " + parts[0]);
+    console.log("Part 1: " + parts[1]);
+    console.log("Part 2: " + parts[2]);
     switch (schema) {
       case "HS256":
         verified = jwa(schema).verify(

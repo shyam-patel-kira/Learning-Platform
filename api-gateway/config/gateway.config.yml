@@ -13,6 +13,12 @@ apiEndpoints:
   user:
     host: localhost
     paths: "/user/*"
+  gre:
+    host: localhost
+    paths: "/gre/*"
+  todos:
+    host: localhost
+    paths: "/todos/*"    
 serviceEndpoints:
   feedbackhttpbin:
     url: "http://localhost:4545"
@@ -20,6 +26,10 @@ serviceEndpoints:
     url: "http://localhost:4955"
   userhttpbin:
     url: "http://localhost:5545"
+  grehttpbin:
+    url: "http://localhost:7545"
+  todoshttpbin:
+    url: "http://localhost:6545"    
 policies:
   - basic-auth
   - cors
@@ -52,7 +62,7 @@ pipelines:
       #- key-auth:
       - rate-limit:
           - action:
-              max: 3400
+              max: 40000
               rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
@@ -66,9 +76,37 @@ pipelines:
       #- key-auth:
       - rate-limit:
           - action:
-              max: 5000
+              max: 50000
               rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
               serviceEndpoint: userhttpbin
               changeOrigin: true
+  - gre:
+    apiEndpoint:
+      - gre
+    policies:
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      #- key-auth:
+      - rate-limit:
+          - action:
+              max: 40000
+              rateLimitBy: "${req.hostname}"
+      - proxy:
+          - action:
+              serviceEndpoint: grehttpbin
+              changeOrigin: true
+  - todos:
+    apiEndpoint:
+      - todos
+    policies:
+      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+      #- key-auth:
+      - rate-limit:
+          - action:
+              max: 40000
+              rateLimitBy: "${req.hostname}"
+      - proxy:
+          - action:
+              serviceEndpoint: todoshttpbin
+              changeOrigin: true              
