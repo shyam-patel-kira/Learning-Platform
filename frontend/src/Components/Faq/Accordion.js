@@ -16,7 +16,7 @@ const Accordion = () => {
 
   return (
     <div id='faq' className='font-myfonts'>
-      <h1 className='text-center my-6 text-6xl text-customdarkblue'>
+      <h1 className='text-center my-6 text-6xl text-customdarkblue underline'>
         Frequently Asked Questions
       </h1>
       <IconContext.Provider value={{ color: '#00FF89', size: '20px' }}>

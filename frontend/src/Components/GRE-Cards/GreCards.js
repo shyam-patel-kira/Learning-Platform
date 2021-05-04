@@ -1,18 +1,20 @@
-import React from 'react'
-import img1 from './img1.jpg'
-import img2 from './img2.jpg'
-import img3 from './img3.png'
+import React from 'react';
+import img1 from './img1.jpg';
+import img2 from './img2.png';
+import img3 from './img3.jpg';
 
-function IeltsCards() {
+function GreCards() {
   return (
     <div className='my-10 font-myfonts'>
-      <h1 className='text-customdarkblue text-6xl text-center underline'>About IELTS</h1>
+      <h1 className='text-customdarkblue text-6xl text-center underline'>
+        About GRE
+      </h1>
       <div className='p-24 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10'>
         <div className='rounded overflow-hidden shadow-lg'>
           <img className='w-full' src={img1} alt='' />
           <div className='px-6 py-4 bg-customwhite'>
             <div className='font-bold text-xl mb-2'>
-              How to book IELTS exam?
+              How to book GRE exam?
             </div>
             <p className='text-gray-700 text-base'>
               IELTS exam can be booked online on British Council Website as well
@@ -90,8 +92,8 @@ function IeltsCards() {
               actual exam starts. During that time you will need to verify your
               documents and thereby you will be allotted a specific seat number.
               Once you go at your seat for the examination you won't be allowed
-              to go washroom untill the exam get's over. You don't need to
-              carry the mobile phones.
+              to go washroom untill the exam get's over. You don't need to carry
+              the mobile phones.
             </p>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>
@@ -111,4 +113,4 @@ function IeltsCards() {
   );
 }
 
-export default IeltsCards;
+export default GreCards;
