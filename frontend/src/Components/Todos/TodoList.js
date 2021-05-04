@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
+import axios from 'axios';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -13,6 +14,8 @@ function TodoList() {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
+    console.log(newTodos);
+    // axios.post
     console.log(...todos);
   };
 
