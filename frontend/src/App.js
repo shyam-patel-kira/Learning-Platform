@@ -10,6 +10,7 @@ import AboutUs from './Pages/AboutUs';
 import ErrorPage from './Error404.JPG';
 import Youtube from './Youtube';
 import TodoApp from './Components/Todos/TodoApp'
+import reportWebVitals from './reportWebVitals';
 
 import Ieltsmain from './Pages/Ieltsmain';
 import Ieltsreading from './Pages/Ieltsreading';
@@ -43,6 +44,7 @@ import Setest from './Components/GRE/Hero/Se/Setest';
 import SeResult from './Components/GRE/Hero/Se/SeResult';
 import Test1 from './Components/GRE/Hero/Quant/Test1';
 import Test1Result from './Components/GRE/Hero/Quant/Test1Result';
+import Dashboard from './Pages/Dashboard';
 
 const Page404 = () => {
   return (
@@ -76,6 +78,8 @@ export default function App() {
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
           <Route path='/todo' component={TodoApp} />
+          <Route path='/todos' component={Dashboard} />
+    
           <Route
             path='/ielts-sample-writing-task-1'
             component={IeltsSampleWritingContent}
@@ -120,3 +124,4 @@ export default function App() {
     </div>
   );
 }
+reportWebVitals();
