@@ -43,6 +43,9 @@ module.exports = {
           'sans-serif',
         ],
       },
+      margin: {
+        fx:'500px'
+      }
     },
   },
   variants: {
