@@ -1,7 +1,8 @@
-import dotenv from "dotenv";
-import jwa from "jwa";
-import jwt from "jsonwebtoken";
-import Inversoft from "passport-node-client";
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const jwa = require("jwa");
+const jwt = require("jsonwebtoken");
+const Inversoft = require("passport-node-client");
 dotenv.config();
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
@@ -12,7 +13,7 @@ const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
  * @param {Object} req The HTTP request
  * @returns {Object} the decoded JWT or null if the JWT was not found in the request or it is invalid
  */
-export default function _decodeJWT(req) {
+module.exports = function _decodeJWT (req) {
   const authorization = req.header("Authorization");
   console.log(authorization);
   if (authorization === null || typeof authorization === "undefined") {
@@ -52,13 +53,11 @@ function decode(encodedJWT) {
     console.log(schema);
 
     console.log(JWT_SECRET);
-    // console.log("Part 0: " + parts[0]);
-    // console.log("Part 1: " + parts[1]);
-    // console.log("Part 2: " + parts[2]);
-
+    console.log("Part 0: " + parts[0]);
+    console.log("Part 1: " + parts[1]);
+    console.log("Part 2: " + parts[2]);
     switch (schema) {
       case "HS256":
-        // console.log("In HS256");
         verified = jwa(schema).verify(
           parts[0] + "." + parts[1],
           parts[2],
