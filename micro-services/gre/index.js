@@ -50,3 +50,15 @@ appRouter.use('/', (req, res,next)=>{
 appRouter.listen(7545, () => {
 console.log("Up and running! This is our gre service");
 })
+
+
+/////
+/*
+
+verbal
+  RC- 7 para 7 String 1/2 QUESTION:
+  SE- Fitb 7 Quuestions
+  TC- MCQ
+qunat - comparison, MCQ single, MCQ multiple, Numeric
+
+*/
