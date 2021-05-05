@@ -1,12 +1,12 @@
-import React from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import TodoForm from "../Components/todo/TodoForm";
-import axios from "axios";
-import TodoList, { Todo } from "../Components/todo/TodoList";
+import React from 'react';
+import Navbar from '../Components/Navbar/Navbar';
+import TodoForm from '../Components/todo/TodoForm';
+import axios from 'axios';
+import TodoList, { Todo } from '../Components/todo/TodoList';
 import Cookies from 'universal-cookie';
-import Sidebar from "../Components/Sidebar/Sidebar";
-import { Link } from "react-router-dom";
-import Error_401 from "../Components/401-Error.jpg"
+import Sidebar from '../Components/Sidebar/Sidebar';
+import { Link } from 'react-router-dom';
+import Error_401 from '../Components/401-Error.jpg';
 
 const Dashboard = () => {
   const [todoList, setTodoList] = React.useState<Todo[]>([]);
@@ -17,8 +17,8 @@ const Dashboard = () => {
   React.useEffect(() => {
     axios.get('http://localhost:8000/todos/todoslist', { headers: { Authorization: AuthStr}})
       .then(res => {
-        if (res.data.error){
-          setError(res.data.error)
+        if (res.data.error) {
+          setError(res.data.error);
         }
         if (res.status === 200) {
           console.log(res.data);
@@ -27,9 +27,8 @@ const Dashboard = () => {
       })
       .catch(error => {
         console.log(error.status);
-//        setError(error.message.error)
       });
-  }, [])
+  }, []);
 
   if (error) {
     return (
@@ -52,22 +51,23 @@ const Dashboard = () => {
       </div>
     );
   }
-  return(
+  return (
     <>
       <div className='bg-custompink'>
-      <Navbar />
+        <Navbar />
         <div className='font-myfonts flex items-start justify-between'>
           <Sidebar />
-            <div className='todo-app mx-auto my-auto mb-4 flex flex-col justify-start text-center'>
-              <h1 className='text-2xl text-white my-4'>What's the Plan for Today?</h1>
-                <TodoForm todos={todoList} setTodos={setTodoList}/>
-                <TodoList todos={todoList} setTodos={setTodoList} />
-            </div>
+          <div className='todo-app mx-auto my-auto mb-4 flex flex-col justify-start text-center'>
+            <h1 className='text-2xl text-white my-4'>
+              What's the Plan for Today?
+            </h1>
+            <TodoForm todos={todoList} setTodos={setTodoList} />
+            <TodoList todos={todoList} setTodos={setTodoList} />
+          </div>
         </div>
-    </div>
-      
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Dashboard;
