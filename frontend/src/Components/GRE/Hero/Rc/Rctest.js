@@ -35,7 +35,7 @@ function Rctest() {
     async function fetchTest() {
       await axios
         .get(
-          `http://localhost:7545/gre/verbal/practice/${test_type}&${test_id}`,
+          `http://localhost:8000/gre/verbal/practice/${test_type}&${test_id}`,
           {
             headers: { Authorization: AuthStr },
           }
@@ -91,7 +91,7 @@ function Rctest() {
     //API Call for storing user answers
     await axios
       .post(
-        `http://localhost:7545/gre/verbal/test/user-answers/${test_type}&${test_id}`,
+        `http://localhost:8000/gre/verbal/test/user-answers/${test_type}&${test_id}`,
         answers,
         {
           headers: { Authorization: AuthStr },
@@ -111,7 +111,7 @@ function Rctest() {
     //API Call for comparing answers in result collection
     await axios
       .get(
-        `http://localhost:7545/gre/verbal-answer-result/test/${test_type}&${test_id}`,
+        `http://localhost:8000/gre/verbal-answer-result/test/${test_type}&${test_id}`,
         {
           headers: { Authorization: AuthStr },
         }

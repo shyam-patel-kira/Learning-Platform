@@ -39,7 +39,7 @@ function Test1Result(props) {
   useEffect(() => {
     async function fetchResult() {
       await axios
-        .get(`http://localhost:7545/gre/quant-result-display/test/${test_id}`, {
+        .get(`http://localhost:8000/gre/quant-result-display/test/${test_id}`, {
           headers: { Authorization: AuthStr },
         })
         .then(res => {
@@ -65,7 +65,7 @@ function Test1Result(props) {
   useEffect(() => {
     async function fetchAnswerKey() {
       await axios
-        .get(`http://localhost:7545/gre/quant-answers/test/${test_id}`, {
+        .get(`http://localhost:8000/gre/quant-answers/test/${test_id}`, {
           headers: { Authorization: secret },
         })
         .then(res => {

@@ -42,7 +42,7 @@ function RcResult(props) {
       const test_type = 'rc';
       await axios
         .get(
-          `http://localhost:7545/gre/verbal-result-display/test/${test_type}&${test_id}`,
+          `http://localhost:8000/gre/verbal-result-display/test/${test_type}&${test_id}`,
           {
             headers: { Authorization: AuthStr },
           }
@@ -73,7 +73,7 @@ function RcResult(props) {
       const test_type = 'rc';
       await axios
         .get(
-          `http://localhost:7545/gre/verbal-answers/test/${test_type}&${test_id}`,
+          `http://localhost:8000/gre/verbal-answers/test/${test_type}&${test_id}`,
           {
             headers: { Authorization: secret },
           }
