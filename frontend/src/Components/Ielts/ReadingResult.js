@@ -13,7 +13,7 @@ function ReadingResult(props) {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#*(&@*!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
   const admin_token = jwt.sign(
     {
       userName: 'kira',

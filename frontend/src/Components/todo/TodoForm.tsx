@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
-import axios from "axios";
-import { Todo } from "./TodoList";
+import axios from 'axios';
+import { Todo } from './TodoList';
 import Cookies from 'universal-cookie';
 
 interface TodoFormProps {
@@ -9,8 +9,8 @@ interface TodoFormProps {
   setTodos: (todos: Todo[]) => void;
 }
 
-const TodoForm = ({todos, setTodos}: TodoFormProps) => {
-  const [title, setTitle] = React.useState("");
+const TodoForm = ({ todos, setTodos }: TodoFormProps) => {
+  const [title, setTitle] = React.useState('');
   const inputRef = useRef(null);
 
   // useEffect(() => {
@@ -21,31 +21,36 @@ const TodoForm = ({todos, setTodos}: TodoFormProps) => {
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   const onSubmit = () => {
     if (title.length > 0) {
-      axios.post('http://localhost:6545/todos/todoslist', {title: title}, {headers: { Authorization: AuthStr}})
+      axios
+        .post(
+          'http://localhost:6545/todos/todoslist',
+          { title: title },
+          { headers: { Authorization: AuthStr } }
+        )
         .then(res => {
           if (res.status === 200) {
             let todo = res.data.todo;
             setTodos([...todos, todo]);
-            setTitle("");
+            setTitle('');
           }
         });
     }
-  }
+  };
 
-  return(
+  return (
     <div className='todo-form'>
       <input
-            placeholder='Add a todo'
-            name='text'
-            className='todo-input'
-            ref={inputRef}
-            onChange={e => setTitle(e.target.value)} 
-            value={title}
-          />
+        placeholder='Add a todo'
+        name='text'
+        className='todo-input'
+        ref={inputRef}
+        onChange={e => setTitle(e.target.value)}
+        value={title}
+      />
       <button onClick={onSubmit} className='todo-button'>
-            Add todo
-      </button>    
+        Add todo
+      </button>
     </div>
-  )
-}
+  );
+};
 export default TodoForm;

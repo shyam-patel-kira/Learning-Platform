@@ -6,11 +6,10 @@
   min-height: 600px;
   background: #161a2b;
   text-align: center;
- /* margin: 128px auto;*/
+  /* margin: 128px auto;*/
   border-radius: 10px;
   padding-bottom: 32px;
 }
-
 
 .complete {
   text-decoration: line-through;
