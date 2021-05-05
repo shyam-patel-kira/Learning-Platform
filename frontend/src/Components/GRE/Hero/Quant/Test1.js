@@ -56,7 +56,7 @@ function Test1() {
   useEffect(() => {
     async function fetchTest() {
       await axios
-        .get(`http://localhost:7545/gre/quant/practice/${test_id}`, {
+        .get(`http://localhost:8000/gre/quant/practice/${test_id}`, {
           headers: { Authorization: AuthStr },
         })
         .then(res => {
@@ -121,7 +121,7 @@ function Test1() {
     //API Call for storing user answers
     await axios
       .post(
-        `http://localhost:7545/gre/quant/test/user-answers/${test_id}`,
+        `http://localhost:8000/gre/quant/test/user-answers/${test_id}`,
         answers,
         {
           headers: { Authorization: AuthStr },
@@ -140,7 +140,7 @@ function Test1() {
 
     //API Call for comparing answers in result collection
     await axios
-      .get(`http://localhost:7545/gre/quant-answer-result/test/${test_id}`, {
+      .get(`http://localhost:8000/gre/quant-answer-result/test/${test_id}`, {
         headers: { Authorization: AuthStr },
       })
       .then(res => {
