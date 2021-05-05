@@ -19,6 +19,7 @@ import writingTaskOneUserAnswerRouter from "./WritingTask1Sample_Routes/writing_
 import writingTaskTwoSampleRouter from "./WritingTask2Sample_Routes/writing_Task2_sample.js";
 import writingTaskTwoTestRouter from "./WritingTask2Sample_Routes/writing_Task2_test_questions.js";
 import writingTaskTwoUserAnswerRouter from "./WritingTask2Sample_Routes/writing_Task2_user_answers.js"
+import resultVisualRouter from "./result_visual.js";
 
 const JWT_SECRET = process.env.TOKEN_SECRET;
 const JWT_SECRET_ADMIN = process.env.TOKEN_SECRET_ADMIN;
@@ -43,6 +44,7 @@ app.use("/ielts", writingTaskOneTestRouter);
 app.use("/ielts", writingTaskTwoTestRouter);
 app.use("/ielts", writingTaskOneUserAnswerRouter);
 app.use("/ielts", writingTaskTwoUserAnswerRouter);
+app.use("/ielts", resultVisualRouter);
 
 const CONNECTION_URL = process.env.DB_CONNECT;
 const PORT = process.env.PORT || 4955;
