@@ -15,10 +15,7 @@ const Dashboard = () => {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   React.useEffect(() => {
-    axios
-      .get('http://localhost:6545/todos/todoslist', {
-        headers: { Authorization: AuthStr },
-      })
+    axios.get('http://localhost:8000/todos/todoslist', { headers: { Authorization: AuthStr}})
       .then(res => {
         if (res.data.error) {
           setError(res.data.error);

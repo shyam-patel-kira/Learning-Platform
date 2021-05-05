@@ -21,12 +21,7 @@ const TodoForm = ({ todos, setTodos }: TodoFormProps) => {
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   const onSubmit = () => {
     if (title.length > 0) {
-      axios
-        .post(
-          'http://localhost:6545/todos/todoslist',
-          { title: title },
-          { headers: { Authorization: AuthStr } }
-        )
+      axios.post('http://localhost:8000/todos/todoslist', {title: title}, {headers: { Authorization: AuthStr}})
         .then(res => {
           if (res.status === 200) {
             let todo = res.data.todo;
