@@ -77,7 +77,6 @@ export default function App() {
           <Route path='/ielts-reading-result' component={ReadingResult} />
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
-          <Route path='/todo' component={TodoApp} />
           <Route path='/todos' component={Dashboard} />
     
           <Route

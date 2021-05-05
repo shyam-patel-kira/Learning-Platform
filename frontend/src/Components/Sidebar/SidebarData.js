@@ -31,7 +31,7 @@ export const SidebarData = [
   },
   {
     title: 'Todo App',
-    link: '/todo',
+    link: '/todos',
     icon: <RiTodoLine />,
   },
 ];

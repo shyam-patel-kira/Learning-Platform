@@ -43,7 +43,7 @@ const TodoList = ({todos, setTodos}: TodoListProps) => {
 
   return(
     <>
-      {todos.filter(todo => !todo.isCompleted).map((todo) => (
+      {todos && todos.filter(todo => !todo.isCompleted).map((todo) => (
         <div className={todo.isCompleted ? 'todo-row complete' : 'todo-row'} key={todo._id}>
           <div className=''>
             {String(new Date(parseInt(todo._id.substring(0, 8), 16) * 1000).getDate())}/
