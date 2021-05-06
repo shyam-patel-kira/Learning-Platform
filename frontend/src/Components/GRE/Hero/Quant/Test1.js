@@ -5,17 +5,17 @@ import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
+import dotenv from 'dotenv'
 
 const cookies = new Cookies();
+dotenv.config()
 
 function Test1() {
   let x = window.location.href.split('/');
   let test_id = x[x.length - 1];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
-  //signing ADMIN TOKEN for answerkey
+ let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
   const admin_token = jwt.sign(
     {
       userName: 'kira',

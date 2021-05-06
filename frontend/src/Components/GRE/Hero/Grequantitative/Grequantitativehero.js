@@ -20,7 +20,7 @@ function Grequantitativehero() {
     window.location = `/gre-quant-test/${x}`;
   };
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
+    <div className='bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
       <h1 className='pt-8 text-4xl text-center'>QUANTITATIVE REASONING</h1>
       <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>
@@ -153,21 +153,21 @@ function Grequantitativehero() {
 
           <div className='flex flex-row justify-evenly w-5/6'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={handleTest}
               id='1'
             >
-              Sample Test 1
+              Test 1
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={handleTest}
               id='2'
             >
-              Sample Test 2
+              Test 2
             </button>
           </div>
         </div>

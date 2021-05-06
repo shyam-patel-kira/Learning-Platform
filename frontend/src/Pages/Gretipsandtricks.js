@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 
 function Gretipsandtricks() {
   return (
-    <div className='bg-custombrown text-customblack'>
+    <div className='bg-customwhite text-customblack'>
       <Navbar />
       <div className='flex items-start justify-between'>
         <Sidebar />

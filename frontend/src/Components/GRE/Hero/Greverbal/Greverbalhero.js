@@ -15,7 +15,7 @@ function Greverbalherocards(props) {
 
 function Greverbalhero() {
   return (
-    <div className='bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
+    <div className='bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite font-myfonts'>
       <h1 className='pt-8 text-4xl text-center'>VERBAL REASONING</h1>
       <div className='px-8 my-10 text-customwhite'>
         <ul className='grid grid-cols-2 gap-4'>
@@ -119,39 +119,27 @@ function Greverbalhero() {
         <div className='flex flex-col justify-center items-center'>
           <div className='flex flex-row justify-evenly w-5/6'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
+              onClick={e => (window.location = '/verbal-rc')}
             >
-              <Link
-                className='hover:no-underline hover:text-customwhite'
-                to='/verbal-rc'
-              >
-                RC
-              </Link>
+              RC
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
+              onClick={e => (window.location = '/verbal-tc')}
             >
-              <Link
-                className='hover:no-underline hover:text-customwhite'
-                to='/verbal-tc'
-              >
-                TC
-              </Link>
+              TC
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
+              onClick={e => (window.location = '/verbal-se')}
             >
-              <Link
-                className='hover:no-underline hover:text-customwhite'
-                to='/verbal-se'
-              >
-                SE
-              </Link>
+              SE
             </button>
           </div>
         </div>

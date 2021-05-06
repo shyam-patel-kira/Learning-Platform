@@ -5,13 +5,14 @@ import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
+import dotenv from 'dotenv'
 
 function RcResult(props) {
+  dotenv.config()
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+  let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
 
   const admin_token = jwt.sign(
     {

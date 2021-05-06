@@ -12,8 +12,7 @@ function ReadingResult(props) {
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN =
-    'sdjkfh8923yhjdforksbfmisa@#(&@!^#&@bhjb2qiuhthisesdadminbhjdsfg839ujkdhfjk';
+  let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
   const admin_token = jwt.sign(
     {
       userName: 'kira',

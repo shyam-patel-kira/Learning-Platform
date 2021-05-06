@@ -14,7 +14,7 @@ function Gremainherocards(props) {
 
 function Gremainhero() {
   return (
-    <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='font-myfonts bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
       <h1 className='pt-8 text-4xl text-center'>GRE</h1>
       <div className='px-8 my-10 text-gray-50'>
         <ul className='grid grid-cols-2 gap-4'>

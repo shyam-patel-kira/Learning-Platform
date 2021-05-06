@@ -9,7 +9,7 @@ function Se() {
   };
 
   return (
-    <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+    <div className='font-myfonts bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
       <h1 className='pt-8 text-4xl text-center'>SENTENCE EQIVALENCE</h1>
       <div className='px-8 my-10 text-customwhite'>
         <div className='px-1 justify-items-start'>
@@ -48,21 +48,21 @@ function Se() {
 
           <div className='flex flex-row justify-evenly w-5/6'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={handleTest}
               id='1'
             >
-              Sample Test 1
+              Test 1
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-white font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={handleTest}
               id='2'
             >
-              Sample Test 2
+              Test 2
             </button>
           </div>
         </div>
