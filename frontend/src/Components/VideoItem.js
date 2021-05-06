@@ -15,7 +15,7 @@ function VideoItem(props) {
         alt={props.video.snippet.title}
       />
 
-      <div className='text-customwhite my-8 font-serif leading-relaxed'>{props.video.snippet.title}</div>
+      <div className='text-black my-8 font-myfonts leading-relaxed'>{props.video.snippet.title}</div>
     </div>
   );
 }

@@ -5,10 +5,10 @@ const IeltsSampleWritingTask2style = props => {
   let x = window.location.href.split('/');
   let keyword = x[x.length - 2];
   return (
-    <div className='font-myfonts bg-custombrown '>
+    <div className='font-myfonts bg-customwhite '>
       <br />
       <br />
-      <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
+      <div className='bg-customdarkblue mx-auto w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center leading-relaxed font-serif'>
           {props.title}
         </h1>
@@ -36,7 +36,7 @@ const IeltsSampleWritingTask2style = props => {
         <div>
           <div className='font-myfonts flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='opinion'
               id='1'

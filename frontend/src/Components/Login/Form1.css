@@ -90,7 +90,6 @@
   display: flex;
   align-items: center;
 
-  color: #ffffff;
 }
 
 .form1-content-left h4 {
@@ -108,7 +107,6 @@
   display: flex;
   align-items: center;
 
-  color: #ffffff;
 }
 
 .form1-inputs {
@@ -199,7 +197,7 @@
   width: 130px;
   margin: 24px 0px;
   border-radius: 8px;
-  border: 4px solid rgb(0, 255, 132);
+  border: 4px solid rgb(62, 219, 240);
   margin-left: 185px;
 }
 

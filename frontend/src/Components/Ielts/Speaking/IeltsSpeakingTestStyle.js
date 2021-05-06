@@ -53,26 +53,26 @@ function IeltsSpeakingTestStyle() {
   };
 
   return (
-    <div className='font-myfonts shadow-customsm bg-custompink my-4 w-5/6 mx-auto grid grid-cols-2'>
-      <div className='shadow-2xl m-8 border-2 p-5 rounded-md min-h-0'>
+    <div className='font-myfonts shadow-lg bg-gray-100 my-4 w-5/6 mx-auto grid grid-cols-2'>
+      <div className='shadow-2xl m-8 border-2 bg-customwhite p-5 rounded-md min-h-0'>
         <h2 className='text-3xl text-customblack'>Current Note</h2>
         {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
         <button
-          className='rounded-md m-2 p-2 float-right bg-green-300  text-customblack'
+          className='rounded-md m-2 p-2 float-right bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue'
           onClick={handleSaveNote}
           disabled={!note}
         >
           Save Note
         </button>
         <button
-          className='rounded-md m-2 p-2 float-right bg-green-300 text-customblack'
+          className='rounded-md m-2 p-2 float-right bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue'
           onClick={() => setIsListening(prevState => !prevState)}
         >
           Start/Stop
         </button>
         <p>{note}</p>
       </div>
-      <div className='shadow-2xl m-8 p-5 border-2 rounded-md min-h-0'>
+      <div className='shadow-2xl m-8 p-5 border-2 bg-customwhite rounded-md min-h-0'>
         <h2 className='text-3xl text-customblack'>Notes</h2>
         {savedNotes.map(n => (
           <p key={n}>{n}</p>

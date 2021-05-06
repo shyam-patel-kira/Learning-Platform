@@ -13,7 +13,7 @@ function Carousel(props) {
             count !== i ? 'hidden' : ''
           } flex items-center justify-center w-full`}
         >
-          <img src={v} className='flex h-screen w-screen' alt='' />
+          <img src={v} className='flex items-center justify-center h-96 w-screen' alt='' />
         </figure>
       );
     }

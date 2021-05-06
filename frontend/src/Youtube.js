@@ -25,7 +25,7 @@ const Youtube = () => {
   };
 
   return (
-    <div className='bg-customblack'>
+    <div className='bg-customwhite'>
     <Navbar />
       <div>
         <SearchBar onFormSubmit={onTermSubmit} />

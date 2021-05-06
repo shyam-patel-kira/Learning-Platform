@@ -10,7 +10,7 @@ import GreCards from '../Components/GRE-Cards/GreCards';
 
 function Home() {
   return (
-    <div className='bg-metal'>
+    <div className='bg-customwhite'>
       <Navbar />
       <HeroSection />
       <Cards />

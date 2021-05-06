@@ -13,11 +13,11 @@ const SearchBar = props => {
   };
 
   return (
-    <div className='bg-black'>
+    <div className='bg-customwhite'>
       <form className='' onSubmit={handleFormSubmit}>
         <div className='flex flex-col'>
           <div className='mx-auto'>
-            <label className='text-white font-serif text-xl my-4'>
+            <label className='text-black font-myfonts text-xl my-4'>
               Search for your favourite video here!!
             </label>
           </div>

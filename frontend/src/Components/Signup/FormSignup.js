@@ -260,7 +260,7 @@ class FormSignup extends React.Component {
           </div>
 
           <button
-            className='cursor-pointer font-myfonts font-normal mx-auto text-lg w-1/2 h-12 mt-3 border-2 outline-none border-none bg-customdarkblue text-white text-center '
+            className='cursor-pointer font-myfonts font-normal mx-auto text-lg w-1/2 h-12 mt-3 border-2 outline-none border-none bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue text-center '
             type='submit'
             onClick={this.handleSubmit}
             disabled={this.state.submitLoading}

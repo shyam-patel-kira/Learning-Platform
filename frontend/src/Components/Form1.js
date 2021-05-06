@@ -7,13 +7,13 @@ import Navbar from './Navbar/Navbar';
 
 const Form1 = () => {
   return (
-    <div className='bg-custompink'>
+    <div className='bg-customwhite'>
       <Navbar />
-      <div className='form1-container bg-custompink'>
+      <div className='form1-container'>
         <span className='close-btn'>×</span>
-        <div className='form1-content-left bg-customdarkblue text-customblack'>
-          <h2 className='font-myfonts'>Welcome Back to LMS</h2>
-          <h4 className='font-myfonts'>Sign In to continue to your Account</h4>
+        <div className='form1-content-left bg-customnewblue text-customblack'>
+          <h2 className='font-myfonts text-customblack'>Welcome Back to LMS</h2>
+          <h4 className='font-myfonts text-customblack'>Sign In to continue to your Account</h4>
           <div className='seperator'></div>
         </div>
         <FormLogin />

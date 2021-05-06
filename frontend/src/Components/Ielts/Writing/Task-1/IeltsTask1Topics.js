@@ -21,11 +21,11 @@ function IeltsTask1Topics(props) {
 
   if (keyword === 'bar-graph') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
-          <h1 className='pt-8 text-4xl text-center my-6 font-serif'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite'>
+          <h1 className='pt-8 text-4xl text-center my-6'>
             Bar Graph
           </h1>
           <div className='px-8 text-customwhite'>
@@ -61,7 +61,7 @@ function IeltsTask1Topics(props) {
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -71,7 +71,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -80,7 +80,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleSamplePractice}
@@ -96,7 +96,7 @@ function IeltsTask1Topics(props) {
             </h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
@@ -106,7 +106,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
@@ -115,7 +115,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='bar-graph'
                 onClick={handleTask1Test}
@@ -128,14 +128,14 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'
               >
                 <Link
                   to='/ielts-writing'
-                  className='hover:no-underline hover:text-customwhite'
+                  className='hover:no-underline'
                 >
                   Go Back
                 </Link>
@@ -152,10 +152,10 @@ function IeltsTask1Topics(props) {
   //Pie-Chart
   else if (keyword === 'pie-chart') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Pie Chart</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
@@ -188,7 +188,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -198,7 +198,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -207,7 +207,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleSamplePractice}
@@ -221,7 +221,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
@@ -231,7 +231,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
@@ -240,7 +240,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='pie-chart'
                 onClick={handleTask1Test}
@@ -253,14 +253,14 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'
               >
                 <Link
                   to='/ielts-writing'
-                  className='hover:no-underline hover:text-customwhite'
+                  className='hover:no-underline'
                 >
                   Go Back
                 </Link>
@@ -277,10 +277,10 @@ function IeltsTask1Topics(props) {
   //Line-Graph
   else if (keyword === 'line-graph') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Line Graph</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
@@ -313,7 +313,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -323,7 +323,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -332,7 +332,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleSamplePractice}
@@ -346,7 +346,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -356,7 +356,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -365,7 +365,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='line-graph'
                 onClick={handleTask1Test}
@@ -378,7 +378,7 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'
@@ -401,10 +401,10 @@ function IeltsTask1Topics(props) {
   //Maps
   else if (keyword === 'maps') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Maps</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
@@ -441,7 +441,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -451,7 +451,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -460,7 +460,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleSamplePractice}
@@ -474,7 +474,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
@@ -484,7 +484,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
@@ -493,7 +493,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='maps'
                 onClick={handleTask1Test}
@@ -506,14 +506,14 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'
               >
                 <Link
                   to='/ielts-writing'
-                  className='hover:no-underline hover:text-customwhite'
+                  className='hover:no-underline'
                 >
                   Go Back
                 </Link>
@@ -530,10 +530,10 @@ function IeltsTask1Topics(props) {
   //Tabular Data
   else if (keyword === 'table') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite font-serif leading-relaxed'>
           <h1 className='pt-8 text-4xl my-6 text-center'>Table</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
@@ -570,7 +570,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -580,7 +580,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -589,7 +589,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleSamplePractice}
@@ -603,7 +603,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
@@ -613,7 +613,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
@@ -622,7 +622,7 @@ function IeltsTask1Topics(props) {
                 Test-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='table'
                 onClick={handleTask1Test}
@@ -635,7 +635,7 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'
@@ -659,10 +659,10 @@ function IeltsTask1Topics(props) {
   //Diagram
   else if (keyword === 'diagram') {
     return (
-      <div className='font-myfonts bg-custombrown'>
+      <div className='font-myfonts bg-customwhite'>
         <br />
         <br />
-        <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite leading-relaxed font-serif'>
+        <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite leading-relaxed font-serif'>
           <h1 className='pt-8 text-4xl  my-6 text-center'>Diagram</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl'>
@@ -699,7 +699,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Sample Answers</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -709,7 +709,7 @@ function IeltsTask1Topics(props) {
               </button>
 
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -718,7 +718,7 @@ function IeltsTask1Topics(props) {
                 Sample-2
               </button>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleSamplePractice}
@@ -732,7 +732,7 @@ function IeltsTask1Topics(props) {
             <h1 className='my-8 text-3xl text-center'>Practice Yourself</h1>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='diagram'
                 onClick={handleTask1Test}
@@ -764,7 +764,7 @@ function IeltsTask1Topics(props) {
           <div>
             <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
               <button
-                className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 variant='Default'
                 name='opinion'
                 id='1'

@@ -5,7 +5,7 @@ import img6 from './img6.png';
 
 function IeltsQuestions() {
   return (
-    <div className='my-10 font-myfonts text-customblack'>
+    <div className='my-10 font-myfonts text-customblack bg-customgray'>
       <div className='p-16 mx-auto flex flex-row'>
         <div className='flex flex-col'>
           <img className='w-1/6 mx-44 my-4' src={img4} alt='' />

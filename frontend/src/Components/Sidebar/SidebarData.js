@@ -30,11 +30,6 @@ export const SidebarData = [
     icon: <AiOutlineYoutube />,
   },
   {
-    title: 'Todo App',
-    link: '/todos',
-    icon: <RiTodoLine />,
-  },
-  {
     title: 'Result',
     link: '/ielts-result',
     icon: <BsGraphUp />

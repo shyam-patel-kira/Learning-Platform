@@ -171,7 +171,7 @@ function Ieltslisteningtest(props) {
   for (let i = 1; i <= 10; i++) {
     if (i <= 9) {
       text1.push(
-        <label className='mx-4 my-4 text-right text-customwhite'>
+        <label className='mx-4 my-4 text-right text-customblack'>
           {'0' + i}
           <input
             className='text-customblack'
@@ -188,7 +188,7 @@ function Ieltslisteningtest(props) {
       );
     } else {
       text1.push(
-        <label className='mx-4 my-4 text-right text-customwhite'>
+        <label className='mx-4 my-4 text-right text-customblack'>
           {i}
           <input
             className='text-customblack'
@@ -209,7 +209,7 @@ function Ieltslisteningtest(props) {
   let text2 = [];
   for (let i = 11; i <= 20; i++) {
     text2.push(
-      <label className='mx-4 my-4 text-right text-customwhite'>
+      <label className='mx-4 my-4 text-right text-customblack'>
         {i + '  '}
         <input
           className='text-customblack'
@@ -229,7 +229,7 @@ function Ieltslisteningtest(props) {
   let text3 = [];
   for (let i = 21; i <= 30; i++) {
     text3.push(
-      <label className='mx-4 my-4 text-right text-customwhite'>
+      <label className='mx-4 my-4 text-right text-customblack'>
         {i + '  '}
         <input
           className='text-customblack'
@@ -249,7 +249,7 @@ function Ieltslisteningtest(props) {
   let text4 = [];
   for (let i = 31; i <= 40; i++) {
     text4.push(
-      <label className='mx-4 my-4 text-right text-customwhite'>
+      <label className='mx-4 my-4 text-right text-customblack'>
         {i + '  '}
         <input
           type='text'
@@ -286,11 +286,11 @@ function Ieltslisteningtest(props) {
   } else {
     if (test_id === '1') {
       return (
-        <div className='font-myfonts leading-relaxed bg-trialback'>
-          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+        <div className='font-myfonts leading-relaxed bg-customgray'>
+          <h1 className='text-5xl text-center mb-2 text-customblack'>
             Test - {question.id}
           </h1>
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-1
           </h1>
 
@@ -298,63 +298,63 @@ function Ieltslisteningtest(props) {
             <source src={section_1} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
+            <div className='border-customblack border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-2
           </h1>
           <audio controls className='mx-auto'>
             <source src={section_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
+            <div className='border-customblack border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-3
           </h1>
           <audio controls className='mx-auto'>
             <source src={section_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
+            <div className='border-customblack border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-4
           </h1>
           <audio controls className='mx-auto'>
             <source src={section_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite border-2 w-1/2 my-4 mx-6 bg-customwhite'>
+            <div className='border-customblack border-2 w-1/2 my-4 mx-6 bg-customwhite'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -391,74 +391,74 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '2') {
       return (
-        <div className='font-myfonts leading-relaxed bg-trialback'>
-          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+        <div className='font-myfonts leading-relaxed bg-customgray'>
+          <h1 className='text-5xl text-center mb-2 text-customblack'>
             Test - {question.id}
           </h1>
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-1
           </h1>
           <audio controls className='mx-auto'>
             <source src={section1_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-2
           </h1>
           <audio controls className='mx-auto'>
             <source src={section2_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-3
           </h1>
           <audio controls className='mx-auto'>
             <source src={section3_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
               <img src={question.img_5} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-4
           </h1>
           <audio controls className='mx-auto'>
             <source src={section4_2} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -495,74 +495,74 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '3') {
       return (
-        <div className='leading-relaxed font-myfonts bg-trialback'>
-          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+        <div className='leading-relaxed font-myfonts bg-customgray'>
+          <h1 className='text-5xl text-center mb-2 text-customblack'>
             Test - {question.id}
           </h1>
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-1
           </h1>
           <audio controls className='mx-auto'>
             <source src={section1_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-2
           </h1>
           <audio controls className='mx-auto'>
             <source src={section2_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-3
           </h1>
           <audio controls className='mx-auto'>
             <source src={section3_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-4
           </h1>
           <audio controls className='mx-auto'>
             <source src={section4_3} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -599,74 +599,74 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '4') {
       return (
-        <div className='leading-relaxed font-myfonts bg-trialback'>
-          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+        <div className='leading-relaxed font-myfonts bg-customgray'>
+          <h1 className='text-5xl text-center mb-2 text-customblack'>
             Test - {question.id}
           </h1>
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-1
           </h1>
           <audio controls className='mx-auto'>
             <source src={section1_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
               <img src={question.img_2} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-2
           </h1>
           <audio controls className='mx-auto'>
             <source src={section2_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-3
           </h1>
           <audio controls className='mx-auto'>
             <source src={section3_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-4
           </h1>
           <audio controls className='mx-auto'>
             <source src={section4_4} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -703,74 +703,74 @@ function Ieltslisteningtest(props) {
     }
     if (test_id === '5') {
       return (
-        <div className='leading-relaxed font-myfonts bg-trialback'>
-          <h1 className='text-5xl text-center mb-2 text-customwhite'>
+        <div className='leading-relaxed font-myfonts bg-customgray'>
+          <h1 className='text-5xl text-center mb-2 text-customblack'>
             Test - {question.id}
           </h1>
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-1
           </h1>
           <audio controls className='mx-auto'>
             <source src={section1_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_1} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text1}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-2
           </h1>
           <audio controls className='mx-auto'>
             <source src={section2_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_2} alt='' />
               <img src={question.img_3} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text2}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-3
           </h1>
           <audio controls className='mx-auto'>
             <source src={section3_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_4} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text3}
             </div>
           </div>
 
-          <h1 className='text-2xl text-center my-4 text-customwhite'>
+          <h1 className='text-2xl text-center my-4 text-customblack'>
             Section-4
           </h1>
           <audio controls className='mx-auto'>
             <source src={section4_5} type='audio/mpeg' />
           </audio>
           <div className='flex'>
-            <div className='border-customwhite bg-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='border-customblack bg-customwhite border-2 w-1/2 my-4 mx-6'>
               <img src={question.img_5} alt='' />
               <img src={question.img_6} alt='' />
             </div>
-            <div className='flex flex-col items-center border-customwhite border-2 w-1/2 my-4 mx-6'>
+            <div className='flex flex-col items-center border-customblack border-2 w-1/2 my-4 mx-6'>
               {text4}
             </div>
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite bg-trialback2 border-2 border-customblack'
+              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);

@@ -9,7 +9,7 @@
     @apply box-border;
   }
   .wrapper {
-    @apply my-10 mx-fx;
+    @apply my-10 mx-auto w-2/5;
   }
   .accordion-wrapper + * {
     @apply m-2;

@@ -65,7 +65,7 @@ import img1 from './img1.JPG';
 const Accordion = ({ title, children }) => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <div className='m-4'>
+    <div className='m-4 p-2'>
       <div
         className={`accordion-title ${isOpen ? 'open' : ''}`}
         onClick={() => setOpen(!isOpen)}
@@ -81,12 +81,12 @@ const Accordion = ({ title, children }) => {
 
 export default function Home() {
   return (
-    <div id='faq' className='font-myfonts py-6'>
+    <div id='faq' className='font-myfonts py-6 bg-customgray'>
       <h1 className='text-6xl text-center text-customdarkblue underline my-4'>
         Frequently Asked Questions
       </h1>
 
-      <div className='wrapper'>
+      <div className='wrapper bg-gray-100 shadow-lg p-4'>
         <Accordion title='How can I prepare for the GRE Test?'>
           ETS offers a variety of free and low-cost tools to help you prepare
           for the GRE General Test so you can feel more confident on test day.

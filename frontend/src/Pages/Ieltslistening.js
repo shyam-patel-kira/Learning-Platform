@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 
 function Ieltslistening() {
   return (
-    <div className='bg-custombrown text-customblack'>
+    <div className='bg-customwhite text-customblack'>
       <Navbar />
       <div className='font-myfonts flex items-start justify-between'>
         <Sidebar />

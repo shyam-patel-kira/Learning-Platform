@@ -3,18 +3,19 @@ import { SidebarData } from './SidebarData';
 
 function Sidebar() {
   return (
-    <div className='my-6 w-1/6 h-full'>
-      <ul className='text-customwhite list-none flex flex-col bg-customblue justify-center items-center'>
+    <div className='font-myfonts my-6 w-1/6 h-full box-border border-customwhite'>
+      <ul className='font-myfonts text-customwhite list-none flex flex-col bg-customgray justify-center items-center'>
         {SidebarData.map((val, key) => {
           return (
             <li
               key={key}
-              className='font-myfonts box-border rounded-md cursor-pointer p-2 w-1/2 text-center bg-boxColor text-customblack hover:text-customwhite hover:bg-custombrown transition-all ease-in duration-300 border-black border-0 my-4 mx-4'
+              className='flex flex-row items-center justify-between font-myfonts box-border rounded-md cursor-pointer p-2 w-3/4 text-center bg-customnewblue text-customwhite hover:text-customdarkblue hover:bg-customhoverblue transition-all ease-in duration-300 border-customblack border-1 my-4'
               onClick={() => {
                 window.location.pathname = val.link;
               }}
             >
-              {val.title}
+              <span className='my-2 ml-4 mr-2'>{val.icon}</span>
+              <span className='my-2 text-left flex-grow'>{val.title}</span>
             </li>
           );
         })}

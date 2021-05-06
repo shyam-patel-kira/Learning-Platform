@@ -6,7 +6,7 @@ function VideoDetail(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='flex flex-row text-3xl mx-auto my-4 text-customblack font-myfonts justify-center'>
             Fetching Video...
           </h1>
           <Loader
@@ -28,11 +28,11 @@ function VideoDetail(props) {
       <div>
         <iframe className='w-full h-96 ml-16' title='video player' src={videoSrc} />
       </div>
-      <div className='text-customwhite bg-customblack ml-16 my-4 font-serif leading-relaxed'>
-        <h4 className='text-customwhite bg-customblack'>
+      <div className='text-customwhite bg-customwhite ml-16 my-4 font-myfonts leading-relaxed'>
+        <h4 className='text-customwhite bg-customwhite'>
           {props.video.snippet.title}
         </h4>
-        <p className='text-customwhite bg-customblack'>
+        <p className='text-customblack bg-customwhite'>
           {props.video.snippet.description}
         </p>
       </div>

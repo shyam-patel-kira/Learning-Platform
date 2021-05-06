@@ -55,8 +55,7 @@ const Dashboard = () => {
     <>
       <div className='bg-custompink'>
         <Navbar />
-        <div className='font-myfonts flex items-start justify-between'>
-          <Sidebar />
+        <div className='font-myfonts flex items-start justify-between mt-16'>
           <div className='todo-app mx-auto my-auto mb-4 flex flex-col justify-start text-center'>
             <h1 className='text-2xl text-white my-4'>
               What's the Plan for Today?

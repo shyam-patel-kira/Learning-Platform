@@ -13,13 +13,11 @@ function GreCards() {
         <div className='rounded overflow-hidden shadow-lg'>
           <img className='w-full' src={img1} alt='' />
           <div className='px-6 py-4 bg-customwhite'>
-            <div className='font-bold text-xl mb-2'>
-              How to book GRE exam?
-            </div>
+            <div className='font-bold text-xl mb-2'>How to book GRE exam?</div>
             <p className='text-gray-700 text-base'>
-              IELTS exam can be booked online on British Council Website as well
-              as on IDP Website. The level of difficulty is same in both the
-              exams conducted by British Council and IDP.
+              GRE exam can be booked online on ETS GRE website. First you have
+              to create an account on ETS and book fo the GRE General Test. You
+              can also cancel and reschedule your appointment.
             </p>
             <br />
             <p>For more details please surf through below link: </p>
@@ -27,30 +25,22 @@ function GreCards() {
               <li>
                 <a
                   className='text-blue-600'
-                  href='https://www.britishcouncil.in/exam/ielts/book-test'
+                  href='https://ereg.ets.org/ereg/public/signin?bmctx=B880D2D189D031F58DE255EC162DBCCE83D65D48BDEC09F734722D40B8CFA0BECA8ADB067F660AF491DBD31D4D17FB6A&contextType=external&username=string&lockpage=https%3A%2F%2Fereg.ets.org%2Fereg%2Fpublic%2Faccountlock&expiredpwdpage=https%3A%2F%2Feias.ets.org%2FxlWebApp%2Fexpiredpwd.jsp%3Fappid%3DEREG&contextValue=%2Foam&password=secure_string&challenge_url=https%3A%2F%2Fereg.ets.org%2Fereg%2Fpublic%2Fsignin&ssoCookie=SameSite%3DNone&creds=username+password&request_id=4020087151969373724&authn_try_count=0&locale=en_US&resource_url=https%253A%252F%252Fereg.ets.org%252Fereg%252Fhome%253F_p%253DGRI'
                 >
-                  Book Exam through British Council
-                </a>
-              </li>
-              <li>
-                <a
-                  className='text-blue-600'
-                  href='https://www.ieltsidpindia.com/registration/registration'
-                >
-                  Book Exam through IDP
+                  Book Exam through ETS Test Taker Portal
                 </a>
               </li>
             </ul>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>
             <span className='inline-block bg-customdarkblue rounded-full px-3 py-1 text-sm font-semibold text-customwhite mr-2 mb-2'>
-              #ielts
+              #gre
             </span>
             <span className='inline-block bg-customdarkblue rounded-full px-3 py-1 text-sm font-semibold text-customwhite mr-2 mb-2'>
-              #britishcouncil
+              #ets
             </span>
             <span className='inline-block bg-customdarkblue rounded-full px-3 py-1 text-sm font-semibold text-customwhite mr-2 mb-2'>
-              #idp
+              #etsgre
             </span>
           </div>
         </div>
@@ -63,11 +53,9 @@ function GreCards() {
             </div>
             <p className='text-gray-700 text-base'>
               When you are going to appear in the examination you will require
-              one passport photo copy which you will need to submit at the
-              examination centre. You will also need to carry your own pencils,
-              erasers and other necessary things which will be explained to you
-              in the email before 2-3 days of examination. You don't need to
-              carry your own headphones as it will be provided by them.
+              one passport photo copy and one recognizable photograph which you
+              will need to submit at the examination centre. Be sure, expired
+              documents are not acceptable. Include your signature.
             </p>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>
@@ -78,7 +66,7 @@ function GreCards() {
               #photocopy
             </span>
             <span className='inline-block bg-customdarkblue rounded-full px-3 py-1 text-sm font-semibold text-customwhite mr-2 mb-2'>
-              #headphones
+              #signature
             </span>
           </div>
         </div>
@@ -88,12 +76,10 @@ function GreCards() {
           <div className='px-6 py-4 bg-customwhite'>
             <div className='font-bold text-xl mb-2 '>Rules of the Exam</div>
             <p className='text-gray-700 text-base'>
-              You will need to reach the examination center 1:30 hour before the
-              actual exam starts. During that time you will need to verify your
-              documents and thereby you will be allotted a specific seat number.
-              Once you go at your seat for the examination you won't be allowed
-              to go washroom untill the exam get's over. You don't need to carry
-              the mobile phones.
+              Do not use any unauthorized materials, including mobile devices,
+              prewritten notes or textbooks. Personal recording devices of any
+              kind are strictly prohibited. Do not communicate with anyone other
+              than the proctor. You must report on time from the breaks.
             </p>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>
@@ -104,7 +90,7 @@ function GreCards() {
               #duration
             </span>
             <span className='inline-block bg-customdarkblue rounded-full px-3 py-1 text-sm font-semibold text-customwhite mr-2 mb-2'>
-              #lrw
+              #prohibition
             </span>
           </div>
         </div>

@@ -20,7 +20,7 @@ class Ieltswritinghero extends React.Component {
 
   render() {
     return (
-      <div className='font-myfonts bg-customblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
+      <div className='font-myfonts bg-customdarkblue my-6 mr-14 w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center'>Writing</h1>
         <div className='px-8 my-10 text-customwhite'>
           <ul className='cards__items'>
@@ -34,7 +34,7 @@ class Ieltswritinghero extends React.Component {
           </h1>
           <div className='flex flex-row justify-evenly w-5/6 px-2'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='bar-graph'
               onClick={this.handleButton}
@@ -44,7 +44,7 @@ class Ieltswritinghero extends React.Component {
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='pie-chart'
               onClick={this.handleButton}
@@ -54,7 +54,7 @@ class Ieltswritinghero extends React.Component {
             </button>
 
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='line-graph'
               onClick={this.handleButton}
@@ -63,7 +63,7 @@ class Ieltswritinghero extends React.Component {
               Line Graph
             </button>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='table'
               onClick={this.handleButton}
@@ -72,7 +72,7 @@ class Ieltswritinghero extends React.Component {
               Tabular Data
             </button>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='maps'
               onClick={this.handleButton}
@@ -81,7 +81,7 @@ class Ieltswritinghero extends React.Component {
               Maps
             </button>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='diagram'
               onClick={this.handleButton}
@@ -99,7 +99,7 @@ class Ieltswritinghero extends React.Component {
 
           <div className='flex flex-col justify-between items-center w-5/6 px-2'>
             <button
-              className='my-2 bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded w-1/3'
+              className='my-2 bg-customnewblue hover:bg-customhoverblue transition-all ease-in duration-300 text-customwhite hover:text-customdarkblue font-bold py-2 px-4 rounded w-1/3'
               variant='Default'
               name='opinion'
               onClick={this.handleTask2Button}
@@ -109,7 +109,7 @@ class Ieltswritinghero extends React.Component {
             </button>
 
             <button
-              className='my-2 w-1/3 bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='my-2 bg-customnewblue hover:bg-customhoverblue transition-all ease-in duration-300 text-customwhite hover:text-customdarkblue font-bold py-2 px-4 rounded w-1/3'
               variant='Default'
               name='adv-disadv'
               onClick={this.handleTask2Button}
@@ -119,7 +119,7 @@ class Ieltswritinghero extends React.Component {
             </button>
 
             <button
-              className='my-2 w-1/3 bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='my-2 bg-customnewblue hover:bg-customhoverblue transition-all ease-in duration-300 text-customwhite hover:text-customdarkblue font-bold py-2 px-4 rounded w-1/3'
               variant='Default'
               name='solution'
               onClick={this.handleTask2Button}
@@ -129,7 +129,7 @@ class Ieltswritinghero extends React.Component {
             </button>
 
             <button
-              className='my-2 w-1/3 bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='my-2 bg-customnewblue hover:bg-customhoverblue transition-all ease-in duration-300 text-customwhite hover:text-customdarkblue font-bold py-2 px-4 rounded w-1/3'
               variant='Default'
               name='discussion'
               onClick={this.handleTask2Button}
@@ -138,7 +138,7 @@ class Ieltswritinghero extends React.Component {
               Discussion Essay
             </button>
             <button
-              className='my-2 w-1/3 bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite font-bold py-2 px-4 rounded'
+              className='my-2 bg-customnewblue hover:bg-customhoverblue transition-all ease-in duration-300 text-customwhite hover:text-customdarkblue font-bold py-2 px-4 rounded w-1/3'
               variant='Default'
               name='direct'
               onClick={this.handleTask2Button}

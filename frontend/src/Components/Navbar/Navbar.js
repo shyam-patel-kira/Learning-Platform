@@ -25,6 +25,14 @@ class Navbar extends Component {
     window.location = '/';
   };
 
+  handleLogin = () => {
+    window.location = '/login';
+  };
+
+  handleSignup = () => {
+    window.location = '/signup';
+  };
+
   logoClick = () => {
     window.location = '/';
   };
@@ -36,20 +44,22 @@ class Navbar extends Component {
   render() {
     const username = cookies.get('uname');
     return (
-      <nav className='flex p-3 bg-customdarkblue items-center justify-between'>
+      <nav className='flex p-3 bg-customgray items-center justify-between'>
         <h1
           className='cursor-pointer text-customwhite'
           onClick={this.logoClick}
         >
-          <i className='fab fa-react mx-2 text-2xl'></i>
-          <span className='text-2xl font-myfonts'>LMS</span>
+          <i className='fab fa-react mx-2 text-2xl text-customblack'></i>
+          <span className='text-2xl font-myfonts text-customblack'>
+            LearnZilla
+          </span>
         </h1>
 
         <ul className='flex items-center flex-grow justify-end font-myfonts'>
           <li>
             <NavLink
               to='/'
-              className='text-customwhite py-2 px-4 font-myfonts hover:text-customwhite'
+              className='text-customblack py-2 px-4 font-myfonts hover:text-customblack'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -70,7 +80,7 @@ class Navbar extends Component {
           </li>
           <li className='dropdown font-myfonts'>
             <p
-              className='justify-center w-full rounded-md px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'
+              className='justify-center w-full rounded-md px-4 py-2 text-customblack focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500'
               data-toggle='dropdown'
               aria-haspopup='true'
               aria-expanded='false'
@@ -87,7 +97,7 @@ class Navbar extends Component {
                   clipRule='evenodd'
                 />
               </svg>
-              Courses
+              Services
             </p>
             <div className='dropdown-menu' aria-labelledby='dropdownMenuButton'>
               <Link className='dropdown-item' to='/gremain'>
@@ -96,13 +106,16 @@ class Navbar extends Component {
               <Link className='dropdown-item' to='/ieltsmain'>
                 IELTS
               </Link>
+              <Link className='dropdown-item' to='/todos'>
+                TODO LIST
+              </Link>
             </div>
           </li>
 
           <li className='font-myfonts'>
             <NavLink
               to='/about-us'
-              className='text-customwhite px-4 py-2 hover:text-customwhite'
+              className='text-customblack px-4 py-2 hover:text-customblack'
             >
               <FiUsers className='mx-1 mb-1 h-4 w-4 inline' />
               About Us
@@ -111,7 +124,7 @@ class Navbar extends Component {
           <li className='font-myfonts'>
             <NavLink
               to='/'
-              className='text-white px-4 py-2 hover:no-underline'
+              className='text-customblack px-4 py-2 hover:no-underline '
               onClick={this.faqClick}
             >
               <svg
@@ -129,7 +142,7 @@ class Navbar extends Component {
                 />
               </svg>
               <AnchorLink
-                className='hover: text-white font-myfonts'
+                className='hover:text-customblack font-myfonts'
                 href='#faq'
               >
                 FAQ
@@ -140,42 +153,33 @@ class Navbar extends Component {
             {' '}
             {username ? (
               <div>
-                <div className='mb-1 h-4 w-4 inline text-customwhite px-4'>
+                <div className='mb-1 h-4 w-4 inline text-customblack px-4'>
                   <BiUser className='inline mx-1 mb-1' />
-                  <h1 className='text-customwhite text-md inline py-2 font-myfonts'>
+                  <h1 className='text-customblack text-md inline py-2 font-myfonts'>
                     Hi, {username}{' '}
                   </h1>
                 </div>
 
                 <button
                   onClick={this.handleLogout}
-                  className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+                  className='font-myfonts bg-customnewblue text-customwhite hover:text-customdarkblue hover:bg-customhoverblue transition ease-in duration-300 rounded-sm border-customnewblue mx-2 py-2 px-4'
                 >
-                  <Link
-                    className='hover:no-underline hover:text-onhovertext'
-                    to='/'
-                  >
-                    Logout
-                  </Link>
+                  Logout
                 </button>
               </div>
             ) : (
               <div>
-                <button className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-                  <Link
-                    className='hover:no-underline hover:text-onhovertext'
-                    to='/login'
-                  >
-                    Login
-                  </Link>
+                <button
+                  onClick={this.handleLogin}
+                  className='font-myfonts bg-customnewblue text-customwhite hover:text-customdarkblue hover:bg-customhoverblue transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+                >
+                  Login
                 </button>
-                <button className='font-myfonts bg-custompink text-customdarkblue hover:text-customdarkblue hover:bg-metal transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'>
-                  <Link
-                    className='hover:no-underline hover:text-onhovertext'
-                    to='/signup'
-                  >
-                    Sign Up
-                  </Link>
+                <button
+                  onClick={this.handleSignup}
+                  className='font-myfonts bg-customnewblue text-customwhite hover:text-customdarkblue hover:bg-customhoverblue transition ease-in duration-300 rounded-sm mx-2 py-2 px-4'
+                >
+                  Sign Up
                 </button>
               </div>
             )}

@@ -125,7 +125,7 @@ function IeltsGraph() {
               </select>
 
               <button
-                className='cursor-pointer font-bold py-2 px-4 rounded bg-customdarkblue text-white text-center '
+                className='bg-customnewblue hover:bg-customhoverblue text-customwhite transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                 type='submit'
                 onClick={handleSubmit}
                 disabled={submitLoading}
@@ -182,7 +182,7 @@ function IeltsGraph() {
                 </select>
 
                 <button
-                  className='cursor-pointer font-bold py-2 px-4 rounded bg-customdarkblue text-white text-center '
+                  className='bg-customnewblue hover:bg-customhoverblue text-customwhite transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                   type='submit'
                   onClick={handleSubmit}
                   disabled={submitLoading}
@@ -209,7 +209,7 @@ function IeltsGraph() {
                   {!submitLoading && <div>Display</div>}
                 </button>
               </div>
-              <div className='mx-44 my-20 w-1/2'>
+              <div className='mx-44 my-20 w-1/2 border-2 border-solid border-customblack'>
                 <Bar
                   data={barChartData}
                   options={{
@@ -276,7 +276,7 @@ function IeltsGraph() {
                 </select>
 
                 <button
-                  className='cursor-pointer font-bold py-2 px-4 rounded bg-customdarkblue text-white text-center '
+                  className='bg-customnewblue hover:bg-customhoverblue text-customwhite transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
                   type='submit'
                   onClick={handleSubmit}
                   disabled={submitLoading}

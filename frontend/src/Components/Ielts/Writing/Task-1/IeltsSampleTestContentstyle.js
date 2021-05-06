@@ -68,10 +68,10 @@ const IeltsSampleTestContentstyle = props => {
   }
 
   return (
-    <div className='font-myfonts bg-custombrown'>
+    <div className='font-myfonts bg-customwhite'>
       <br />
       <br />
-      <div className='bg-customblue mx-auto w-3/4 divide-y-2 text-customwhite'>
+      <div className='bg-customdarkblue mx-auto w-3/4 divide-y-2 text-customwhite'>
         <h1 className='pt-8 text-4xl text-center font-serif'>{props.title}</h1>
         <div className='px-8 my-10 text-customwhite'>
           <div className='my-10 text-xl font-serif leading-relaxed'>
@@ -108,7 +108,7 @@ const IeltsSampleTestContentstyle = props => {
         <div>
           <div className='flex flex-row justify-around align-middle w-5/6 px-2 py-4 mx-auto'>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               id='1'
             >
@@ -120,7 +120,7 @@ const IeltsSampleTestContentstyle = props => {
               </Link>
             </button>
             <button
-              className='bg-customblack hover:bg-custombrown transition-all ease-in duration-300 text-customwhite py-2 px-4 font-bold my-2 rounded'
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               name='test'
               onClick={handleWritingTest}

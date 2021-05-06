@@ -2,7 +2,7 @@ import React from 'react';
 
 function IeltsSpeakingQuestions(props) {
   return (
-    <div className='font-myfonts bg-custompink mx-auto mb-4 my-4 w-5/6 shadow-customsm'>
+    <div className='font-myfonts bg-gray-100 mx-auto mb-4 my-4 w-5/6 shadow-lg'>
       <h1 className='text-customblack text-5xl text-center my-4 leading-relaxed font-semibold'>
         Test - {props.id}
       </h1>
