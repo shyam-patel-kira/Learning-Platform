@@ -140,7 +140,7 @@ function RcResult(props) {
   } else {
     let cls = 'text-3xl my-3 text-center';
     return (
-      <div className='text-lg shadow-2xl flex flex-col bg-custompink font-myfonts w-1/2 mx-auto my-10 text-customblack'>
+      <div className='text-lg shadow-2xl flex flex-col bg-gray-200 font-myfonts w-1/2 mx-auto my-10 text-customblack'>
         <h1 className='text-5xl py-4 text-center'>Scorecard</h1>
         <h1 className={cls}>Score - {params.score}</h1>
         <h1 className={cls}>Total Incorrect Answers - {params.incorrect}</h1>
@@ -171,7 +171,7 @@ function RcResult(props) {
           onClick={e => {
             window.location = '/verbal-rc';
           }}
-          className='text-center w-1/3 mb-3 border-2 border-customblack bg-green-500 mx-auto'
+          className='cursor-pointer font-myfonts font-normal mx-auto mb-3 text-lg w-1/2 h-12 mt-3 border-2 outline-none border-none bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue text-center '
         >
           Back to Main Page
         </button>

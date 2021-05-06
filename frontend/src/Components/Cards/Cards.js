@@ -1,11 +1,10 @@
 import React from 'react';
 import CardItems from './CardItems';
-import './Cards.css';
 
 function Cards() {
   return (
-    <div className='p-8'>
-      <h1 className='text-center text-5xl text-customdarkblue font-myfonts'>
+    <div className='p-8 mt-20'>
+      <h1 className='text-center text-5xl text-customdarkblue font-myfonts underline'>
         This is where GRE and IELTS can take you!
       </h1>
       <div className='cards__container font-myfonts'>

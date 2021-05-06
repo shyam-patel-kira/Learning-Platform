@@ -5,17 +5,17 @@ import Cookies from 'universal-cookie';
 import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 const cookies = new Cookies();
-dotenv.config()
+dotenv.config();
 
 function Test1() {
   let x = window.location.href.split('/');
   let test_id = x[x.length - 1];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
- let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
+  let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
   const admin_token = jwt.sign(
     {
       userName: 'kira',
@@ -217,9 +217,9 @@ function Test1() {
     );
   } else {
     return (
-      <div className='leading-relaxed font-myfonts grid grid-col-2'>
+      <div className='leading-relaxed font-myfonts grid grid-col-2 bg-customwhite'>
         <h1 className='text-4xl text-center my-4 ml-96'>Test-{question.id}</h1>
-        <div className='boder-black border-2 w-11/12 overflow-y-scroll overscroll-auto h-1/2 col-start-1 col-end-5 ml-4'>
+        <div className='bg-customgray boder-black border-2 w-11/12 overflow-y-scroll overscroll-auto h-quanth col-start-1 col-end-5 ml-4'>
           <div className='flex'>
             <label className='mx-2 my-4 text-right text-2xl text-black'>
               Q1.
@@ -382,10 +382,10 @@ function Test1() {
             </div>
           </div>
         </div>
-        <div className='flex-col items-center border-black border-2 w-1/2 h-1/3 my-32 ml-60 col-end-6'>
+        <div className='bg-customgray flex-col items-center border-black border-2 w-1/2 h-quanth mt-2 mb-8 ml-60 col-end-6'>
           {text}
           <button
-            className='w-32 text-center rounded-md h-10 box-border font-bold text-customwhite bg-customblack border-2 border-customblack my-4 ml-20 '
+            className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
             type='submit'
             onClick={e => {
               handleSubmit(e);

@@ -1,11 +1,14 @@
 import React from 'react';
 import image from './who-are-we.png';
-import image1 from './our.jpg';
+import image1 from './shyam.jpeg';
+import image2 from './jay.JPG';
+import image3 from './shantanu.jpg';
+
 
 function AboutUsHero() {
   return (
     <div className='font-myfonts'>
-      <div className='pt-30 px-5 pb-0 border-b box-border mx-0.5'>
+      <div className='pt-30 px-5 pb-0 box-border mx-0.5'>
         <table className='w-full bg-transparent box-border mb-4'>
           <tbody>
             <tr>
@@ -17,7 +20,7 @@ function AboutUsHero() {
                   <b>Imagining Teaching</b> and<b> Learning</b>
                 </div>
                 <div className='mt-10 mb-7 text-4xl box-border'>
-                  Why we exist?
+                  <strong>Why we exist?</strong>
                 </div>
                 <div className='text-lg box-border'>
                   The demand and utilization of learning platforms are growing
@@ -46,7 +49,9 @@ function AboutUsHero() {
       </div>
 
       <div className='bg-gray-200 text-center pl-48 pr-48 -mx-4'>
-        <div className='mt-10 mb-7 text-4xl box-border'>Who are we?</div>
+        <div className='mt-12 pt-4 mb-7 text-4xl box-border'>
+          <strong>Who are we?</strong>
+        </div>
         <div className='mb-5 box-border text-xl'>
           LearnZilla is a web application which lets you learn for the
           competitive exams with interactive videos and prepare for the exams
@@ -59,13 +64,13 @@ function AboutUsHero() {
         <div className='mb-5 box-border text-xl'>
           Student can understand and learn the topic and then give exams of that
           topic in which they feel they are weak. The teaching materials are in
-          their purest form. Student will also get the analysis of the test attempted.
+          their purest form. Student will also get the analysis of the test
+          attempted.
         </div>
-        <div>
-          <iframe>fk</iframe>
-        </div>
-        <div className='mb-5 text-xl'>
-          LearnZilla's founders Shyam Patel, Jay Shah and Shantanu Sheth started
+
+        <div className='mb-5 text-xl pb-4'>
+          LearnZilla's founders
+          <strong> Shyam Patel, Jay Shah and Shantanu Sheth</strong> started
           this small startup as a part of their Final year Project.
         </div>
       </div>
@@ -79,7 +84,7 @@ function AboutUsHero() {
                 Co-Founder, CEO
               </div>
               <img
-                className='w-full max-w-xs align-middle ml-24 border-0 box-border'
+                className='h-shyamh w-full max-w-xs align-middle ml-24 border-0 box-border'
                 src={image1}
               ></img>
             </td>
@@ -90,7 +95,7 @@ function AboutUsHero() {
               </div>
               <img
                 className='w-full max-w-xs align-middle ml-24 border-0 box-border'
-                src={image1}
+                src={image2}
               ></img>
             </td>
             <td className='w-1/4 align-bottom p-0 box-border text-center'>
@@ -100,7 +105,7 @@ function AboutUsHero() {
               </div>
               <img
                 className='w-full max-w-xs align-middle ml-24 border-0 box-border'
-                src={image1}
+                src={image3}
               ></img>
             </td>
           </tr>

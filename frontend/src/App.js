@@ -31,6 +31,7 @@ import IeltsGraph from './Components/IELTS-Chart/IeltsGraph';
 
 import Gremain from './Pages/Gremain';
 import Greverbal from './Pages/Greverbal';
+import Greawa from './Pages/Greawa';
 import Grequantitative from './Pages/Grequantitative';
 import Gretipsandtricks from './Pages/Gretipsandtricks';
 import Rcmain from './Pages/Rcmain';
@@ -103,6 +104,7 @@ export default function App() {
 
           <Route path='/gremain' component={Gremain} />
           <Route path='/gre-verbal' component={Greverbal} />
+          <Route path='/gre-awa' component={Greawa} />
           <Route path='/gre-quantitative' component={Grequantitative} />
           <Route path='/gre-tipsandtricks' component={Gretipsandtricks} />
           <Route path='/verbal-rc' component={Rcmain} />

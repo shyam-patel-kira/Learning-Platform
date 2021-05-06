@@ -48,8 +48,13 @@ module.exports = {
         ],
       },
       margin: {
-        fx:'500px'
-      }
+        fx: '500px',
+      },
+      height: {
+        quanth: '1550px',
+        shyamh: '424px',
+        customcar: '500px'
+      },
     },
   },
   variants: {
