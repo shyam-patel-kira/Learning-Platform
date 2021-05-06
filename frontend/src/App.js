@@ -27,6 +27,7 @@ import IeltsSampleTestTask2 from './Components/Ielts/Writing/Task-2/IeltsSampleT
 import IeltsSpeakingTest from './Components/Ielts/Speaking/IeltsSpeakingTest';
 import ReadingResult from './Components/Ielts/ReadingResult';
 import ListeningResult from './Components/Ielts/ListeningResult';
+import IeltsGraph from './Components/IELTS-Chart/IeltsGraph';
 
 import Gremain from './Pages/Gremain';
 import Greverbal from './Pages/Greverbal';
@@ -77,7 +78,7 @@ export default function App() {
           <Route path='/ielts-listening-result' component={ListeningResult} />
           <Route path='/mini-youtube' component={Youtube} />
           <Route path='/todos' component={Dashboard} />
-    
+
           <Route
             path='/ielts-sample-writing-task-1'
             component={IeltsSampleWritingContent}
@@ -98,6 +99,7 @@ export default function App() {
 
           <Route path='/ielts-writing-task-1' component={IeltsTask1Topics} />
           <Route path='/ielts-writing-task-2' component={IeltsTask2Topics} />
+          <Route path='/ielts-result' component={IeltsGraph} />
 
           <Route path='/gremain' component={Gremain} />
           <Route path='/gre-verbal' component={Greverbal} />

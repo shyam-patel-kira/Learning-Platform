@@ -1,5 +1,5 @@
 import { FiHeadphones } from 'react-icons/fi';
-import { BsBook, BsPencil } from 'react-icons/bs';
+import { BsBook, BsPencil,BsGraphUp } from 'react-icons/bs';
 import { AiOutlineAudio, AiOutlineYoutube } from 'react-icons/ai';
 import { RiTodoLine } from 'react-icons/ri';
 
@@ -34,4 +34,9 @@ export const SidebarData = [
     link: '/todos',
     icon: <RiTodoLine />,
   },
+  {
+    title: 'Result',
+    link: '/ielts-result',
+    icon: <BsGraphUp />
+  }
 ];

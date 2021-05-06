@@ -47,7 +47,10 @@ class Navbar extends Component {
 
         <ul className='flex items-center flex-grow justify-end font-myfonts'>
           <li>
-            <NavLink to='/' className='text-customwhite py-2 px-4 font-myfonts hover:text-customwhite'>
+            <NavLink
+              to='/'
+              className='text-customwhite py-2 px-4 font-myfonts hover:text-customwhite'
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='mx-1 mb-1 h-4 w-4 inline'

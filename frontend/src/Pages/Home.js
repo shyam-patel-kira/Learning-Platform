@@ -4,9 +4,9 @@ import Cards from '../Components/Cards/Cards';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar/Navbar';
 import Accordion from '../Components/Faq/Accordion';
-import IeltsCards from '../Components/IELTS-Cards/IeltsCards'
-import IeltsQuestions from '../Components/IELTS-Cards/IeltsQuestions'
-import GreCards from '../Components/GRE-Cards/GreCards'
+import IeltsCards from '../Components/IELTS-Cards/IeltsCards';
+import IeltsQuestions from '../Components/IELTS-Cards/IeltsQuestions';
+import GreCards from '../Components/GRE-Cards/GreCards';
 
 function Home() {
   return (
