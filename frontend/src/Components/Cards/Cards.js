@@ -1,5 +1,9 @@
 import React from 'react';
 import CardItems from './CardItems';
+import Aus from './australia.png';
+import Can from './canada.png';
+import Newz from './newz.png'
+import Usa from './usa.png'
 
 function Cards() {
   return (
@@ -11,24 +15,24 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItems
-              src='images/usa.png'
+              src={Usa}
               text='Achieve your goals to go to USA with IELTS and GRE'
               path='/'
             />
             <CardItems
-              src='images/canada.png'
+              src={Can}
               text='Achieve your dreams to go to Canada with IELTS'
               path='/'
             />
           </ul>
           <ul className='cards__items'>
             <CardItems
-              src='images/australia.png'
+              src={Aus}
               text='Achieve your dreams to go to Australia with IELTS'
               path='/'
             />
             <CardItems
-              src='images/newz.png'
+              src={Newz}
               text='Journey to New Zealand begins with IELTS'
               path='/'
             />
