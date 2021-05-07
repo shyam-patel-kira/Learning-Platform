@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
 
@@ -64,7 +63,7 @@ function Tctest() {
         });
     }
     fetchTest();
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmit = async e => {
     e.preventDefault();

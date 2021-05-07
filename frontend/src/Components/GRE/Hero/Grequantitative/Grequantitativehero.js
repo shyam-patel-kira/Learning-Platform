@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Grequantitativeherocards(props) {
   return (
@@ -16,7 +15,6 @@ function Grequantitativeherocards(props) {
 function Grequantitativehero() {
   const handleTest = event => {
     let x = event.target.id;
-    console.log(x);
     window.location = `/gre-quant-test/${x}`;
   };
   return (

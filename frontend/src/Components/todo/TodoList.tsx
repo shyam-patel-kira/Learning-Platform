@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
 import Cookies from 'universal-cookie';
 
 export interface Todo {
@@ -20,7 +19,12 @@ const TodoList = ({ todos, setTodos }: TodoListProps) => {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   const markCompleted = (todo: Todo) => {
-    axios.put(`http://localhost:6545/todos/todoslist/${todo._id}`, {}, {headers: { Authorization: AuthStr}})
+    axios
+      .put(
+        `http://localhost:6545/todos/todoslist/${todo._id}`,
+        {},
+        { headers: { Authorization: AuthStr } }
+      )
       .then(res => {
         if (res.status === 200) {
           let _todos = todos;

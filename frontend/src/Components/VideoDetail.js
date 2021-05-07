@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 
 function VideoDetail(props) {
   if (!props.video) {
@@ -26,7 +26,11 @@ function VideoDetail(props) {
   return (
     <div>
       <div>
-        <iframe className='w-full h-96 ml-16' title='video player' src={videoSrc} />
+        <iframe
+          className='w-full h-96 ml-16'
+          title='video player'
+          src={videoSrc}
+        />
       </div>
       <div className='text-customwhite bg-customwhite ml-16 my-4 font-myfonts leading-relaxed'>
         <h4 className='text-customwhite bg-customwhite'>

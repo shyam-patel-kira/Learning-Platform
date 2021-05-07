@@ -31,7 +31,6 @@ function IeltsSampleTestTask2(props) {
           }
         )
         .then(res => {
-          console.log(res.data);
           if (res.data.error) {
             setError(res.data.error);
           } else {
@@ -45,7 +44,7 @@ function IeltsSampleTestTask2(props) {
         .catch(e => console.log(e.message));
     }
     fetchTest();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

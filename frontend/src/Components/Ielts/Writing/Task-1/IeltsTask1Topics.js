@@ -25,9 +25,7 @@ function IeltsTask1Topics(props) {
         <br />
         <br />
         <div className='bg-customdarkblue shadow-lg mx-auto w-3/4 divide-y-2 text-customwhite'>
-          <h1 className='pt-8 text-4xl text-center my-6'>
-            Bar Graph
-          </h1>
+          <h1 className='pt-8 text-4xl text-center my-6'>Bar Graph</h1>
           <div className='px-8 text-customwhite'>
             <div className='my-10 text-xl font-serif leading-relaxed'>
               <ul className='font-myfonts list-disc list-inside'>
@@ -133,10 +131,7 @@ function IeltsTask1Topics(props) {
                 name='opinion'
                 id='1'
               >
-                <Link
-                  to='/ielts-writing'
-                  className='hover:no-underline'
-                >
+                <Link to='/ielts-writing' className='hover:no-underline'>
                   Go Back
                 </Link>
               </button>
@@ -258,10 +253,7 @@ function IeltsTask1Topics(props) {
                 name='opinion'
                 id='1'
               >
-                <Link
-                  to='/ielts-writing'
-                  className='hover:no-underline'
-                >
+                <Link to='/ielts-writing' className='hover:no-underline'>
                   Go Back
                 </Link>
               </button>
@@ -511,10 +503,7 @@ function IeltsTask1Topics(props) {
                 name='opinion'
                 id='1'
               >
-                <Link
-                  to='/ielts-writing'
-                  className='hover:no-underline'
-                >
+                <Link to='/ielts-writing' className='hover:no-underline'>
                   Go Back
                 </Link>
               </button>

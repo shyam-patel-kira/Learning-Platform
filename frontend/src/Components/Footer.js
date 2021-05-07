@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Footer.css';
+import { animateScroll as scroll } from 'react-scroll';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class Footer extends React.Component {
       email: '',
     };
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   onChangeAuthor = event => {
     this.setState({
@@ -58,20 +63,23 @@ class Footer extends React.Component {
       <div className='flex max-h-screen justify-between bg-customdarkblue font-myfonts'>
         <div className='flex flex-col w-full divide-y-2 divide-customwhite justify-center items-center bg-customdarkblue'>
           <div className='flex items-center text-4xl w-3/4 justify-between'>
-            <Link to='/' className='inline hover:no-underline'>
-              <i className='fab fa-typo3 text-customwhite' />
+            <Link
+              to='/'
+              onClick={this.scrollToTop}
+              className='flex flex-row hover:no-underline'
+            >
               <p className='text-customwhite hover:no-underline font-myfonts'>
                 LearnZilla
               </p>
             </Link>
             <div className='flex text-4xl'>
-              <Link
-                className='m-4 text-customwhite hover:text-customwhite'
-                to='/'
-                target='_blank'
-                aria-label='Instagram'
-              >
-                <i className='fab fa-instagram' />
+              <Link className='' target='_blank' aria-label='Instagram'>
+                <i
+                  className='fab fa-instagram m-4 text-customwhite hover:text-customwhite'
+                  onClick={() =>
+                    (window.location = 'https://www.instagram.com/learn_zilla/')
+                  }
+                />
               </Link>
               <Link
                 className='m-4 text-customwhite hover:text-customwhite'
@@ -88,12 +96,14 @@ class Footer extends React.Component {
             <Link
               className='my-4 font-myfonts text-customwhite no-underline bg-scroll hover:underline hover:text-customwhite'
               to='/'
+              onClick={this.scrollToTop}
             >
               Home
             </Link>
             <Link
               className='my-4 font-myfonts text-customwhite no-underline hover:underline hover:text-customwhite'
-              to='/about'
+              to='/about-us'
+              onClick={this.scrollToTop}
             >
               About
             </Link>
@@ -132,7 +142,7 @@ class Footer extends React.Component {
                   d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
                 />
               </svg>
-              <p className='inline font-myfonts'> lms@gmail.com</p>
+              <p className='inline font-myfonts'>learnzilla@gmail.com</p>
             </div>
           </div>
         </div>

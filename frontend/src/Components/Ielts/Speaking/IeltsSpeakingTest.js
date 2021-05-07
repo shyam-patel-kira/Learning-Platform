@@ -41,7 +41,6 @@ function IeltsSpeakingTest() {
         headers: { Authorization: AuthStr },
       })
       .then(res => {
-        console.log(res.data);
         if (res.data.error) {
           setError(res.data.error);
         } else {
@@ -69,7 +68,7 @@ function IeltsSpeakingTest() {
       .catch(e => {
         console.log(e.message);
       });
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

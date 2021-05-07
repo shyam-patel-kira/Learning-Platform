@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
 
@@ -44,7 +43,6 @@ function Rctest() {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
             setQuestion({
               id: res.data.results[0].test_id,
               test_type: res.data.results[0].test_type,
@@ -64,7 +62,7 @@ function Rctest() {
         });
     }
     fetchTest();
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -86,7 +84,6 @@ function Rctest() {
       delete answer[i];
     }
     let answers = { answers: answer };
-    console.log(answers);
 
     //API Call for storing user answers
     await axios
@@ -120,7 +117,6 @@ function Rctest() {
         if (res.data.error) {
           setError({ error: res.data.error });
         } else {
-          console.log(res.data);
           setSubmitLoading(false);
         }
       })

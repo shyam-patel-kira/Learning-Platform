@@ -64,7 +64,7 @@ function ReadingResult(props) {
         });
     }
     fetchResult();
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     async function fetchAnswerKey() {
@@ -76,7 +76,6 @@ function ReadingResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data.results[0].answers);
             let ans = [];
             for (let i of Object.values(res.data.results[0].answers)) {
               ans.push(i);
@@ -90,7 +89,7 @@ function ReadingResult(props) {
         });
     }
     fetchAnswerKey();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

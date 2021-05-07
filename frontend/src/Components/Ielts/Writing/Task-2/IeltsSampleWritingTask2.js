@@ -29,7 +29,6 @@ function IeltsSampleWritingTask2(props) {
           }
         )
         .then(res => {
-          console.log(res.data);
           if (res.data.error) {
             setError({ error: res.data.error });
           } else {
@@ -47,7 +46,7 @@ function IeltsSampleWritingTask2(props) {
         .catch(e => console.log(e.message));
     }
     fetchData();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (
@@ -63,7 +62,7 @@ function IeltsSampleWritingTask2(props) {
     return (
       <div>
         <div className='my-64'>
-          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack font-serif justify-center'>
+          <h1 className='font-myfonts flex flex-row text-3xl mx-auto my-4 text-customblack justify-center'>
             Fetching Sample Content...
           </h1>
           <Loader

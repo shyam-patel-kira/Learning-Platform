@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Ieltslisteningherocards(props) {
   return (
@@ -12,4 +12,4 @@ function Ieltslisteningherocards(props) {
   );
 }
 
-export default Ieltslisteningherocards
+export default Ieltslisteningherocards;

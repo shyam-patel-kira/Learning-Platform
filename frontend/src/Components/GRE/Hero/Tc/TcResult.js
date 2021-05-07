@@ -5,10 +5,10 @@ import jwt from 'jsonwebtoken';
 import Loader from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 function TcResult(props) {
-  dotenv.config()
+  dotenv.config();
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
@@ -66,7 +66,7 @@ function TcResult(props) {
         });
     }
     fetchResult();
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     async function fetchAnswerKey() {
@@ -95,7 +95,7 @@ function TcResult(props) {
         });
     }
     fetchAnswerKey();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

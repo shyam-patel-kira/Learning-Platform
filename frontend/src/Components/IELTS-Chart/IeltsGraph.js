@@ -17,7 +17,6 @@ function IeltsGraph() {
   const [msgLoader, setMsgLoader] = useState(false);
   const [bool, setBool] = useState(false);
   const [barChartData, setBarChartData] = useState({});
-  const [pieChartData, setPieChartData] = useState({});
 
   const handleChange = event => {
     setTestType(event.target.value);

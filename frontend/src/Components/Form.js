@@ -11,8 +11,12 @@ const Form = () => {
       <div className='form-container'>
         <span className='close-btn'>×</span>
         <div className='font-myfonts form-content-left bg-customnewblue'>
-          <h2 className='font-myfonts mt-12 text-customblack'>Join LMS for Free</h2>
-          <h4 className='font-myfonts mt-12 text-customblack'>Begin Your Journey</h4>
+          <h2 className='font-myfonts mt-12 text-customblack'>
+            Join LMS for Free
+          </h2>
+          <h4 className='font-myfonts mt-12 text-customblack'>
+            Begin Your Journey
+          </h4>
           <div className='seperator'></div>
         </div>
         <FormSignup />

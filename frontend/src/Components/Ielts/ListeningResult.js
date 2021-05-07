@@ -5,10 +5,10 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../401-Error.jpg';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 function ListeningResult(props) {
-  dotenv.config()
+  dotenv.config();
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
@@ -50,7 +50,6 @@ function ListeningResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
             setParams({
               bands: res.data.results[0].bands,
               correct: res.data.results[0].correct,
@@ -65,7 +64,7 @@ function ListeningResult(props) {
         });
     }
     fetchResult();
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     async function fetchAnswerKey() {
@@ -90,7 +89,7 @@ function ListeningResult(props) {
         });
     }
     fetchAnswerKey();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

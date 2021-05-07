@@ -8,7 +8,7 @@ import Error_401 from '../../../401-Error.jpg';
 import dotenv from 'dotenv';
 
 function SeResult(props) {
-  dotenv.config()
+  dotenv.config();
   const cookies = new Cookies();
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
@@ -51,7 +51,6 @@ function SeResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
             setParams({
               score: res.data.results[0].score,
               incorrect: res.data.results[0].incorrect,
@@ -66,7 +65,7 @@ function SeResult(props) {
         });
     }
     fetchResult();
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     async function fetchAnswerKey() {
@@ -95,7 +94,7 @@ function SeResult(props) {
         });
     }
     fetchAnswerKey();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

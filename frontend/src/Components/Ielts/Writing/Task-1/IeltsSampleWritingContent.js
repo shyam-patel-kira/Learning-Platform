@@ -30,7 +30,6 @@ function IeltsSampleWritingContent(props) {
           }
         )
         .then(res => {
-          console.log(res.data);
           if (res.data.error) {
             setError({ error: res.data.error });
           } else {
@@ -49,7 +48,7 @@ function IeltsSampleWritingContent(props) {
         .catch(e => console.log(e.message));
     }
     fetchData();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

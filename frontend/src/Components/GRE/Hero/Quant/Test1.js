@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import Error_401 from '../../../401-Error.jpg';
 import dotenv from 'dotenv';
@@ -15,15 +14,6 @@ function Test1() {
   let test_id = x[x.length - 1];
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
-  let ADMIN_TOKEN = process.env.REACT_APP_SECRET_ADMIN;
-  const admin_token = jwt.sign(
-    {
-      userName: 'kira',
-      roles: 'ADMIN',
-    },
-    ADMIN_TOKEN
-  );
-  let secret = 'JWT '.concat(admin_token);
 
   const [error, setError] = useState('');
   const [ans, setAns] = useState(new Array(7));
@@ -63,7 +53,6 @@ function Test1() {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
             setQuestion({
               id: res.data.results[0].test_id,
               img1: res.data.results[0].question_1,
@@ -95,7 +84,7 @@ function Test1() {
         });
     }
     fetchTest();
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -104,7 +93,7 @@ function Test1() {
     let test_id = x[x.length - 1];
 
     let answer = { ...ans };
-    console.log(answer);
+
     for (let i = 1; i <= 20; i++) {
       if (answer[i] === undefined) {
         answer[`ans_${i.toString()}`] = '';
@@ -116,7 +105,6 @@ function Test1() {
       delete answer[i];
     }
     let answers = { answers: answer };
-    console.log(answers);
 
     //API Call for storing user answers
     await axios

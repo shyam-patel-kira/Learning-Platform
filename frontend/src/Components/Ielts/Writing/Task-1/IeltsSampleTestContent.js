@@ -33,7 +33,6 @@ function IeltsSampleTestContent(props) {
           }
         )
         .then(res => {
-          console.log(res.data);
           if (res.data.error) {
             setError(res.data.error);
           } else {
@@ -48,29 +47,29 @@ function IeltsSampleTestContent(props) {
         .catch(e => console.log(e.message));
     }
     fetchTest();
-  }, []);
+  }, []); //eslint-disable-line
 
-   if (error) {
-     return (
-       <div className='flex flex-row'>
-         <div>
-           <img className='' src={Error_401} alt='' />
-         </div>
-         <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
-           <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
-             {error}
-           </h1>
-           <p className='text-2xl text-center text-customblack my-3'>
-             Please{' '}
-             <Link className='text-blue-500' to='/login'>
-               Login
-             </Link>{' '}
-             first.
-           </p>
-         </div>
-       </div>
-     );
-   }
+  if (error) {
+    return (
+      <div className='flex flex-row'>
+        <div>
+          <img className='' src={Error_401} alt='' />
+        </div>
+        <div className='bg-custompink shadow-2xl w-1/2 my-40 mx-auto mr-4 border-2 '>
+          <h1 className='text-5xl text-center text-customblack mt-6 font-myfonts'>
+            {error}
+          </h1>
+          <p className='text-2xl text-center text-customblack my-3'>
+            Please{' '}
+            <Link className='text-blue-500' to='/login'>
+              Login
+            </Link>{' '}
+            first.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (loading === true) {
     return (

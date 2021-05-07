@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Se() {
   const handleTest = event => {
     let x = event.target.id;
-    console.log(x);
     window.location = `/gre-se-test/${x}`;
   };
 

@@ -4,7 +4,7 @@ import youtube from './api/youtube';
 import SearchBar from './Components/SearchBar';
 import VideoList from './Components/VideoList';
 import VideoDetail from './Components/VideoDetail';
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './Components/Navbar/Navbar';
 
 const Youtube = () => {
   const [videos, setVideos] = useState([]);
@@ -26,7 +26,7 @@ const Youtube = () => {
 
   return (
     <div className='bg-customwhite'>
-    <Navbar />
+      <Navbar />
       <div>
         <SearchBar onFormSubmit={onTermSubmit} />
       </div>

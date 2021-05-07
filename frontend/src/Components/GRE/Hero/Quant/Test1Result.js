@@ -46,7 +46,6 @@ function Test1Result(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
             setParams({
               score: res.data.results[0].score,
               incorrect: res.data.results[0].incorrect,
@@ -60,7 +59,7 @@ function Test1Result(props) {
         });
     }
     fetchResult();
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     async function fetchAnswerKey() {
@@ -85,7 +84,7 @@ function Test1Result(props) {
         });
     }
     fetchAnswerKey();
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (

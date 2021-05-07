@@ -4,7 +4,6 @@ import TodoForm from '../Components/todo/TodoForm';
 import axios from 'axios';
 import TodoList, { Todo } from '../Components/todo/TodoList';
 import Cookies from 'universal-cookie';
-import Sidebar from '../Components/Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 import Error_401 from '../Components/401-Error.jpg';
 
@@ -15,20 +14,22 @@ const Dashboard = () => {
   let USER_TOKEN = cookies.get('token');
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   React.useEffect(() => {
-    axios.get('http://localhost:6545/todos/todoslist', { headers: { Authorization: AuthStr}})
+    axios
+      .get('http://localhost:6545/todos/todoslist', {
+        headers: { Authorization: AuthStr },
+      })
       .then(res => {
         if (res.data.error) {
           setError(res.data.error);
         }
         if (res.status === 200) {
-          console.log(res.data);
           setTodoList(res.data.todos);
         }
       })
       .catch(error => {
         console.log(error.status);
       });
-  }, []);
+  }, []); //eslint-disable-line
 
   if (error) {
     return (
@@ -53,10 +54,10 @@ const Dashboard = () => {
   }
   return (
     <>
-      <div className='bg-custompink'>
+      <div className='bg-customwhite'>
         <Navbar />
-        <div className='font-myfonts flex items-start justify-between mt-16'>
-          <div className='todo-app mx-auto my-auto mb-4 flex flex-col justify-start text-center'>
+        <div className='font-myfonts flex items-start justify-between mt-8'>
+          <div className='todo-app mx-auto mt-0 mb-8 flex flex-col justify-start text-center'>
             <h1 className='text-2xl text-white my-4'>
               What's the Plan for Today?
             </h1>

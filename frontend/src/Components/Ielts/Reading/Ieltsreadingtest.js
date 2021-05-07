@@ -245,7 +245,7 @@ class Ieltsreadingtest extends React.Component {
                 <div className='grid gap-x-10 gap-y-2 grid-cols-2'>{text}</div>
                 <div className='flex justify-center items-center my-4'>
                   <button
-                    className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+                    className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
                     type='submit'
                     onClick={e => {
                       this.handleSubmit(e);
@@ -271,7 +271,7 @@ class Ieltsreadingtest extends React.Component {
                             d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
                           />
                         </svg>
-                        <div className='ml-4'> Submitting...</div>
+                        <div className=''>Submitting...</div>
                       </div>
                     )}
                     {!this.state.submitLoading && <span>Submit</span>}

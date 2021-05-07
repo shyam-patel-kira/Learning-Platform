@@ -8,7 +8,7 @@ function Gremain() {
     <div className='bg-customwhite text-customblack'>
       <Navbar />
       <div className='flex items-start justify-between'>
-          <AboutUsHero />
+        <AboutUsHero />
       </div>
       <Footer />
     </div>

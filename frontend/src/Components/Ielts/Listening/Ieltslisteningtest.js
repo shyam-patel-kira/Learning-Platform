@@ -80,7 +80,7 @@ function Ieltslisteningtest(props) {
         });
     }
     fetchData();
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -135,7 +135,6 @@ function Ieltslisteningtest(props) {
         if (res.data.error) {
           setError(res.data.error);
         } else {
-          console.log(res.data);
           setSubmitLoading(false);
         }
       })
@@ -354,7 +353,7 @@ function Ieltslisteningtest(props) {
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+              className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -368,7 +367,7 @@ function Ieltslisteningtest(props) {
                 <div className='flex flex-row'>
                   <svg
                     xmlns='https://www.w3.org/2000/svg'
-                    className='animate-spin h-6 w-6'
+                    className='animate-spin h-6 w-6 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -458,7 +457,7 @@ function Ieltslisteningtest(props) {
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+              className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -472,7 +471,7 @@ function Ieltslisteningtest(props) {
                 <div className='flex flex-row'>
                   <svg
                     xmlns='https://www.w3.org/2000/svg'
-                    className='animate-spin h-6 w-6'
+                    className='animate-spin h-6 w-6 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -562,7 +561,7 @@ function Ieltslisteningtest(props) {
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+              className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -576,7 +575,7 @@ function Ieltslisteningtest(props) {
                 <div className='flex flex-row'>
                   <svg
                     xmlns='https://www.w3.org/2000/svg'
-                    className='animate-spin h-6 w-6'
+                    className='animate-spin h-6 w-6 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -666,7 +665,7 @@ function Ieltslisteningtest(props) {
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+              className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -680,7 +679,7 @@ function Ieltslisteningtest(props) {
                 <div className='flex flex-row'>
                   <svg
                     xmlns='https://www.w3.org/2000/svg'
-                    className='animate-spin h-6 w-6'
+                    className='animate-spin h-6 w-6 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -770,7 +769,7 @@ function Ieltslisteningtest(props) {
           </div>
           <div className='flex flex-row justify-center'>
             <button
-              className='w-32 text-center rounded-md mx-24 my-2 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
+              className='w-36 text-center rounded-md mx-24 my-4 h-10 box-border font-bold text-customwhite hover:text-customdarkblue bg-customnewblue hover:bg-customhoverblue border-1 border-customblack'
               type='submit'
               onClick={e => {
                 handleSubmit(e);
@@ -784,7 +783,7 @@ function Ieltslisteningtest(props) {
                 <div className='flex flex-row'>
                   <svg
                     xmlns='https://www.w3.org/2000/svg'
-                    className='animate-spin h-6 w-6'
+                    className='animate-spin h-6 w-6 ml-2'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'

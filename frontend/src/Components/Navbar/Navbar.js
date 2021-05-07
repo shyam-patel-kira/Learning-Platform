@@ -122,9 +122,9 @@ class Navbar extends Component {
             </NavLink>
           </li>
           <li className='font-myfonts'>
-            <NavLink
+            <Link
               to='/'
-              className='text-customblack px-4 py-2 hover:no-underline '
+              className='text-customblack hover:text-customblack px-4 py-2 hover:no-underline '
               onClick={this.faqClick}
             >
               <svg
@@ -147,7 +147,7 @@ class Navbar extends Component {
               >
                 FAQ
               </AnchorLink>
-            </NavLink>
+            </Link>
           </li>
           <li>
             {' '}

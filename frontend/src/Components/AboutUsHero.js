@@ -4,7 +4,6 @@ import image1 from './shyam.jpeg';
 import image2 from './jay.JPG';
 import image3 from './shantanu.jpg';
 
-
 function AboutUsHero() {
   return (
     <div className='font-myfonts'>
@@ -13,7 +12,7 @@ function AboutUsHero() {
           <tbody>
             <tr>
               <td className='w-4/12 p-0 align-bottom box-border'>
-                <img src={image} />
+                <img src={image} alt='' />
               </td>
               <td className='w-8/12 box-border p-0'>
                 <div className='mt-10 text-5xl mb-7 leading-10 box-border'>
@@ -86,6 +85,7 @@ function AboutUsHero() {
               <img
                 className='h-shyamh w-full max-w-xs align-middle ml-24 border-0 box-border'
                 src={image1}
+                alt=''
               ></img>
             </td>
             <td className='w-1/4 align-bottom p-0 box-border text-center'>
@@ -96,6 +96,7 @@ function AboutUsHero() {
               <img
                 className='w-full max-w-xs align-middle ml-24 border-0 box-border'
                 src={image2}
+                alt=''
               ></img>
             </td>
             <td className='w-1/4 align-bottom p-0 box-border text-center'>
@@ -106,6 +107,7 @@ function AboutUsHero() {
               <img
                 className='w-full max-w-xs align-middle ml-24 border-0 box-border'
                 src={image3}
+                alt=''
               ></img>
             </td>
           </tr>
