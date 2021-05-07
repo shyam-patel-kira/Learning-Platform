@@ -1,9 +1,6 @@
-const express = require("express" );
+const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const jwa = require("jwa");
-const jwt = require("jsonwebtoken");
-const Inversoft = require("passport-node-client");
 
 const _decodeJWT = require("../decodeJWTFunction.js");
 const _authorized = require("../authorizationFunction.js");
@@ -17,9 +14,9 @@ const quantResultRouter = express.Router();
 
 require("../Models/Quant_AnswerKey.js");
 const Quant_AnswerKey = mongoose.model("Quant_AnswerKey");
-require("../Models/GRE_User_Quant_Answer.js")
+require("../Models/GRE_User_Quant_Answer.js");
 const GRE_User_Quant_Answer = mongoose.model("GRE_User_Quant_Answer");
-require("../Models/Result_Quant.js")
+require("../Models/Result_Quant.js");
 const Result_Quant = mongoose.model("Result_Quant");
 
 //API for storing result in results collection
@@ -31,30 +28,30 @@ quantResultRouter.get("/quant-answer-result/test/:test_id", (req, res) => {
   var incorrectAnswers = [];
 
   const decodedJWT = _decodeJWT(req);
-  console.log(decodedJWT)
+  console.log(decodedJWT);
   if (!_authorized(decodedJWT, "USER")) {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
   const userName = decodedJWT.userName;
   console.log("Authorization passed");
-  Quant_AnswerKey
-    .find({
-      test_id: req.params.test_id,
-    })
+  Quant_AnswerKey.find({
+    test_id: req.params.test_id,
+  })
     .then((doc) => {
       answer_test = doc[0].answers;
       answer_test = Object.keys(answer_test).map((key) => [
         Number(key),
         answer_test[key],
       ]);
-    console.log("Our Answer key obtained");
+      console.log("Our Answer key obtained");
       let user_answer;
-      GRE_User_Quant_Answer
-        .find({
-          userName: userName,
-          test_id: req.params.test_id,
-        }).sort({_id:-1}).limit(1)
+      GRE_User_Quant_Answer.find({
+        userName: userName,
+        test_id: req.params.test_id,
+      })
+        .sort({ _id: -1 })
+        .limit(1)
         .then((ans) => {
           console.log(ans);
           user_answer = ans[0].answers;
@@ -62,8 +59,8 @@ quantResultRouter.get("/quant-answer-result/test/:test_id", (req, res) => {
             Number(key),
             user_answer[key],
           ]);
-    console.log(ans);
-    console.log("User Answer key obtained");
+          console.log(ans);
+          console.log("User Answer key obtained");
           var i, a, b;
           for (i = 0; i < 20; i++) {
             a = user_answer[i][1];
@@ -119,17 +116,18 @@ quantResultRouter.get("/quant-answer-result/test/:test_id", (req, res) => {
 //API's for displaying result
 quantResultRouter.get("/quant-result-display/test/:test_id", (req, res) => {
   const decodedJWT = _decodeJWT(req);
-  console.log(decodedJWT)
+  console.log(decodedJWT);
   if (!_authorized(decodedJWT, "USER")) {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
-  const userName = decodedJWT.userName
-  Result_Quant
-    .find({
-      userName: userName,
-      test_id: req.params.test_id,
-    }).sort({_id:-1}).limit(1)
+  const userName = decodedJWT.userName;
+  Result_Quant.find({
+    userName: userName,
+    test_id: req.params.test_id,
+  })
+    .sort({ _id: -1 })
+    .limit(1)
     .then((doc) => {
       res.status(201).json({
         message: "Result displayed successfully",
@@ -148,11 +146,10 @@ quantResultRouter.get("/quant-result/display-all", (req, res) => {
     console.log("Is not authorised");
     return res.json({ status: "Error", error: "Unauthorized user" });
   }
-  const userName = decodedJWT.userName
-  Result_Quant
-    .find({
-      userName: userName,
-    }) //User-ID left to be inserted
+  const userName = decodedJWT.userName;
+  Result_Quant.find({
+    userName: userName,
+  })
     .then((doc) => {
       res.status(201).json({
         message: "Result displayed successfully",
