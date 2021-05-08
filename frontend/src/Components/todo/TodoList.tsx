@@ -21,7 +21,7 @@ const TodoList = ({ todos, setTodos }: TodoListProps) => {
   const markCompleted = (todo: Todo) => {
     axios
       .put(
-        `http://localhost:6545/todos/todoslist/${todo._id}`,
+        `http://localhost:8000/todos/todoslist/${todo._id}`,
         {},
         { headers: { Authorization: AuthStr } }
       )

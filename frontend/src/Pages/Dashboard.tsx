@@ -15,7 +15,7 @@ const Dashboard = () => {
   let AuthStr = 'JWT '.concat(USER_TOKEN);
   React.useEffect(() => {
     axios
-      .get('http://localhost:6545/todos/todoslist', {
+      .get('http://localhost:8000/todos/todoslist', {
         headers: { Authorization: AuthStr },
       })
       .then(res => {
