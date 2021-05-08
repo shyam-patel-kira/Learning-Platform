@@ -1,0 +1,85 @@
+version: "3.9"
+
+services:
+  dev_env_cache:
+    container_name: dev_env_cache
+    image: bitnami/redis:latest
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes  
+    restart: unless-stopped
+    networks:
+      - ms-network
+  frontend:
+   image: frontend
+   stdin_open: true
+   build: ../frontend/frontend
+   ports: 
+     - "3000:3050"
+   networks:
+     - ms-network
+  # depends_on:
+  #   - mongo
+  # proxy:
+  #   image: haproxy
+  #   ports:
+  #       - "8090:8090"
+  #   volumes:
+  #       - ./haproxy:/usr/local/etc/haproxy
+  ielts:
+    image: ielts-microservice
+    build: ./micro-services/ielts/
+    ports:
+      - "4955:4955"
+    networks:
+      - ms-network
+    container_name: ielts  
+  user-profile:
+    image: user-profile-microservice
+    build: ./micro-services/user-profile/
+    ports:
+      - "5545:5545"
+    networks:
+      - ms-network
+    container_name: user-profile      
+  gre:
+    image: gre-microservice
+    build: ./micro-services/gre/
+    ports:
+      - "6545:6545"
+    networks:
+      - ms-network
+    container_name: gre  
+  todos:
+    image: todos-microservice
+    build: ./micro-services/todos/
+    ports:
+      - "7545:7545"
+    networks:
+      - ms-network
+    container_name: todos
+    depends_on: 
+      - dev_env_cache      
+  gateway:
+    image: api-gateway
+    build: ./api-gateway/
+    ports:
+      - "8000:8000"
+    networks:
+      - ms-network
+    container_name: gateway                
+  # mongo:
+  #   image: mongo:3.6.19-xenial
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - mern-app
+  #   volumes:
+  #     - mongo-data:/data/db
+networks:
+  ms-network:
+    driver: bridge
+# volumes:
+#   mongo-data:
+#     driver: local
