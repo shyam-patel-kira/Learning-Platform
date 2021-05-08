@@ -1,8 +1,8 @@
 import React from 'react';
-import image from './who-are-we.png';
 import image1 from './shyam.jpeg';
 import image2 from './jay.JPG';
 import image3 from './shantanu.jpg';
+import img1 from './about-us-g animated.svg';
 
 function AboutUsHero() {
   return (
@@ -11,8 +11,8 @@ function AboutUsHero() {
         <table className='w-full bg-transparent box-border mb-4'>
           <tbody>
             <tr>
-              <td className='w-4/12 p-0 align-bottom box-border'>
-                <img src={image} alt='' />
+              <td className='w-4/12 align-bottom box-border pr-10 py-auto'>
+                <img classname='ml-2' src={img1} alt='' />
               </td>
               <td className='w-8/12 box-border p-0'>
                 <div className='mt-10 text-5xl mb-7 leading-10 box-border'>

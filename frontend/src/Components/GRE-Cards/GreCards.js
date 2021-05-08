@@ -55,7 +55,8 @@ function GreCards() {
               When you are going to appear in the examination you will require
               one passport photo copy and one recognizable photograph which you
               will need to submit at the examination centre. Be sure, expired
-              documents are not acceptable. Include your signature.
+              documents are not acceptable. Include your signature. Do not carry
+              any material like pen or paper with you.
             </p>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>
@@ -79,7 +80,8 @@ function GreCards() {
               Do not use any unauthorized materials, including mobile devices,
               prewritten notes or textbooks. Personal recording devices of any
               kind are strictly prohibited. Do not communicate with anyone other
-              than the proctor. You must report on time from the breaks.
+              than the proctor. You must report on time from the breaks as you
+              will not be given any extra time.
             </p>
           </div>
           <div className='px-6 pt-4 pb-2 bg-customwhite'>

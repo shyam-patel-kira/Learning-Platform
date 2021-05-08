@@ -49,6 +49,8 @@ module.exports = {
       },
       margin: {
         fx: '500px',
+        svg: '800px',
+        img: '505px'
       },
       height: {
         quanth: '1550px',
