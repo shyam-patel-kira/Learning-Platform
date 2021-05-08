@@ -6,6 +6,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { BiUser } from 'react-icons/bi';
 import Cookies from 'universal-cookie';
 import { FiUsers } from 'react-icons/fi';
+import img from './logo.jpg';
 
 const cookies = new Cookies();
 
@@ -49,10 +50,7 @@ class Navbar extends Component {
           className='cursor-pointer text-customwhite'
           onClick={this.logoClick}
         >
-          <i className='fab fa-react mx-2 text-2xl text-customblack'></i>
-          <span className='text-2xl font-myfonts text-customblack'>
-            LearnZilla
-          </span>
+          <img src={img} className='h-14 w-36'></img>
         </h1>
 
         <ul className='flex items-center flex-grow justify-end font-myfonts'>

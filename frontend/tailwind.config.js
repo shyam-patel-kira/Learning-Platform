@@ -53,7 +53,7 @@ module.exports = {
       height: {
         quanth: '1550px',
         shyamh: '424px',
-        customcar: '500px',
+        customcar: '400px',
       },
     },
   },
