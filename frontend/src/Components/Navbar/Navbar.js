@@ -50,7 +50,7 @@ class Navbar extends Component {
           className='cursor-pointer text-customwhite'
           onClick={this.logoClick}
         >
-          <img src={img} className='h-14 w-36' alt=''></img>
+          <img src={img} className='h-16 w-36' alt=''></img>
         </h1>
 
         <ul className='flex items-center flex-grow justify-end font-myfonts'>
