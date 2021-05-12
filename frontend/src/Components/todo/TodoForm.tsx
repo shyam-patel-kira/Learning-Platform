@@ -20,7 +20,7 @@ const TodoForm = ({ todos, setTodos }: TodoFormProps) => {
     if (title.length > 0) {
       axios
         .post(
-          'http://localhost:6545/todos/todoslist',
+          'http://localhost:8000/todos/todoslist',
           { title: title },
           { headers: { Authorization: AuthStr } }
         )
