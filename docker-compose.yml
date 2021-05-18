@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 
 services:
   dev_env_cache:
@@ -8,75 +8,82 @@ services:
       - 6379:6379
     environment:
       - ALLOW_EMPTY_PASSWORD=yes  
-    restart: unless-stopped
+    restart: always
     networks:
       - ms-network
   frontend:
-   image: frontend
+   image: shyamkira/frontend
+   container_name: frontend
    stdin_open: true
-   build: ../frontend/frontend
+   build: ../frontend/frontend/
    ports: 
-     - "3000:3050"
+     - "3000:3000"
    networks:
      - ms-network
-  # depends_on:
-  #   - mongo
-  # proxy:
-  #   image: haproxy
-  #   ports:
-  #       - "8090:8090"
-  #   volumes:
-  #       - ./haproxy:/usr/local/etc/haproxy
+   volumes:
+     - ../frontend/frontend:/usr/src/app
   ielts:
-    image: ielts-microservice
+    image: shyamkira/ielts
     build: ./micro-services/ielts/
+    container_name: ielts
     ports:
       - "4955:4955"
     networks:
       - ms-network
-    container_name: ielts  
+    volumes:
+     - ./micro-services/ielts:/usr/src/app    
   user-profile:
-    image: user-profile-microservice
+    image: shyamkira/user-profile
+    container_name: user-profile
     build: ./micro-services/user-profile/
     ports:
       - "5545:5545"
     networks:
-      - ms-network
-    container_name: user-profile      
+      - ms-network      
+    volumes:
+     - ./micro-services/user-profile:/usr/src/app
   gre:
-    image: gre-microservice
+    image: shyamkira/gre
     build: ./micro-services/gre/
+    container_name: gre 
     ports:
       - "6545:6545"
     networks:
       - ms-network
-    container_name: gre  
+    volumes:
+     - ./micro-services/gre:/usr/src/app   
   todos:
-    image: todos-microservice
+    image: shyamkira/todos
+    container_name: todos
     build: ./micro-services/todos/
     ports:
       - "7545:7545"
     networks:
       - ms-network
-    container_name: todos
     depends_on: 
-      - dev_env_cache      
+      - dev_env_cache
+    volumes:
+     - ./micro-services/todos:/usr/src/app  
+  feedback:
+    image: shyamkira/feedback
+    container_name: feedback
+    build: ./micro-services/feedback/
+    ports:
+      - "4545:4545"
+    networks:
+      - ms-network
+    volumes:
+     - ./micro-services/feedback:/usr/src/app          
   gateway:
-    image: api-gateway
+    image: shyamkira/gateway
+    container_name: gateway 
     build: ./api-gateway/
     ports:
       - "8000:8000"
     networks:
       - ms-network
-    container_name: gateway                
-  # mongo:
-  #   image: mongo:3.6.19-xenial
-  #   ports:
-  #     - "27017:27017"
-  #   networks:
-  #     - mern-app
-  #   volumes:
-  #     - mongo-data:/data/db
+    volumes:
+     - ./api-gateway:/usr/src/app                 
 networks:
   ms-network:
     driver: bridge

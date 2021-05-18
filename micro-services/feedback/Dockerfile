@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 6545
+EXPOSE 4545
 
-CMD [ "nodemon index.js" ]
+CMD npm start

@@ -26,12 +26,6 @@ mongoose.connect(process.env.DB_CONNECT, () => {
   console.log("Database connected sucessfully!");
 })
 
-
-app.get('/', (req, res) => {
-
-  res.send("This is out main EndPoint");
-})
-
 // Create Functionality
 app.post("/feedback", (req, res) => {
   console.log(req.body)
@@ -74,17 +68,17 @@ app.get("/feedback", (req, res) => {
   })
 })
 
-app.delete("/feedback/:id", (req, res) => {
+// app.delete("/feedback/:id", (req, res) => {
 
-  FeedBack.findOneAndRemove(req.params.id).then(() => {
-    res.send("feedback removed succesfully");
-  }).catch(err => {
-    if (err) {
-      throw err;
-    }
-  })
+//   FeedBack.findOneAndRemove(req.params.id).then(() => {
+//     res.send("feedback removed succesfully");
+//   }).catch(err => {
+//     if (err) {
+//       throw err;
+//     }
+//   })
 
-})
+// })
 
 // Finding by ID
 // app.get("/feedback/:id", (req, res) => {
@@ -107,4 +101,4 @@ app.delete("/feedback/:id", (req, res) => {
 
 app.listen(4545, () => {
   console.log("Up and running! This is our feedback service");
-})
+});

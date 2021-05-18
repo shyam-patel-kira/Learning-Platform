@@ -21,7 +21,7 @@ apiEndpoints:
     paths: "/todos/*"    
 serviceEndpoints:
   feedbackhttpbin:
-    url: "http://localhost:4545"
+    url: "http://feedback:4545"
   ieltshttpbin:
     url: "http://ielts:4955"
   userhttpbin:
@@ -40,7 +40,7 @@ policies:
   - proxy
   - rate-limit
 pipelines:
-  - default:
+  - feedback:
     apiEndpoint:
       - feedback
     policies:
@@ -48,7 +48,7 @@ pipelines:
       #- key-auth:
       - rate-limit:
           - action:
-              max: 30
+              max: 30000
               rateLimitBy: "${req.hostname}"
       - proxy:
           - action:
