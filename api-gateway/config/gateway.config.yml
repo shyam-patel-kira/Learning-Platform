@@ -21,15 +21,15 @@ apiEndpoints:
     paths: "/todos/*"    
 serviceEndpoints:
   feedbackhttpbin:
-    url: "http://localhost:4545"
+    url: "http://feedback:4545"
   ieltshttpbin:
-    url: "http://localhost:4955"
+    url: "http://ielts:4955"
   userhttpbin:
-    url: "http://localhost:5545"
+    url: "http://user-profile:5545"
   grehttpbin:
-    url: "http://localhost:7545"
+    url: "http://gre:7545"
   todoshttpbin:
-    url: "http://localhost:6545"    
+    url: "http://todos:6545"    
 policies:
   - basic-auth
   - cors
@@ -40,7 +40,7 @@ policies:
   - proxy
   - rate-limit
 pipelines:
-  - default:
+  - feedback:
     apiEndpoint:
       - feedback
     policies:
@@ -48,7 +48,7 @@ pipelines:
       #- key-auth:
       - rate-limit:
           - action:
-              max: 30
+              max: 30000
               rateLimitBy: "${req.hostname}"
       - proxy:
           - action:

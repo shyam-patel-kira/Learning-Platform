@@ -12,7 +12,8 @@ dotenv.config();
 
 // loading Redis
 const REDIS_PORT = process.env.PORT || 6379;
-const client = redis.createClient(REDIS_PORT);
+const REDIS_HOST = process.env.HOST || "dev_env_cache";
+const client = redis.createClient(REDIS_PORT, REDIS_HOST);
 
 const todoRouter = express.Router();
 require("../Models/Todo.js");
