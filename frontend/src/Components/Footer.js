@@ -56,6 +56,9 @@ class Footer extends React.Component {
     await axios
       .post('http://localhost:8000/feedback', feedback)
       .then(res => console.log(res.data));
+      alert("FeedBack Submitted Successfully");
+      scroll.scrollToTop();
+      
   };
 
   render() {

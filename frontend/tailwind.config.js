@@ -43,7 +43,6 @@ module.exports = {
           'Lucida Sans Unicode',
           'Lucida Grande',
           'Lucida Sans',
-          'Arial',
           'sans-serif',
         ],
       },
