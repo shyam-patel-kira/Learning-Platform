@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gre
+  name: gre
+spec:
+  ports:
+    - name: "6545"
+      port: 6545
+      targetPort: 6545
+  selector:
+    io.kompose.service: gre
+status:
+  loadBalancer: {}
