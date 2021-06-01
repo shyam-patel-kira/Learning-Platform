@@ -108,45 +108,180 @@ class Ieltsreadinghero extends React.Component {
               className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
-              id='1'
+              id='01'
             >
-              Test 1
+              Test 01
             </button>
 
             <button
               className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
-              id='2'
+              id='02'
             >
-              Test 2
+              Test 02
             </button>
 
             <button
               className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
-              id='3'
+              id='03'
             >
-              Test 3
+              Test 03
             </button>
             <button
               className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
-              id='4'
+              id='04'
             >
-              Test 4
+              Test 04
             </button>
             <button
               className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
               variant='Default'
               onClick={this.handleTest}
-              id='5'
+              id='05'
             >
-              Test 5
+              Test 05
             </button>
-          </div>
+            </div>
+            <br />
+            <div className='flex flex-row justify-evenly w-5/6'>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='06'
+            >
+              Test 06
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='07'
+            >
+              Test 07
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='08'
+            >
+              Test 08
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='09'
+            >
+              Test 09
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='10'
+            >
+              Test 10
+            </button>
+            </div>
+            <br />
+            <div className='flex flex-row justify-evenly w-5/6'>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='11'
+            >
+              Test 11
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='12'
+            >
+              Test 12
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='13'
+            >
+              Test 13
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='14'
+            >
+              Test 14
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='15'
+            >
+              Test 15
+            </button>
+            </div>
+            <br />
+            <div className='flex flex-row justify-evenly w-5/6'>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='16'
+            >
+              Test 16
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='17'
+            >
+              Test 17
+            </button>
+
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='18'
+            >
+              Test 18
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='19'
+            >
+              Test 19
+            </button>
+            <button
+              className='bg-customnewblue hover:bg-customhoverblue text-customwhite hover:text-customdarkblue transition-all ease-in duration-300 font-bold py-2 px-4 rounded'
+              variant='Default'
+              onClick={this.handleTest}
+              id='20'
+            >
+              Test 20
+            </button>
+            </div>
         </div>
         <br />
       </div>

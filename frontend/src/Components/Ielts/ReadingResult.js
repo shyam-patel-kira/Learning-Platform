@@ -31,11 +31,13 @@ function ReadingResult(props) {
     incorrect: '',
     test_id: '',
     test_type: '',
+    rcmMsg: '',
+    level: '',
   });
   let [answerKey, setAnswerKey] = useState([]);
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
-
+  console.log(mytest);
   useEffect(() => {
     async function fetchResult() {
       await axios
@@ -49,18 +51,20 @@ function ReadingResult(props) {
           if (res.data.error) {
             setError(res.data.error);
           } else {
-            console.log(res.data);
+            console.log("In else " + res.data);
             setParams({
               bands: res.data.results[0].bands,
               correct: res.data.results[0].correct,
               incorrect: res.data.results[0].incorrect,
               test_id: res.data.results[0].test_id,
               test_type: res.data.results[0].test_type,
+              rcmMsg : res.data.recommendMessage,
+              level : res.data.level,
             });
           }
         })
         .catch(e => {
-          console.log(e.message);
+          console.log("My eririri " + e.message);
         });
     }
     fetchResult();
@@ -142,6 +146,8 @@ function ReadingResult(props) {
       <h1 className={cls}>Total Incorrect Answers - {params.incorrect}</h1>
       <h1 className={cls}>Examination Type - {params.test_type}</h1>
       <h1 className={cls}>Test-Id - {params.test_id}</h1>
+      <h1 className={cls}>Skill Level - {params.level}</h1>
+      <h1 className={cls}>Recommendation - {params.rcmMsg}</h1>
       <h1 className={cls}>Answer Key</h1>
       <ul className=''>
         {answerKey &&
