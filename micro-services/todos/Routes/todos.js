@@ -13,7 +13,7 @@ dotenv.config();
 // loading Redis
 const REDIS_PORT = process.env.PORT || 6379;
 const REDIS_HOST = process.env.HOST || "dev_env_cache";
-const client = redis.createClient(REDIS_PORT, REDIS_HOST);
+// const client = redis.createClient(REDIS_PORT, REDIS_HOST);
 
 const todoRouter = express.Router();
 require("../Models/Todo.js");
@@ -21,27 +21,27 @@ const Todo = mongoose.model("Todo");
 
 
 // Cache middleware
-function cache(req, res, next) {
-      
-    client.get("todos", (err, data) => {
-        console.log("In cache ");
-        const todos = JSON.parse(data);
-        if (err) throw err;
-        // console.log(todos);
-        if (data !== null) {
-        return res.status(200).json({
-            title: 'success',
-            todos: todos,
-        });
-      } else {
-        next();
-      }
-    });
-  }
-  
+// function cache(req, res, next) {
+//
+//     client.get("todos", (err, data) => {
+//         console.log("In cache ");
+//         const todos = JSON.parse(data);
+//         if (err) throw err;
+//         // console.log(todos);
+//         if (data !== null) {
+//         return res.status(200).json({
+//             title: 'success',
+//             todos: todos,
+//         });
+//       } else {
+//         next();
+//       }
+//     });
+//   }
+
 
 // get todo route
-todoRouter.get('/todoslist', cache, (req, res) => {
+todoRouter.get('/todoslist', (req, res) => {
     // verify
     console.log("In GET todoslist");
     const decodedJWT = _decodeJWT(req);
@@ -59,8 +59,8 @@ todoRouter.get('/todoslist', cache, (req, res) => {
         if (err) return console.log(err);
         // Set data to Redis
         // const todo = {"todos" : todos};
-        
-        client.setex("todos", 3600, JSON.stringify(todos));
+
+        // client.setex("todos", 3600, JSON.stringify(todos));
         return res.status(200).json({
             title: 'success',
             todos: todos
@@ -81,7 +81,7 @@ todoRouter.post('/todoslist', (req, res) => {
             error: "Unauthorized user"
         });
     }
-    client.del("todos")
+    // client.del("todos")
     console.log(decodedJWT.id);
     let newTodo = new Todo({
         title: req.body.title,
@@ -132,7 +132,7 @@ todoRouter.put('/todoslist/:todoId', (req, res) => {
             error: "Unauthorized user"
         });
     }
-    client.del("todos");
+    // client.del("todos");
     // now we know token is valid
     Todo.findOne({
         author: decodedJWT.id,
